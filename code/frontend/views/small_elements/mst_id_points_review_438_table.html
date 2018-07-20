@@ -1,0 +1,19 @@
+<div>
+    <p style="font-size:large">
+        Folgende Stichwörter wurden von dir und den anderen Spielern erstellt.
+    </p>
+
+    <ul class="list-inline">
+        {{#other_tags}}
+        <li class="pt-3">
+            <button type="button" class="btn bg-dark-gray other_tags_review_fitting" style="cursor:default;{{style}}">
+                {{tag}} <span class="{{class}}">({{num}})</span>
+            </button>
+        </li>
+        {{/other_tags}}
+    </ul>
+
+    <p style="font-size:large">
+        Durch Übereinstimmungen hast du für dieses Bild <strong>{{points}} Punkte</strong> erhalten.
+    </p>
+</div>

@@ -1,0 +1,196 @@
+<!--
+@param tutorial: true|false: Is the view in tutorial mode (show additional hints for "Nächstes Bild", etc)
+@param stats: Show the stats, i.e., the right side of the screen. This div should hold all elements (leaderboard, points, ...)
+@param leaderboard: true|false: Print the leaderboard div
+@param points: true|false: Print the points div
+-->
+
+<div class="row" id="tagging_process">
+    <!-- The left side of the WebApp (the image tagging part) -->
+    <div class="col-md-6">
+        <div class="card bg-gray" id="div_it_img_card">
+
+            <div class="front" id="div_it_img">
+                <img id="bilderbuch" class="fit center-block mt-3" alt="Bild lädt..." src=""/>
+                <br><br>
+                <p class="center-block pl-3">Das Bild verschwindet in <strong id="div_it_flip_sec">5</strong> Sekunden.
+                </p>
+            </div>
+
+            <div class="back p-3" id="div_it_tag">
+                <p>
+                    Bitte schreibe in das Feld so viele <strong>Stichworte</strong> hinein (<em>Bilder-Taggen</em>) wie
+                    dir zur <strong>Stimmung</strong> im jeweiligen Bild in den Sinn kommen.
+                </p>
+                <p>
+                    Einzelne Stichworte kannst du mit <strong>LEERTASTE</strong>, <strong>KOMMA</strong> oder mit
+                    <strong>ENTER</strong>
+                    trennen.
+                </p>
+                <!--<br>-->
+                {{^surrender}}
+                {{^confirm}}
+                <p>
+                    Wenn du fertig bist, klicke auf <i>Nächstes Bild</i>.
+                </p>
+                {{/confirm}}
+                {{/surrender}}
+                {{#confirm}}
+                <p>
+                    Wenn du fertig bist, klicke auf <i>{{confirm}}</i>.
+                </p>
+                {{/confirm}}
+                {{#surrender}}
+                <p>
+                    Mit einem Klick auf <i>Runde aufgeben</i> kannst du diese Runde aufgeben.
+                </p>
+                {{/surrender}}
+                <ul class="min-h-30 max-h-30 bg-white sortable" id="myTags"></ul>
+                <div style="position: relative;">
+                    {{#tutorial}}
+                    <span class="pull-right text-right">
+                        Beispielstimmungen zum zuvor gezeigten Bild:
+                        <!--<br>-->
+                        <strong id="tut_example_morales"></strong>...
+                    </span>
+                    <br><br>
+                    {{/tutorial}}
+                    <button type="button" class="btn btn-primary w-35 pt-3" onclick="btn_oc_postImageTags()"
+                            id="next_img">
+                        Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+                    </button>
+                </div>
+                {{#tutorial_implemented_design}}
+                <p class="pt-3" id="tut_next_img_hint">
+                    Mit einem Klick auf <em>Nächstes Bild</em> beendest du diese Einführung.
+                </p>
+                {{/tutorial_implemented_design}}
+                {{#tutorial_normal}}
+                <div>
+                    <p class="pt-3" id="tut_next_img_label">
+                        Mit einem Klick auf <em>Nächstes Bild</em> gelangst du zum nächsten Bild dieser Einführung.
+                    </p>
+                </div>
+                <div>
+                    <p class="pt-3 invisible" id="tut_next_img_end_label">
+                        Mit einem Klick auf <em>Nächstes Bild</em> beendest du diese Einführung.
+                    </p>
+                </div>
+                {{/tutorial_normal}}
+            </div>
+        </div>
+    </div>
+
+    <!-- The right side of the WebApp (the place for the stats) -->
+    {{#stats}}
+    <div class="col-md-6">
+        <div class="card bg-gray pr-5 pl-5 pt-3 pb-3" id="div_it_stats">
+            {{#progress_bar}}
+            <div id="div_it_progress_bar"></div>
+            {{/progress_bar}}
+            <div id="div_game_elements_spinner">
+                {{#leaderboard}}
+                <div>
+                    {{#points}}
+                    <div class="bg-blue pull-right pl-3 pr-3">
+                        <h4 class="game_element_point card-title text-center" id="div_it_pts_lb"></h4>
+                    </div>
+                    <br>
+                    {{/points}}
+
+
+                    <div class="card no-border container_margin_top-5">
+                        <div class="card no-border bg-gray w-100 leaderboard" id="div_it_lb"></div>
+                    </div>
+                </div>
+                {{/leaderboard}}
+
+                {{#id_prizes_59}}
+                <div>
+                    <div id="div_it_id_prizes_59"></div>
+                </div>
+                {{/id_prizes_59}}
+
+                {{#id_points_151}}
+                <div>
+                    <div id="div_it_id_points_151"></div>
+                </div>
+                {{/id_points_151}}
+
+                {{#id_points_review_210}}
+                <div>
+                    <div id="div_it_id_points_review_210"></div>
+                </div>
+                {{/id_points_review_210}}
+
+                {{#id_aquarium_339}}
+                <div>
+                    <div id="div_it_id_aquarium_339"></div>
+                </div>
+                {{/id_aquarium_339}}
+
+                {{#id_teams_simple_104}}
+                <div>
+                    <div id="div_it_id_teams_simple_104"></div>
+                </div>
+                {{/id_teams_simple_104}}
+
+                {{#id_points_96}}
+                <div>
+                    <div id="div_it_id_points_96"></div>
+                </div>
+                {{/id_points_96}}
+
+                {{#id_complex_115}}
+                <div>
+                    <div id="div_it_id_complex_115"></div>
+                </div>
+                {{/id_complex_115}}
+
+                {{#id_points_review_125}}
+                <div>
+                    <div id="div_it_id_points_review_125"></div>
+                </div>
+                {{/id_points_review_125}}
+
+                {{#id_points_similar_61}}
+                <div>
+                    <div id="div_it_id_points_similar_61"></div>
+                </div>
+                {{/id_points_similar_61}}
+
+                {{#id_points_review_438}}
+                <div>
+                    <div id="div_it_id_points_review_438"></div>
+                </div>
+                {{/id_points_review_438}}
+
+                {{#id_single_teams_407}}
+                <div>
+                    <div id="div_it_id_single_teams_407"></div>
+                </div>
+                {{/id_single_teams_407}}
+
+                {{#id_beat_friend_51}}
+                <div>
+                    <div id="div_it_id_beat_friend_51"></div>
+                </div>
+                {{/id_beat_friend_51}}
+
+                {{#id_teams_points_369}}
+                <div>
+                    <div id="div_it_id_teams_points_369"></div>
+                </div>
+                {{/id_teams_points_369}}
+
+                {{#id_levels_498}}
+                <div>
+                    <div id="div_it_id_levels_498"></div>
+                </div>
+                {{/id_levels_498}}
+            </div>
+        </div>
+    </div>
+    {{/stats}}
+
+</div>

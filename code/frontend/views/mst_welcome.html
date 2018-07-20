@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-md-7 col-md-offset-3 h-100">
+        {{#platform_closed}}
+        <h3>Hallo!</h3>
+        <p>
+            <strong>Vielen Dank, dass du an der Studie teilnehmen möchtest.</strong>
+        </p>
+        <p>
+            Die Registrierung ist abgeschlossen und es können keine neuen Teilnehmer mehr angenommen werden.
+            Solltest du bereits teilgenommen haben und deine E-Mail-Adresse hinterlegt haben, bekommst du in den
+            nächsten Tagen eine Nachricht von uns.
+        </p>
+        {{/platform_closed}}
+
+        {{^platform_closed}}
+        {{#design_implemented}}
+        <h3>Willkommen zurück!</h3>
+        <p>
+            <strong>Vielen Dank, dass du die Realisierung deines Spielkonzepts ausprobieren möchtest.</strong>
+        </p>
+        {{/design_implemented}}
+
+        {{^design_implemented}}
+        <h3>Hallo!</h3>
+        <p>
+            <strong>Vielen Dank, dass du an der Studie teilnehmen möchtest.</strong>
+        </p>
+        {{/design_implemented}}
+
+        <p>
+            Im Folgenden zeigen wir dir nacheinander <strong>mehrere Bilder</strong> für jeweils eine <strong>kurze
+            Zeit</strong>.
+            Für jedes Bild bitten wir dich, uns in Form von Stichwörtern mitzuteilen, was dir zur
+            <strong>Stimmung im jeweiligen Bild</strong> in den Sinn kommt.
+            Dieser Prozess nennt sich <strong>Bilder-Tagging</strong> und hilft uns bei der Verbesserung der affektiven
+            Bildklassifizierung.
+        </p>
+
+        <p>
+            {{^design_implemented}}
+            Die Teilnahme an dieser Studie dauert in etwa <strong>20 Minuten</strong>.
+            {{/design_implemented}}
+
+            {{#design_implemented}}
+            Das Ausprobieren deines Spielkonzepts dauert in etwa <strong>20 Minuten</strong>.
+            {{/design_implemented}}
+
+            Informationen zur Nutzung deiner Daten können in den <a href="javascript:btn_oc_viewDataPrivacy()">Datenschutzhinweisen</a>
+            nachgelesen werden.
+            Diese Studie wird von Max Mustermann im Rahmen einer Masterarbeit am DFKI (Deutsches Forschungszentrum
+            für Künstliche Intelligenz) durchgeführt.
+        </p>
+
+        <p>
+            Hinweis für Nutzer von <strong>SurveyCircle</strong>: Am Ende der Studie findest du einen SurveyCircle-Key.
+        </p>
+
+        <div>
+            <label for="data_privacy">
+                <input type="checkbox" name="data_privacy" id="data_privacy"/> Ich habe die <a
+                    href="javascript:btn_oc_viewDataPrivacy()"> Hinweise zum Datenschutz</a> und die
+                Teilnahmeinformationen gelesen, verstanden und bin damit einverstanden, dass meine Daten für
+                wissenschaftliche Forschungszwecke verwendet werden dürfen.
+            </label>
+        </div>
+        <input type="button" class="btn btn-primary" value="Weiter" onclick="btn_oc_welcomeScreen_next()">
+        {{/platform_closed}}
+    </div>
+</div>

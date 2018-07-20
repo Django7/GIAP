@@ -1,0 +1,66 @@
+<div>
+    {{^end_page}}
+    <!-- the first team -->
+    <div id="teams_points_teams">
+        <div>
+            <h2 id="teams_pts_t1">Team 1 (Punkte: <span id="teams_pts_t1_points">{{points_t1}}</span>)</h2>
+            <div style="font-size: large" class="pl-3">
+                <p>
+                    {{t1_p1_name}}: <span id="teams_points_t1_p1_state"
+                                                           class="typing_animated">tippt<span>.</span><span>.</span><span>.</span></span>
+                </p>
+                <p>
+                    {{t1_p2_name}}: <span id="teams_points_t1_p2_state"
+                                          class="typing_animated">tippt<span>.</span><span>.</span><span>.</span></span>
+                </p>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- the second team -->
+        <div>
+            <h2 id="teams_pts_t2">Team 2 (Punkte: <span id="teams_pts_t2_points">{{points_t2}}</span>)</h2>
+            <div style="font-size: large" class="pl-3">
+                <p>
+                    {{t2_p1_name}}: <span id="teams_points_t2_p1_state"
+                                          class="typing_animated">tippt<span>.</span><span>.</span><span>.</span></span>
+                </p>
+                <p>
+                    {{t2_p2_name}}: <span id="teams_points_t2_p2_state"
+                                          class="typing_animated">tippt<span>.</span><span>.</span><span>.</span></span>
+                </p>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <!-- Loader to show while words are getting checked -->
+    <div id="teams_points_winner_round_loader" class="text-center">
+        <div class="loader center"></div>
+        <p class="pt-2">
+            Die bestätigten Tags werden ausgewertet<span>.</span><span>.</span><span>.</span>
+        </p>
+    </div>
+
+    <div id="teams_points_shuffle_teams" class="invisible">
+        <div style="font-size: large">
+            Die Teams werden zur nächsten Runde neu gewürfelt.
+        </div>
+        <br>
+    </div>
+
+
+    <div>
+        <button type="button" class="btn btn-primary w-35 pt-3 pull-right invisible" onclick="btn_oc_postImageTags()"
+                id="next_img_teams_points">
+            Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+        </button>
+    </div>
+    {{/end_page}}
+
+    <!-- end screen, total winner -->
+    {{#end_page}}
+    <div style="font-size: large">Ihr habt alle 15 Runden abgeschlossen.</div>
+    {{/end_page}}
+</div>

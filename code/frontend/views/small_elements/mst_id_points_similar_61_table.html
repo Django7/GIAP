@@ -1,0 +1,19 @@
+<div>
+    <p>
+        Zu diesem Bild hast du <strong>{{count}} Tags</strong> erstellt.
+    </p>
+    <p>
+        Der Durchschnitt an Tags für dieses Bild beträgt: <strong>{{mean}} Tags</strong>
+    </p>
+    <p>
+        Im folgenden siehst du die {{mean_round}} häufigsten Tags zu diesem Bild.
+    </p>
+
+    <ul class="list-inline">
+        {{#other_tags}}
+        <li class="pt-3">
+            <button type="button" class="btn bg-dark-gray other_tags_review_fitting" style="cursor:default">{{tag}}</button>
+        </li>
+        {{/other_tags}}
+    </ul>
+</div>

@@ -1,0 +1,40 @@
+<div>
+    <!--<div class="bg-blue pull-left pl-3 pr-3">-->
+        <!--<h3 class="game_element_point card-title text-center">Punkte: {{points}}</h3>-->
+    <!--</div>-->
+
+    <!--<br>-->
+    <!--<br>-->
+
+    <h3>Ranking</h3>
+    <div class="card no-border bg-gray w-100 leaderboard" id="div_it_id_beat_friend_51_lb"></div>
+
+    {{^end_page}}
+    <p>
+        Für dieses Bild gibt es insgesamt <strong>{{different_moods_count}} verschiedene Stimmungen</strong>.
+        Deine eingegebenen Stichworte stimmen mit denen von <strong>{{same_mood_count}} Spielern</strong> überein.
+    </p>
+
+    <p>
+        Bitte bewerte die folgenden Stichwörter.
+        Wenn du die Stimmung als <em>passend</em> empfindest, kannst du sie mit einem Klick "liken".
+        Nicht bestätigte Wörter werden automatisch als <em>nicht passend</em> markiert.
+    </p>
+
+    <ul class="list-inline">
+        {{#other_tags}}
+        <li class="pt-3">
+            <button type="button" class="btn bg-dark-gray other_tags_review_fitting">
+            {{tag}} <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </li>
+        {{/other_tags}}
+    </ul>
+
+    <div>
+        <button type="button" class="btn btn-primary w-35 pt-3 pull-right" onclick="btn_oc_postImageTags()" id="next_img_beat_friend">
+            Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+        </button>
+    </div>
+    {{/end_page}}
+</div>

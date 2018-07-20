@@ -1,0 +1,71 @@
+<div>
+    {{^end_page}}
+    <div id="teams_simple_timer_div" style="font-size: large">
+        Für dieses Bild verbleiben <span id="teams_simple_timer">90</span> Sekunden.
+    </div>
+
+    <br>
+
+    <!-- the first team -->
+    <div id="teams_simple_teams" class="invisible">
+        <div>
+            <h2>Team 1 (Siege: <span id="teams_simple_t1_wins">0</span>)</h2>
+            <div style="font-size: large" class="pl-3">
+                <p>
+                    <strong>{{t1_p1_name}}</strong>: <span id="teams_simple_t1_p1_state" class="typing_animated">tippt<span>.</span><span>.</span><span>.</span></span>
+                </p>
+                <p>
+                    {{t1_p2_name}}: <span id="teams_simple_t1_p2_state"
+                                          class="typing_animated">tippt<span>.</span><span>.</span><span>.</span></span>
+                </p>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- the second team -->
+        <div>
+            <h2>Team 2 (Siege: <span id="teams_simple_t2_wins">0</span>)</h2>
+            <div style="font-size: large" class="pl-3">
+                <p>
+                    {{t2_p1_name}}: <span id="teams_simple_t2_p1_state"
+                                          class="typing_animated">tippt<span>.</span><span>.</span><span>.</span></span>
+                </p>
+                <p>
+                    {{t2_p2_name}}: <span id="teams_simple_t2_p2_state"
+                                          class="typing_animated">tippt<span>.</span><span>.</span><span>.</span></span>
+                </p>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <!-- Loader to show while words are getting checked -->
+    <div id="teams_simple_winner_round_loader" class="text-center invisible">
+        <div class="loader center"></div>
+        <p class="pt-2">
+            Die bestätigten Tags werden ausgewertet<span>.</span><span>.</span><span>.</span>
+        </p>
+    </div>
+
+    <!-- The winners of the round -->
+    <div id="teams_simple_winner_round_div" class="invisible">
+        <div style="font-size: large">
+            Team 1 hat <span id="teams_simple_words_t1"></span> und Team 2 hat <span id="teams_simple_words_t2"></span> logische Wörter eingegeben.
+            Damit hat <span id="teams_simple_winner_round"></span> diese Runde gewonnen.
+        </div>
+
+        <div class="pt-3">
+            <button type="button" class="btn btn-primary w-35 pt-3 pull-right" onclick="btn_oc_postImageTags()"
+                    id="next_img_teams_simple">
+                Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+        </div>
+    </div>
+    {{/end_page}}
+
+    <!-- end screen, total winner -->
+    {{#end_page}}
+    <div id="teams_simple_winner_total_div" style="font-size: large">Der Gewinner ist: <strong>{{winner}}</strong> ({{winner_1}} und {{winner_2}})</div>
+    {{/end_page}}
+</div>

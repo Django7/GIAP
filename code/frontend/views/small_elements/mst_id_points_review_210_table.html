@@ -1,0 +1,24 @@
+<div>
+    {{#tags_present}}
+    <p>
+        Es gibt Stichwörter von anderen Spielern, die du bewerten kannst.
+        Wenn du die Stimmung als "passend" empfindest, kannst du sie mit einem Klick bestätigen.
+        Nicht bestätigte Wörter werden automatisch als "nicht passend" markiert.
+    </p>
+    {{/tags_present}}
+    {{^tags_present}}
+    <p>
+        Zu diesem Bild hat kein anderer Spieler ein Stichwort erstellt, das du nicht auch hattest.
+    </p>
+    {{/tags_present}}
+
+    <ul class="list-inline" id="points_210_list">
+        {{#other_tags}}
+        <li class="pt-3">
+            <button type="button" class="btn bg-dark-gray other_tags_review_fitting">
+            {{tag}} <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </li>
+        {{/other_tags}}
+    </ul>
+</div>

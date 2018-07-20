@@ -1,0 +1,170 @@
+{{#with_frame}}
+<div class="row pt-3">
+    <div class="col-md-8 center">
+        <div class="card bg-gray">
+            {{/with_frame}}
+            <div class="w-100 p-3" id="end_screen">
+                {{#no_more_images}}
+                <h1>Geschafft!</h1>
+                <p>
+                    Vielen Dank für deine Teilnahme, du hast alle Bilder bearbeitet, die wir haben!
+                </p>
+                {{/no_more_images}}
+
+                {{#normal}}
+                <h1>Geschafft!</h1>
+                <p>
+                    Vielen Dank, dass du am Bilder-Taggen teilgenommen hast.
+                    {{#show_quest_btn}}
+                    Wir möchten dir nun noch ein <strong>paar abschließende Fragen</strong> stellen.
+                    Klicke dazu auf <em>Zum Fragebogen</em>.
+                    {{/show_quest_btn}}
+                </p>
+
+                {{^show_quest_btn}}
+                <p>
+                    Du hast die Studie erfolgreich abgeschlossen und kannst das Browserfenster nun schließen.
+                </p>
+                <p>
+                    Für Nutzer von <strong>SurveyCircle</strong> (www.surveycircle.com): Der Survey Code lautet:
+                    Y9Z8-EDBZ-HUPJ-6K96
+                </p>
+                <h3>Zweck der Studie</h3>
+                <p>
+                    Fokus der Studie liegt darauf, herauszufinden, ob Menschen in der Lage sind, Spielkonzepte zu
+                    entwickeln, die ihnen persönlich dabei helfen, ihre Motivation in bestimmten Situationen (hier: mehr
+                    Tags erstellen) zu erhöhen.
+                </p>
+                <p>
+                    Du wurdest zufällig einer von insgesamt drei Gruppen zugeordnet:
+                </p>
+                <ul>
+                    <li>
+                        Testgruppe 1: Erstellung eines Spielkonzepts und Bilder-Taggen mit dessen Realisierung.
+                    </li>
+                    <li>
+                        Testgruppe 2: Erstellung eines Spielkonzepts und Bilder-Taggen mit der Realisierung eines <em>anderen</em>
+                        Spielkonzepts.
+                    </li>
+                    <li>
+                        Kontrollgruppe: Bilder-Taggen mit vordefinierten Oberflächen, ohne ein persönliches Spielkonzept
+                        entwickelt zu haben.
+                    </li>
+                </ul>
+
+                {{#design_implemented}}
+                <p>
+                    {{#generic_implementation}}
+                    Du warst in <strong>Testgruppe 2</strong>.
+                    {{/generic_implementation}}
+                    {{^generic_implementation}}
+                    Du warst in <strong>Testgruppe 1</strong>.
+                    {{/generic_implementation}}
+                </p>
+                {{/design_implemented}}
+                {{^design_implemented}}
+                <p>
+                    Du warst in der <strong>Kontrollgruppe</strong>.
+                </p>
+                {{/design_implemented}}
+
+                <p>
+                    Wir möchten nun herausfinden, ob es einen Zusammenhang zwischen der Anzahl an erstellten Tags und
+                    der Zugehörigkeit der oben genannten Gruppen gibt, also ob Teilnehmer mit selbst erstellten
+                    Spielekonzepten weniger, gleich viel oder mehr Tags erstellt haben.
+                </p>
+
+                <p>
+                    Mit deiner Teilnahme hast du uns sehr geholfen.
+                    Wir möchten uns an dieser Stelle noch mal herzlichst bei dir bedanken.
+                </p>
+                {{/show_quest_btn}}
+                {{/normal}}
+                {{#show_extra_performed}}
+                {{^extra_more_than_one}}
+                {{#show_quest_btn}}
+                <p>
+                    Du hast bereits <strong>eine</strong> Extrarunde absolviert.
+                </p>
+                {{/show_quest_btn}}
+                {{/extra_more_than_one}}
+                {{#extra_more_than_one}}
+                {{#show_quest_btn}}
+                <p>
+                    Du hast bereits <strong>{{extra_performed}}</strong> Extrarunden absolviert.
+                </p>
+                {{/show_quest_btn}}
+                {{/extra_more_than_one}}
+                {{/show_extra_performed}}
+
+
+                {{#design}}
+                <h1>Konzept abgeschickt!</h1>
+                <p>
+                    Wir haben dein Spielkonzept erhalten und melden uns, sobald wir es umgesetzt haben.
+                    Du kannst das Browserfenster nun einfach schließen.
+                </p>
+                <p>
+                    Für Nutzer von <strong>SurveyCircle</strong> (www.surveycircle.com): Den Code teilen wir dir am Ende
+                    des zweiten Teils mit, spätestens aber wenn die Studie beendet ist. Sollte es Probleme geben, kannst
+                    du dich gerne jederzeit an uns wenden.
+                </p>
+                {{/design}}
+
+                {{#leaderboard}}
+                <p>
+                    Wenn du möchtest, kannst du hier deinen Namen in der Bestenliste anpassen.
+                </p>
+                <label class="pull-right">
+                    Name:
+                    <input type="text" id="div_it_lb_username">
+                    <input type="button" class="btn btn-primary" onclick="btn_oc_setUserNameForLeaderboard();"
+                           value="Bestätigen">
+                </label>
+                <br>
+                <br>
+                {{/leaderboard}}
+
+                {{#g_add_round}}
+                <div>
+                    <p>
+                        {{^no_more_images}}
+                        {{#show_quest_btn}}
+                        Wenn du uns noch weiter helfen möchtest, kannst du <strong>fünf zusätzliche Bilder</strong>
+                        bearbeiten.
+                        Es handelt sich dabei um neue, noch nicht gesehene Bilder.
+                        Diese Extrarunde findet in der gleichen Form wie das vorherige Tagging statt und kann beliebig
+                        oft wiederholt werden, bis der Fragebogen beantwortet wurde.
+                        {{#leaderboard}}
+                        Die Punkte aus den Extrarunden werden regulär auf deine Punkte addiert.
+                        {{/leaderboard}}
+                        Klicke dazu auf <em>Zur Extrarunde</em>.
+                        <br><br>
+                        <strong>
+                            Bitte beachte: Damit wir deinen Beitrag zur Studie werten können, muss dieser Fragebogen
+                            abgeschlossen werden.
+                        </strong>
+                        {{/show_quest_btn}}
+                        {{/no_more_images}}
+                    </p>
+                    <br>
+                    <div class="pull-right">
+                        {{#show_extra_btn}}
+                        <input type="button" class="btn btn-primary" value="Zur Extrarunde"
+                               onclick="btn_oc_end_extraRound()">
+                        {{/show_extra_btn}}
+                        {{#show_quest_btn}}
+                        <input type="button" class="btn btn-primary" value="Zum Fragebogen"
+                               onclick="btn_oc_end_questionnaire()">
+                        {{/show_quest_btn}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                {{/g_add_round}}
+            </div>
+            {{#with_frame}}
+        </div>
+    </div>
+</div>
+{{/with_frame}}

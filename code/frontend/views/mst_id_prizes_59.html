@@ -1,0 +1,28 @@
+<div>
+    <div class="bg-blue pull-left pl-3 pr-3">
+        <h4 class="game_element_point card-title text-center" id="div_it_id_prizes_points">Basispunkte: 0</h4>
+    </div>
+    {{#bonus_points}}
+    <div class="bg-blue pull-left pl-3 pr-3">
+        <h4 class="game_element_point card-title text-center" id="div_it_id_prizes_points_bonus">Bonuspunkte: {{bonus_points}}</h4>
+    </div>
+    {{/bonus_points}}
+    <br><br><br>
+    {{#show_information}}
+    <div>
+        <p>
+            Pro eingegebenem Stichwort erhältst du <strong>100 Basispunkte</strong>.
+            Für besonders ausgefallene Stichwörter (Stichwörter, die von <strong>1-3 weiteren
+            Spielern</strong> erstellt wurden) erhältst du zusätzlich <strong>50 Bonuspunkte</strong>.
+            Nachdem du zu jedem Bild Stichwörter erstellt hast, erfährst du wie viel Bonuspunkte du gesammelt hast.
+        </p>
+        <p>
+            Deine <strong>Gesamtpunktzahl</strong> entspricht der Summe deiner Basis- und Bonuspunkten.
+        </p>
+    </div>
+    {{/show_information}}
+    {{#bonus_points}}
+    Das folgende Diagramm zeigt dir, wie du im Vergleich zu anderen Spielern abgeschnitten hast.
+    <div class="card no-border bg-gray w-100 leaderboard" id="div_it_lb"></div>
+    {{/bonus_points}}
+</div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire Analyzer</title>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body style="position: absolute; height:95%; width: 99%;background-color: #272727; color: white">
+
+<div id="controlling" class="control">
+    <div class="besides">
+        <p>
+            Bitte Pattern auswählen:
+        </p>
+        <form>
+            <fieldset>
+                <input type="radio" id="rb_design" name="pattern" value="design">
+                <label for="rb_design"> Design</label>
+                <br>
+                <input type="radio" id="rb_end_normal" name="pattern" value="end_normal">
+                <label for="rb_end_normal"> End (Normal)</label>
+                <br>
+                <input type="radio" id="rb_end_design" name="pattern" value="end_design" checked="checked">
+                <label for="rb_end_design"> End (Design)</label>
+                <br>
+                <input type="radio" id="rb_demographics_normal" name="pattern" value="demographics_normal">
+                <label for="rb_demographics_normal"> Demographics (Normal)</label>
+                <br>
+                <input type="radio" id="rb_demographics_design" name="pattern" value="demographics_design">
+                <label for="rb_demographics_design"> Demographics (Design)</label>
+                <br>
+                <input type="radio" id="rb_big_five" name="pattern" value="big_five">
+                <label for="rb_big_five"> Big Five</label>
+                <br>
+            </fieldset>
+        </form>
+    </div>
+    <div class="besides" style="">
+        Wähle die Daten zum Analysieren aus:
+        <p>
+            <input type="file" id="files" name="files[]" multiple/>
+        </p>
+        <p>Dateien:</p>
+        <output id="list"></output>
+        <br>
+        <!--<output id="list"></output>-->
+    </div>
+    <div class="besides">
+        Leeres Feld
+    </div>
+    <div class="besides" style="">
+        <input type="button" value="Start" onclick="startAnalyzing()">
+        <br><br>
+        <input type="button" value="Download" onclick="download()">
+    </div>
+</div>
+
+<hr/>
+
+<div class="result" id="result" style="background-color: #272727; color: white; padding: 3px; overflow: scroll;">
+
+
+</div>
+
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="jquery-3.3.1.js"></script>
+<script type="text/javascript" src="papaparse.js"></script>
+<script type="text/javascript" src="patterns.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<div>
+    {{^end_page}}
+    {{#multiplayer}}
+    <div>
+        {{#t1_win_round}}
+        <div style="font-size: large">
+            Dein Team hat diese Runde gewonnen{{#giving_up}} (durch Aufgabe){{/giving_up}}.
+        </div>
+        {{/t1_win_round}}
+        {{#t2_win_round}}
+        <div style="font-size: large">
+            Das gegnerische Team hat diese Runde gewonnen{{#giving_up}} (durch Aufgabe){{/giving_up}}.
+        </div>
+        {{/t2_win_round}}
+    </div>
+    {{/multiplayer}}
+
+    {{#singleplayer}}
+    <div>
+        {{#t1_win_round}}
+        <div style="font-size: large">
+            Du hast diese Runde gewonnen{{#giving_up}} (durch Aufgabe){{/giving_up}}.
+        </div>
+        {{/t1_win_round}}
+        {{#t2_win_round}}
+        <div style="font-size: large">
+            Dein Gegner hat diese Runde gewonnen{{#giving_up}} (durch Aufgabe){{/giving_up}}.
+        </div>
+        {{/t2_win_round}}
+    </div>
+    {{/singleplayer}}
+    <br>
+
+    <button type="button" id="next_img_single_teams" class="btn btn-primary w-35 pt-3 pull-right" onclick="{{btn_listener}}">
+        Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+    {{/end_page}}
+
+    <!-- end screen, total winner -->
+    {{#end_page}}
+    <div style="font-size: large">
+        Du hast alle 15 Runden absolviert.
+    </div>
+    {{/end_page}}
+</div>

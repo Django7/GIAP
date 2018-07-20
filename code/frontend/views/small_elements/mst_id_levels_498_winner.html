@@ -1,0 +1,32 @@
+{{^end_page}}
+<div style="font-size: large">
+    {{#user_won}}
+    Super. Du hast diese Runde gewonnen!
+    {{/user_won}}
+    {{^user_won}}
+    Dein Gegner hat diese Runde gewonnen.
+    {{/user_won}}
+</div>
+{{/end_page}}
+
+<!-- end screen, total winner -->
+{{#end_page}}
+<div style="font-size: large">
+    {{#lvl_up}}
+    Herzlichen Glückwunsch! Du hast das Spiel gewonnen und bist damit ein Level aufgestiegen.
+    {{/lvl_up}}
+    {{^lvl_up}}
+    Dein Gegner hat das Spiel gewonnen. Du bist damit ein Level abgestiegen.
+    {{/lvl_up}}
+</div>
+{{/end_page}}
+
+{{^end_page}}
+<br>
+<div id="div_it_id_levels_498_next_btn">
+    <button type="button" id="next_img_single_teams" class="btn btn-primary w-35 pt-3 pull-right"
+            onclick="{{btn_listener}}">
+        Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+</div>
+{{/end_page}}

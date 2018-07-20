@@ -1,0 +1,31 @@
+<div>
+    <div class="bg-blue pull-left pl-3 pr-3">
+        <h4 class="game_element_point card-title text-center" id="div_it_id_points_review_points">Punkte: 0</h4>
+    </div>
+
+    <br><br>
+
+    <div class="pt-3">
+        {{#final_view}}
+        <h4>Herzlichen Glückwunsch!</h4>
+        <p>
+            Du hast den <strong><span id="id_points_review_210_place">fünften</span> Platz</strong> erreicht!
+        </p>
+        {{^first_place}}
+        <!--<p>-->
+            <!--<em>Tipp:</em> Mit Hilfe von Extra-Runden kannst du noch weiter aufsteigen.-->
+        <!--</p>-->
+        {{/first_place}}
+        {{/final_view}}
+
+        <div class="invisible" id="div_it_id_points_review_other_tags">
+            <div id="div_it_id_points_review_table">
+                <span class="typing_animated">Tabelle lädt<span>.</span><span>.</span><span>.</span></span>
+            </div>
+            <button type="button" class="btn btn-primary w-35 pt-3 pull-right" onclick="btn_oc_postImageTags()"
+                    id="next_img_points_review">
+                Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+        </div>
+    </div>
+</div>
