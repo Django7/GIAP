@@ -17,8 +17,8 @@ CREATE TABLE users (
   PRIMARY KEY (uid)
 );
 
-DROP TABLE IF EXISTS groups;
-CREATE TABLE groups (
+DROP TABLE IF EXISTS `groups`;
+CREATE TABLE `groups` (
   gid   INT(11) NOT NULL AUTO_INCREMENT,
   id    TINYTEXT,
   name  TINYTEXT,
@@ -31,7 +31,7 @@ CREATE TABLE users_groups (
   uid INT(11),
   gid INT(11),
   FOREIGN KEY (uid) REFERENCES users (uid),
-  FOREIGN KEY (gid) REFERENCES groups (gid)
+  FOREIGN KEY (gid) REFERENCES `groups` (gid)
 );
 
 DROP TABLE IF EXISTS users_groups_commands;
@@ -41,7 +41,7 @@ CREATE TABLE users_groups_commands (
   command      TINYTEXT,
   trigger_cmds TEXT,
   sql_command  TEXT,
-  FOREIGN KEY (gid) REFERENCES groups (gid),
+  FOREIGN KEY (gid) REFERENCES `groups` (gid),
   PRIMARY KEY (cmdid, gid)
 );
 

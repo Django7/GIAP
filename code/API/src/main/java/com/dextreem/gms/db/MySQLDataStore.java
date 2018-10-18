@@ -448,7 +448,7 @@ public class MySQLDataStore implements DataStoreConnector {
     /**
      * Returns ALL IDs of the group the user belongs to
      *
-     * @param userName The user name to get the groups for
+     * @param userName The user name to get the `groups` for
      * @return The user's group IDs as an integer list, can be empty.
      */
     @Override
@@ -521,7 +521,7 @@ public class MySQLDataStore implements DataStoreConnector {
         }
         int groupCount = 0;
         try {
-            String sql = "SELECT count(*) FROM groups WHERE name=?";
+            String sql = "SELECT count(*) FROM `groups` WHERE name=?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, group);
             ResultSet rs = preparedStatement.executeQuery();
@@ -540,7 +540,7 @@ public class MySQLDataStore implements DataStoreConnector {
     /**
      * Gets the group id by its name
      *
-     * @param group The groups name to look for
+     * @param group The `groups` name to look for
      * @return The respective group's id
      */
     @Override
@@ -551,7 +551,7 @@ public class MySQLDataStore implements DataStoreConnector {
             return -1;
         }
         try {
-            String sql = "SELECT gid FROM groups WHERE name=?";
+            String sql = "SELECT gid FROM `groups` WHERE name=?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, group);
             ResultSet rs = preparedStatement.executeQuery();
@@ -575,7 +575,7 @@ public class MySQLDataStore implements DataStoreConnector {
         connect();
 
         try {
-            String sql = "SELECT name FROM groups WHERE gid=?";
+            String sql = "SELECT name FROM `groups` WHERE gid=?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, groupID);
             ResultSet rs = preparedStatement.executeQuery();
@@ -598,7 +598,7 @@ public class MySQLDataStore implements DataStoreConnector {
         connect();
 
         try {
-            String sql = "SELECT name FROM groups WHERE basic=1";
+            String sql = "SELECT name FROM `groups` WHERE basic=1";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
             ArrayList<String> names = new ArrayList<>();
@@ -615,7 +615,7 @@ public class MySQLDataStore implements DataStoreConnector {
     /**
      * Creates a new user.
      * User name and password is assumed to be neither null nor empty!
-     * Also created additional table entries for the basic groups (none, design_task, ...)
+     * Also created additional table entries for the basic `groups` (none, design_task, ...)
      *
      * @param name       The name of the new user
      * @param pwd        The password of the new user
@@ -1140,7 +1140,7 @@ public class MySQLDataStore implements DataStoreConnector {
 
     /**
      * Gets the respective sql statement from the database.
-     * <b>NOTE:</b> Returns only the first occurrence of the command. So, if the user is in multiple groups with the
+     * <b>NOTE:</b> Returns only the first occurrence of the command. So, if the user is in multiple `groups` with the
      * same command, only the first finding gets returned. Therefore, it is required that the user knows what he/she does.
      *
      * @param command The command to lookup in the database.
@@ -1359,7 +1359,7 @@ public class MySQLDataStore implements DataStoreConnector {
         try {
             String quest_id = "" +
                     "SELECT id\n" +
-                    "FROM groups\n" +
+                    "FROM `groups`\n" +
                     "WHERE gid=?";
             PreparedStatement preparedStatement = connection.prepareStatement(quest_id);
             preparedStatement.setInt(1, groupID);
@@ -1426,7 +1426,7 @@ public class MySQLDataStore implements DataStoreConnector {
                     "FROM users_groups\n" +
                     "  INNER JOIN questionnaires_users ON users_groups.uid = questionnaires_users.uid\n" +
                     "WHERE gid = (SELECT gid\n" +
-                    "  FROM groups\n" +
+                    "  FROM `groups`\n" +
                     "  WHERE name = ?)\n" +
                     " AND qid = (SELECT qid\n" +
                     "  FROM questionnaires\n" +

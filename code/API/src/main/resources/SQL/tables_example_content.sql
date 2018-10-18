@@ -25,7 +25,7 @@ INSERT INTO users_groups (uid, gid) VALUE (1, 1);
 INSERT INTO users_groups (uid, gid) VALUE (2, 2);
 INSERT INTO users_groups (uid, gid) VALUE (3, 3);
 INSERT INTO users_groups (uid, gid) VALUE (4, 4);
-INSERT INTO users_groups (uid, gid) VALUE (5, 5);
+/* INSERT INTO users_groups (uid, gid) VALUE (5, 5); */
 
 /* insert default points to users */
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
@@ -36,14 +36,14 @@ INSERT INTO game_td_points (uid, points, points_incr, representation, last_updat
   VALUE (4, 0, 100, 'points', NOW());
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
   VALUE (5, 0, 100, 'points', NOW(), 0);
-INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
+/* INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
   VALUE (618, 6000, 0, 'points', NOW(), 1);
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
   VALUE (619, 2900, 0, 'points', NOW(), 1);
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
   VALUE (620, 1100, 0, 'points', NOW(), 1);
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
-  VALUE (621, 10200, 0, 'points', NOW(), 1);
+  VALUE (621, 10200, 0, 'points', NOW(), 1); */
 
 # Insert the tutorial image to the
 INSERT INTO images (name, basic_image) VALUE ('TUTORIAL_1', 0);

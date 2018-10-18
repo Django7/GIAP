@@ -30,12 +30,12 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
     FROM groups
     WHERE name = 'game_td_points'),
    'set_points', '', 'INSERT INTO game_td_points (points, last_update) VALUE (?, ?)');
-INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+/* INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE
   ((SELECT gid
     FROM groups
     WHERE name = 'game_custom_jokes'),
-   'get_joke', '', 'SELECT * FROM game_custom_jokes ORDER BY RAND() LIMIT 1');
+   'get_joke', '', 'SELECT * FROM game_custom_jokes ORDER BY RAND() LIMIT 1'); */
 INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM groups
@@ -44,7 +44,7 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
          'UPDATE game_td_points SET points = ((SELECT count(*) FROM image_tags WHERE uid=%UID% AND length(tag) > 0 AND iid NOT IN (SELECT iid FROM images WHERE name LIKE \'TUTORIAL%\')) * points_incr) WHERE uid=%UID%');
 
 /* achievements */
-INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+/* INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM groups
           WHERE name = 'achievement'), 'get_achievements', '',
@@ -59,10 +59,10 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
           FROM groups
           WHERE name = 'achievement'), 'inc_points', 'POST',
          'UPDATE game_td_points SET points = ((SELECT count(*) FROM image_tags WHERE uid=%UID% AND length(tag) > 0 AND iid NOT IN (SELECT iid FROM images WHERE name LIKE \'TUTORIAL%\')) * points_incr) WHERE uid=%UID%');
-
+*/
 
 /* goals */
-INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+/* INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM groups
           WHERE name = 'game_custom_goals'), 'get_stats', '',
@@ -79,9 +79,9 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
           FROM groups
           WHERE name = 'game_custom_goals'), 'get_goals', '',
          'SELECT text, type, comparator, gu.identifier, trigger_val FROM goals INNER JOIN goals_users gu ON goals.gid = gu.gid WHERE uid = %UID%');
-
+*/
 /* Compare others */
-INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+/* INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM groups
           WHERE name = 'game_compare_others'), 'get_others_tags', '',
@@ -92,23 +92,23 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
           FROM groups
           WHERE name = 'game_compare_others'), 'get_accordance', '',
          'SELECT count(*) AS accordance FROM image_tags it_1 INNER JOIN image_tags it_2 ON it_1.iid = it_2.iid WHERE it_1.uid = %UID% AND it_2.uid != %UID% AND it_1.tag = it_2.tag;');
-
+*/
 /* Compare with timer */
-INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+/*INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM groups
           WHERE name = 'game_compare_time'), 'get_all_tags', '',
          'SELECT tag FROM image_tags WHERE uid=%UID% AND iid NOT IN (SELECT iid FROM images WHERE name LIKE \'TUTORIAL%\') AND Length(tag) > 0;');
-
+*/
 /* Dictionary */
-INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+/*INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM groups
           WHERE name = 'game_dictionary'), 'get_all_tags', '',
          'SELECT tag FROM image_tags WHERE uid=%UID% AND iid NOT IN (SELECT iid FROM images WHERE name LIKE \'TUTORIAL%\') AND Length(tag) > 0 GROUP BY tag;');
-
+*/
 /* Summary */
-INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+/*INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM groups
           WHERE name = 'game_summary'), 'get_all_my_tags', '',
@@ -119,7 +119,7 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
           FROM groups
           WHERE name = 'game_summary'), 'get_all_others_tags', '',
          'SELECT name, GROUP_CONCAT(DISTINCT tag SEPARATOR \', \') AS others_tags FROM images INNER JOIN image_tags it ON images.iid = it.iid WHERE uid != %UID% AND name NOT LIKE \'TUTORIAL%\' AND length(tag) > 0 GROUP BY images.iid;');
-
+*/
 /* Questionnaire duration update */
 INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
