@@ -70,32 +70,39 @@
     <session id="-29516033">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.102" value="1" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.70" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="properties" value="65" />
           <entry key="sql" value="55" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Properties" value="65" />
           <entry key="SQL" value="55" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="java" value="1" />
           <entry key="sql" value="4" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="1" />
           <entry key="SQL" value="4" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -112,7 +119,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/websocket/runner/WebSocketMessageReceivedWorkerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="4876">
               <caret line="235" column="24" selection-start-line="235" selection-start-column="24" selection-end-line="235" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -135,10 +142,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/MySQLDataStore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
+            <state relative-caret-position="546">
               <caret line="447" column="7" selection-start-line="447" selection-start-column="7" selection-end-line="447" selection-end-column="7" />
               <folding>
                 <element signature="e#16658#16659#0" expanded="true" />
@@ -170,11 +177,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/props/settings.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="552">
+              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="644">
+              <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -182,7 +198,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/reinit_all_tables.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="437">
               <caret line="19" column="28" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="28" />
             </state>
           </provider>
@@ -298,7 +314,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/SQL/game_elements.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/dextreem/gms/websocket/MyWebSocketServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dextreem/gms/websocket/model/WebSocketMessageReceived.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="src:table:/fa8084ce/cb51b9ea-400c-4dfd-991c-9f552a193221/gms.users_groups" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/cb51b9ea-400c-4dfd-991c-9f552a193221/console.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/SQL/td_additional_commands.sql" />
@@ -316,6 +331,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/SQL/tables_example_content.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/SQL/subsequent_tables_example_content.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/MySQLDataStore.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -468,8 +484,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -912,7 +928,9 @@
       <workItem from="1530514559122" duration="6170000" />
       <workItem from="1531225800535" duration="5910000" />
       <workItem from="1531908719566" duration="627000" />
-      <workItem from="1539867043684" duration="2619000" />
+      <workItem from="1539867043684" duration="3076000" />
+      <workItem from="1540198214196" duration="210000" />
+      <workItem from="1540274463207" duration="1443000" />
     </task>
     <servers />
   </component>
@@ -949,7 +967,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="907939000" />
+    <option name="totallyTimeSpent" value="910049000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -964,7 +982,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13365282" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13578275" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Project Explorer" order="3" weight="0.32995737" />
@@ -974,23 +992,23 @@
       <window_info id="Image Layers" order="7" />
       <window_info id="Palette&#9;" order="8" />
       <window_info id="Structure" order="9" weight="0.15298508" />
-      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4914712" weight="0.32934782" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.60223645" visible="true" weight="0.2788145" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.60117143" visible="true" weight="0.2788145" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5708955" weight="0.3478261" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4914712" weight="0.32826087" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.40788072" weight="0.32930845" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.40734825" weight="0.32930845" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" sideWeight="0.49573562" weight="0.32934782" />
       <window_info anchor="bottom" id="DB Execution Console" order="10" />
       <window_info anchor="bottom" id="Application Servers" order="11" sideWeight="0.4978678" weight="0.32934782" />
       <window_info anchor="bottom" id="Console" order="12" />
       <window_info active="true" anchor="bottom" id="Database Console" order="13" sideWeight="0.65618336" visible="true" weight="0.39347827" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.39776358" side_tool="true" visible="true" weight="0.2788145" />
-      <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.5676972" weight="0.36739132" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="14" sideWeight="0.39882854" side_tool="true" visible="true" weight="0.2788145" />
+      <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.5660277" weight="0.36663008" />
+      <window_info anchor="bottom" id="Database Changes" order="16" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1082,13 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/session/SessionManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -1152,24 +1163,6 @@
     <entry file="das://table:/fa8084ce/cb51b9ea-400c-4dfd-991c-9f552a193221/gms.users" />
     <entry file="das://table:/fa8084ce/cb51b9ea-400c-4dfd-991c-9f552a193221/gms.questionnaires_users" />
     <entry file="das://table:/fa8084ce/cb51b9ea-400c-4dfd-991c-9f552a193221/gms.users_groups" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/helper/Props.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <element signature="e#1158#1159#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/study_participants.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3910">
@@ -1177,30 +1170,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/reinit_all_tables.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/tables_example_content.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/subsequent_tables_example_content.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2829">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/websocket/runner/WebSocketMessageReceivedWorkerThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="4876">
           <caret line="235" column="24" selection-start-line="235" selection-start-column="24" selection-end-line="235" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1222,21 +1194,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/MySQLDataStore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="447" column="7" selection-start-line="447" selection-start-column="7" selection-end-line="447" selection-end-column="7" />
+        <state relative-caret-position="230">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/helper/Props.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="989">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
           <folding>
-            <element signature="e#16658#16659#0" expanded="true" />
-            <element signature="e#16717#16718#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+            <element signature="e#1203#1204#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/props/settings.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="552">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/reinit_all_tables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/tables_example_content.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/subsequent_tables_example_content.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2829">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/MySQLDataStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="447" column="7" selection-start-line="447" selection-start-column="7" selection-end-line="447" selection-end-column="7" />
+          <folding>
+            <element signature="e#16658#16659#0" expanded="true" />
+            <element signature="e#16717#16718#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

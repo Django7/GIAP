@@ -346,6 +346,18 @@ function setUDGETaggingEnvironment(main_user_group_id) {
             };
             break;
         }
+        case 'id_test_11': {
+            UDGE.setTaggingEnvironment = function (mst_params, fun_array, frame_only) {
+                mst_params['stats'] = true;
+                mst_params['id_test_11'] = true;
+                fun_array.push(function () {
+                    if (!frame_only) {
+                        ID_TEST_11.setView();
+                    }
+                })
+            };
+            break;
+        }
         default: {
         }
     }

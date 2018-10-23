@@ -69,6 +69,7 @@ var ID_SINGLE_TEAMS_407;
 var ID_BEAT_FRIEND_51;
 var ID_TEAMS_POINTS_369;
 var ID_LEVELS_498;
+var ID_TEST_11;
 
 /**
  * Sets the statics to their default values
@@ -141,4 +142,6 @@ function reinitGameElements() {
     ID_TEAMS_POINTS_369.init('div_it_id_teams_points_369');
     ID_LEVELS_498 = ID_levels_498();
     ID_LEVELS_498.init('div_it_id_levels_498');
+    ID_TEST_11 = ID_Test_11();
+    ID_TEST_11.init('div_it_id_test_11');
 }
