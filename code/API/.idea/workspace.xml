@@ -74,20 +74,21 @@
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.102" value="1" />
           <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.70" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="properties" value="65" />
+          <entry key="properties" value="91" />
           <entry key="sql" value="55" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Properties" value="65" />
+          <entry key="Properties" value="91" />
           <entry key="SQL" value="55" />
           <entry key="XML" value="2" />
         </counts>
@@ -213,8 +214,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/props/settings.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="957">
-              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+            <state relative-caret-position="362">
+              <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -258,7 +259,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/study_participants.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
+            <state relative-caret-position="6946">
               <caret line="302" column="16" selection-start-line="302" selection-start-column="16" selection-end-line="302" selection-end-column="16" />
             </state>
           </provider>
@@ -379,10 +380,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/SQL/reinit_all_tables.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/MySQLDataStore.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/props/settings.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/SQL/tables_example_content.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/SQL/subsequent_tables_example_content.sql" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/props/settings.properties" />
       </list>
     </option>
   </component>
@@ -480,7 +481,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -523,6 +523,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -972,6 +973,7 @@
       <workItem from="1540642514435" duration="34000" />
       <workItem from="1540642595658" duration="2138000" />
       <workItem from="1540724351913" duration="1797000" />
+      <workItem from="1540903444440" duration="532000" />
     </task>
     <servers />
   </component>
@@ -1008,7 +1010,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="914018000" />
+    <option name="totallyTimeSpent" value="914550000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1023,7 +1025,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1401919" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14164004" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Project Explorer" order="3" weight="0.32995737" />
@@ -1035,7 +1037,7 @@
       <window_info id="Structure" order="9" weight="0.15298508" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4914712" weight="0.32934782" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6002132" weight="0.27863437" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.599574" visible="true" weight="0.2777168" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5708955" weight="0.3478261" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1047,8 +1049,8 @@
       <window_info anchor="bottom" id="Application Servers" order="11" sideWeight="0.4978678" weight="0.32934782" />
       <window_info anchor="bottom" id="Console" order="12" />
       <window_info active="true" anchor="bottom" id="Database Console" order="13" sideWeight="0.65618336" visible="true" weight="0.39347827" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.39978677" side_tool="true" visible="true" weight="0.27863437" />
-      <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.56556505" weight="0.36563876" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.40042597" side_tool="true" visible="true" weight="0.2777168" />
+      <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.56496274" weight="0.36553237" />
       <window_info anchor="bottom" id="Database Changes" order="16" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1056,7 +1058,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.1652452" />
       <window_info anchor="right" id="Designer" order="5" />
-      <window_info anchor="right" id="Database" order="6" sideWeight="0.4931973" visible="true" weight="0.15778251" />
+      <window_info anchor="right" id="Database" order="6" sideWeight="0.4931973" visible="true" weight="0.15761448" />
       <window_info anchor="right" id="FAQ Robot" order="7" weight="0.32995737" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="9" />
@@ -1285,6 +1287,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/study_participants.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6946">
+          <caret line="302" column="16" selection-start-line="302" selection-start-column="16" selection-end-line="302" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/subsequent_tables_example_content.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1292,17 +1301,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/study_participants.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="302" column="16" selection-start-line="302" selection-start-column="16" selection-end-line="302" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/props/settings.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        <state relative-caret-position="362">
+          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
         </state>
       </provider>
     </entry>

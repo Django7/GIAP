@@ -2090,13 +2090,42 @@ function startIDTest11Tutorial() {
                     'Weiter',
                     function () {
                         enableTagFieldAndButton();
-                        next_img_btn.click(btn_oc_viewTutorialFinished);
+                        next_img_btn.click(startIDTest11Tutorial_part_2);
                     },
                     true
                 );
             }, 5000);
         },
         true);
+}
+
+function startIDTest11Tutorial_part_2() {
+    // Check whether at least one tag was created
+    var tags = $("#myTags").tagit("assignedTags");
+    if (tags.length === 0) {
+        viewInfoOverlay('' +
+            'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
+            'Diese Einschränkung wird im regulären Ablauf wegfallen.');
+    } else {
+        // Disabling the tag field
+        disableTagField();
+
+        // Changing the button
+        var next_img_btn = $('#next_img');
+        next_img_btn.html('Bestätigt');
+        ID_TEST_11.displayPoints();
+        viewLeftTutorialOverlay(
+            'Wörter anderer Spieler',
+            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_test_11_2.html'),
+            'Weiter',
+            function () {
+                disableTagFieldAndNextButton();
+                next_img_btn.prop('onclick', null).off('click');
+                $('#next_img_points_similar_61').click(btn_oc_viewTutorialFinished);
+            },
+            true
+        );
+    }
 }
 
 /**
