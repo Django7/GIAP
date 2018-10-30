@@ -15,10 +15,10 @@ INSERT INTO users (name, pwd, mail, login) VALUE ('legolas', '', '', 0);
 INSERT INTO users (name, pwd, mail, login) VALUE ('anork85', '', '', 0);
 
 /* the groups */
-INSERT INTO groups (name, id, basic) VALUE ('none', 'none', 1);
-INSERT INTO groups (name, id, basic) VALUE ('game_td_points', 'td', 1);
-INSERT INTO groups (name, id, basic) VALUE ('design_task', 'design', 1);
-INSERT INTO groups (name, id, basic) VALUE ('design_implemented', 'design_implemented', 0);
+INSERT INTO `groups` (name, id, basic) VALUE ('none', 'none', 1);
+INSERT INTO `groups` (name, id, basic) VALUE ('game_td_points', 'td', 1);
+INSERT INTO `groups`(name, id, basic) VALUE ('design_task', 'design', 1);
+INSERT INTO `groups` (name, id, basic) VALUE ('design_implemented', 'design_implemented', 0);
 
 /* map users to user groups */
 INSERT INTO users_groups (uid, gid) VALUE (1, 1);

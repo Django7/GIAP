@@ -166,6 +166,13 @@ function setUDGETutorial(main_user_group_id) {
             };
             break;
         }
+        case "id_test_11": {
+            UDGE.startTutorial = function () {
+                printLog("start id test 11 tutorial");
+                startIDTest11Tutorial();
+            };
+            break;
+        }
         default: {
             UDGE.startTutorial = function () {
                 startBasicTutorial();
@@ -736,6 +743,12 @@ function setUDGEAfterTagAdded(main_user_group_id) {
             };
             break;
         }
+        case "id_test_11": {
+            UDGE.afterTagAdded = function(event, ui) {
+                ID_TEST_11.addNewTag();
+            };
+            break;
+        }
         default: {
             UDGE.afterTagAdded = function (event, ui) {
             };
@@ -812,6 +825,12 @@ function setUDGEAfterTagRemoved(main_user_group_id) {
         case "id_levels_498": {
             UDGE.afterTagRemoved = function (event, ui) {
                 ID_LEVELS_498.removeNewTag(ui.tagLabel);
+            };
+            break;
+        }
+        case "id_test_11": {
+            UDGE.afterTagRemoved = function(event, ui) {
+                ID_TEST_11.removeNewTag();
             };
             break;
         }
@@ -2046,6 +2065,41 @@ function startIDBeatFriend51Tutorial_part_2() {
 }
 
 /**
+ * Start the test 11 tutorial
+ */
+function startIDTest11Tutorial() {
+    var next_img_btn = $('#next_img');
+    next_img_btn.prop('onclick', null).off('click');
+
+    // Create an example view of the right view
+    ID_TEST_11 = ID_Test_11();
+    ID_TEST_11.init('div_it_id_test_11');
+
+    viewRightTutorialOverlay(
+        'Prinzip des Bilder-Taggens',
+        $('<div></div>').load('views/dialogs/dia_tutorial_design_implemented.html'),
+        'Weiter',
+        function () {
+            flipIn(5);
+            setTimeout(function () {
+                setVisible($('#div_it_stats'));
+                ID_TEST_11.setTutorialView();
+                viewLeftTutorialOverlay(
+                    'Der Durchschnitt',
+                    $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_test_11.html'),
+                    'Weiter',
+                    function () {
+                        enableTagFieldAndButton();
+                        next_img_btn.click(btn_oc_viewTutorialFinished);
+                    },
+                    true
+                );
+            }, 5000);
+        },
+        true);
+}
+
+/**
  * Start the similar 61 tutorial
  */
 function startIDPointsSimilar61Tutorial() {
@@ -2297,7 +2351,7 @@ function enableNextButton() {
  * Defines what happens after a tag was added
  */
 function increaseVisiblePoints(event, ui) {
-    if (arrayContainsOnOfThoseElements(USER_GROUP, ['design_implemented', 'id_aquarium_339'])) {
+    if (arrayContainsOnOfThoseElements(USER_GROUP, ['design_implemented', 'id_test_11'])) {
         // Trigger self designed stuff
         UDGE.afterTagAdded(event, ui);
     } else {
@@ -2313,7 +2367,7 @@ function increaseVisiblePoints(event, ui) {
 function decreaseVisiblePoints(event, ui) {
     // Decrease iff control variable is set
     if (DECREASE_POINTS) {
-        if (arrayContainsOnOfThoseElements(USER_GROUP, ['design_implemented', 'id_aquarium_339'])) {
+        if (arrayContainsOnOfThoseElements(USER_GROUP, ['design_implemented', 'id_test_11'])) {
             // Trigger self designed stuff
             UDGE.afterTagRemoved(event, ui);
         } else {

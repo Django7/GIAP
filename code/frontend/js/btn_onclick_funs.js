@@ -18,7 +18,7 @@ function btn_oc_welcomeScreen_next() {
         startDemographicsBigFiveSurvey(function () {
             viewWelcomeOverlay();
         });
-    } else if (arrayContainsOnOfThoseElements(USER_GROUP, ['none', 'td', 'id_aquarium_339'])) {
+    } else if (arrayContainsOnOfThoseElements(USER_GROUP, ['none', 'td', 'id_test_11'])) {
         startDemographicsSurveyNormal(function () {
             viewWelcomeOverlay();
         });

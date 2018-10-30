@@ -199,11 +199,11 @@ function setTaggingTutorial() {
             setExamplePointsAndLB();
             startPAndLTutorial()
         }]);
-    }else if(arrayContainsElement(USER_GROUP, "id_aquarium_339")){
+    }else if(arrayContainsElement(USER_GROUP, "id_test_11")){
         mst_params['tutorial_normal'] = true;
         setVisibleTutorialViews(mst_params);
         fun_array = fun_array.concat([function () {
-            startAquariumTutorial();
+            startIDTest11Tutorial();
         }]);
     } else {
         printErr("User does not fit in a group!");
