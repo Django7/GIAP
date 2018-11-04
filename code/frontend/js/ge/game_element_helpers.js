@@ -539,6 +539,13 @@ function setUDGEAfterGetImage(main_user_group_id) {
             };
             break;
         }
+        case "id_test_11": {
+            UDGE.afterGetImage = function () {
+                get40MostUsedTagsForCurrentImage();
+                getDistinctMoodsForThisImage();
+            };
+            break;
+        }
         default: {
             UDGE.afterGetImage = function () {
             };
@@ -614,6 +621,13 @@ function setUDGEAfterPostImage(main_user_group_id) {
         case 'id_teams_points_369': {
             UDGE.afterPostImage = function () {
                 ID_TEAMS_POINTS_369.storeStats();
+            };
+            break;
+        }
+        case 'id_test_11': {
+            UDGE.afterPostImage = function () {
+                ID_TEST_11.storePoints();
+                ID_TEST_11.generateNewPointsDistribution();
             };
             break;
         }
@@ -968,6 +982,18 @@ function setUDGEOnInterpretCommand(main_user_group_id) {
             };
             UDGE.COMMAND_HANDLER['get_worked_images'] = function (content) {
                 ID_COMPLEX_115.setLevel(content['value'][0]['num']);
+            };
+            break;
+        }
+        case "id_test_11": {
+            UDGE.COMMAND_HANDLER['get_my_tag_count'] = function (content) {
+                ID_TEST_11.setPoints(content['value'][0]['num']);
+            };
+            UDGE.COMMAND_HANDLER['get_most_40_tags_for_this_image'] = function (content) {
+                ID_TEST_11.setOtherPlayersTags(content['value']);
+            };
+            UDGE.COMMAND_HANDLER['get_mood_count_for_this_image'] = function (content) {
+                //ID_TEST_11.setDistinctMoods(content['value'][0]['num']);
             };
             break;
         }
@@ -1447,6 +1473,13 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
         case "id_points_96": {
             UDGE.onTutorialFinished = function (event, ui) {
                 setCookie('96_points', 0);
+                viewTutorialFinished();
+            };
+            break;
+        }
+        case "id_test_11": {
+            UDGE.onTutorialFinished = function (event, ui) {
+                deleteCookie('11_points');
                 viewTutorialFinished();
             };
             break;
@@ -2090,6 +2123,8 @@ function startIDTest11Tutorial() {
                     'Weiter',
                     function () {
                         enableTagFieldAndButton();
+                        var next_btn = $('#next_img');
+                        next_btn.html('Bestätigen');
                         next_img_btn.click(startIDTest11Tutorial_part_2);
                     },
                     true
@@ -2120,8 +2155,8 @@ function startIDTest11Tutorial_part_2() {
             'Weiter',
             function () {
                 disableTagFieldAndNextButton();
-                next_img_btn.prop('onclick', null).off('click');
-                $('#next_img_points_similar_61').click(btn_oc_viewTutorialFinished);
+                $('#next_img_test_11').prop('onclick', null).off('click');
+                $('#next_img_test_11').click(btn_oc_viewTutorialFinished);
             },
             true
         );

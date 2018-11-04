@@ -2,3 +2,42 @@
     <h3>Ranking</h3>
     <div class="card no-border bg-gray w-100 leaderboard" id="div_it_id_test_11_lb"></div>
 </div>
+
+<div>
+    Dieses Bild wurde mit insgesamt <span id="numTags" style="font-weight: bold">0</span> Tags von anderen Spielern versehen.</p>
+</div>
+
+{{#anyTags}}
+<div>
+    <p>Bitte bewerte die folgenden Tags mit einem Klick:</p>
+    <ul class="list-inline">
+        {{#tag1}}
+        <li>
+            <button id="tag1" class="btn btn-dark-gray" onclick="$('#tag1').prop('disabled', true)">
+               {{tag1text}} <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </li>
+        {{/tag1}}
+        {{#tag2}}
+        <li>
+            <button id=tag2 class="btn btn-dark-gray" onclick="$('#tag2').prop('disabled', true)">
+                {{tag2text}} <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </li>
+        {{/tag2}}
+        {{#tag3}}
+        <li>
+            <button id=tag3 class="btn btn-dark-gray" onclick="$('#tag3').prop('disabled', true)">
+                {{tag3text}} <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </li>
+        {{/tag3}}
+    </ul>
+</div>
+{{/anyTags}}
+
+<div>
+    <button type="button" class="btn btn-primary w-35 pt-3 pull-right" onclick="btn_oc_postImageTags()" id="next_img_test_11">
+        Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+</div>
