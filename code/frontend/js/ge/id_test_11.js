@@ -8,10 +8,10 @@ ID_Test_11 = function () {
         IN_TUTORIAL = false,
         IN_END = false,
         OTHERS = [
-            [(Math.random() * 14).toFixed(0), 'ProFlamer', '#607cae', 0],
-            [(Math.random() * 14).toFixed(0), 'McSwizzle', '#607cae', 0],
-            [(Math.random() * 14).toFixed(0), 'Xycor', '#607cae', 0],
-            [(Math.random() * 14).toFixed(0), 'McDaSchu', '#607cae', 0]
+            [(Math.random() * 14).toFixed(0) * 100, 'ProFlamer', '#607cae', 0],
+            [(Math.random() * 14).toFixed(0) * 100, 'McSwizzle', '#607cae', 0],
+            [(Math.random() * 14).toFixed(0) * 100, 'Xycor', '#607cae', 0],
+            [(Math.random() * 14).toFixed(0) * 100, 'McDaSchu', '#607cae', 0]
         ],
 
         /**
@@ -66,10 +66,10 @@ ID_Test_11 = function () {
 
         generateNewPointsDistribution = function() {
             OTHERS = [
-                [(Math.random() * 14).toFixed(0), 'ProFlamer', '#607cae', 0],
-                [(Math.random() * 14).toFixed(0), 'McSwizzle', '#607cae', 0],
-                [(Math.random() * 14).toFixed(0), 'Xycor', '#607cae', 0],
-                [(Math.random() * 14).toFixed(0), 'McDaSchu', '#607cae', 0]
+                [(Math.random() * 14).toFixed(0) * 100, 'ProFlamer', '#607cae', 0],
+                [(Math.random() * 14).toFixed(0) * 100, 'McSwizzle', '#607cae', 0],
+                [(Math.random() * 14).toFixed(0) * 100, 'Xycor', '#607cae', 0],
+                [(Math.random() * 14).toFixed(0) * 100, 'McDaSchu', '#607cae', 0]
             ]
         },
 
@@ -109,7 +109,7 @@ ID_Test_11 = function () {
 
                 // Display the ranking
                 var leaderboard = OTHERS;
-                leaderboard.push([YOUR_TAGS, username, '#5b67f1', 1]);
+                leaderboard.push([YOUR_TAGS * 100, username, '#5b67f1', 1]);
 
                 var lb = $('#div_it_id_test_11_lb');
                 lb.html('');

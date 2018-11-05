@@ -113,13 +113,13 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
           FROM `groups`
           WHERE name = 'game_summary'), 'get_all_my_tags', '',
          'SELECT name, GROUP_CONCAT(DISTINCT tag SEPARATOR \', \') AS my_tags FROM images INNER JOIN image_tags it ON images.iid = it.iid WHERE uid = %UID% AND name NOT LIKE \'TUTORIAL%\' AND length(tag) > 0 GROUP BY images.iid;');
-
+*/
 INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM `groups`
-          WHERE name = 'game_summary'), 'get_all_others_tags', '',
+          WHERE name = 'id_test_11'), 'get_most_40_tags_for_this_image', '',
          'SELECT name, GROUP_CONCAT(DISTINCT tag SEPARATOR \', \') AS others_tags FROM images INNER JOIN image_tags it ON images.iid = it.iid WHERE uid != %UID% AND name NOT LIKE \'TUTORIAL%\' AND length(tag) > 0 GROUP BY images.iid;');
-*/
+
 /* Questionnaire duration update */
 INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
@@ -145,3 +145,9 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
           FROM `groups`
           WHERE name = 'design_task'), 'set_questionnaire_duration', '',
          'INSERT INTO questionnaires_duration (uid, quest_name, duration) VALUE (%UID%, ?, ?);');
+
+
+/* Custom Game Commands */
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+VALUES (5, 'get_most_40_tags_for_this_image', '',
+        'SELECT top40tags FROM (SELECT tag AS top40tags, count(*) AS tagCount FROM image_tags WHERE iid = %IID% GROUP BY tag ORDER BY tagCount DESC LIMIT 40) AS tagsTable')
