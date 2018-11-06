@@ -466,6 +466,14 @@ function setUDGEEnd(main_user_group_id) {
             };
             break;
         }
+        case "id_test_11": {
+            UDGE.setEnd = function (mst_params, fun_array) {
+                mst_params['leaderboard'] = true;
+                ID_TEST_11.setPoints(getCookie('11_points'));
+                ID_TEST_11.setEndView();
+            };
+            break;
+        }
         default: {
             UDGE.setEnd = function (mst_params, fun_array) {
             };
@@ -627,7 +635,7 @@ function setUDGEAfterPostImage(main_user_group_id) {
         case 'id_test_11': {
             UDGE.afterPostImage = function () {
                 ID_TEST_11.storePoints();
-                ID_TEST_11.generateNewPointsDistribution();
+                ID_TEST_11.generateNewPointsDistribution(1);
             };
             break;
         }
@@ -1482,8 +1490,28 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
         }
         case "id_test_11": {
             UDGE.onTutorialFinished = function (event, ui) {
-                deleteCookie('11_points');
-                viewTutorialFinished();
+                BootstrapDialog.show({
+                    title: 'Nickname',
+                    message: $('<div>Bitte gebe hier deinen Nicknamen (1-8 Zeichen) ein, der später im Leaderboard erscheinen soll.</div>' +
+                        '<input class="pt-2 pb-2" type="text" id="dia_nickname_id_points">' +
+                        '<div id="dia_nickname_id_points_error" class="invisible txt_red">Bitte gebe einen Nicknamen mit 1-8 Zeichen an.</div>'),
+                    closable: false,
+                    buttons: [{
+                        label: 'Weiter',
+                        action: function (dialogItself) {
+                            var nick = $('#dia_nickname_id_points').val();
+                            if (nick.length > 0 && nick.length < 9) {
+                                setCookie('lb_username', nick);
+                                dialogItself.close();
+                                deleteCookie('11_points');
+                                viewTutorialFinished();
+                            } else {
+                                setVisible($('#dia_nickname_id_points_error'));
+                            }
+                        }
+                    }]
+                });
+
             };
             break;
         }
@@ -2161,16 +2189,7 @@ function startIDTest11Tutorial_part_2() {
                 disableTagFieldAndNextButton();
                 $('#next_img_test_11').prop('onclick', null).off('click');
                 $('#next_img_test_11').click(function() {
-                        viewLeftTutorialOverlay(
-                            'Username wählen:',
-                            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_test_11_askUsername.html'),
-                            'Weiter',
-                            function () {
-                                ID_TEST_11.setUsername($('#usernameInput').val());
-                                btn_oc_viewTutorialFinished();
-                            },
-                            true
-                        );
+                    btn_oc_viewTutorialFinished();
                 });
             },
             true

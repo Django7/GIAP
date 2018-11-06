@@ -150,4 +150,8 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
 /* Custom Game Commands */
 INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
 VALUES (5, 'get_most_40_tags_for_this_image', '',
-        'SELECT top40tags FROM (SELECT tag AS top40tags, count(*) AS tagCount FROM image_tags WHERE iid = %IID% GROUP BY tag ORDER BY tagCount DESC LIMIT 40) AS tagsTable')
+        'SELECT top40tags FROM (SELECT tag AS top40tags, count(*) AS tagCount FROM image_tags WHERE iid = (SELECT iid FROM image_log WHERE uid = %UID% AND in_work = 1) GROUP BY tag ORDER BY tagCount DESC LIMIT 40) AS tagsTable');
+
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+VALUES (5, 'get_mood_count_for_this_image', '',
+		'SELECT count(*) AS numDistTags FROM image_tags WHERE iid = (SELECT iid FROM image_log WHERE uid = %UID% AND in_work = 1) GROUP BY iid');
