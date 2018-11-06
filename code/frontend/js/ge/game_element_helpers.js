@@ -993,6 +993,9 @@ function setUDGEOnInterpretCommand(main_user_group_id) {
                 ID_TEST_11.setOtherPlayersTags(content['value']);
             };
             UDGE.COMMAND_HANDLER['get_mood_count_for_this_image'] = function (content) {
+                if(content['value'][0] === undefined)
+                    ID_TEST_11.setDistinctMoods(0);
+                else ID_TEST_11.setDistinctMoods(content['value'][0]);
                 //ID_TEST_11.setDistinctMoods(content['value'][0]['num']);
             };
             break;
@@ -2125,6 +2128,7 @@ function startIDTest11Tutorial() {
                         enableTagFieldAndButton();
                         var next_btn = $('#next_img');
                         next_btn.html('Bestätigen');
+                        next_img_btn.prop('onclick', null).off('click');
                         next_img_btn.click(startIDTest11Tutorial_part_2);
                     },
                     true
@@ -2156,7 +2160,18 @@ function startIDTest11Tutorial_part_2() {
             function () {
                 disableTagFieldAndNextButton();
                 $('#next_img_test_11').prop('onclick', null).off('click');
-                $('#next_img_test_11').click(btn_oc_viewTutorialFinished);
+                $('#next_img_test_11').click(function() {
+                        viewLeftTutorialOverlay(
+                            'Username wählen:',
+                            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_test_11_askUsername.html'),
+                            'Weiter',
+                            function () {
+                                ID_TEST_11.setUsername($('#usernameInput').val());
+                                btn_oc_viewTutorialFinished();
+                            },
+                            true
+                        );
+                });
             },
             true
         );

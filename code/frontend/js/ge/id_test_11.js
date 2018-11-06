@@ -129,10 +129,9 @@ ID_Test_11 = function () {
 
         setOtherPlayersTags = function(others) {
             OTHER_TAGS = others !== "" ? others : [];
-            DISTINCT_TAGS = OTHER_TAGS == null ? 0 : OTHER_TAGS.length;
         },
 
-        setDistinctMoods = function(num){
+        setDistinctMoods = function(num) {
             DISTINCT_TAGS = num;
         },
 
@@ -149,6 +148,10 @@ ID_Test_11 = function () {
             tag3 = tempTags[2] === undefined ? null : tempTags[2];
 
             return [tag1, tag2, tag3];
+        },
+
+        setUsername= function(name) {
+            setCookie('lb_username', name);
         };
 
 
@@ -165,6 +168,7 @@ ID_Test_11 = function () {
         displayPoints : displayPoints,
         setOtherPlayersTags : setOtherPlayersTags,
         setDistinctMoods : setDistinctMoods,
-        storePoints : storePoints
+        storePoints : storePoints,
+        setUsername : setUsername
     };
 };

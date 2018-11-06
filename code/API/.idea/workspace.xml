@@ -81,28 +81,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="properties" value="91" />
-          <entry key="sql" value="55" />
+          <entry key="properties" value="92" />
+          <entry key="sql" value="60" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Properties" value="91" />
-          <entry key="SQL" value="55" />
+          <entry key="Properties" value="92" />
+          <entry key="SQL" value="60" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="1" />
+          <entry key="java" value="2" />
           <entry key="sql" value="4" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="2" />
           <entry key="SQL" value="4" />
           <entry key="XML" value="1" />
         </counts>
@@ -164,33 +164,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/MySQLDataStore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="1096" selection-start-line="1096" selection-end-line="1096" />
-              <folding>
-                <element signature="e#16658#16659#0" expanded="true" />
-                <element signature="e#16717#16718#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/websocket/MyWebSocketServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-620">
-              <caret line="193" column="55" selection-start-line="193" selection-start-column="55" selection-end-line="193" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/websocket/runner/WebSocketMessageReceivedWorkerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="724" column="40" selection-start-line="724" selection-start-column="40" selection-end-line="724" selection-end-column="40" />
+            <state relative-caret-position="281">
+              <caret line="724" selection-start-line="724" selection-end-line="724" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6135#6136#0" expanded="true" />
@@ -208,6 +186,37 @@
                 <element signature="e#33288#33289#0" expanded="true" />
                 <element signature="e#33328#33329#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/MySQLDataStore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="1160" column="54" lean-forward="true" selection-start-line="1160" selection-start-column="54" selection-end-line="1160" selection-end-column="54" />
+              <folding>
+                <element signature="e#16658#16659#0" expanded="true" />
+                <element signature="e#16717#16718#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/DataStoreConnector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="358" column="27" selection-start-line="358" selection-start-column="27" selection-end-line="358" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/props/settings.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="897">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
@@ -242,7 +251,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/tables_example_content.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-529">
+            <state relative-caret-position="345">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
@@ -257,11 +266,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/subsequent_tables_example_content.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="152" column="172" selection-start-line="152" selection-start-column="172" selection-end-line="152" selection-end-column="172" />
+            <state relative-caret-position="556">
+              <caret line="156" column="140" lean-forward="true" selection-start-line="156" selection-start-column="140" selection-end-line="156" selection-end-column="140" />
             </state>
           </provider>
         </entry>
@@ -280,7 +289,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>meta</find>
       <find>tutorial</find>
       <find>get_sta</find>
       <find>get_stat</find>
@@ -310,6 +318,7 @@
       <find>get_most_40_tags_for_this_image</find>
       <find>execute</find>
       <find>executeCommand</find>
+      <find>executeCommane</find>
     </findStrings>
     <replaceStrings>
       <replace>VALUE</replace>
@@ -419,7 +428,7 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -473,6 +482,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -543,13 +553,12 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540653422130" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541515390986" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.data.extractors.current.id" value="Comma-separated (CSV)_id" />
     <property name="extract.method.default.visibility" value="private" />
@@ -1032,7 +1041,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="923662000" />
+    <option name="totallyTimeSpent" value="929382000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1044,10 +1053,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1444563" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14376996" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Project Explorer" order="3" weight="0.32995737" />
@@ -1059,8 +1068,8 @@
       <window_info id="Structure" order="9" weight="0.15298508" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4914712" weight="0.32934782" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5986141" weight="0.27753305" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.57036245" visible="true" weight="0.3469163" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5974441" visible="true" weight="0.2766191" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5697551" weight="0.34687155" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4914712" weight="0.32826087" />
@@ -1071,7 +1080,7 @@
       <window_info anchor="bottom" id="Application Servers" order="11" sideWeight="0.4978678" weight="0.32934782" />
       <window_info anchor="bottom" id="Console" order="12" />
       <window_info active="true" anchor="bottom" id="Database Console" order="13" sideWeight="0.65618336" visible="true" weight="0.39347827" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.42963752" side_tool="true" visible="true" weight="0.3469163" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.4025559" side_tool="true" visible="true" weight="0.2766191" />
       <window_info anchor="bottom" id="Terminal" order="15" sideWeight="0.56496274" weight="0.36553237" />
       <window_info anchor="bottom" id="Database Changes" order="16" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1080,7 +1089,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.1652452" />
       <window_info anchor="right" id="Designer" order="5" />
-      <window_info anchor="right" id="Database" order="6" sideWeight="0.4931973" visible="true" weight="0.15724947" />
+      <window_info anchor="right" id="Database" order="6" sideWeight="0.4931973" visible="true" weight="0.15761448" />
       <window_info anchor="right" id="FAQ Robot" order="7" weight="0.32995737" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="9" />
@@ -1134,10 +1143,16 @@
           <option name="timeStamp" value="202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/websocket/runner/WebSocketMessageReceivedWorkerThread.java</url>
+          <line>703</line>
+          <properties />
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/MySQLDataStore.java</url>
           <line>1089</line>
           <properties />
-          <option name="timeStamp" value="204" />
+          <option name="timeStamp" value="208" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1238,13 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/props/settings.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/api.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33028">
@@ -1280,24 +1288,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/DataStoreConnector.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/tables_example_content.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2702">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        <state relative-caret-position="345">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/reinit_all_tables.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/DataStoreConnector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="20" selection-end-line="171" />
+        <state relative-caret-position="225">
+          <caret line="358" column="27" selection-start-line="358" selection-start-column="27" selection-end-line="358" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/websocket/runner/WebSocketMessageReceivedWorkerThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="724" column="40" selection-start-line="724" selection-start-column="40" selection-end-line="724" selection-end-column="40" />
+        <state relative-caret-position="281">
+          <caret line="724" selection-start-line="724" selection-end-line="724" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6135#6136#0" expanded="true" />
@@ -1318,28 +1326,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/tables_example_content.sql">
+    <entry file="file://$PROJECT_DIR$/props/settings.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-529">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/subsequent_tables_example_content.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="152" column="172" selection-start-line="152" selection-start-column="172" selection-end-line="152" selection-end-column="172" />
+        <state relative-caret-position="897">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/db/MySQLDataStore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="1096" selection-start-line="1096" selection-end-line="1096" />
+        <state relative-caret-position="74">
+          <caret line="1160" column="54" lean-forward="true" selection-start-line="1160" selection-start-column="54" selection-end-line="1160" selection-end-column="54" />
           <folding>
             <element signature="e#16658#16659#0" expanded="true" />
             <element signature="e#16717#16718#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/reinit_all_tables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="20" selection-end-line="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/subsequent_tables_example_content.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="156" column="140" lean-forward="true" selection-start-line="156" selection-start-column="140" selection-end-line="156" selection-end-column="140" />
         </state>
       </provider>
     </entry>
