@@ -121,20 +121,19 @@ function createAggregationCSV() {
 
         var csvString = "user_id;condition;avg_time_img_basic_bonus;avg_time_img_basic;avg_time_img_bonus;tags_tutorial;tags_basic;tags_bonus;extra_rounds\n";
         results.forEach(function(row) {
-            csvString += parseFloat(row.user_id).toFixed(2).toString().replace(".", ",") + ";";
-            csvString += parseFloat(row.condition).toFixed(2).toString().replace(".", ",") + ";";
-            csvString += parseFloat(row.avg_time_img_basic_bonus).toFixed(2).toString().replace(".", ",") + ";";
-            csvString += parseFloat(row.avg_time_img_basic).toFixed(2).toString().replace(".", ",") + ";";
-            csvString += parseFloat(row.avg_time_img_bonus).toFixed(2).toString().replace(".", ",") + ";";
-            csvString += parseFloat(row.tags_tutorial).toFixed(2).toString().replace(".", ",") + ";";
-            csvString += parseFloat(row.tags_basic).toFixed(2).toString().replace(".", ",") + ";";
-            csvString += parseFloat(row.tags_bonus).toFixed(2).toString().replace(".", ",") + ";";
-            csvString += parseFloat(row.extra_rounds).toFixed(2).toString().replace(".", ",") + "\n";
+            csvString += cropDBEntry(row.user_id)+ ";";
+            csvString += cropDBEntry(row.condition) + ";";
+            csvString += cropDBEntry(row.avg_time_img_basic_bonus) + ";";
+            csvString += cropDBEntry(row.avg_time_img_basic) + ";";
+            csvString += cropDBEntry(row.avg_time_img_bonus) + ";";
+            csvString += cropDBEntry(row.tags_tutorial) + ";";
+            csvString += cropDBEntry(row.tags_basic) + ";";
+            csvString += cropDBEntry(row.tags_bonus) + ";";
+            csvString += cropDBEntry(row.extra_rounds) + "\n";
         });
-        csvString.replace("NaN", "");
 
-        fs.unlink('aggregation.csv', function(err) {
-            fs.appendFile('aggregation.csv', csvString, function(err) {
+        fs.unlink('aggregations.csv', function(err) {
+            fs.appendFile('aggregations.csv', csvString, function(err) {
                 if (err) throw err;
                 console.log('finished!');
                 dbConnection.destroy();
@@ -142,4 +141,9 @@ function createAggregationCSV() {
             });
         });
     });
+}
+
+function cropDBEntry(entry, floatLength = 2) {
+    if(entry == "") return "";
+    return parseFloat(entry).toFixed(floatLength).toString().replace(".", ",");
 }
