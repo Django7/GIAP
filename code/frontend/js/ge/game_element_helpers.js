@@ -173,6 +173,13 @@ function setUDGETutorial(main_user_group_id) {
             };
             break;
         }
+        case "id_test_12": {
+            UDGE.startTutorial = function () {
+                printLog("start id test 12 tutorial");
+                startIDTest12Tutorial();
+            };
+            break;
+        }
         default: {
             UDGE.startTutorial = function () {
                 startBasicTutorial();
@@ -365,6 +372,18 @@ function setUDGETaggingEnvironment(main_user_group_id) {
             };
             break;
         }
+        case 'id_test_12': {
+            UDGE.setTaggingEnvironment = function (mst_params, fun_array, frame_only) {
+                mst_params['stats'] = true;
+                mst_params['id_test_12'] = true;
+                fun_array.push(function () {
+                    if (!frame_only) {
+                        ID_TEST_12.setView();
+                    }
+                })
+            };
+            break;
+        }
         default: {
         }
     }
@@ -474,6 +493,12 @@ function setUDGEEnd(main_user_group_id) {
             };
             break;
         }
+        case "id_test_12": {
+            UDGE.setEnd = function (mst_params, fun_array) {
+                ID_TEST_12.setEndView();
+            };
+            break;
+        }
         default: {
             UDGE.setEnd = function (mst_params, fun_array) {
             };
@@ -551,6 +576,14 @@ function setUDGEAfterGetImage(main_user_group_id) {
             UDGE.afterGetImage = function () {
                 get40MostUsedTagsForCurrentImage();
                 getDistinctMoodsForThisImage();
+            };
+            break;
+        }
+        case "id_test_12": {
+            UDGE.afterGetImage = function() {
+                //get10MostUsedTagsForCurrentImage();
+                var tags = ['unruhig, verlassen, düster, glücklich, ruhig, verträumt, dunkel, trist, warm'];
+                ID_TEST_12.setTags(tags);
             };
             break;
         }
@@ -639,6 +672,12 @@ function setUDGEAfterPostImage(main_user_group_id) {
             };
             break;
         }
+        case 'id_test_12': {
+            UDGE.afterPostImage = function() {
+                ID_TEST_12.storeStats();
+            };
+            break;
+        }
         default: {
             UDGE.afterPostImage = function () {
             };
@@ -683,6 +722,13 @@ function setUDGEAfterFlipImage(main_user_group_id) {
         case 'id_points_review_438': {
             UDGE.afterFlipImage = function (inTutorial) {
                 ID_POINTS_REVIEW_438.startTimer();
+            };
+            break;
+        }
+        case 'id_test_12': {
+            UDGE.afterFlipImage = function(inTutorial) {
+                ID_TEST_12.setTimer();
+                printLog('image flipped');
             };
             break;
         }
@@ -771,6 +817,13 @@ function setUDGEAfterTagAdded(main_user_group_id) {
             };
             break;
         }
+        case "id_test_12": {
+            UDGE.afterTagAdded = function(event, ui) {
+                printLog('tag added');
+                ID_TEST_12.addNewTag(ui.tagLabel);
+            };
+            break;
+        }
         default: {
             UDGE.afterTagAdded = function (event, ui) {
             };
@@ -853,6 +906,12 @@ function setUDGEAfterTagRemoved(main_user_group_id) {
         case "id_test_11": {
             UDGE.afterTagRemoved = function(event, ui) {
                 ID_TEST_11.removeNewTag();
+            };
+            break;
+        }
+        case "id_test_12": {
+            UDGE.afterTagRemoved = function(event, ui) {
+                ID_TEST_12.removeNewTag(ui.tagLabel);
             };
             break;
         }
@@ -1005,6 +1064,12 @@ function setUDGEOnInterpretCommand(main_user_group_id) {
                     ID_TEST_11.setDistinctMoods(0);
                 else ID_TEST_11.setDistinctMoods(content['value'][0]);
                 //ID_TEST_11.setDistinctMoods(content['value'][0]['num']);
+            };
+            break;
+        }
+        case "id_test_12": {
+            UDGE.COMMAND_HANDLER['get_most_10_tags_for_this_image'] = function (content) {
+                ID_TEST_12.setTags(content['value']);
             };
             break;
         }
@@ -1515,6 +1580,37 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
             };
             break;
         }
+        case "id_test_12": {
+            UDGE.onTutorialFinished = function (event, ui) {
+                    BootstrapDialog.show({
+                        title: 'Suche Gegner',
+                        message: $('<div>Es wird nach einem Gegenspieler gesucht.</div>'
+                        ),
+                        closable: false,
+                        buttons: [{
+                            label: 'Weiter',
+                            action: function (dialogItself) {
+                               // dialogItself.close();                      ***
+                                setTimeout( function () { BootstrapDialog.show({
+                                    title: 'Gegner gefunden',
+                                    message: $('<div> Es wurde ein Gegenspieler gefunden.</div>'),
+                                    closable: false,
+                                    buttons: [{
+                                        label: 'Weiter',
+                                        action: function(dialogItself) {
+                                            dialogItself.close();
+                                            viewTutorialFinished();
+                                        }
+                                    }]
+                                }); }, getRandomNumber(5, 9) * 1000);
+                                dialogItself.close();
+                            }
+                        }]
+                    });
+            };
+            break;
+        }
+
         default: {
             UDGE.onTutorialFinished = function (event, ui) {
                 viewTutorialFinished();
@@ -2346,6 +2442,80 @@ function startIDPointsReview438Tutorial_part_2() {
         );
     }
 }
+
+/**
+* start the test_12 tutorial
+ */
+
+function startIDTest12Tutorial(){
+    var next_img_btn = $('#next_img');
+    next_img_btn.prop('onclick', null).off('click');
+    //create example view
+
+    ID_TEST_12 = ID_Test_12();
+    ID_TEST_12.init('div_it_id_test_12');
+
+    viewRightTutorialOverlay(
+        'Prinzip des Bilder-Taggens',
+        $('<div></div>').load('views/dialogs/dia_tutorial_design_implemented.html'),
+        'Weiter',
+        function () {
+            flipIn(5);
+            setTimeout(function () {
+                setVisible($('#div_it_stats'));
+                ID_TEST_12.setTutorialView();
+                viewLeftTutorialOverlay(
+                    'Gegenspieler',
+                    $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_test_12.html'),
+                    'Weiter',
+                    function () {
+                        enableTagFieldAndButton();
+                        var next_btn = $('#next_img');
+                        next_btn.html('Bestätigen');
+                        next_img_btn.prop('onclick', null).off('click');
+                        next_img_btn.click(startIDTest12Tutorial_part_2);
+                    },
+                    true
+                );
+            }, 5000);
+        },
+        true);
+}
+
+/**
+ * start the second part of the test_12 tutorial
+ */
+
+function startIDTest12Tutorial_part_2() {
+    // Check whether at least one tag was created
+    var tags = $("#myTags").tagit("assignedTags");
+    var taggss = ['verlassen, unruhig, düster'];
+    ID_TEST_12.setTags(taggss);
+    if (tags.length === 0) {
+        viewInfoOverlay('' +
+            'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
+            'Diese Einschränkung wird im regulären Ablauf wegfallen.');
+    } else {
+        // Disabling the tag field
+        disableTagField();
+        // Changing the button
+        var next_img_btn = $('#next_img');
+        next_img_btn.html('Bestätigt');
+        viewLeftTutorialOverlay(
+            'Runden',
+            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_test_12_2.html'),
+            'Weiter',
+            function () {
+                disableTagFieldAndNextButton();
+                next_img_btn.prop('onclick', null).off('click');
+                $('#next_img_test_12').click(btn_oc_viewTutorialFinished());
+            },
+            true
+        );
+    }
+}
+
+
 
 /*
     ###################### EXAMPLES ##########################

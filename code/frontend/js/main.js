@@ -199,11 +199,11 @@ function setTaggingTutorial() {
             setExamplePointsAndLB();
             startPAndLTutorial()
         }]);
-    }else if(arrayContainsElement(USER_GROUP, "id_test_11")){
+    }else if(arrayContainsElement(USER_GROUP, "id_test_12")){
         mst_params['tutorial_normal'] = true;
         setVisibleTutorialViews(mst_params);
         fun_array = fun_array.concat([function () {
-            startIDTest11Tutorial();
+            startIDTest12Tutorial();
         }]);
     } else {
         printErr("User does not fit in a group!");

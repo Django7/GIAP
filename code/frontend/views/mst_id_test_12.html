@@ -1,0 +1,32 @@
+<div>
+    {{^end_page}}
+    {{#p1_win_round}}
+    <div style = "font-size: large">
+        Du hast diese Runde gewonnen {{#submit}} durch Aufgabe {{/submit}}.
+    </div>
+    {{/p1_win_round}}
+    {{#p2_win_round}}
+    <div style = "font-size: large">
+        Dein Gegner hat diese Runde gewonnen {{#submit}} durch Aufgabe {{/submit}}.
+    </div>
+    {{/p2_win_round}}
+    <button type="button" id="next_img_test_12" class="btn btn-primary w-35 pt-3 pull-right" onclick="{{btn_listener}}">
+        Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+    {{/end_page}}
+
+    {{#end_page}}
+    <div style = "font-size: large">
+        Du hast alle Runden absolviert. </div>
+    {{#p1_win}}
+    <div style = "font-size: large">
+        Du hast die meisten von 15 Runden gewonnen: <h4 class="game_element_point card-title text-center" id ="rounds_won"> 0 </h4>
+    </div>
+    {{/p1_win}}
+    {{#p2_win}}
+    <div style = "font-size: large">
+        Du hast nicht genug von 15 Runden gewonnen: <h4 class="game_element_point card-title text-center" id ="rounds_won_2"> 0</h4>
+    </div>
+    {{/p2_win}}
+    {{/end_page}}
+</div>
