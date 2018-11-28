@@ -162,6 +162,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="2601">
               <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
             </state>
@@ -169,6 +170,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1258">
@@ -180,6 +182,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/html.js">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="7191">
               <caret line="423" column="28" selection-start-line="423" selection-start-column="28" selection-end-line="423" selection-end-column="28" />
             </state>
@@ -189,6 +192,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ge/id_test_12.js">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="-2431">
               <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
               <folding>
@@ -349,13 +353,7 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-5" />
     <option name="width" value="1932" />
     <option name="height" value="990" />
@@ -416,7 +414,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CSVScripts" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
@@ -450,76 +448,76 @@
     </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.id_complex_115">
-    <configuration name="Achiever + Leaderboard + Goals + Statistics" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=xP6dLEk01B&amp;pwd=lqX2RHlK64">
+    <configuration name="Achiever + Leaderboard + Goals + Statistics" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=xP6dLEk01B&amp;pwd=lqX2RHlK64">
       <method v="2" />
     </configuration>
-    <configuration name="Compare_others" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=MqmlExleY7&amp;pwd=UbECwe0FlW">
+    <configuration name="Compare_others" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=MqmlExleY7&amp;pwd=UbECwe0FlW">
       <method v="2" />
     </configuration>
-    <configuration name="Compare_time" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=jTwGA7ij34&amp;pwd=SEiHsqb8ZY">
+    <configuration name="Compare_time" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=jTwGA7ij34&amp;pwd=SEiHsqb8ZY">
       <method v="2" />
     </configuration>
-    <configuration name="Levels_Farm" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=G4eomZlIjG&amp;pwd=KrZVvy1Lty">
+    <configuration name="Levels_Farm" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=G4eomZlIjG&amp;pwd=KrZVvy1Lty">
       <method v="2" />
     </configuration>
-    <configuration name="Progresse_etc" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=8SnYSosLTA&amp;pwd=vaw49X59Bm">
+    <configuration name="Progresse_etc" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=8SnYSosLTA&amp;pwd=vaw49X59Bm">
       <method v="2" />
     </configuration>
-    <configuration name="id_beat_friend_51" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=Tp7uxnfK2v&amp;pwd=s9VXKcvl2u">
+    <configuration name="id_beat_friend_51" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=Tp7uxnfK2v&amp;pwd=s9VXKcvl2u">
       <method v="2" />
     </configuration>
-    <configuration name="id_complex_115" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=qqv8OZ9rAh&amp;pwd=ft8DDwCp22">
+    <configuration name="id_complex_115" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=qqv8OZ9rAh&amp;pwd=ft8DDwCp22">
       <method v="2" />
     </configuration>
-    <configuration name="id_levels_498" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=u7qdb8PHhp&amp;pwd=s9SL5qRNkW">
+    <configuration name="id_levels_498" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=u7qdb8PHhp&amp;pwd=s9SL5qRNkW">
       <method v="2" />
     </configuration>
-    <configuration name="id_levels_498_laptop" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=fS4jLc5mM4&amp;pwd=LZVqDpiA4w">
+    <configuration name="id_levels_498_laptop" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=fS4jLc5mM4&amp;pwd=LZVqDpiA4w">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_151" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=1G69Vby7Ck&amp;pwd=YUqzoks1Ub">
+    <configuration name="id_points_151" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=1G69Vby7Ck&amp;pwd=YUqzoks1Ub">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_96" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=RhhDczKpjO&amp;pwd=ZphvrwZFVK">
+    <configuration name="id_points_96" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=RhhDczKpjO&amp;pwd=ZphvrwZFVK">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_aquarium_339" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=lyN1cx4inv&amp;pwd=BEHbXVyaht">
+    <configuration name="id_points_aquarium_339" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=lyN1cx4inv&amp;pwd=BEHbXVyaht">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_review_125" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=ebTraCmrnc&amp;pwd=A0wNO33Jw2">
+    <configuration name="id_points_review_125" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=ebTraCmrnc&amp;pwd=A0wNO33Jw2">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_review_210" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=bRVetPsY6Z&amp;pwd=LCiXGVDkKL">
+    <configuration name="id_points_review_210" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=bRVetPsY6Z&amp;pwd=LCiXGVDkKL">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_review_438" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=gCth9OFDFZ&amp;pwd=xs9NsCRdu2">
+    <configuration name="id_points_review_438" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=gCth9OFDFZ&amp;pwd=xs9NsCRdu2">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_similar_61" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=0u43fGhvN7&amp;pwd=KQ4PIu310n">
+    <configuration name="id_points_similar_61" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=0u43fGhvN7&amp;pwd=KQ4PIu310n">
       <method v="2" />
     </configuration>
-    <configuration name="id_prizes_59" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=7Szd2Y2Txw&amp;pwd=tMbVvRnwTs">
+    <configuration name="id_prizes_59" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=7Szd2Y2Txw&amp;pwd=tMbVvRnwTs">
       <method v="2" />
     </configuration>
-    <configuration name="id_single_teams_407" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=AjUZsMSHaO&amp;pwd=m1gyqgBBsu">
+    <configuration name="id_single_teams_407" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=AjUZsMSHaO&amp;pwd=m1gyqgBBsu">
       <method v="2" />
     </configuration>
-    <configuration name="id_teams_points_369" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=OcWebSan3r&amp;pwd=pMl4DYcL9h">
+    <configuration name="id_teams_points_369" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=OcWebSan3r&amp;pwd=pMl4DYcL9h">
       <method v="2" />
     </configuration>
-    <configuration name="id_teams_simple_104" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=AeNUGmfZXv&amp;pwd=r8rbSiZdDw">
+    <configuration name="id_teams_simple_104" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=AeNUGmfZXv&amp;pwd=r8rbSiZdDw">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/index.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html?usr=user_name&amp;pwd=safe1" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=user_name&amp;pwd=safe1">
+    <configuration name="index.html?usr=user_name&amp;pwd=safe1" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=user_name&amp;pwd=safe1">
       <method v="2" />
     </configuration>
-    <configuration name="test_box.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/test_box.html">
+    <configuration name="test_box.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/test_box.html">
       <method v="2" />
     </configuration>
-    <configuration name="test_box_quest.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/test_box_quest.html">
+    <configuration name="test_box_quest.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/test_box_quest.html">
       <method v="2" />
     </configuration>
     <list>
@@ -654,6 +652,7 @@
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15699404" />
       <window_info id="Structure" order="2" weight="0.10800843" />
+
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.49255952" side_tool="true" weight="0.27704918" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49578503" weight="0.20217392" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.50744045" weight="0.27704918" />
@@ -691,9 +690,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
