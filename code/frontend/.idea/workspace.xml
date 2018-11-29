@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a1bb5f-e8dd-4ab6-b6ff-141897f870a9" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/js/ge/id_test_12.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/mst_id_test_12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/props/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/props/settings.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/target/classes/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/target/classes/settings.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/btn_onclick_funs.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/btn_onclick_funs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ge/game_element_helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ge/game_element_helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/statics.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/statics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/mst_tagging_environment.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/mst_tagging_environment.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -13,94 +27,186 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="696506986">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.45" value="1" />
+          <entry key="project.open.time.53" value="1" />
+          <entry key="project.open.time.55" value="1" />
+          <entry key="project.open.time.60" value="1" />
+          <entry key="project.open.time.61" value="1" />
+          <entry key="project.open.time.78" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="19" />
+          <entry key="js" value="18" />
+          <entry key="ts" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="19" />
+          <entry key="JavaScript" value="18" />
+          <entry key="TypeScript" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="526" />
+          <entry key="js" value="1003" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="526" />
+          <entry key="JavaScript" value="1003" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1059775030">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="1" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="24" />
+          <entry key="JavaScript" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="24" />
+          <entry key="js" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="1323" />
+          <entry key="js" value="2206" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="1323" />
+          <entry key="JavaScript" value="2206" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-403694224">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.60" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="155" />
+          <entry key="js" value="1262" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="155" />
+          <entry key="JavaScript" value="1262" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="8" />
+          <entry key="js" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="8" />
+          <entry key="JavaScript" value="25" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/mst_tagging_environment.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3281">
-              <caret line="193" column="48" selection-start-line="193" selection-start-column="48" selection-end-line="193" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18003">
-              <caret line="1061" column="31" selection-start-line="1061" selection-start-column="31" selection-end-line="1061" selection-end-column="31" />
+            <state relative-caret-position="17">
+              <caret line="677" column="14" selection-start-line="677" selection-start-column="14" selection-end-line="677" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_11_askUsername.html">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="40" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="40" />
+
+            <state relative-caret-position="2601">
+              <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/api_connection.js">
+
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10234">
-              <caret line="602" column="30" selection-start-line="602" selection-start-column="17" selection-end-line="602" selection-end-column="46" />
+            <state relative-caret-position="1258">
+              <caret line="74" column="66" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/html.js">
+          <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="7191">
+              <caret line="423" column="28" selection-start-line="423" selection-start-column="28" selection-end-line="423" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/ge/id_test_12.js">
+          <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="-2431">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
+        <entry file="file://$PROJECT_DIR$/views/mst_id_test_12.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/statics.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2380">
-              <caret line="140" column="48" selection-start-line="140" selection-start-column="48" selection-end-line="140" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/ge/id_beat_friend_51.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="105" column="53" selection-start-line="105" selection-start-column="53" selection-end-line="105" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/ge/id_test_11.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2669">
-              <caret line="157" column="43" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/mst_id_test_11.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/small_elements/mst_id_test_11_table.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="126" selection-start-line="41" selection-start-column="126" selection-end-line="41" selection-end-column="126" />
+            <state relative-caret-position="238">
+              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -111,8 +217,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -193,10 +299,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_96.html" />
-        <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_151.html" />
-        <option value="$PROJECT_DIR$/js/ge/id_points_151.js" />
-        <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_review_210_1.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_review_210_2.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_review_210_lobby.html" />
         <option value="$PROJECT_DIR$/views/small_elements/mst_id_points_review_210_table.html" />
@@ -231,11 +333,6 @@
         <option value="$PROJECT_DIR$/js/html.js" />
         <option value="$PROJECT_DIR$/views/mst_id_points_151.html" />
         <option value="$PROJECT_DIR$/js/questionnaires.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/views/mst_tagging_environment.html" />
-        <option value="$PROJECT_DIR$/js/statics.js" />
-        <option value="$PROJECT_DIR$/js/btn_onclick_funs.js" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_11_2.html" />
         <option value="$PROJECT_DIR$/views/small_elements/mst_id_beat_friend_51_table.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_11.html" />
@@ -243,6 +340,15 @@
         <option value="$PROJECT_DIR$/views/small_elements/mst_id_test_11_table.html" />
         <option value="$PROJECT_DIR$/views/mst_id_test_11.html" />
         <option value="$PROJECT_DIR$/js/ge/id_test_11.js" />
+        <option value="$PROJECT_DIR$/views/mst_tagging_environment.html" />
+        <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12.html" />
+        <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12_2.html" />
+        <option value="$PROJECT_DIR$/js/statics.js" />
+        <option value="$PROJECT_DIR$/js/btn_onclick_funs.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/views/mst_id_test_12.html" />
+        <option value="$PROJECT_DIR$/js/ge/id_test_12.js" />
         <option value="$PROJECT_DIR$/js/ge/game_element_helpers.js" />
       </list>
     </option>
@@ -296,12 +402,6 @@
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="small_elements" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -526,12 +626,15 @@
       <workItem from="1542120101527" duration="1149000" />
       <workItem from="1542179643213" duration="595000" />
       <workItem from="1542184196773" duration="724000" />
-      <workItem from="1543154934420" duration="15000" />
+      <workItem from="1542464965477" duration="6532000" />
+      <workItem from="1542976927488" duration="7917000" />
+      <workItem from="1543056917202" duration="1646000" />
+      <workItem from="1543230377335" duration="1339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1438022000" />
+    <option name="totallyTimeSpent" value="1455441000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -543,14 +646,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15753424" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15699404" />
       <window_info id="Structure" order="2" weight="0.10800843" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.4915701" side_tool="true" visible="true" weight="0.27759197" />
+
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.49255952" side_tool="true" weight="0.27704918" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49578503" weight="0.20217392" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" sideWeight="0.50842994" visible="true" weight="0.27759197" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.50744045" weight="0.27704918" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" sideWeight="0.49789253" weight="0.32826087" />
       <window_info anchor="bottom" id="Run" order="5" />
@@ -563,6 +668,25 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15699404" />
+      <window_info id="Structure" order="2" weight="0.10800843" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.49255952" side_tool="true" visible="true" weight="0.27704918" />
+      <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49578503" weight="0.20217392" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.50744045" visible="true" weight="0.27704918" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Find" order="4" sideWeight="0.49789253" weight="0.32826087" />
+      <window_info anchor="bottom" id="Run" order="5" />
+      <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.43677557" weight="0.38152173" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="9" weight="0.32934782" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -667,7 +791,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/ge/game_element_helpers.js</url>
-          <line>1378</line>
+          <line>1356</line>
           <option name="timeStamp" value="539" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -694,40 +818,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_levels_498_lobby.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="105" selection-start-line="6" selection-start-column="105" selection-end-line="6" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/small_elements/mst_id_levels_498_winner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_points_review_438.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="432" column="1" lean-forward="true" selection-start-line="432" selection-start-column="1" selection-end-line="432" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_levels_498_1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_teams_points_369.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/mst_id_points_151.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -737,13 +827,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mst_id_points_similar_61.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tag-it.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6532">
-          <caret line="309" column="15" selection-start-line="309" selection-start-column="8" selection-end-line="309" selection-end-column="15" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/questionnaires.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -856,45 +939,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/helpers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/btn_onclick_funs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/html.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="423" column="25" selection-start-line="423" selection-start-column="25" selection-end-line="423" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3519">
-          <caret line="153" column="28" lean-forward="true" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/small_elements/mst_id_beat_friend_51_table.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="26" column="84" selection-start-line="26" selection-start-column="84" selection-end-line="26" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/json.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3335">
-          <caret line="145" column="9" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -921,17 +969,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_tagging_environment.html">
+    <entry file="file://$PROJECT_DIR$/views/small_elements/mst_id_test_11_table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3281">
-          <caret line="193" column="48" selection-start-line="193" selection-start-column="48" selection-end-line="193" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18003">
-          <caret line="1061" column="31" selection-start-line="1061" selection-start-column="31" selection-end-line="1061" selection-end-column="31" />
+        <state relative-caret-position="697">
+          <caret line="41" column="126" selection-start-line="41" selection-start-column="126" selection-end-line="41" selection-end-column="126" />
         </state>
       </provider>
     </entry>
@@ -942,31 +983,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/api_connection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10234">
-          <caret line="602" column="30" selection-start-line="602" selection-start-column="17" selection-end-line="602" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/statics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="140" column="48" selection-start-line="140" selection-start-column="48" selection-end-line="140" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ge/id_beat_friend_51.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
+        <state relative-caret-position="359">
           <caret line="105" column="53" selection-start-line="105" selection-start-column="53" selection-end-line="105" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/id_test_11.js">
+    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2669">
-          <caret line="157" column="43" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/btn_onclick_funs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/json.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2465">
+          <caret line="145" column="9" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/api_connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="527" column="21" lean-forward="true" selection-start-line="527" selection-start-column="21" selection-end-line="527" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12013">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery-ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="16714" column="4" selection-start-line="16714" selection-start-column="4" selection-end-line="16714" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -977,17 +1046,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/small_elements/mst_id_test_11_table.html">
+    <entry file="file://$PROJECT_DIR$/js/tag-it.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="126" selection-start-line="41" selection-start-column="126" selection-end-line="41" selection-end-column="126" />
+        <state relative-caret-position="361">
+          <caret line="529" column="14" selection-start-line="529" selection-start-column="14" selection-end-line="529" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/statics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1208">
+          <caret line="79" column="47" lean-forward="true" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mst_tagging_environment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="47" column="73" selection-start-line="47" selection-start-column="73" selection-end-line="47" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/id_test_11.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="43" lean-forward="true" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/id_single_teams_407.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="115" column="51" lean-forward="true" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="677" column="14" selection-start-line="677" selection-start-column="14" selection-end-line="677" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2601">
+          <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/html.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7191">
+          <caret line="423" column="28" selection-start-line="423" selection-start-column="28" selection-end-line="423" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+        <state relative-caret-position="1258">
+          <caret line="74" column="66" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/id_test_12.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2431">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mst_id_test_12.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
