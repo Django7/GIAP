@@ -1,11 +1,12 @@
 var mysql = require('mysql');
+var propertiesReader = require('properties-reader');
+var properties = propertiesReader('dbconnect.properties');
 
 var dbConnection = mysql.createConnection({
-//    host: 'm.schubhan.de',
-    host: 'localhost',
-    user: 'root',
-    password: 'fp_project',
-    database: 'gms'
+    host: properties.get('db.host'),
+    user: properties.get('db.user'),
+    password: properties.get('db.pw'),
+    database: properties.get('db.database')
 });
 
 dbConnection.connect(function(err) {
@@ -19,7 +20,7 @@ dbConnection.connect(function(err) {
 
 function updateTagRatings() {
     var lineReader = require('readline').createInterface({
-        input: require('fs').createReadStream('main_ratings_per_tag.csv')
+        input: require('fs').createReadStream('main_ratings_per_tag_base.csv')
     });
 
     var numLines = 0;

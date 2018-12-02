@@ -1,5 +1,14 @@
 var mysql = require('mysql');
 var fs = require('fs');
+var propertiesReader = require('properties-reader');
+var properties = propertiesReader('dbconnect.properties');
+
+var dbConnection = mysql.createConnection({
+    host: properties.get('db.host'),
+    user: properties.get('db.user'),
+    password: properties.get('db.pw'),
+    database: properties.get('db.database')
+});
 
 var sql =
     "SELECT\n" +
@@ -15,14 +24,6 @@ var sql =
     "WHERE iid > 3\n" +
     "ORDER BY uid, iid;";
 
-var dbConnection = mysql.createConnection({
-//    host: 'm.schubhan.de',
-    host: 'localhost',
-    user: '',
-    password: '',
-    database: 'gms'
-});
-
 dbConnection.connect(function(err) {
     if (err) {
         return console.log('error when connecting to db:', err);
@@ -35,7 +36,6 @@ dbConnection.connect(function(err) {
 function createTimingsCSV() {
     dbConnection.query(sql, [], function (err, results) {
         if(err) throw err;
-        console.log(results);
 
         var csvString = "user_id;condition;timings;image_id\n";
         results.forEach(function(row) {
@@ -45,8 +45,8 @@ function createTimingsCSV() {
             csvString += cropDBEntry(row.iid, 0) + "\n";
         });
 
-        fs.unlink('timings.csv', function(err) {
-            fs.appendFile('timings.csv', csvString, function(err) {
+        fs.unlink('CSV/timings.csv', function(err) {
+            fs.appendFile('CSV/timings.csv', csvString, function(err) {
                 if (err) throw err;
                 console.log('finished!');
                 dbConnection.destroy();

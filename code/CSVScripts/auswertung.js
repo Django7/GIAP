@@ -1,5 +1,14 @@
 var mysql = require('mysql');
 var fs = require('fs');
+var propertiesReader = require('properties-reader');
+var properties = propertiesReader('dbconnect.properties');
+
+var dbConnection = mysql.createConnection({
+    host: properties.get('db.host'),
+    user: properties.get('db.user'),
+    password: properties.get('db.pw'),
+    database: properties.get('db.database')
+});
 
 var sql =
     "SELECT \n" +
@@ -55,14 +64,6 @@ var sql =
     "    ON demographic.uid = cond.uid)\n" +
     "ORDER BY uid";
 
-var dbConnection = mysql.createConnection({
-//    host: 'm.schubhan.de',
-    host: 'localhost',
-    user: 'root',
-    password: 'fp_project',
-    database: 'gms'
-});
-
 dbConnection.connect(function(err) {
     if (err) {
         return console.log('error when connecting to db:', err);
@@ -86,11 +87,11 @@ function createAuswertungCSV() {
             var imi = JSON.parse(JSON.parse(row.imi)) || {design_game_affinity : {}};
             var implementation = JSON.parse(JSON.parse(row.implementation)) || {design_implementation : {}};
             var bigFive = JSON.parse(JSON.parse(row.bigFive)) || {};
-            console.log(demographic);
+            /*console.log(demographic);
             console.log(concept);
             console.log(imi);
             console.log(implementation);
-            console.log(bigFive);
+            console.log(bigFive); */
 
             csvString += getAge(checkJSONValue(demographic.age)) + ";";
             csvString += getGender(checkJSONValue(demographic.gender)) + ";";
@@ -129,15 +130,13 @@ function createAuswertungCSV() {
             csvString += getDesignFeasibility(checkJSONValue(concept.design_feasibility)) + ";";
             csvString += getYesNo(checkJSONValue(implementation.change_something)) + ";";
             csvString += checkJSONValue(implementation.changes).replace(/\n/g, "") + ";";
-            if(checkJSONValue(implementation.changes).includes("Die Verteilung")) {
-                console.log("Here!");
-            }
+
             csvString += getYesNo(checkJSONValue(implementation.design_game_already_designed)) + ";";
             csvString += getYesNo(checkJSONValue(implementation.image_tagging_known_before)) + "\n";
         });
 
-        fs.unlink('auswertung.csv', function(err) {
-            fs.appendFile('auswertung.csv', csvString, function(err) {
+        fs.unlink('CSV/auswertung.csv', function(err) {
+            fs.appendFile('CSV/auswertung.csv', csvString, function(err) {
                 if (err) throw err;
                 console.log('finished!');
                 dbConnection.destroy();

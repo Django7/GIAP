@@ -1,6 +1,14 @@
 var mysql = require('mysql');
 var fs = require('fs');
+var propertiesReader = require('properties-reader');
+var properties = propertiesReader('dbconnect.properties');
 
+var dbConnection = mysql.createConnection({
+    host: properties.get('db.host'),
+    user: properties.get('db.user'),
+    password: properties.get('db.pw'),
+    database: properties.get('db.database')
+});
 
 var sql =
     "SELECT \tbothTimes.uid AS user_id,\n" +
@@ -97,14 +105,6 @@ var sql =
     "\n" +
     "         ON bothTimes.uid = numExtraRounds.uid";
 
-var dbConnection = mysql.createConnection({
-//    host: 'm.schubhan.de',
-    host: 'localhost',
-    user: '',
-    password: '',
-    database: 'gms'
-});
-
 dbConnection.connect(function(err) {
     if (err) {
         return console.log('error when connecting to db:', err);
@@ -117,7 +117,6 @@ dbConnection.connect(function(err) {
 function createAggregationCSV() {
     dbConnection.query(sql, [], function (err, results) {
         if(err) throw err;
-        console.log(results);
 
         var csvString = "user_id;condition;avg_time_img_basic_bonus;avg_time_img_basic;avg_time_img_bonus;tags_tutorial;tags_basic;tags_bonus;extra_rounds\n";
         results.forEach(function(row) {
@@ -132,8 +131,8 @@ function createAggregationCSV() {
             csvString += cropDBEntry(row.extra_rounds) + "\n";
         });
 
-        fs.unlink('aggregations.csv', function(err) {
-            fs.appendFile('aggregations.csv', csvString, function(err) {
+        fs.unlink('CSV/aggregations.csv', function(err) {
+            fs.appendFile('CSV/aggregations.csv', csvString, function(err) {
                 if (err) throw err;
                 console.log('finished!');
                 dbConnection.destroy();
