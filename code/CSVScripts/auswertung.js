@@ -87,11 +87,11 @@ function createAuswertungCSV() {
             var imi = JSON.parse(JSON.parse(row.imi)) || {design_game_affinity : {}};
             var implementation = JSON.parse(JSON.parse(row.implementation)) || {design_implementation : {}};
             var bigFive = JSON.parse(JSON.parse(row.bigFive)) || {};
-            /*console.log(demographic);
+            console.log(demographic);
             console.log(concept);
             console.log(imi);
             console.log(implementation);
-            console.log(bigFive); */
+            console.log(bigFive);
 
             csvString += getAge(checkJSONValue(demographic.age)) + ";";
             csvString += getGender(checkJSONValue(demographic.gender)) + ";";
@@ -122,17 +122,29 @@ function createAuswertungCSV() {
             csvString += checkJSONValue(implementation.design_implementation.imp_satisfied_general) + ";";
             csvString += checkJSONValue(implementation.design_implementation.imp_motiv_design) + ";";
             csvString += checkJSONValue(implementation.design_implementation.imp_motiv_design_process) + ";";
-            csvString += checkJSONValue(implementation.imp_optical_comment).replace(/\n/g, "") + ";";
-            csvString += checkJSONValue(implementation.imp_aspects_comment).replace(/\n/g, "") + ";";
+            csvString += checkJSONValue(implementation.imp_optical_comment).replace(/\n/g, "").replace(/;/g, "") + ";";
+            csvString += checkJSONValue(implementation.imp_aspects_comment).replace(/\n/g, "").replace(/;/g, "") + ";";
             csvString += getMoreTagsTendency(checkJSONValue(implementation.self_design_more_tags)) + ";";
 
             csvString += getDesignFeasibility(checkJSONValue(concept.design_feasibility)) + ";";
-            csvString += getDesignFeasibility(checkJSONValue(concept.design_feasibility)) + ";";
             csvString += getYesNo(checkJSONValue(implementation.change_something)) + ";";
-            csvString += checkJSONValue(implementation.changes).replace(/\n/g, "") + ";";
+            csvString += checkJSONValue(implementation.changes).replace(/\n/g, "").replace(/;/g, "") + ";";
+            csvString += getYesNo(checkJSONValue(concept.design_game_already_designed)) + ";";
+            csvString += getYesNo(checkJSONValue(concept.image_tagging_known_before)) + ";";
 
-            csvString += getYesNo(checkJSONValue(implementation.design_game_already_designed)) + ";";
-            csvString += getYesNo(checkJSONValue(implementation.image_tagging_known_before)) + "\n";
+            if(bigFive.big_five_matrix !== undefined) {
+                csvString += cropDBEntry((reverseBF(bigFive.big_five_matrix.bf_reserved) + parseInt(bigFive.big_five_matrix.bf_social)) / 2, 1) + ";";
+                csvString += cropDBEntry((reverseBF(bigFive.big_five_matrix.bf_relaxed_stress) + parseInt(bigFive.big_five_matrix.bf_fast_nervous)) / 2, 1) + ";";
+                csvString += cropDBEntry((reverseBF(bigFive.big_five_matrix.bf_art_interest) + parseInt(bigFive.big_five_matrix.bf_fantasy)) / 2, 1) + ";";
+                csvString += cropDBEntry((reverseBF(bigFive.big_five_matrix.bf_convenient) + parseInt(bigFive.big_five_matrix.bf_task_properly)) / 2, 1) + ";";
+                csvString += cropDBEntry((parseInt(bigFive.big_five_matrix.bf_trust) + reverseBF(bigFive.big_five_matrix.bf_criticize)) / 2, 1) + "\n";
+            } else {
+                csvString += ";";
+                csvString += ";";
+                csvString += ";";
+                csvString += ";";
+                csvString += "\n";
+            }
         });
 
         fs.unlink('CSV/auswertung.csv', function(err) {
@@ -220,4 +232,12 @@ function getWhereFrom(string) {
     if(string.toLowerCase().includes("twitch")) return 3;
     if(string.toLowerCase().includes("other")) return 4;
     return string;
+}
+
+function reverseBF(num) {
+    if(num == 1) return 5;
+    if(num == 2) return 4;
+    if(num == 3) return 3;
+    if(num == 4) return 2;
+    if(num == 5) return 1;
 }
