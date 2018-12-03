@@ -1582,31 +1582,39 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
         }
         case "id_test_12": {
             UDGE.onTutorialFinished = function (event, ui) {
-                    BootstrapDialog.show({
-                        title: 'Suche Gegner',
-                        message: $('<div>Es wird nach einem Gegenspieler gesucht.</div>'
-                        ),
-                        closable: false,
-                        buttons: [{
-                            label: 'Weiter',
-                            action: function (dialogItself) {
-                               // dialogItself.close();                      ***
-                                setTimeout( function () { BootstrapDialog.show({
-                                    title: 'Gegner gefunden',
-                                    message: $('<div> Es wurde ein Gegenspieler gefunden.</div>'),
+                BootstrapDialog.show({
+                    title: 'Spielersuche',
+                    message: $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_test_12_search.html'),
+                    closable: false,
+                    buttons: [{
+                        label: 'Suchen',
+                        action: function (dialogItself) {
+                            setVisible($('#id_test_12_loader'));
+                            setTimeout(function() {
+                                dialogItself.close();
+                                BootstrapDialog.show({
+                                    label: 'Spiel bereit',
+                                    message: $('<div> Es wurde ein Gegenspieler gefunden.</div>' +
+                                        '<div> Klicke auf <em> Weiter </em> um das Tutorial zu beenden und das Spiel zu beginnen. </div>'),
                                     closable: false,
                                     buttons: [{
                                         label: 'Weiter',
                                         action: function(dialogItself) {
                                             dialogItself.close();
-                                            viewTutorialFinished();
+                                            setTaggingEnvironment();
                                         }
                                     }]
-                                }); }, getRandomNumber(5, 9) * 1000);
-                                dialogItself.close();
-                            }
-                        }]
-                    });
+                                });
+                            }, getRandomNumber(7000, 10000));
+
+                        }
+                    }, {
+                        label: 'Abbrechen',
+                        action: function(dialogItself) {
+                            dialogItself.close();
+                        }
+                    }]
+                });
             };
             break;
         }
