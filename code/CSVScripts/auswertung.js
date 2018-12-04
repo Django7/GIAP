@@ -82,16 +82,25 @@ function createAuswertungCSV() {
             csvString += cropDBEntry(row.uid, 0)+ ";";
             csvString += cropDBEntry(row.gid, 0)+ ";";
 
-            var demographic = JSON.parse(JSON.parse(row.demographic)) || {};
-            var concept = JSON.parse(JSON.parse(row.concept)) || {concept_satisfaction : {}};
-            var imi = JSON.parse(JSON.parse(row.imi)) || {design_game_affinity : {}};
-            var implementation = JSON.parse(JSON.parse(row.implementation)) || {design_implementation : {}};
-            var bigFive = JSON.parse(JSON.parse(row.bigFive)) || {};
-            console.log(demographic);
-            console.log(concept);
-            console.log(imi);
-            console.log(implementation);
-            console.log(bigFive);
+            var demographic = JSON.parse(JSON.parse(row.demographic));
+            var concept = JSON.parse(JSON.parse(row.concept));
+            var imi = JSON.parse(JSON.parse(row.imi));
+            var implementation = JSON.parse(JSON.parse(row.implementation));
+            var bigFive = JSON.parse(JSON.parse(row.bigFive));
+
+            if(demographic == null) demographic = {};
+            if(concept == null) concept = {concept_satisfaction : {}};
+            if(imi == null) imi = {design_game_affinity : {}};
+            if(implementation == null) implementation = {design_implementation : {}};
+            if(bigFive == null) bigFive = {};
+
+            if(row.uid === 125) {
+                console.log(demographic);
+                console.log(concept);
+                console.log(imi);
+                console.log(implementation);
+                console.log(bigFive);
+            }
 
             csvString += getAge(checkJSONValue(demographic.age)) + ";";
             csvString += getGender(checkJSONValue(demographic.gender)) + ";";
@@ -100,8 +109,15 @@ function createAuswertungCSV() {
             csvString += checkJSONValue(demographic.speed_test_value).split(" ")[0] + ";";
 
             csvString += checkJSONValue(concept.design_playtime) + ";";
-            csvString += /*checkJSONValue(concept.motiv_part_design) + */ ";";
-            csvString += /*checkJSONValue(concept.motiv_part_game) + */ ";";
+            if(demographic.speed_test_value !== undefined) {
+                csvString += parseInt(checkJSONValue(implementation.design_implementation.imp_motiv_design_process)) <= 3 ? 0 : 1;
+                csvString += ";";
+                csvString += parseInt(checkJSONValue(implementation.design_implementation.imp_motiv_design)) <= 3 ? 0 : 1;
+                csvString += ";";
+            } else {
+                csvString += "" + ";" + "" + ";";
+            }
+
 
             csvString += checkJSONValue(imi.design_game_affinity.game_affinity) + ";";
             csvString += checkJSONValue(imi.design_game_affinity.video_game_frequency) + ";";
@@ -137,14 +153,85 @@ function createAuswertungCSV() {
                 csvString += cropDBEntry((reverseBF(bigFive.big_five_matrix.bf_relaxed_stress) + parseInt(bigFive.big_five_matrix.bf_fast_nervous)) / 2, 1) + ";";
                 csvString += cropDBEntry((reverseBF(bigFive.big_five_matrix.bf_art_interest) + parseInt(bigFive.big_five_matrix.bf_fantasy)) / 2, 1) + ";";
                 csvString += cropDBEntry((reverseBF(bigFive.big_five_matrix.bf_convenient) + parseInt(bigFive.big_five_matrix.bf_task_properly)) / 2, 1) + ";";
-                csvString += cropDBEntry((parseInt(bigFive.big_five_matrix.bf_trust) + reverseBF(bigFive.big_five_matrix.bf_criticize)) / 2, 1) + "\n";
+                csvString += cropDBEntry((parseInt(bigFive.big_five_matrix.bf_trust) + reverseBF(bigFive.big_five_matrix.bf_criticize)) / 2, 1) + ";";
             } else {
-                csvString += ";";
-                csvString += ";";
-                csvString += ";";
-                csvString += ";";
-                csvString += "\n";
+                csvString += cropDBEntry((reverseBF(demographic.big_five_matrix.bf_reserved) + parseInt(demographic.big_five_matrix.bf_social)) / 2, 1) + ";";
+                csvString += cropDBEntry((reverseBF(demographic.big_five_matrix.bf_relaxed_stress) + parseInt(demographic.big_five_matrix.bf_fast_nervous)) / 2, 1) + ";";
+                csvString += cropDBEntry((reverseBF(demographic.big_five_matrix.bf_art_interest) + parseInt(demographic.big_five_matrix.bf_fantasy)) / 2, 1) + ";";
+                csvString += cropDBEntry((reverseBF(demographic.big_five_matrix.bf_convenient) + parseInt(demographic.big_five_matrix.bf_task_properly)) / 2, 1) + ";";
+                csvString += cropDBEntry((parseInt(demographic.big_five_matrix.bf_trust) + reverseBF(demographic.big_five_matrix.bf_criticize)) / 2, 1) + ";";
             }
+
+            if(imi.imi_interest_enjoyment !== undefined) {
+                csvString += (
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_fun)) +
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_interesting)) +
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_entertaining))) - 3 + ";";
+
+                csvString += (
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_performance)) +
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_competence)) +
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_success))) - 3 + ";";
+
+                csvString += (
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_choice_steering)) +
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_choice_self)) +
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_choice_generic))) - 3 + ";";
+
+                csvString += (
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_pressure)) +
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_tension)) +
+                    parseInt(checkJSONValue(imi.imi_interest_enjoyment.tagging_concerns))) - 3 + ";";
+            } else {
+                csvString += (
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_fun)) +
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_interesting)) +
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_entertaining))) - 3 + ";";
+
+                csvString += (
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_performance)) +
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_competence)) +
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_success))) - 3 + ";";
+
+                csvString += (
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_choice_steering)) +
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_choice_self)) +
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_choice_generic))) - 3 + ";";
+
+                csvString += (
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_pressure)) +
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_tension)) +
+                    parseInt(checkJSONValue(implementation.imi_interest_enjoyment.tagging_concerns))) - 3 + ";";
+            }
+
+            if(implementation.sus_matrix !== undefined) {
+                csvString += ((
+                    (parseInt(checkJSONValue(implementation.sus_matrix.sus_frequently)) - 1) +
+                    (5 - parseInt(checkJSONValue(implementation.sus_matrix.sus_unnecessary_complex))) +
+                    (parseInt(checkJSONValue(implementation.sus_matrix.sus_easiness_to_use)) - 1) +
+                    (5 - parseInt(checkJSONValue(implementation.sus_matrix.sus_technical_experienced))) +
+                    (parseInt(checkJSONValue(implementation.sus_matrix.sus_functions_well_integrated)) - 1) +
+                    (5 - parseInt(checkJSONValue(implementation.sus_matrix.sus_too_inconsistent))) +
+                    (parseInt(checkJSONValue(implementation.sus_matrix.sus_fast_learnable)) - 1) +
+                    (5 - parseInt(checkJSONValue(implementation.sus_matrix['sus_inconvenient ']))) +
+                    (parseInt(checkJSONValue(implementation.sus_matrix.sus_safety_while_using)) - 1) +
+                    (5 - parseInt(checkJSONValue(implementation.sus_matrix.sus_lot_to_learn_before)))) * 2.5).toString().replace(".", ",") + ";";
+            } else {
+                csvString += ((
+                    (parseInt(checkJSONValue(imi.sus_matrix.sus_frequently)) - 1) +
+                    (5 - parseInt(checkJSONValue(imi.sus_matrix.sus_unnecessary_complex))) +
+                    (parseInt(checkJSONValue(imi.sus_matrix.sus_easiness_to_use)) - 1) +
+                    (5 - parseInt(checkJSONValue(imi.sus_matrix.sus_technical_experienced))) +
+                    (parseInt(checkJSONValue(imi.sus_matrix.sus_functions_well_integrated)) - 1) +
+                    (5 - parseInt(checkJSONValue(imi.sus_matrix.sus_too_inconsistent))) +
+                    (parseInt(checkJSONValue(imi.sus_matrix.sus_fast_learnable)) - 1) +
+                    (5 - parseInt(checkJSONValue(imi.sus_matrix['sus_inconvenient ']))) +
+                    (parseInt(checkJSONValue(imi.sus_matrix.sus_safety_while_using)) - 1) +
+                    (5 - parseInt(checkJSONValue(imi.sus_matrix.sus_lot_to_learn_before)))) * 2.5).toString().replace(".", ",") + ";";
+            }
+
+            csvString += imi.comments !== undefined ? checkJSONValue(imi.comments).replace(/\n/g, "").replace(/;/g, "") : checkJSONValue(implementation.comments).replace(/\n/g, "").replace(/;/g, "");
+            csvString += "\n";
         });
 
         fs.unlink('CSV/auswertung.csv', function(err) {
