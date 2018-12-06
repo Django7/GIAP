@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ea896ae2-1fb9-4534-8756-678e7b51a114" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSV/auswertung.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CSV/auswertung.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auswertung.js" beforeDir="false" afterPath="$PROJECT_DIR$/auswertung.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbconnect.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dbconnect.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updateTagsInDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/updateTagsInDB.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auswertung.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2509">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+            <state relative-caret-position="2760">
+              <caret line="120" selection-start-line="120" selection-end-line="120" />
             </state>
           </provider>
         </entry>
@@ -65,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/updateTagsInDB.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-495">
-              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+            <state relative-caret-position="192">
+              <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -106,9 +103,9 @@
         <option value="$PROJECT_DIR$/aggregations.js" />
         <option value="$PROJECT_DIR$/timings.js" />
         <option value="$PROJECT_DIR$/ratings.js" />
+        <option value="$PROJECT_DIR$/auswertung.js" />
         <option value="$PROJECT_DIR$/updateTagsInDB.js" />
         <option value="$PROJECT_DIR$/dbconnect.properties" />
-        <option value="$PROJECT_DIR$/auswertung.js" />
       </list>
     </option>
   </component>
@@ -125,6 +122,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -141,7 +139,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -164,7 +161,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.auswertung.js">
+  <component name="RunManager" selected="Node.js.updateTagsInDB.js">
     <configuration name="aggregations.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/aggregations.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -182,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.updateTagsInDB.js" />
         <item itemvalue="Node.js.auswertung.js" />
         <item itemvalue="Node.js.timings.js" />
         <item itemvalue="Node.js.ratings.js" />
         <item itemvalue="Node.js.aggregations.js" />
-        <item itemvalue="Node.js.updateTagsInDB.js" />
       </list>
     </recent_temporary>
   </component>
@@ -211,12 +208,13 @@
       <workItem from="1543489971491" duration="1640000" />
       <workItem from="1543495644621" duration="6744000" />
       <workItem from="1543828033390" duration="2986000" />
-      <workItem from="1543914886664" duration="12785000" />
+      <workItem from="1543914886664" duration="12854000" />
+      <workItem from="1544086723965" duration="1188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52719000" />
+    <option name="totallyTimeSpent" value="53976000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -253,7 +251,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/auswertung.js</url>
           <line>101</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
@@ -288,17 +285,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/auswertung.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/timings.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1081">
           <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/updateTagsInDB.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-495">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -309,10 +306,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auswertung.js">
+    <entry file="file://$PROJECT_DIR$/updateTagsInDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2509">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+        <state relative-caret-position="192">
+          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
         </state>
       </provider>
     </entry>

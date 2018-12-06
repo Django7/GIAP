@@ -39,7 +39,7 @@ function updateTagRatings() {
         numLines++;
 
         dbConnection.query(
-                "UPDATE image_tags SET rating = " + rating1 + ", rating_2 =" + rating2 + " WHERE uid = " + uid + " AND iid = " + iid + " AND tag LIKE '" + tag + "'",
+                "INSERT INTO image_tags VALUES(" + uid + ", " + iid + ", " + "'" + tag + "'" + ", " + rating1 + ", " + rating2 + ")",
                 [],
                 function (err, results) {
                 if(err) throw err;
