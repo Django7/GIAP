@@ -20,7 +20,7 @@ dbConnection.connect(function(err) {
 
 function updateTagRatings() {
     var lineReader = require('readline').createInterface({
-        input: require('fs').createReadStream('main_ratings_per_tag_base.csv')
+        input: require('fs').createReadStream('post_ratings_per_tag_base.csv')
     });
 
     var numLines = 0;
