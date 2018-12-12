@@ -94,14 +94,6 @@ function createAuswertungCSV() {
             if(implementation == null) implementation = {design_implementation : {}};
             if(bigFive == null) bigFive = {};
 
-            if(row.uid === 125) {
-                console.log(demographic);
-                console.log(concept);
-                console.log(imi);
-                console.log(implementation);
-                console.log(bigFive);
-            }
-
             csvString += getAge(checkJSONValue(demographic.age)) + ";";
             csvString += getGender(checkJSONValue(demographic.gender)) + ";";
             csvString += getNationality(checkJSONValue(demographic.nationality)) + ";";
@@ -154,12 +146,18 @@ function createAuswertungCSV() {
                 csvString += cropDBEntry((reverseBF(bigFive.big_five_matrix.bf_art_interest) + parseInt(bigFive.big_five_matrix.bf_fantasy)) / 2, 1) + ";";
                 csvString += cropDBEntry((reverseBF(bigFive.big_five_matrix.bf_convenient) + parseInt(bigFive.big_five_matrix.bf_task_properly)) / 2, 1) + ";";
                 csvString += cropDBEntry((parseInt(bigFive.big_five_matrix.bf_trust) + reverseBF(bigFive.big_five_matrix.bf_criticize)) / 2, 1) + ";";
-            } else {
+            } else if(demographic.big_five_matrix !== undefined) {
                 csvString += cropDBEntry((reverseBF(demographic.big_five_matrix.bf_reserved) + parseInt(demographic.big_five_matrix.bf_social)) / 2, 1) + ";";
                 csvString += cropDBEntry((reverseBF(demographic.big_five_matrix.bf_relaxed_stress) + parseInt(demographic.big_five_matrix.bf_fast_nervous)) / 2, 1) + ";";
                 csvString += cropDBEntry((reverseBF(demographic.big_five_matrix.bf_art_interest) + parseInt(demographic.big_five_matrix.bf_fantasy)) / 2, 1) + ";";
                 csvString += cropDBEntry((reverseBF(demographic.big_five_matrix.bf_convenient) + parseInt(demographic.big_five_matrix.bf_task_properly)) / 2, 1) + ";";
                 csvString += cropDBEntry((parseInt(demographic.big_five_matrix.bf_trust) + reverseBF(demographic.big_five_matrix.bf_criticize)) / 2, 1) + ";";
+            } else {
+                    console.log(demographic);
+                    console.log(concept);
+                    console.log(imi);
+                    console.log(implementation);
+                    console.log(bigFive);
             }
 
             if(imi.imi_interest_enjoyment !== undefined) {

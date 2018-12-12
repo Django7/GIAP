@@ -2,21 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a1bb5f-e8dd-4ab6-b6ff-141897f870a9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/js/ge/id_test_12.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/mst_id_test_12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CSVScripts/insertTagsInDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/.idea/artifacts/code_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/artifacts/code_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/props/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/props/settings.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/target/classes/SQL/results_aggregations.SQL" beforeDir="false" afterPath="$PROJECT_DIR$/../API/target/classes/SQL/results_aggregations.SQL" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/target/classes/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/target/classes/settings.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/aggregations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/aggregations.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/auswertung.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/auswertung.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_grouped.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_grouped.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_per_tag.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_per_tag.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/timings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/timings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/auswertung.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/auswertung.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/dbconnect.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/dbconnect.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/updateTagsInDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/updateTagsInDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TagJudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TagJudge/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TagJudge/src/com/dextreem/tj/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TagJudge/src/com/dextreem/tj/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/btn_onclick_funs.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/btn_onclick_funs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ge/game_element_helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ge/game_element_helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/statics.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/statics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/mst_tagging_environment.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/mst_tagging_environment.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,133 +31,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="696506986">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="8" />
-          <entry key="project.open.time.21" value="2" />
-          <entry key="project.open.time.38" value="1" />
-          <entry key="project.open.time.45" value="1" />
-          <entry key="project.open.time.53" value="1" />
-          <entry key="project.open.time.55" value="1" />
-          <entry key="project.open.time.60" value="1" />
-          <entry key="project.open.time.61" value="1" />
-          <entry key="project.open.time.78" value="1" />
-          <entry key="project.opened" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="19" />
-          <entry key="js" value="18" />
-          <entry key="ts" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="19" />
-          <entry key="JavaScript" value="18" />
-          <entry key="TypeScript" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts" />
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="526" />
-          <entry key="js" value="1003" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="526" />
-          <entry key="JavaScript" value="1003" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-1059775030">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.36" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts" />
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="24" />
-          <entry key="JavaScript" value="24" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="24" />
-          <entry key="js" value="24" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="1323" />
-          <entry key="js" value="2206" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="1323" />
-          <entry key="JavaScript" value="2206" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-403694224">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.36" value="1" />
-          <entry key="project.open.time.38" value="1" />
-          <entry key="project.open.time.41" value="1" />
-          <entry key="project.open.time.60" value="1" />
-          <entry key="project.opened" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="155" />
-          <entry key="js" value="1262" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="155" />
-          <entry key="JavaScript" value="1262" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="8" />
-          <entry key="js" value="25" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="8" />
-          <entry key="JavaScript" value="25" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="15525">
               <caret line="677" column="14" selection-start-line="677" selection-start-column="14" selection-end-line="677" selection-end-column="14" />
             </state>
           </provider>
@@ -162,19 +45,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-
-            <state relative-caret-position="2601">
+            <state relative-caret-position="3519">
               <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
-              <caret line="74" column="66" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="66" />
+            <state relative-caret-position="169">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
         </entry>
@@ -182,9 +63,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/html.js">
           <provider selected="true" editor-type-id="text-editor">
-
-            <state relative-caret-position="7191">
+            <state relative-caret-position="9729">
               <caret line="423" column="28" selection-start-line="423" selection-start-column="28" selection-end-line="423" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/statics.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -192,21 +81,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ge/id_test_12.js">
           <provider selected="true" editor-type-id="text-editor">
-
-            <state relative-caret-position="-2431">
+            <state relative-caret-position="230">
               <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/mst_id_test_12.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="322">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -343,20 +228,21 @@
         <option value="$PROJECT_DIR$/views/mst_tagging_environment.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12_2.html" />
-        <option value="$PROJECT_DIR$/js/statics.js" />
         <option value="$PROJECT_DIR$/js/btn_onclick_funs.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/views/mst_id_test_12.html" />
         <option value="$PROJECT_DIR$/js/ge/id_test_12.js" />
         <option value="$PROJECT_DIR$/js/ge/game_element_helpers.js" />
+        <option value="$PROJECT_DIR$/js/statics.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-5" />
-    <option name="width" value="1932" />
-    <option name="height" value="990" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -386,22 +272,6 @@
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="ge" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -630,11 +500,14 @@
       <workItem from="1542976927488" duration="7917000" />
       <workItem from="1543056917202" duration="1646000" />
       <workItem from="1543230377335" duration="1339000" />
+      <workItem from="1544447304439" duration="649000" />
+      <workItem from="1544511810914" duration="1139000" />
+      <workItem from="1544597403191" duration="2021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1455441000" />
+    <option name="totallyTimeSpent" value="1459250000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -646,13 +519,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15699404" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1564805" />
       <window_info id="Structure" order="2" weight="0.10800843" />
-
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.49255952" side_tool="true" weight="0.27704918" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49578503" weight="0.20217392" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.50744045" weight="0.27704918" />
@@ -1053,13 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/statics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1208">
-          <caret line="79" column="47" lean-forward="true" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/mst_tagging_environment.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -1086,46 +950,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="15525">
           <caret line="677" column="14" selection-start-line="677" selection-start-column="14" selection-end-line="677" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2601">
+        <state relative-caret-position="3519">
           <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/html.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7191">
+        <state relative-caret-position="9729">
           <caret line="423" column="28" selection-start-line="423" selection-start-column="28" selection-end-line="423" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="66" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ge/id_test_12.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2431">
+        <state relative-caret-position="230">
           <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mst_id_test_12.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="322">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/statics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
     </entry>

@@ -80,7 +80,7 @@ public class Main {
                     continue;
                 }
                 try {
-                    lines.add(line + Tags.SEPARATOR + rating.get(Integer.parseInt(tmp[1])).get(tmp[2]));
+                    lines.add(line + Tags.SEPARATOR + rating.get(Integer.parseInt(tmp[0])).get(tmp[2]));
                 } catch (NullPointerException ex) {
                     System.out.println("Fehler beim Bewerten der folgenden Line: " + line);
                     System.out.println("Diese Line wird dann ohne Bewertung erscheinen!!!");

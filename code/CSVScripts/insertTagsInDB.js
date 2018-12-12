@@ -14,13 +14,13 @@ dbConnection.connect(function(err) {
         return console.log('error when connecting to db:', err);
     } else {
         console.log("DB Connected!");
-        updateTagRatings();
+        insertTagRatings();
     }
 });
 
-function updateTagRatings() {
+function insertTagRatings() {
     var lineReader = require('readline').createInterface({
-        input: require('fs').createReadStream('tags.csvmerged.csv')
+        input: require('fs').createReadStream('post_ratings_per_tag_base.csv')
     });
 
     var numLines = 0;
@@ -28,18 +28,20 @@ function updateTagRatings() {
     lineReader.on('line', function (line) {
         var variables = line.split(";");
 
-        var iid = variables[0];
-        var freq = variables[1];
+        var uid = variables[0];
+        var iid = variables[1];
         var tag = variables[2];
         var rating1 = variables[3];
         var rating2 = variables[4];
 
+        if(uid == "user_id") return;
+
         numLines++;
 
         dbConnection.query(
-            "UPDATE image_tags SET rating = " + rating1 + ", rating_2 = " + rating2 + " WHERE iid = " + iid + " AND tag = '" + tag + "'",
-            [],
-            function (err, results) {
+                "INSERT INTO image_tags VALUES(" + uid + ", " + iid + ", " + "'" + tag + "'" + ", " + rating1 + ", " + rating2 + ")",
+                [],
+                function (err, results) {
                 if(err) throw err;
                 numLines--;
                 if(numLines === 0) {
@@ -47,6 +49,6 @@ function updateTagRatings() {
                     dbConnection.destroy();
                     process.exit(0);
                 }
-            });
+        });
     });
 }

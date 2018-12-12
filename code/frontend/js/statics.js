@@ -1,6 +1,7 @@
 /** The server URL **/
 var SERVER_URL = 'ws://localhost:8025/ws/wscon';
-// var SERVER_URL = 'wss://dobuch.de/ws/wscon/';
+//var SERVER_URL = 'ws://m.schubhan.de:8025/ws/wscon';
+//var SERVER_URL = 'wss://dobuch.de/ws/wscon/';
 
 /** If false, new users get an error message and cannot go beyond the welcome page **/
 var PLATFORM_OPEN = true;
@@ -76,6 +77,7 @@ var ID_TEST_12;
  * Sets the statics to their default values
  */
 function initStaticEnvironment() {
+    //SERVER_URL = 'ws://m.schubhan.de:8025/ws/wscon';
     SERVER_URL = 'ws://localhost:8025/ws/wscon';
     //SERVER_URL = 'wss://dobuch.de/ws/wscon/';
     PLATFORM_OPEN = true;

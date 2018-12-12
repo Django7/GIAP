@@ -1,70 +1,91 @@
 user_id;condition;age;sex;nationality;url_where_from;typing_speed;gaming_time;motiv_part_design;motiv_part_game;dga_game_affinity;dga_video_game_frequency;dga_video_game_passion;dga_board_game_frequency;dga_board_game_passion;cs_satisfied;cs_easiness;cs_motivation_for_others;cs_motivation_for_me;cs_relevance_of_setting;cs_already_motivated;imp_satisfied_with_concept;imp_satisfied_opt;imp_all_aspects_implemented;imp_satisfied_general;imp_motiv_design;imp_motiv_design_process;imp_optical_comment;imp_aspects_comment;more_or_less_tags_without_concept;feasibility;change_something_with_concept;changes;already_game_designed;tagging_already_known;BF_extraversion;BF_neuroticism;BF_openness_to_experience;BF_conscientiousness;BF_agreeableness;IMI_interest_enjoyment;IMI_perceived_competence;IMI_perceived_choice;IMI_pressure_tension;SUS;comments
 44;2;2;2;0;0;;;;;5;4;5;4;2;;;;;;;;;;;;;;;;;;;;;3,5;1,5;4,5;3,5;2,5;10;3;9;4;95;
-47;2;2;1;0;0;;;;;1;1;1;1;1;;;;;;;;;;;;;;;;;;;;;2,0;3,0;1,5;4,5;3,0;8;3;8;6;65;
-48;1;2;2;0;0;;;;;5;5;5;2;4;;;;;;;;;;;;;;;;;;;;;3,0;3,0;2,5;4,0;4,5;8;7;5;6;85;Nein
-51;3;2;2;0;0;47;10 Stunden würden hinkommen;0;0;;;;;;5;5;5;5;3;2;4;4;5;5;3;2;;;0;1;1;Eventuell wäre noch ein Timer Interessant das man nicht unendlich Zeit hat ein Bild zu tagen. Somit hat man wenig Zeit zu überlegen und schreibt wirklich nur die Stimmungen auf die man dabei fühlt.;1;1;3,0;1,5;4,0;2,5;2,5;9;9;12;3;97,5;
-55;4;6;1;0;0;82;Videospiele = nie. Brettspiele = ein-zweimal im Jahr;1;1;;;;;;4;4;3;4;2;1;4;4;3;4;4;5;;;0;1;0;;0;0;4,0;2,5;2,5;3,0;3,5;9;3;9;5;92,5;Es war nach ein paar mal zu sehr dieselbe Sorte von Bildern und ich fand mich selber langweilig, weil mir nicht mehr Tags einfielen. Ich fand die "Belohnung" mit dem Aquarium sehr niedlich, es fehlte nur ein Delfin. ) 
-59;4;2;2;0;0;33;1x;1;1;;;;;;4;2;5;5;2;2;4;4;3;4;4;4;;;0;1;1;Ich habe nicht so ganz verstanden, wie jetzt die Belohnung aussah. Wenn nach den 30 Tags dann auch wirklich eine Belohnung folgt, würde mich das auf jeden Fall motivieren mehr Tags anzugeben. ;0;0;4,5;3,0;3,0;4,5;4,0;9;8;8;5;70;
-61;3;2;2;0;0;45;> 20h;0;1;;;;;;4;4;5;5;2;3;4;5;5;5;4;3;;;0;1;0;;0;0;1,0;2,5;5,0;2,5;3,0;1;3;11;0;97,5;
-63;1;3;2;0;0;;;;;5;5;5;5;5;;;;;;;;;;;;;;;;;;;;;3,5;2,5;4,5;3,5;1,0;6;9;9;4;92,5;
-64;1;2;2;1;0;;;;;4;2;4;1;2;;;;;;;;;;;;;;;;;;;;;4,0;2,0;4,0;4,5;3,5;9;8;7;2;85;
-69;2;3;1;0;0;;;;;4;1;1;3;3;;;;;;;;;;;;;;;;;;;;;5,0;1,5;2,5;3,5;4,0;0;9;11;4;85;
-71;1;2;2;0;0;;;;;3;2;2;3;3;;;;;;;;;;;;;;;;;;;;;2,5;2,5;2,5;3,0;4,0;4;2;7;7;50;
-73;1;2;2;0;1;;;;;5;4;5;2;4;;;;;;;;;;;;;;;;;;;;;2,0;3,0;5,0;4,5;3,5;12;8;8;3;95;
-74;1;3;2;0;1;;;;;5;4;4;3;2;;;;;;;;;;;;;;;;;;;;;2,5;3,5;4,5;3,0;3,0;8;7;7;10;80;
-90;2;7;1;0;1;;;;;4;1;1;4;4;;;;;;;;;;;;;;;;;;;;;2,0;4,0;2,0;3,0;2,5;5;3;5;9;72,5;
-101;2;3;2;0;0;;;;;4;4;4;2;1;;;;;;;;;;;;;;;;;;;;;4,0;4,0;2,5;2,5;4,0;6;7;4;8;82,5;
-103;2;3;1;0;1;;;;;5;4;4;4;4;;;;;;;;;;;;;;;;;;;;;2,0;4,0;1,5;4,0;1,5;4;2;10;2;92,5;
-104;3;2;1;0;0;52;Videospiele mehrmals in der Woche. ;0;0;;;;;;4;2;1;1;3;5;5;3;5;5;1;1;;;1;1;0;;1;1;3,5;4,0;5,0;2,5;1,5;10;9;6;3;80;
-105;4;2;2;0;1;28;Täglich;0;0;;;;;;4;3;5;3;1;2;5;1;1;1;1;1;;Ich erkenne mein Spielkonzept in keinem meiner erdachten Aspekte wieder. Anstatt es mit mehreren Leuten zu spielen taggt man die Bilder alleine und somit ist die komplette Grundidee des Spiels wie die Diskussionsrunde sowie die Rolle des Punktevergebers nicht zu verwirklichen.;1;2;0;;0;0;2,5;2,0;2,5;2,0;2,0;0;4;5;3;45;Ich bin der Meinung dass Bilder-Taggen generell wenig bis gar nicht unterhaltsam ist und auch kein Spielkonzept wirklich etwas daran ändern kann.
-111;2;3;2;0;1;;;;;4;4;2;2;2;;;;;;;;;;;;;;;;;;;;;3,5;4,5;5,0;3,0;3,5;9;6;9;5;92,5;Jeweilige Bilderzahl mit angeben (z.B. Bild 4/15)Die Chance integrieren, ein Bild zu überspringen und dafür ein anderes zu wählen (z.B. wenn man versehentlich kurz weggeschaut hat während der 5 Sekunden)Sonst alles geil! Besonders die Führung durch die Prozedur! Schön aufgeräumt und Übersichtlich, weiter so!
-115;3;3;2;0;1;30;5h;1;1;;;;;;5;2;5;5;1;1;4;5;5;5;5;5;;;0;1;1;Die Verteilung der Bonuspunkte nach dem Bilder Taggen erschien mir etwas willkürlich, hier würde ich dann gerne die Wörter, für die ich einen Bonus erhalten habe, angezeigt bekommen zusammen mit der ganzen Liste der möglichen Antworten.Außerdem fiel mir auf, dass ich manchmal unaufmerksam war und mir ein Bild nicht rechtzeitig oder richtig angeschaut habe. Hier hätte ich gern zusätzlich einen Button als "Joker", mit dem ich solche Bilder aus der Wertung nehmen kann und dafür ein neues zugewiesen bekomme. Dieser Joker sollte z.B. 2x zur Verfügung stehen und dürfte nur innerhalb der ersten 5 Sekunden nach dem das entsprechende Bild verschwunden ist aktiviert werden können.;0;1;3,5;3,0;4,0;3,5;4,0;12;9;10;6;87,5;
-120;2;7;2;0;1;;;;;3;4;4;3;3;;;;;;;;;;;;;;;;;;;;;1,5;2,0;2,0;4,0;3,5;12;5;7;1;82,5;
-123;2;2;0;0;0;;;;;4;2;3;3;2;;;;;;;;;;;;;;;;;;;;;4,0;1,5;3,5;4,5;3,0;4;8;8;6;85;
+47;2;2;1;0;0;;;;;1;1;1;1;1;;;;;;;;;;;;;;;;;;;;;2;3;1,5;4,5;3;8;3;8;6;65;
+48;1;2;2;0;0;;;;;5;5;5;2;4;;;;;;;;;;;;;;;;;;;;;3;3;2,5;4;4,5;8;7;5;6;85;Nein
+51;3;2;2;0;0;47;10 Stunden würden hinkommen;0;0;;;;;;5;5;5;5;3;2;4;4;5;5;3;2;;;0;1;1;Eventuell wäre noch ein Timer Interessant das man nicht unendlich Zeit hat ein Bild zu tagen. Somit hat man wenig Zeit zu überlegen und schreibt wirklich nur die Stimmungen auf die man dabei fühlt.;1;1;3;1,5;4;2,5;2,5;9;9;12;3;97,5;
+55;4;6;1;0;0;82;Videospiele = nie. Brettspiele = ein-zweimal im Jahr;1;1;;;;;;4;4;3;4;2;1;4;4;3;4;4;5;;;0;1;0;;0;0;4;2,5;2,5;3;3,5;9;3;9;5;92,5;"Es war nach ein paar mal zu sehr dieselbe Sorte von Bildern und ich fand mich selber langweilig, weil mir nicht mehr Tags einfielen. Ich fand die ""Belohnung"" mit dem Aquarium sehr niedlich, es fehlte nur ein Delfin. ) "
+59;4;2;2;0;0;33;1x;1;1;;;;;;4;2;5;5;2;2;4;4;3;4;4;4;;;0;1;1;Ich habe nicht so ganz verstanden, wie jetzt die Belohnung aussah. Wenn nach den 30 Tags dann auch wirklich eine Belohnung folgt, würde mich das auf jeden Fall motivieren mehr Tags anzugeben. ;0;0;4,5;3;3;4,5;4;9;8;8;5;70;
+61;3;2;2;0;0;45;> 20h;0;1;;;;;;4;4;5;5;2;3;4;5;5;5;4;3;;;0;1;0;;0;0;1;2,5;5;2,5;3;1;3;11;0;97,5;
+63;1;3;2;0;0;;;;;5;5;5;5;5;;;;;;;;;;;;;;;;;;;;;3,5;2,5;4,5;3,5;1;6;9;9;4;92,5;
+64;1;2;2;1;0;;;;;4;2;4;1;2;;;;;;;;;;;;;;;;;;;;;4;2;4;4,5;3,5;9;8;7;2;85;
+69;2;3;1;0;0;;;;;4;1;1;3;3;;;;;;;;;;;;;;;;;;;;;5;1,5;2,5;3,5;4;0;9;11;4;85;
+71;1;2;2;0;0;;;;;3;2;2;3;3;;;;;;;;;;;;;;;;;;;;;2,5;2,5;2,5;3;4;4;2;7;7;50;
+73;1;2;2;0;1;;;;;5;4;5;2;4;;;;;;;;;;;;;;;;;;;;;2;3;5;4,5;3,5;12;8;8;3;95;
+74;1;3;2;0;1;;;;;5;4;4;3;2;;;;;;;;;;;;;;;;;;;;;2,5;3,5;4,5;3;3;8;7;7;10;80;
+90;2;7;1;0;1;;;;;4;1;1;4;4;;;;;;;;;;;;;;;;;;;;;2;4;2;3;2,5;5;3;5;9;72,5;
+101;2;3;2;0;0;;;;;4;4;4;2;1;;;;;;;;;;;;;;;;;;;;;4;4;2,5;2,5;4;6;7;4;8;82,5;
+103;2;3;1;0;1;;;;;5;4;4;4;4;;;;;;;;;;;;;;;;;;;;;2;4;1,5;4;1,5;4;2;10;2;92,5;
+104;3;2;1;0;0;52;Videospiele mehrmals in der Woche. ;0;0;;;;;;4;2;1;1;3;5;5;3;5;5;1;1;;;1;1;0;;1;1;3,5;4;5;2,5;1,5;10;9;6;3;80;
+105;4;2;2;0;1;28;Täglich;0;0;;;;;;4;3;5;3;1;2;5;1;1;1;1;1;;Ich erkenne mein Spielkonzept in keinem meiner erdachten Aspekte wieder. Anstatt es mit mehreren Leuten zu spielen taggt man die Bilder alleine und somit ist die komplette Grundidee des Spiels wie die Diskussionsrunde sowie die Rolle des Punktevergebers nicht zu verwirklichen.;1;2;0;;0;0;2,5;2;2,5;2;2;0;4;5;3;45;Ich bin der Meinung dass Bilder-Taggen generell wenig bis gar nicht unterhaltsam ist und auch kein Spielkonzept wirklich etwas daran ändern kann.
+111;2;3;2;0;1;;;;;4;4;2;2;2;;;;;;;;;;;;;;;;;;;;;3,5;4,5;5;3;3,5;9;6;9;5;92,5;Jeweilige Bilderzahl mit angeben (z.B. Bild 4/15)Die Chance integrieren, ein Bild zu überspringen und dafür ein anderes zu wählen (z.B. wenn man versehentlich kurz weggeschaut hat während der 5 Sekunden)Sonst alles geil! Besonders die Führung durch die Prozedur! Schön aufgeräumt und Übersichtlich, weiter so!
+115;3;3;2;0;1;30;5h;1;1;;;;;;5;2;5;5;1;1;4;5;5;5;5;5;;;0;1;1;"Die Verteilung der Bonuspunkte nach dem Bilder Taggen erschien mir etwas willkürlich, hier würde ich dann gerne die Wörter, für die ich einen Bonus erhalten habe, angezeigt bekommen zusammen mit der ganzen Liste der möglichen Antworten.Außerdem fiel mir auf, dass ich manchmal unaufmerksam war und mir ein Bild nicht rechtzeitig oder richtig angeschaut habe. Hier hätte ich gern zusätzlich einen Button als ""Joker"", mit dem ich solche Bilder aus der Wertung nehmen kann und dafür ein neues zugewiesen bekomme. Dieser Joker sollte z.B. 2x zur Verfügung stehen und dürfte nur innerhalb der ersten 5 Sekunden nach dem das entsprechende Bild verschwunden ist aktiviert werden können.";0;1;3,5;3;4;3,5;4;12;9;10;6;87,5;
+120;2;7;2;0;1;;;;;3;4;4;3;3;;;;;;;;;;;;;;;;;;;;;1,5;2;2;4;3,5;12;5;7;1;82,5;
+123;2;2;0;0;0;;;;;4;2;3;3;2;;;;;;;;;;;;;;;;;;;;;4;1,5;3,5;4,5;3;4;8;8;6;85;
 125;3;2;2;0;4;82;1-2x;0;0;;;;;;3;2;4;4;2;1;2;2;4;4;1;1;Die Bilder wurden viel zu kurz angezeigt, als dass ich mir eine Meinung darüber bilden könnte. Sie sollten dauerhaft angezeigt werden.;;0;1;0;;0;0;2,5;2,5;1,5;2,5;3,5;2;1;1;4;67,5;
-132;4;2;2;3;3;36;5-7 Tage;1;1;;;;;;3;2;4;4;3;3;2;4;3;3;5;4;;;0;1;0;;1;0;3,0;2,5;2,0;3,0;3,5;9;5;7;9;95;
-135;4;3;1;0;4;62;Wenn einmal im Monat;1;1;;;;;;4;3;4;5;2;1;4;1;3;3;4;4;Umsetzung der Idee "Stimmungsmodule" wurde nicht umgesetzt, allerdings der zweite Teil (Belohnung durch zusätzliche Schlagwörter in Form des Aquariums). Optisch war die Umsetzung zufriedenstellend.;;0;1;0;;0;0;4,5;3,5;2,0;3,5;2,5;12;1;11;8;97,5;Das Konzept "Aquarium" ist eine gute Idee und hatte mich motiviert! Sie wurde zudem gut umgesetzt. Allerdings gingen mir nach einer Zeit die Schlagwörter aus (persönlich zu unkreativ ))
-146;1;2;2;0;1;;;;;5;5;5;2;4;;;;;;;;;;;;;;;;;;;;;2,5;2,0;4,0;3,0;1,5;5;5;1;10;87,5;
-151;3;2;2;0;4;31;;1;0;;;;;;4;4;5;4;2;1;3;5;4;5;3;4;;;1;1;1;Es sollte offensichtlich sein, welche tags wie viele Punkte geben um den ansporn zu erhöhen. ;1;0;2,5;2,5;3,5;3,5;4,0;4;8;9;8;77,5;
-155;4;2;1;0;0;50;Etwa einmal im Monat;0;0;;;;;;5;5;4;4;2;1;5;1;2;1;3;1;Das Aquarium ist zwar eine nette Idee, aber sehr ablenkend. Das zu taggende Bild sieht man nur für 5 Sekunden während auf der rechten Seite des Bildschirms Bewegung ist, die ablenkt. Danach sieht man das Bild, um das es geht nicht mehr, dafür aber dauerhaft das Aquarium. Man muss aufpassen, dass man mit den Tags nicht aus Versehen das Aquarium beschreibt, weil man sich an das aktuelle Bild schon wieder nicht erinnern kann. Wenn es um Bilder geht, sollte man den Nutzer davon nicht mit anderen visuellen Reizen ablenken. Die Anzeige, wie viele Tags ich noch bis zur nächsten Überraschung angeben muss hat bei mir dazu geführt, dass ich sehr wissen wollte, was die Überraschung ist. Deshalb wollte ich pro Bild möglichst viele Tags angeben, vor allem auch, da ich nicht wusste, wie viele Bilder noch kommen - jedes Bild hätte die letzte Chance sein können. Ich musste mich sehr zurückhalten, keine nonsense-tags zu benutzen. ;Unter anderem das Spielen gegen andere Spieler und das vorgeschlagene Punktesystem. ;0;1;0;;1;1;3,5;3,0;3,5;2,5;2,5;6;4;10;10;67,5;Ich habe nicht das Gefühl, das mein Spielkonzept auch nur im Ansatz umgesetzt wurde. 
-157;2;3;2;0;4;;;;;2;1;1;2;3;;;;;;;;;;;;;;;;;;;;;2,0;2,5;2,5;3,0;2,0;3;6;6;5;80;
-159;2;2;2;0;0;;;;;5;5;5;5;5;;;;;;;;;;;;;;;;;;;;;3,5;3,5;5,0;1,5;3,0;3;5;6;8;67,5;Kein fan abstrakter Kunst.
-166;2;2;1;0;2;;;;;4;4;5;1;4;;;;;;;;;;;;;;;;;;;;;2,5;3,0;4,5;3,0;3,0;6;6;7;5;87,5;
-189;2;8;1;0;2;;;;;3;4;4;3;4;;;;;;;;;;;;;;;;;;;;;1,0;3,5;4,0;4,5;2,0;10;6;10;5;77,5;
-195;2;2;1;0;2;;;;;3;3;2;2;2;;;;;;;;;;;;;;;;;;;;;4,5;2,5;2,5;2,5;3,0;8;3;9;9;87,5;
-203;1;3;1;0;1;;;;;4;3;4;3;4;;;;;;;;;;;;;;;;;;;;;2,5;4,5;1,5;3,0;2,5;0;7;6;10;55;
-216;4;2;1;0;4;39;2-3 Mal;1;1;;;;;;4;4;3;4;1;3;4;5;2;4;5;4;;Mindestanzahl an Bildern;0;1;0;;0;1;2,0;3,0;4,5;3,0;4,5;10;7;7;4;90;Es viel ein wenig schwer sich nur auf die Stimmung zu konzentrieren, ab und zu hätte ich auch gerne mal ein Nomen mit eingeworfen (Ich wusste nicht, ob das geht, da nur Adjektive als Beispiel gegeben waren) und die Darstellung bezeichnet, ich glaube das konnte ich auch nicht so gut trennen. Insgesamt war es eine gute und schöne Idee das Aquarium miteinzubauen, die wirklich dazu motiviert hat noch ein paar Tags extra zu schreiben und ein bisschen mehr nachzudenken.
-230;1;3;1;0;1;;;;;5;4;4;4;4;;;;;;;;;;;;;;;;;;;;;3,0;4,0;2,0;3,5;2,0;3;5;9;6;97,5;
-244;1;4;1;0;1;;;;;3;3;3;4;3;;;;;;;;;;;;;;;;;;;;;4,5;2,5;2,5;5,0;3,0;10;6;8;2;95;
-247;1;7;1;0;1;;;;;3;1;1;2;1;;;;;;;;;;;;;;;;;;;;;4,5;1,5;3,0;5,0;4,0;11;11;10;7;90;
-250;1;8;2;0;2;;;;;3;4;2;2;2;;;;;;;;;;;;;;;;;;;;;4,0;2,0;2,5;3,5;3,0;4;5;9;6;57,5;
-253;1;4;2;2;1;;;;;3;4;4;4;4;;;;;;;;;;;;;;;;;;;;;3,0;2,5;2,0;3,5;4,0;6;6;5;5;77,5;
-263;2;2;1;0;1;;;;;4;2;3;1;3;;;;;;;;;;;;;;;;;;;;;5,0;4,0;2,5;2,5;2,5;12;10;9;2;92,5;Mir hat das System sehr gut gefallen. :)
-272;1;3;2;0;0;;;;;5;5;5;4;5;;;;;;;;;;;;;;;;;;;;;3,5;4,0;5,0;4,5;1,5;4;1;3;8;67,5;
-273;2;5;1;0;0;;;;;4;4;2;1;1;;;;;;;;;;;;;;;;;;;;;3,5;3,0;4,0;4,5;4,0;9;7;9;9;92,5;
-301;4;3;2;0;2;57;1 mal;0;1;;;;;;3;2;4;4;2;2;4;3;4;4;4;2;;;1;-1;0;;0;1;4,5;3,0;4,0;4,0;4,5;4;9;9;5;75;
-304;1;3;1;0;2;;;;;5;1;1;4;4;;;;;;;;;;;;;;;;;;;;;2,5;4,0;4,5;4,0;3,0;1;4;6;1;75;
-313;1;2;2;0;0;;;;;5;5;5;5;5;;;;;;;;;;;;;;;;;;;;;3,0;1,0;2,5;3,0;4,5;9;7;12;4;92,5;
-339;3;0;1;0;1;41;;1;1;;;;;;5;4;4;5;4;3;4;4;5;5;4;4;;;1;2;1;Ich habe eine Ablenkung während der Bildbetrachtung durch mein Aquarium bemerkt. Durch das Erkundschaften meiner Spielewelt verlor ich einige Sekunden, wodurch ich das Bild nicht ganz klar im Kopf hatte. Aus diesem Grund würde ich das Bild, welches mit Stimmungen zu versehen ist, alleine anzeigen, und das Aquarium erst während des Taggens. Weiterhin fehlte mir eine Information, wie viele Bilder von den 15 (5 in der Extrarunde) noch zu taggen sind.;0;1;2,0;4,0;5,0;4,5;2,0;12;6;11;2;97,5;Mir gefällt die Umsetzung des Aquariums sehr gut! Das Entdecken neuer Erweiterungen hat mich immer wieder zum Lächeln gebracht. Auch mit den "Specials" bin ich zufrieden! :)
-341;4;3;2;0;1;78;Ein- bis zweimal;0;0;;;;;;4;2;3;3;1;1;2;3;3;1;2;3;;;0;1;0;;0;1;4,5;2,0;2,5;3,5;4,0;2;4;8;3;82,5;Es fehlt allgemein die Motivation, warum diese Bilder überhaupt getaggt werden sollten.
-349;1;7;1;0;1;;;;;3;1;1;4;4;;;;;;;;;;;;;;;;;;;;;4,0;2,0;5,0;5,0;2,5;12;10;11;0;82,5;
-351;2;3;1;0;4;;;;;2;1;1;4;4;;;;;;;;;;;;;;;;;;;;;5,0;3,5;3,5;3,5;2,0;12;11;4;0;95;Bei manchen Bildern war es schwierig, diese innerhalb der kurzen Zeit zu bewerten.
-353;4;3;2;0;1;17;mindestens 5mal die Woche;0;1;;;;;;4;2;4;4;1;1;5;1;1;1;5;3;Fische statt meinem Konzept;Eigentlich alles;1;-1;0;;0;0;4,0;3,0;3,5;3,0;3,0;10;9;10;3;80;
-380;1;3;1;0;2;;;;;2;1;1;1;1;;;;;;;;;;;;;;;;;;;;;4,0;4,5;2,5;5,0;3,5;8;3;1;8;82,5;
-384;4;6;1;0;1;22;0;0;0;;;;;;5;4;5;5;2;1;4;2;4;3;1;1;;;1;-1;0;;0;1;5,0;1,5;4,5;3,0;4,5;0;0;2;2;50;
-386;1;2;1;0;0;;;;;2;3;2;1;2;;;;;;;;;;;;;;;;;;;;;4,0;3,5;2,5;3,0;3,5;9;3;6;8;95;
-389;1;2;2;0;1;;;;;4;5;5;2;1;;;;;;;;;;;;;;;;;;;;;3,5;3,0;5,0;4,0;3,5;10;5;10;9;85;Die Zeit reichte mir meist nicht aus, genügend Emotionen zu entwickeln (10 Sek.?)Interessante Bildauswahl 
-395;2;3;2;0;1;;;;;5;5;5;5;4;;;;;;;;;;;;;;;;;;;;;2,5;3,0;4,0;5,0;4,0;9;7;10;9;92,5;
-398;4;2;2;0;0;41;0-2 Mal;1;1;;;;;;3;4;4;4;2;3;4;4;1;4;4;4;;Leider, war es mir nicht möglich das Spielkonzept innerhalb einer Gruppe auszuprobieren, daher konnte das Kernkonzept dabei nicht auf die Probe gestellt werden. Jedoch muss man dazu sagen, dass es möglich gewesen wäre, wenn ausreichend Mitspieler anwesend wären.;0;1;0;;0;0;3,0;3,0;3,5;3,0;3,5;9;1;6;2;70;
-407;3;2;1;0;2;38;An wenigen Spieleabenden mit Freunden. Diese finden höchstens ein mal im Monat oder weniger statt.;0;1;;;;;;5;5;4;5;1;2;5;5;5;5;5;3;;;1;-1;1;Die Auswahl der Wörter ist sehr subjektiv. Man findet schnell viele Wörter, die das gezeigte Bild beschreiben würden, die der Automatismus nicht aufgreift. Umgekehrt erkennt man relativ schnell, wie der Automatismus bei bestimmten Bildern reagiert, also welche Wörter genannt werden wollen, selbst wenn diese nicht der eigenen Betrachtung entsprechen.;1;0;4,0;3,5;5,0;3,5;3,5;12;5;4;9;80;
-412;2;2;1;0;1;;;;;3;1;1;2;3;;;;;;;;;;;;;;;;;;;;;4,0;3,5;2,5;4,5;3,0;10;9;8;4;90;
-426;4;3;1;4;0;19;2;1;1;;;;;;2;2;5;5;1;3;3;4;3;4;5;4;;;2;1;0;;0;0;3,5;4,0;3,0;3,5;4,0;12;12;12;12;87,5;
-429;2;3;1;0;2;;;;;1;1;1;4;5;;;;;;;;;;;;;;;;;;;;;1,5;3,5;3,0;3,0;2,0;1;1;2;12;47,5;
-438;3;3;1;0;0;40;unterschiedlich ;1;1;;;;;;3;1;4;2;1;1;5;5;4;5;5;5;;;1;-1;0;;0;0;2,5;4,5;4,0;3,0;2,5;7;8;10;4;90;
-441;4;2;1;0;2;45;1;0;1;;;;;;4;4;4;4;1;1;4;4;1;2;4;3;;Der Vergleich zu anderen Leuten, die die Bilder taggen sollten, fehlte. Außerdem gab es keine Verlosung (zumindest bis zu diesem Punkt der Befragung nicht). ;0;1;1;An dem umgesetzten Spielkonzept fand ich nicht so gut, dass es ein Bild war und sich die Fische bewegt haben. Dies war sehr irritierend und hat zum Teil sehr abgelenkt. Da es ein zusätzliches "Bild" war, fiel es mir etwas schwer mich auf das ursprüngliche Bild zu konzentrieren und nur Tags dazu aufzuschreiben. ;0;1;2,0;2,0;3,0;2,5;2,5;5;6;3;8;82,5;
-449;4;3;1;0;4;3;3;1;1;;;;;;5;5;4;5;2;1;5;4;4;4;5;4;;;0;1;0;;0;0;2,5;3,0;4,0;4,0;3,5;12;8;8;4;92,5;
-456;4;7;1;0;1;52;1x wöchentlich;0;1;;;;;;3;2;4;4;3;2;4;2;2;2;4;3;;Es wurde keine Auswahlliste angeboten;0;1;0;;0;0;1,0;4,5;2,0;3,0;3,0;4;2;10;9;85;Der Zeitraum von 5 Sekunden war zu kurz, um sich ein Bild einprägen zu können.Die Aquarium-Animation war amüsant und hat angespornt möglichst viele Adjektive anzugeben. Hat nur noch eine Bewertung für die nächste Überraschung gefehlt, ist man auch geneigt, ein nicht wirklich passend empfundenes Adjektiv einzugeben. 
-461;4;3;2;0;4;65;1-5 (momentan eher 0-1 mal, wenn Urlaub ist und Freunde Zeit haben dann auch durchaus mal täglich);0;0;;;;;;5;4;2;5;3;2;4;3;1;1;2;3;;Wettbewerb als Kernaspekt meines Konzeptes war in keiner erkennbaren Form vorhanden;1;2;0;;1;1;4,5;2,0;5,0;2,5;2,0;7;4;6;2;87,5;
-488;4;3;2;0;4;44;manchmal gar nicht, maximal etwa 3mal;0;0;;;;;;4;4;3;4;2;3;2;4;3;4;3;2;;;0;1;1;Es muss skalierbar / nach oben offen sein wenn alle "Überraschungen" erspielt sind, lässt sonst die Motivation sofort nach. Außerdem gibt es keinen Aspekt der Qualitätssicherung man wird dazu motiviert, lauter Unsinn zu schreiben.;0;0;1,0;3,0;5,0;3,0;4,0;6;7;12;2;87,5;Bei einer Aufgabe habe ich ein paar Nonsens-Tags geschrieben, um an die "Überraschung" zu kommen.
-498;3;3;1;0;1;57;etwa 1-2mal;0;1;;;;;;4;2;4;4;2;3;5;5;5;4;4;3;;;0;-1;0;;0;1;3,0;2,5;2,5;4,0;3,5;7;5;7;6;85;
-502;4;3;1;5;4;62;0;0;0;;;;;;4;4;5;5;2;3;2;4;2;2;2;2;;;1;1;0;;0;1;3,5;1,5;4,5;4,0;5,0;3;5;7;5;87,5;
+132;4;2;2;3;3;36;5-7 Tage;1;1;;;;;;3;2;4;4;3;3;2;4;3;3;5;4;;;0;1;0;;1;0;3;2,5;2;3;3,5;9;5;7;9;95;
+135;4;3;1;0;4;62;Wenn einmal im Monat;1;1;;;;;;4;3;4;5;2;1;4;1;3;3;4;4;"Umsetzung der Idee ""Stimmungsmodule"" wurde nicht umgesetzt, allerdings der zweite Teil (Belohnung durch zusätzliche Schlagwörter in Form des Aquariums). Optisch war die Umsetzung zufriedenstellend.";;0;1;0;;0;0;4,5;3,5;2;3,5;2,5;12;1;11;8;97,5;"Das Konzept ""Aquarium"" ist eine gute Idee und hatte mich motiviert! Sie wurde zudem gut umgesetzt. Allerdings gingen mir nach einer Zeit die Schlagwörter aus (persönlich zu unkreativ ))"
+146;1;2;2;0;1;;;;;5;5;5;2;4;;;;;;;;;;;;;;;;;;;;;2,5;2;4;3;1,5;5;5;1;10;87,5;
+151;3;2;2;0;4;31;;1;0;;;;;;4;4;5;4;2;1;3;5;4;5;3;4;;;1;1;1;Es sollte offensichtlich sein, welche tags wie viele Punkte geben um den ansporn zu erhöhen. ;1;0;2,5;2,5;3,5;3,5;4;4;8;9;8;77,5;
+155;4;2;1;0;0;50;Etwa einmal im Monat;0;0;;;;;;5;5;4;4;2;1;5;1;2;1;3;1;Das Aquarium ist zwar eine nette Idee, aber sehr ablenkend. Das zu taggende Bild sieht man nur für 5 Sekunden während auf der rechten Seite des Bildschirms Bewegung ist, die ablenkt. Danach sieht man das Bild, um das es geht nicht mehr, dafür aber dauerhaft das Aquarium. Man muss aufpassen, dass man mit den Tags nicht aus Versehen das Aquarium beschreibt, weil man sich an das aktuelle Bild schon wieder nicht erinnern kann. Wenn es um Bilder geht, sollte man den Nutzer davon nicht mit anderen visuellen Reizen ablenken. Die Anzeige, wie viele Tags ich noch bis zur nächsten Überraschung angeben muss hat bei mir dazu geführt, dass ich sehr wissen wollte, was die Überraschung ist. Deshalb wollte ich pro Bild möglichst viele Tags angeben, vor allem auch, da ich nicht wusste, wie viele Bilder noch kommen - jedes Bild hätte die letzte Chance sein können. Ich musste mich sehr zurückhalten, keine nonsense-tags zu benutzen. ;Unter anderem das Spielen gegen andere Spieler und das vorgeschlagene Punktesystem. ;0;1;0;;1;1;3,5;3;3,5;2,5;2,5;6;4;10;10;67,5;Ich habe nicht das Gefühl, das mein Spielkonzept auch nur im Ansatz umgesetzt wurde. 
+157;2;3;2;0;4;;;;;2;1;1;2;3;;;;;;;;;;;;;;;;;;;;;2;2,5;2,5;3;2;3;6;6;5;80;
+159;2;2;2;0;0;;;;;5;5;5;5;5;;;;;;;;;;;;;;;;;;;;;3,5;3,5;5;1,5;3;3;5;6;8;67,5;Kein fan abstrakter Kunst.
+166;2;2;1;0;2;;;;;4;4;5;1;4;;;;;;;;;;;;;;;;;;;;;2,5;3;4,5;3;3;6;6;7;5;87,5;
+189;2;8;1;0;2;;;;;3;4;4;3;4;;;;;;;;;;;;;;;;;;;;;1;3,5;4;4,5;2;10;6;10;5;77,5;
+195;2;2;1;0;2;;;;;3;3;2;2;2;;;;;;;;;;;;;;;;;;;;;4,5;2,5;2,5;2,5;3;8;3;9;9;87,5;
+203;1;3;1;0;1;;;;;4;3;4;3;4;;;;;;;;;;;;;;;;;;;;;2,5;4,5;1,5;3;2,5;0;7;6;10;55;
+216;4;2;1;0;4;39;2-3 Mal;1;1;;;;;;4;4;3;4;1;3;4;5;2;4;5;4;;Mindestanzahl an Bildern;0;1;0;;0;1;2;3;4,5;3;4,5;10;7;7;4;90;Es viel ein wenig schwer sich nur auf die Stimmung zu konzentrieren, ab und zu hätte ich auch gerne mal ein Nomen mit eingeworfen (Ich wusste nicht, ob das geht, da nur Adjektive als Beispiel gegeben waren) und die Darstellung bezeichnet, ich glaube das konnte ich auch nicht so gut trennen. Insgesamt war es eine gute und schöne Idee das Aquarium miteinzubauen, die wirklich dazu motiviert hat noch ein paar Tags extra zu schreiben und ein bisschen mehr nachzudenken.
+230;1;3;1;0;1;;;;;5;4;4;4;4;;;;;;;;;;;;;;;;;;;;;3;4;2;3,5;2;3;5;9;6;97,5;
+244;1;4;1;0;1;;;;;3;3;3;4;3;;;;;;;;;;;;;;;;;;;;;4,5;2,5;2,5;5;3;10;6;8;2;95;
+247;1;7;1;0;1;;;;;3;1;1;2;1;;;;;;;;;;;;;;;;;;;;;4,5;1,5;3;5;4;11;11;10;7;90;
+250;1;8;2;0;2;;;;;3;4;2;2;2;;;;;;;;;;;;;;;;;;;;;4;2;2,5;3,5;3;4;5;9;6;57,5;
+253;1;4;2;2;1;;;;;3;4;4;4;4;;;;;;;;;;;;;;;;;;;;;3;2,5;2;3,5;4;6;6;5;5;77,5;
+263;2;2;1;0;1;;;;;4;2;3;1;3;;;;;;;;;;;;;;;;;;;;;5;4;2,5;2,5;2,5;12;10;9;2;92,5;Mir hat das System sehr gut gefallen. :)
+272;1;3;2;0;0;;;;;5;5;5;4;5;;;;;;;;;;;;;;;;;;;;;3,5;4;5;4,5;1,5;4;1;3;8;67,5;
+273;2;5;1;0;0;;;;;4;4;2;1;1;;;;;;;;;;;;;;;;;;;;;3,5;3;4;4,5;4;9;7;9;9;92,5;
+301;4;3;2;0;2;57;1 mal;0;1;;;;;;3;2;4;4;2;2;4;3;4;4;4;2;;;1;-1;0;;0;1;4,5;3;4;4;4,5;4;9;9;5;75;
+304;1;3;1;0;2;;;;;5;1;1;4;4;;;;;;;;;;;;;;;;;;;;;2,5;4;4,5;4;3;1;4;6;1;75;
+313;1;2;2;0;0;;;;;5;5;5;5;5;;;;;;;;;;;;;;;;;;;;;3;1;2,5;3;4,5;9;7;12;4;92,5;
+339;3;0;1;0;1;41;;1;1;;;;;;5;4;4;5;4;3;4;4;5;5;4;4;;;1;2;1;Ich habe eine Ablenkung während der Bildbetrachtung durch mein Aquarium bemerkt. Durch das Erkundschaften meiner Spielewelt verlor ich einige Sekunden, wodurch ich das Bild nicht ganz klar im Kopf hatte. Aus diesem Grund würde ich das Bild, welches mit Stimmungen zu versehen ist, alleine anzeigen, und das Aquarium erst während des Taggens. Weiterhin fehlte mir eine Information, wie viele Bilder von den 15 (5 in der Extrarunde) noch zu taggen sind.;0;1;2;4;5;4,5;2;12;6;11;2;97,5;"Mir gefällt die Umsetzung des Aquariums sehr gut! Das Entdecken neuer Erweiterungen hat mich immer wieder zum Lächeln gebracht. Auch mit den ""Specials"" bin ich zufrieden! :)"
+341;4;3;2;0;1;78;Ein- bis zweimal;0;0;;;;;;4;2;3;3;1;1;2;3;3;1;2;3;;;0;1;0;;0;1;4,5;2;2,5;3,5;4;2;4;8;3;82,5;Es fehlt allgemein die Motivation, warum diese Bilder überhaupt getaggt werden sollten.
+349;1;7;1;0;1;;;;;3;1;1;4;4;;;;;;;;;;;;;;;;;;;;;4;2;5;5;2,5;12;10;11;0;82,5;
+351;2;3;1;0;4;;;;;2;1;1;4;4;;;;;;;;;;;;;;;;;;;;;5;3,5;3,5;3,5;2;12;11;4;0;95;Bei manchen Bildern war es schwierig, diese innerhalb der kurzen Zeit zu bewerten.
+353;4;3;2;0;1;17;mindestens 5mal die Woche;0;1;;;;;;4;2;4;4;1;1;5;1;1;1;5;3;Fische statt meinem Konzept;Eigentlich alles;1;-1;0;;0;0;4;3;3,5;3;3;10;9;10;3;80;
+380;1;3;1;0;2;;;;;2;1;1;1;1;;;;;;;;;;;;;;;;;;;;;4;4,5;2,5;5;3,5;8;3;1;8;82,5;
+384;4;6;1;0;1;22;0;0;0;;;;;;5;4;5;5;2;1;4;2;4;3;1;1;;;1;-1;0;;0;1;5;1,5;4,5;3;4,5;0;0;2;2;50;
+386;1;2;1;0;0;;;;;2;3;2;1;2;;;;;;;;;;;;;;;;;;;;;4;3,5;2,5;3;3,5;9;3;6;8;95;
+389;1;2;2;0;1;;;;;4;5;5;2;1;;;;;;;;;;;;;;;;;;;;;3,5;3;5;4;3,5;10;5;10;9;85;Die Zeit reichte mir meist nicht aus, genügend Emotionen zu entwickeln (10 Sek.?)Interessante Bildauswahl 
+395;2;3;2;0;1;;;;;5;5;5;5;4;;;;;;;;;;;;;;;;;;;;;2,5;3;4;5;4;9;7;10;9;92,5;
+398;4;2;2;0;0;41;0-2 Mal;1;1;;;;;;3;4;4;4;2;3;4;4;1;4;4;4;;Leider, war es mir nicht möglich das Spielkonzept innerhalb einer Gruppe auszuprobieren, daher konnte das Kernkonzept dabei nicht auf die Probe gestellt werden. Jedoch muss man dazu sagen, dass es möglich gewesen wäre, wenn ausreichend Mitspieler anwesend wären.;0;1;0;;0;0;3;3;3,5;3;3,5;9;1;6;2;70;
+407;3;2;1;0;2;38;An wenigen Spieleabenden mit Freunden. Diese finden höchstens ein mal im Monat oder weniger statt.;0;1;;;;;;5;5;4;5;1;2;5;5;5;5;5;3;;;1;-1;1;Die Auswahl der Wörter ist sehr subjektiv. Man findet schnell viele Wörter, die das gezeigte Bild beschreiben würden, die der Automatismus nicht aufgreift. Umgekehrt erkennt man relativ schnell, wie der Automatismus bei bestimmten Bildern reagiert, also welche Wörter genannt werden wollen, selbst wenn diese nicht der eigenen Betrachtung entsprechen.;1;0;4;3,5;5;3,5;3,5;12;5;4;9;80;
+412;2;2;1;0;1;;;;;3;1;1;2;3;;;;;;;;;;;;;;;;;;;;;4;3,5;2,5;4,5;3;10;9;8;4;90;
+426;4;3;1;4;0;19;2;1;1;;;;;;2;2;5;5;1;3;3;4;3;4;5;4;;;2;1;0;;0;0;3,5;4;3;3,5;4;12;12;12;12;87,5;
+429;2;3;1;0;2;;;;;1;1;1;4;5;;;;;;;;;;;;;;;;;;;;;1,5;3,5;3;3;2;1;1;2;12;47,5;
+438;3;3;1;0;0;40;unterschiedlich ;1;1;;;;;;3;1;4;2;1;1;5;5;4;5;5;5;;;1;-1;0;;0;0;2,5;4,5;4;3;2,5;7;8;10;4;90;
+441;4;2;1;0;2;45;1;0;1;;;;;;4;4;4;4;1;1;4;4;1;2;4;3;;Der Vergleich zu anderen Leuten, die die Bilder taggen sollten, fehlte. Außerdem gab es keine Verlosung (zumindest bis zu diesem Punkt der Befragung nicht). ;0;1;1;"An dem umgesetzten Spielkonzept fand ich nicht so gut, dass es ein Bild war und sich die Fische bewegt haben. Dies war sehr irritierend und hat zum Teil sehr abgelenkt. Da es ein zusätzliches ""Bild"" war, fiel es mir etwas schwer mich auf das ursprüngliche Bild zu konzentrieren und nur Tags dazu aufzuschreiben. ";0;1;2;2;3;2,5;2,5;5;6;3;8;82,5;
+449;4;3;1;0;4;3;3;1;1;;;;;;5;5;4;5;2;1;5;4;4;4;5;4;;;0;1;0;;0;0;2,5;3;4;4;3,5;12;8;8;4;92,5;
+456;4;7;1;0;1;52;1x wöchentlich;0;1;;;;;;3;2;4;4;3;2;4;2;2;2;4;3;;Es wurde keine Auswahlliste angeboten;0;1;0;;0;0;1;4,5;2;3;3;4;2;10;9;85;Der Zeitraum von 5 Sekunden war zu kurz, um sich ein Bild einprägen zu können.Die Aquarium-Animation war amüsant und hat angespornt möglichst viele Adjektive anzugeben. Hat nur noch eine Bewertung für die nächste Überraschung gefehlt, ist man auch geneigt, ein nicht wirklich passend empfundenes Adjektiv einzugeben. 
+461;4;3;2;0;4;65;1-5 (momentan eher 0-1 mal, wenn Urlaub ist und Freunde Zeit haben dann auch durchaus mal täglich);0;0;;;;;;5;4;2;5;3;2;4;3;1;1;2;3;;Wettbewerb als Kernaspekt meines Konzeptes war in keiner erkennbaren Form vorhanden;1;2;0;;1;1;4,5;2;5;2,5;2;7;4;6;2;87,5;
+488;4;3;2;0;4;44;manchmal gar nicht, maximal etwa 3mal;0;0;;;;;;4;4;3;4;2;3;2;4;3;4;3;2;;;0;1;1;"Es muss skalierbar / nach oben offen sein wenn alle ""Überraschungen"" erspielt sind, lässt sonst die Motivation sofort nach. Außerdem gibt es keinen Aspekt der Qualitätssicherung man wird dazu motiviert, lauter Unsinn zu schreiben.";0;0;1;3;5;3;4;6;7;12;2;87,5;"Bei einer Aufgabe habe ich ein paar Nonsens-Tags geschrieben, um an die ""Überraschung"" zu kommen."
+498;3;3;1;0;1;57;etwa 1-2mal;0;1;;;;;;4;2;4;4;2;3;5;5;5;4;4;3;;;0;-1;0;;0;1;3;2,5;2,5;4;3,5;7;5;7;6;85;
+502;4;3;1;5;4;62;0;0;0;;;;;;4;4;5;5;2;3;2;4;2;2;2;2;;;1;1;0;;0;1;3,5;1,5;4,5;4;5;3;5;7;5;87,5;
+503;4;2;2;0;0;82;Täglich;1;1;5;5;5;2;1;5;4;4;4;3;3;;;;;;;;;;;;;1;0;4;3;3,5;4;3;7;8;7;3;85;Nein
+518;5;2;1;0;4;;;;;4;2;2;5;4;;;;;;;;;;;;;;;;;;;;;4;4;4;5;3;11;8;11;7;85;
+520;5;3;1;5;4;;;;;4;1;3;4;4;;;;;;;;;;;;;;;;;;;;;2,5;4,5;5;4,5;3,5;9;6;7;3;72,5;es wäre eventuell gut gewesen, vor Beginn der Umfrage anzumerken, dass keine Musik im Hintergrund gehört werden sollte (ich hatte zuerst welche laufen, doch als ich wusste, dass es um Stimmungen bei Bildern ging, habe ich sie ausgemacht, weil ich finde, dass die Musik selbst sehr viel Stimmung macht und das das Antwortverhalten sonst stark beeinflusst)
+544;5;3;1;0;1;;;;;3;1;1;4;2;;;;;;;;;;;;;;;;;;;;;2,5;2,5;5;4,5;3,5;5;4;9;6;67,5;
+546;5;4;1;0;4;;;;;4;3;4;4;4;;;;;;;;;;;;;;;;;;;;;4;3;4,5;5;2;10;9;4;6;90;
+581;5;3;1;0;2;;;;;2;1;1;3;3;;;;;;;;;;;;;;;;;;;;;3;3;3;4,5;3,5;10;4;10;3;77,5;
+584;5;2;2;0;0;;;;;5;5;5;5;5;;;;;;;;;;;;;;;;;;;;;2;2,5;4,5;3;2;2;5;7;6;90;
+589;5;3;1;0;4;;;;;3;3;3;3;3;;;;;;;;;;;;;;;;;;;;;3;3;3;3;3;6;6;6;6;50;
+592;5;3;1;0;2;;;;;2;1;1;1;1;;;;;;;;;;;;;;;;;;;;;4;4,5;4;4,5;4;9;6;9;3;87,5;
+598;5;3;1;0;4;;;;;4;3;2;5;5;;;;;;;;;;;;;;;;;;;;;2,5;3;5;4,5;3;1;3;6;9;87,5;
+604;5;5;2;0;4;;;;;5;5;4;2;2;;;;;;;;;;;;;;;;;;;;;2;2;3,5;4,5;2;9;7;8;4;92,5;
+608;5;3;other;0;4;;;;;5;5;5;2;3;;;;;;;;;;;;;;;;;;;;;1;2;2;3;2,5;12;7;10;0;92,5;
+609;5;2;1;0;4;;;;;4;2;2;5;5;;;;;;;;;;;;;;;;;;;;;4,5;2;4,5;4,5;1,5;6;8;10;8;87,5;
+611;5;3;1;0;4;;;;;5;5;5;5;5;;;;;;;;;;;;;;;;;;;;;4;2,5;5;3,5;3;3;5;5;7;72,5;
+649;5;5;1;0;2;;;;;1;1;1;4;3;;;;;;;;;;;;;;;;;;;;;3;3;3,5;3,5;2,5;6;9;9;4;50;
+673;5;2;1;0;4;;;;;3;1;1;4;4;;;;;;;;;;;;;;;;;;;;;2;5;4,5;3;3,5;6;4;7;7;75;
+679;5;3;1;0;4;;;;;2;1;1;4;2;;;;;;;;;;;;;;;;;;;;;3;4;4,5;3,5;4,5;9;3;9;3;75;
+684;5;2;1;6;4;;;;;1;1;1;4;5;;;;;;;;;;;;;;;;;;;;;3;2,5;4,5;5;3;5;0;3;7;52,5;
+693;5;3;2;dz;2;;;;;3;2;2;5;5;;;;;;;;;;;;;;;;;;;;;4;2,5;4;3,5;4;4;4;4;7;50;5 seconds is not enough for me to see the picture and describe it few words or tags. I think my tags may not be very relevant because of this. I could have gave you more tags and keywords if I had more time.
+698;5;4;2;0;1;;;;;3;3;3;3;3;;;;;;;;;;;;;;;;;;;;;2;3,5;3,5;3;2,5;0;0;0;0;50;
+704;5;2;1;0;4;;;;;4;3;3;3;3;;;;;;;;;;;;;;;;;;;;;2;3,5;5;3,5;3,5;9;6;8;5;75;
