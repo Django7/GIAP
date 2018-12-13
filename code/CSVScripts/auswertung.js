@@ -11,19 +11,34 @@ var dbConnection = mysql.createConnection({
 });
 
 var sql =
-    "SELECT \n" +
-    "\tdemographic.uid,\n" +
+    "SELECT\n" +
+    "    demographic.uid,\n" +
     "    cond.gid,\n" +
+    "    picTime.time AS basicTime,\n" +
+    "    tutPicTime.time AS bonusTime,\n" +
+    "    tutTags.numTags AS tutTags,\n" +
+    "    normTags.numTags AS normTags,\n" +
+    "    COALESCE(bonusTags.numTags, \"\") AS bonusTags,\n" +
+    "\tnormalAndBonusTags.numTags AS normAndBonusTags,\n" +
+    "\ttutorialRatings.rating_1 AS tut_rating_1,\n" +
+    "\ttutorialRatings.rating_2 AS tut_rating_2,\n" +
+    "\ttutorialRatings.rating_avg AS tut_rating_avg,\n" +
+    "\tbasicRatings.rating_1 AS base_rating_1,\n" +
+    "\tbasicRatings.rating_2 AS base_rating_2,\n" +
+    "\tbasicRatings.rating_avg AS base_rating_avg,\n" +
+    "\tCOALESCE(bonusRatings.rating_1, \"\") AS bonus_rating_1,\n" +
+    "\tCOALESCE(bonusRatings.rating_2, \"\") AS bonus_rating_2,\n" +
+    "\tCOALESCE(bonusRatings.rating_avg, \"\") AS bonus_rating_avg,\n" +
     "    demographic.json_answer AS demographic,\n" +
     "    concept.json_answer AS concept,\n" +
     "    imi.json_answer AS imi,\n" +
     "    implementation.json_answer AS implementation,\n" +
     "    bigFive.json_answer AS bigFive\n" +
-    "FROM (((((\n" +
+    "FROM ((((((((((((((\n" +
     "\t(SELECT uid, json_answer\n" +
     "    FROM questionnaires_users\n" +
     "    WHERE qid = 4) AS demographic\n" +
-    "\t\n" +
+    "    \n" +
     "    LEFT JOIN\n" +
     "    \n" +
     "    (SELECT uid, json_answer\n" +
@@ -55,14 +70,96 @@ var sql =
     "    WHERE qid = 5) AS bigFive\n" +
     "    \n" +
     "    ON demographic.uid = bigFive.uid)\n" +
-    "\n" +
-    "\tLEFT JOIN\n" +
+    "    \n" +
+    "    LEFT JOIN\n" +
     "    \n" +
     "    (SELECT uid, gid\n" +
     "    FROM users_groups) AS cond\n" +
     "    \n" +
     "    ON demographic.uid = cond.uid)\n" +
-    "ORDER BY uid";
+    "    \n" +
+    "    LEFT JOIN\n" +
+    "    \n" +
+    "    (SELECT image_log.uid, AVG(TIME_TO_SEC(timediff(end_time, start_time))) AS 'time'\n" +
+    "\tFROM image_log\n" +
+    "\tWHERE iid > 3\n" +
+    "\tGROUP BY uid) AS picTime\n" +
+    "    \n" +
+    "    ON demographic.uid = picTime.uid)\n" +
+    "    \n" +
+    "    LEFT JOIN\n" +
+    "    \n" +
+    "    (SELECT image_log.uid, AVG(TIME_TO_SEC(timediff(end_time, start_time))) AS 'time'\n" +
+    "\tFROM image_log\n" +
+    "\tWHERE iid <= 3\n" +
+    "\tGROUP BY uid) AS tutPicTime\n" +
+    "    \n" +
+    "    ON demographic.uid = tutPicTime.uid)\n" +
+    "    \n" +
+    "    LEFT JOIN\n" +
+    "    \n" +
+    "    (SELECT uid, count(uid) AS numTags \n" +
+    "\tFROM image_tags\n" +
+    "\tWHERE iid <= 3\n" +
+    "\tGROUP BY uid) AS tutTags\n" +
+    "    \n" +
+    "    ON demographic.uid = tutTags.uid)\n" +
+    "    \n" +
+    "    LEFT JOIN\n" +
+    "    \n" +
+    "    (SELECT uid, count(uid) AS numTags\n" +
+    "\tFROM image_tags\n" +
+    "\tWHERE iid > 3 AND iid < 19\n" +
+    "\tGROUP BY uid) AS normTags\n" +
+    "    \n" +
+    "    ON demographic.uid = normTags.uid)\n" +
+    "    \n" +
+    "    LEFT JOIN\n" +
+    "    \n" +
+    "    (SELECT uid, count(uid) AS numTags\n" +
+    "\tFROM image_tags\n" +
+    "\tWHERE iid >= 19\n" +
+    "\tGROUP BY uid) AS bonusTags\n" +
+    "    \n" +
+    "    ON demographic.uid = bonusTags.uid)\n" +
+    "    \n" +
+    "\tLEFT JOIN\n" +
+    "    \n" +
+    "    (SELECT uid, count(uid) AS numTags\n" +
+    "\tFROM image_tags\n" +
+    "\tWHERE iid > 3\n" +
+    "\tGROUP BY uid) AS normalAndBonusTags\n" +
+    "    \n" +
+    "    ON demographic.uid = normalAndBonusTags.uid)\n" +
+    "    \n" +
+    "    LEFT JOIN\n" +
+    "    \n" +
+    "    (SELECT uid, AVG(rating) AS rating_1, AVG(rating_2) AS rating_2, ((AVG(rating) + AVG(rating_2)) / 2) AS rating_avg\n" +
+    "\tFROM image_tags\n" +
+    "\tWHERE iid <= 3\n" +
+    "\tGROUP BY uid) AS tutorialRatings\n" +
+    "    \n" +
+    "    ON demographic.uid = tutorialRatings.uid)\n" +
+    "\t\n" +
+    "\tLEFT JOIN\n" +
+    "\t\n" +
+    "\t(SELECT uid, AVG(rating) AS rating_1, AVG(rating_2) AS rating_2, ((AVG(rating) + AVG(rating_2)) / 2) AS rating_avg\n" +
+    "\tFROM image_tags\n" +
+    "\tWHERE iid > 3 AND iid < 19\n" +
+    "\tGROUP BY uid) basicRatings\n" +
+    "\t\n" +
+    "\tON demographic.uid = basicRatings.uid)\n" +
+    "\t\n" +
+    "\tLEFT JOIN\n" +
+    "\t\n" +
+    "\t(SELECT uid, AVG(rating) AS rating_1, AVG(rating_2) AS rating_2, ((AVG(rating) + AVG(rating_2)) / 2) AS rating_avg\n" +
+    "\tFROM image_tags\n" +
+    "\tWHERE iid >= 19\n" +
+    "\tGROUP BY uid) bonusRatings\n" +
+    "\t\n" +
+    "\tON demographic.uid = bonusRatings.uid)\n" +
+    "    \n" +
+    "    ORDER BY uid";
 
 dbConnection.connect(function(err) {
     if (err) {
@@ -77,7 +174,7 @@ function createAuswertungCSV() {
     dbConnection.query(sql, [], function (err, results) {
         if(err) throw err;
 
-        var csvString = "user_id;condition;age;sex;nationality;url_where_from;typing_speed;gaming_time;motiv_part_design;motiv_part_game;dga_game_affinity;dga_video_game_frequency;dga_video_game_passion;dga_board_game_frequency;dga_board_game_passion;cs_satisfied;cs_easiness;cs_motivation_for_others;cs_motivation_for_me;cs_relevance_of_setting;cs_already_motivated;imp_satisfied_with_concept;imp_satisfied_opt;imp_all_aspects_implemented;imp_satisfied_general;imp_motiv_design;imp_motiv_design_process;imp_optical_comment;imp_aspects_comment;more_or_less_tags_without_concept;feasibility;change_something_with_concept;changes;already_game_designed;tagging_already_known;BF_extraversion;BF_neuroticism;BF_openness_to_experience;BF_conscientiousness;BF_agreeableness;IMI_interest_enjoyment;IMI_perceived_competence;IMI_perceived_choice;IMI_pressure_tension;SUS;comments\n";
+        var csvString = "user_id;condition;age;sex;nationality;url_where_from;typing_speed;gaming_time;avg_time_img_basic_bonus;avg_time_img_basic;avg_time_img_bonus;tags_tutorial;tags_basic;tags_bonus;tags_basic_and_bonus;extra_rounds;rating_tutorial_1;rating_tutorial_2;rating_tutorial_mean;rating_basic_1;rating_basic_2;rating_basic_mean;rating_extra_1;rating_extra_2;rating_extra_mean;dga_game_affinity;dga_video_game_frequency;dga_video_game_passion;dga_board_game_frequency;dga_board_game_passion;game_affinity;cs_satsified;cs_easiness;cs_motivation_for_others;cs_motivation_for_me;cs_relevance_of_setting;cs_already_motivated;imp_satisfied_with_concept;imp_satisfied_opt;imp_all_aspects_implemented;imp_satisfied_general;imp_motiv_design;imp_motiv_design_process;imp_optical_comment;imp_aspects_comment;satisfaction_with_implementation;more_or_less_tags_without_concept;feasibility;change_something_with_concept;changes;already_game_designed;tagging_already_known;BF_extraversion;BF_neuroticism;BF_openness_to_experience;BF_conscientiousness;BF_aggreeableness;IMI_interest_enjoyment;IMI_perceived_competence;IMI_perceived_choice;IMI_pressure_tension;SUS;comments\n";
         results.forEach(function(row, idx) {
             csvString += cropDBEntry(row.uid, 0)+ ";";
             csvString += cropDBEntry(row.gid, 0)+ ";";
@@ -101,21 +198,69 @@ function createAuswertungCSV() {
             csvString += checkJSONValue(demographic.speed_test_value).split(" ")[0] + ";";
 
             csvString += checkJSONValue(concept.design_playtime) + ";";
-            if(demographic.speed_test_value !== undefined) {
+            if(!row.bonusTime == "0.0000") {
+                csvString += cropDBEntry(parseFloat(checkJSONValue(row.basicTime)) + parseFloat(checkJSONValue(row.bonusTime)) / 2) + ";";
+                csvString += cropDBEntry(checkJSONValue(row.basicTime)) + ";";
+                csvString += cropDBEntry(checkJSONValue(row.bonusTime)) + ";";
+            } else {
+                csvString += cropDBEntry(checkJSONValue(row.basicTime)) + ";";
+                csvString += cropDBEntry(checkJSONValue(row.basicTime)) + ";";
+                csvString += "" + ";";
+            }
+
+            csvString += checkJSONValue(row.tutTags) + ";";
+            csvString += checkJSONValue(row.normTags) + ";";
+            csvString += checkJSONValue(row.bonusTags) + ";";
+            csvString += checkJSONValue(row.normAndBonusTags) + ";";
+
+            if(row.normTags == row.normAndBonusTags) csvString += "" + ";"
+            else csvString += "1" + ";";
+
+            csvString += cropDBEntry(row.tut_rating_1) + ";";
+            csvString += cropDBEntry(row.tut_rating_2) + ";";
+            csvString += cropDBEntry(row.tut_rating_avg) + ";";
+            csvString += cropDBEntry(row.base_rating_1) + ";";
+            csvString += cropDBEntry(row.base_rating_2) + ";";
+            csvString += cropDBEntry(row.base_rating_avg) + ";";
+            csvString += cropDBEntry(row.bonus_rating_1) + ";";
+            csvString += cropDBEntry(row.bonus_rating_2) + ";";
+            csvString += cropDBEntry(row.bonus_rating_avg) + ";";
+
+            /*    if(demographic.speed_test_value !== undefined) {
                 csvString += parseInt(checkJSONValue(implementation.design_implementation.imp_motiv_design_process)) <= 3 ? 0 : 1;
                 csvString += ";";
                 csvString += parseInt(checkJSONValue(implementation.design_implementation.imp_motiv_design)) <= 3 ? 0 : 1;
                 csvString += ";";
             } else {
                 csvString += "" + ";" + "" + ";";
+            } */
+
+            if(imi.design_game_affinity.game_affinity !== undefined) {
+                csvString += checkJSONValue(imi.design_game_affinity.game_affinity) + ";";
+                csvString += checkJSONValue(imi.design_game_affinity.video_game_frequency) + ";";
+                csvString += checkJSONValue(imi.design_game_affinity.video_game_passion) + ";";
+                csvString += checkJSONValue(imi.design_game_affinity.board_game_frequency) + ";";
+                csvString += checkJSONValue(imi.design_game_affinity.board_game_passion) + ";";
+                csvString += cropDBEntry((
+                    parseInt(imi.design_game_affinity.game_affinity) +
+                    parseInt(imi.design_game_affinity.video_game_frequency) +
+                    parseInt(imi.design_game_affinity.video_game_passion) +
+                    parseInt(imi.design_game_affinity.board_game_frequency) +
+                    parseInt(imi.design_game_affinity.board_game_passion)) / 5) + ";";
+            } else {
+                csvString += checkJSONValue(concept.design_game_affinity.game_affinity) + ";";
+                csvString += checkJSONValue(concept.design_game_affinity.video_game_frequency) + ";";
+                csvString += checkJSONValue(concept.design_game_affinity.video_game_passion) + ";";
+                csvString += checkJSONValue(concept.design_game_affinity.board_game_frequency) + ";";
+                csvString += checkJSONValue(concept.design_game_affinity.board_game_passion) + ";";
+                csvString += cropDBEntry((
+                    parseInt(concept.design_game_affinity.game_affinity) +
+                    parseInt(concept.design_game_affinity.video_game_frequency) +
+                    parseInt(concept.design_game_affinity.video_game_passion) +
+                    parseInt(concept.design_game_affinity.board_game_frequency) +
+                    parseInt(concept.design_game_affinity.board_game_passion)) / 5) + ";";
             }
 
-
-            csvString += checkJSONValue(imi.design_game_affinity.game_affinity) + ";";
-            csvString += checkJSONValue(imi.design_game_affinity.video_game_frequency) + ";";
-            csvString += checkJSONValue(imi.design_game_affinity.video_game_passion) + ";";
-            csvString += checkJSONValue(imi.design_game_affinity.board_game_frequency) + ";";
-            csvString += checkJSONValue(imi.design_game_affinity.board_game_passion) + ";";
 
             csvString += checkJSONValue(concept.concept_satisfaction.satisfied) + ";";
             csvString += checkJSONValue(concept.concept_satisfaction.easiness) + ";";
@@ -132,6 +277,15 @@ function createAuswertungCSV() {
             csvString += checkJSONValue(implementation.design_implementation.imp_motiv_design_process) + ";";
             csvString += checkJSONValue(implementation.imp_optical_comment).replace(/\n/g, "").replace(/;/g, "") + ";";
             csvString += checkJSONValue(implementation.imp_aspects_comment).replace(/\n/g, "").replace(/;/g, "") + ";";
+            if(implementation.design_implementation.imp_satisfied_with_concept !== undefined) {
+                csvString += cropDBEntry((
+                    parseInt(implementation.design_implementation.imp_satisfied_with_concept) +
+                    parseInt(implementation.design_implementation.imp_satisfied_opt) +
+                    parseInt(implementation.design_implementation.imp_all_aspects_implemented) +
+                    parseInt(implementation.design_implementation.imp_satisfied_general) +
+                    parseInt(implementation.design_implementation.imp_motiv_design) +
+                    parseInt(implementation.design_implementation.imp_motiv_design_process)) / 6) + ";";
+            } else csvString += "" + ";";
             csvString += getMoreTagsTendency(checkJSONValue(implementation.self_design_more_tags)) + ";";
 
             csvString += getDesignFeasibility(checkJSONValue(concept.design_feasibility)) + ";";
