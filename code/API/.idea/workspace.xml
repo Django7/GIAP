@@ -62,7 +62,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/props/settings.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-171">
+            <state relative-caret-position="552">
               <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/websocket/runner/WebSocketMessageReceivedWorkerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="690">
               <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
             </state>
           </provider>
@@ -80,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="23">
               <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/reinit_all_tables.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="3312">
               <caret line="144" column="42" selection-end-line="171" />
             </state>
           </provider>
@@ -98,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/print_results.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="4646">
               <caret line="202" column="34" selection-start-line="202" selection-start-column="34" selection-end-line="202" selection-end-column="34" />
             </state>
           </provider>
@@ -251,7 +251,7 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -775,6 +775,7 @@
       <workItem from="1544511721006" duration="1132000" />
       <workItem from="1544597556069" duration="2951000" />
       <workItem from="1544703516677" duration="1426000" />
+      <workItem from="1544996018585" duration="228000" />
     </task>
     <servers />
   </component>
@@ -811,7 +812,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="946302000" />
+    <option name="totallyTimeSpent" value="946530000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -823,10 +824,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Project Explorer" order="3" weight="0.32995737" />
@@ -1074,35 +1074,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/props/settings.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
+        <state relative-caret-position="552">
           <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dextreem/gms/websocket/runner/WebSocketMessageReceivedWorkerThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="690">
           <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="23">
           <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/reinit_all_tables.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="3312">
           <caret line="144" column="42" selection-end-line="171" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/SQL/print_results.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="4646">
           <caret line="202" column="34" selection-start-line="202" selection-start-column="34" selection-end-line="202" selection-end-column="34" />
         </state>
       </provider>
