@@ -21,6 +21,19 @@ var sql2 =
     "GROUP BY iid, tag\n" +
     "ORDER BY iid, tag";
 
+var sql3 =
+    "SELECT image.uid, groupTable.gid, TIME_TO_SEC(TIMEDIFF(image.end_time, image.start_time)) AS timeNeeded, image.iid \n" +
+    "FROM (image_log AS image\n" +
+    "\n" +
+    "LEFT JOIN\n" +
+    "\n" +
+    "(SELECT uid, gid \n" +
+    "FROM users_groups) AS groupTable\n" +
+    "\n" +
+    "ON image.uid = groupTable.uid)\n" +
+    "\n" +
+    "ORDER BY uid, iid";
+
 dbConnection.connect(function(err) {
     if (err) {
         return console.log('error when connecting to db:', err);
@@ -72,6 +85,29 @@ function createMainRatingsGrouped() {
             fs.appendFile('CSV/ratings_grouped.csv', csvString, function (err) {
                 if (err) throw err;
                 console.log('finished ratings_grouped!');
+                createTagTimings();
+            });
+        });
+    });
+}
+
+function createTagTimings() {
+    dbConnection.query(sql3, [], function (err, results) {
+        if (err) throw err;
+
+        var csvString = "user_id;condition;timing;image_id\n";
+
+        results.forEach(function (row) {
+            csvString += row.uid + ";";
+            csvString += row.gid + ";";
+            csvString += row.timeNeeded + ";";
+            csvString += row.iid + "\n";
+        });
+
+        fs.unlink('CSV/alltimings.csv', function (err) {
+            fs.appendFile('CSV/alltimings.csv', csvString, function (err) {
+                if (err) throw err;
+                console.log('finished alltimings!');
                 dbConnection.destroy();
                 process.exit(0);
             });
