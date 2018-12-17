@@ -82,7 +82,7 @@ var sql =
     "    \n" +
     "    (SELECT image_log.uid, AVG(TIME_TO_SEC(timediff(end_time, start_time))) AS 'time'\n" +
     "\tFROM image_log\n" +
-    "\tWHERE iid > 3\n" +
+    "\tWHERE iid > 3 AND iid < 19\n" +
     "\tGROUP BY uid) AS picTime\n" +
     "    \n" +
     "    ON demographic.uid = picTime.uid)\n" +
@@ -91,7 +91,7 @@ var sql =
     "    \n" +
     "    (SELECT image_log.uid, AVG(TIME_TO_SEC(timediff(end_time, start_time))) AS 'time'\n" +
     "\tFROM image_log\n" +
-    "\tWHERE iid <= 3\n" +
+    "\tWHERE iid > 19\n" +
     "\tGROUP BY uid) AS tutPicTime\n" +
     "    \n" +
     "    ON demographic.uid = tutPicTime.uid)\n" +
@@ -199,7 +199,7 @@ function createAuswertungCSV() {
 
             csvString += checkJSONValue(concept.design_playtime) + ";";
             if(!row.bonusTime == "0.0000") {
-                csvString += cropDBEntry(parseFloat(checkJSONValue(row.basicTime)) + parseFloat(checkJSONValue(row.bonusTime)) / 2) + ";";
+                csvString += cropDBEntry((row.basicTime + row.bonusTime) / 2) + ";";
                 csvString += cropDBEntry(checkJSONValue(row.basicTime)) + ";";
                 csvString += cropDBEntry(checkJSONValue(row.bonusTime)) + ";";
             } else {
