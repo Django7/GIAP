@@ -11,8 +11,23 @@ var dbConnection = mysql.createConnection({
 });
 
 var sql =
-    "SELECT uid, iid, tag, COALESCE(rating, \"\") AS rating_1, COALESCE(rating_2, \"\") AS rating_2\n" +
-    "FROM image_tags \n" +
+    "SELECT \n" +
+    "\timage_tags.uid,\n" +
+    "    image_tags.iid,\n" +
+    "    users_groups.gid,\n" +
+    "\t(CASE \n" +
+    "\t\tWHEN image_tags.iid <= 3 THEN 0 \n" +
+    "        WHEN image_tags.iid > 3 AND image_tags.iid < 19 THEN 1 \n" +
+    "        ELSE 2 \n" +
+    "\tEND) AS imgType, \n" +
+    "    image_tags.tag, \n" +
+    "    COALESCE(image_tags.rating, \"\") AS rating_1, \n" +
+    "    COALESCE(image_tags.rating_2, \"\") AS rating_2,\n" +
+    "    (image_tags.rating + image_tags.rating_2) / 2 AS meanRating\n" +
+    "FROM \n" +
+    "\timage_tags\n" +
+    "\tLEFT JOIN users_groups\n" +
+    "\tON (image_tags.uid = users_groups.uid)\n" +
     "ORDER BY uid, iid, tag";
 
 var sql2 =
@@ -48,14 +63,17 @@ function createMainRatingsPerTagCSV() {
     dbConnection.query(sql, [], function (err, results) {
         if(err) throw err;
 
-        var csvString = "user_id;image_id;tag;rate_1;rate_2\n";
+        var csvString = "user_id;condition;image_id;image_type;tag;rater_1;rater_2;mean_ratings\n";
 
         results.forEach(function(row) {
             csvString += row.uid + ";";
+            csvString += row.gid + ";";
             csvString += row.iid + ";";
+            csvString += row.imgType + ";";
             csvString += row.tag + ";";
             csvString += row.rating_1 + ";";
-            csvString += row.rating_2 + "\n";
+            csvString += row.rating_2 + ";";
+            csvString += cropDBEntry(row.meanRating, 1) + "\n";
         });
 
         fs.unlink('CSV/ratings_per_tag.csv', function(err) {
