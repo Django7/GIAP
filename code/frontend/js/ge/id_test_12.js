@@ -31,8 +31,8 @@ ID_Test_12 = function() {
 
         setEndView = function() {
             setIDTest12View(false, true);
-            $('#rounds_won').html(STATS.p1_wins);
-            $('#rounds_won_2').html(STATS.p1_wins);
+            $('#rounds_won').text(STATS.p1_wins);
+            $('#rounds_won_2').text(STATS.p1_wins);
         },
 
         setIDTest12View = function(in_tutorial, in_end) {
@@ -125,12 +125,13 @@ ID_Test_12 = function() {
 
         checkTag = function(tag) {
             for (var i = 0; i<TAGS.length; i++) {
-                if (TAGS[i].toLowerCase() === tag.toLowerCase()) {
+                if (TAGS[i].tag.toLowerCase() === tag.toLowerCase()) {
                     return true;
                 } else {
-                    return false;
+                    continue;
                 }
             }
+            return false;
         },
 
         confirmTags = function(user_won, user_gave_up) {

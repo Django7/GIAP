@@ -582,8 +582,8 @@ function setUDGEAfterGetImage(main_user_group_id) {
         case "id_test_12": {
             UDGE.afterGetImage = function() {
                 //get10MostUsedTagsForCurrentImage();
-                var tags = ['unruhig, verlassen, düster, glücklich, ruhig, verträumt, dunkel, trist, warm'];
-                ID_TEST_12.setTags(tags);
+                ID_TEST_12.setTags([{tag: 'unruhig'}, {tag: 'verlassen'}, {tag: 'düster'}, {tag: 'glücklich'}, {tag: 'ruhig'},
+                    {tag: 'verträumt'}, {tag: 'dunkel'}, {tag: 'trist'}, {tag: 'warm'}]);
             };
             break;
         }
@@ -2472,16 +2472,15 @@ function startIDTest12Tutorial(){
             setTimeout(function () {
                 setVisible($('#div_it_stats'));
                 ID_TEST_12.setTutorialView();
+                ID_TEST_12.setTags([{tag: 'unruhig'}, {tag: 'verlassen'}, {tag: 'düster'},
+                    {tag: 'ruhig'}, {tag: 'warm'}, {tag: 'chaotisch'},
+                    {tag: 'traurig'}, {tag: 'durcheinander'}, {tag: 'einsam'}]);
                 viewLeftTutorialOverlay(
                     'Gegenspieler',
                     $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_test_12.html'),
                     'Weiter',
                     function () {
-                        enableTagFieldAndButton();
-                        var next_btn = $('#next_img');
-                        next_btn.html('Bestätigen');
-                        next_img_btn.prop('onclick', null).off('click');
-                        next_img_btn.click(startIDTest12Tutorial_part_2);
+                        enableNextButton();
                     },
                     true
                 );
@@ -2493,12 +2492,13 @@ function startIDTest12Tutorial(){
 /**
  * start the second part of the test_12 tutorial
  */
-
+/**
 function startIDTest12Tutorial_part_2() {
     // Check whether at least one tag was created
     var tags = $("#myTags").tagit("assignedTags");
-    var taggss = ['verlassen, unruhig, düster'];
-    ID_TEST_12.setTags(taggss);
+    ID_TEST_12.setTags([{tag: 'unruhig'}, {tag: 'verlassen'}, {tag: 'düster'},
+        {tag: 'ruhig'}, {tag: 'warm'}, {tag: 'chaotisch'},
+        {tag: 'traurig'}, {tag: 'durcheinander'}, {tag: 'einsam'}]);
     if (tags.length === 0) {
         viewInfoOverlay('' +
             'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
@@ -2522,7 +2522,7 @@ function startIDTest12Tutorial_part_2() {
         );
     }
 }
-
+*/
 
 
 /*
@@ -2627,7 +2627,7 @@ function enableNextButton() {
  * Defines what happens after a tag was added
  */
 function increaseVisiblePoints(event, ui) {
-    if (arrayContainsOnOfThoseElements(USER_GROUP, ['design_implemented', 'id_test_11'])) {
+    if (arrayContainsOnOfThoseElements(USER_GROUP, ['design_implemented', 'id_test_12'])) {
         // Trigger self designed stuff
         UDGE.afterTagAdded(event, ui);
     } else {
@@ -2643,7 +2643,7 @@ function increaseVisiblePoints(event, ui) {
 function decreaseVisiblePoints(event, ui) {
     // Decrease iff control variable is set
     if (DECREASE_POINTS) {
-        if (arrayContainsOnOfThoseElements(USER_GROUP, ['design_implemented', 'id_test_11'])) {
+        if (arrayContainsOnOfThoseElements(USER_GROUP, ['design_implemented', 'id_test_12'])) {
             // Trigger self designed stuff
             UDGE.afterTagRemoved(event, ui);
         } else {
