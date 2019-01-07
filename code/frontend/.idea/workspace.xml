@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a1bb5f-e8dd-4ab6-b6ff-141897f870a9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../CSVScripts/insertTagsInDB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/artifacts/code_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/artifacts/code_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/props/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/props/settings.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/target/classes/SQL/results_aggregations.SQL" beforeDir="false" afterPath="$PROJECT_DIR$/../API/target/classes/SQL/results_aggregations.SQL" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/target/classes/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/target/classes/settings.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CSVScripts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/aggregations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/aggregations.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/auswertung.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/auswertung.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_grouped.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_grouped.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_per_tag.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_per_tag.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/timings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/timings.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CSVScripts/auswertung.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/auswertung.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/dbconnect.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/dbconnect.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/updateTagsInDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/updateTagsInDB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TagJudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TagJudge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TagJudge/src/com/dextreem/tj/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TagJudge/src/com/dextreem/tj/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/statics.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/statics.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="253">
+              <caret line="14" column="72" lean-forward="true" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -72,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/statics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+            <state relative-caret-position="253">
+              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -266,6 +253,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -277,7 +265,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -503,11 +490,12 @@
       <workItem from="1544447304439" duration="649000" />
       <workItem from="1544511810914" duration="1139000" />
       <workItem from="1544597403191" duration="2021000" />
+      <workItem from="1545314270977" duration="1315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1459250000" />
+    <option name="totallyTimeSpent" value="1460565000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -519,7 +507,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1564805" />
@@ -985,15 +974,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/statics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        <state relative-caret-position="253">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="253">
+          <caret line="14" column="72" lean-forward="true" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
         </state>
       </provider>
     </entry>
