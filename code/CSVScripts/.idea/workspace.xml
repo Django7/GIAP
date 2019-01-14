@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea896ae2-1fb9-4534-8756-678e7b51a114" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/props/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/props/settings.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/target/classes/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/target/classes/settings.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSV/ratings_per_tag.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CSV/ratings_per_tag.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratings.js" beforeDir="false" afterPath="$PROJECT_DIR$/ratings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSV/auswertung.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CSV/auswertung.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auswertung.js" beforeDir="false" afterPath="$PROJECT_DIR$/auswertung.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,11 +48,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ratings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
+            <state relative-caret-position="1679">
+              <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/auswertung.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="468" column="54" selection-start-line="468" selection-start-column="54" selection-end-line="468" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -99,6 +112,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>changes</find>
+      <find>console.log</find>
+      <find>feasibili</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -114,13 +134,14 @@
         <option value="$PROJECT_DIR$/InsertTagsInDB.js" />
         <option value="$PROJECT_DIR$/dbconnect.properties" />
         <option value="$PROJECT_DIR$/updateTagsInDB.js" />
-        <option value="$PROJECT_DIR$/auswertung.js" />
         <option value="$PROJECT_DIR$/ratings.js" />
+        <option value="$PROJECT_DIR$/auswertung.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -171,7 +192,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.ratings.js">
+  <component name="RunManager" selected="Node.js.auswertung.js">
     <configuration name="aggregations.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/aggregations.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -189,10 +210,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.auswertung.js" />
         <item itemvalue="Node.js.ratings.js" />
         <item itemvalue="Node.js.aggregations.js" />
         <item itemvalue="Node.js.timings.js" />
-        <item itemvalue="Node.js.auswertung.js" />
         <item itemvalue="Node.js.insertTagsInDB.js" />
       </list>
     </recent_temporary>
@@ -222,12 +243,17 @@
       <workItem from="1544086723965" duration="1188000" />
       <workItem from="1544609209292" duration="5523000" />
       <workItem from="1545041833438" duration="2593000" />
-      <workItem from="1545115959603" duration="1716000" />
+      <workItem from="1545115959603" duration="2327000" />
+      <workItem from="1545217831593" duration="3888000" />
+      <workItem from="1545312953780" duration="2082000" />
+      <workItem from="1546441456014" duration="10075000" />
+      <workItem from="1546705449369" duration="2024000" />
+      <workItem from="1546855221406" duration="593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66843000" />
+    <option name="totallyTimeSpent" value="86116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -238,8 +264,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24414715" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39687848" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24414715" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39687848" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -266,23 +292,65 @@
           <line>33</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <condition expression="row.uid == 339" language="JavaScript" />
+          <url>file://$PROJECT_DIR$/auswertung.js</url>
+          <line>219</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
       <expression>
-        <expression-string>row.uid == 503</expression-string>
+        <expression-string>row.uid == 339</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>row.uid == 44</expression-string>
+        <expression-string>row.uid == 301</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>tag == &quot;düster&quot;</expression-string>
+        <expression-string>row.uid == 441</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row.uid == 426</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row.uid == 104</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row.uid == 132</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row.uid == 105</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row.uid == 103</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row.uid == 101</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>row.uid == 488</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -307,6 +375,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2461">
           <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ratings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1679">
+          <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -340,22 +422,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/auswertung.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="211" column="60" lean-forward="true" selection-start-line="211" selection-start-column="60" selection-end-line="211" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ratings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
+        <state relative-caret-position="356">
+          <caret line="468" column="54" selection-start-line="468" selection-start-column="54" selection-end-line="468" selection-end-column="54" />
         </state>
       </provider>
     </entry>

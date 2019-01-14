@@ -16,6 +16,7 @@ var sql =
     "    cond.gid,\n" +
     "    picTime.time AS basicTime,\n" +
     "    tutPicTime.time AS bonusTime,\n" +
+    "    overallPicTime.time AS overallTime,\n" +
     "    tutTags.numTags AS tutTags,\n" +
     "    normTags.numTags AS normTags,\n" +
     "    COALESCE(bonusTags.numTags, \"\") AS bonusTags,\n" +
@@ -29,12 +30,13 @@ var sql =
     "\tCOALESCE(bonusRatings.rating_1, \"\") AS bonus_rating_1,\n" +
     "\tCOALESCE(bonusRatings.rating_2, \"\") AS bonus_rating_2,\n" +
     "\tCOALESCE(bonusRatings.rating_avg, \"\") AS bonus_rating_avg,\n" +
+    "\tCOALESCE(numExtraRounds.extraRounds, \"\") AS extraRounds,\n" +
     "    demographic.json_answer AS demographic,\n" +
     "    concept.json_answer AS concept,\n" +
     "    imi.json_answer AS imi,\n" +
     "    implementation.json_answer AS implementation,\n" +
     "    bigFive.json_answer AS bigFive\n" +
-    "FROM ((((((((((((((\n" +
+    "FROM ((((((((((((((((\n" +
     "\t(SELECT uid, json_answer\n" +
     "    FROM questionnaires_users\n" +
     "    WHERE qid = 4) AS demographic\n" +
@@ -91,10 +93,19 @@ var sql =
     "    \n" +
     "    (SELECT image_log.uid, AVG(TIME_TO_SEC(timediff(end_time, start_time))) AS 'time'\n" +
     "\tFROM image_log\n" +
-    "\tWHERE iid > 19\n" +
+    "\tWHERE iid >= 19\n" +
     "\tGROUP BY uid) AS tutPicTime\n" +
     "    \n" +
     "    ON demographic.uid = tutPicTime.uid)\n" +
+    "    \n" +
+    "    LEFT JOIN\n" +
+    "    \n" +
+    "    (SELECT image_log.uid, AVG(TIME_TO_SEC(timediff(end_time, start_time))) AS 'time'\n" +
+    "\tFROM image_log\n" +
+    "\tWHERE iid > 3\n" +
+    "\tGROUP BY uid) AS overallPicTime\n" +
+    "    \n" +
+    "    ON demographic.uid = overallPicTime.uid)\n" +
     "    \n" +
     "    LEFT JOIN\n" +
     "    \n" +
@@ -146,7 +157,7 @@ var sql =
     "\t(SELECT uid, AVG(rating) AS rating_1, AVG(rating_2) AS rating_2, ((AVG(rating) + AVG(rating_2)) / 2) AS rating_avg\n" +
     "\tFROM image_tags\n" +
     "\tWHERE iid > 3 AND iid < 19\n" +
-    "\tGROUP BY uid) basicRatings\n" +
+    "\tGROUP BY uid) AS basicRatings\n" +
     "\t\n" +
     "\tON demographic.uid = basicRatings.uid)\n" +
     "\t\n" +
@@ -155,10 +166,19 @@ var sql =
     "\t(SELECT uid, AVG(rating) AS rating_1, AVG(rating_2) AS rating_2, ((AVG(rating) + AVG(rating_2)) / 2) AS rating_avg\n" +
     "\tFROM image_tags\n" +
     "\tWHERE iid >= 19\n" +
-    "\tGROUP BY uid) bonusRatings\n" +
+    "\tGROUP BY uid) AS bonusRatings\n" +
     "\t\n" +
     "\tON demographic.uid = bonusRatings.uid)\n" +
-    "    \n" +
+    "\t\n" +
+    "\tLEFT JOIN\n" +
+    "\t\n" +
+    "(SELECT \n" +
+    "\tuid, CEIL(COUNT(uid) / 5) AS extraRounds\n" +
+    "FROM\n" +
+    "\t(SELECT uid FROM image_tags WHERE iid >= 19 GROUP BY uid, iid) AS tagsPerImage\n" +
+    "GROUP BY uid) AS numExtraRounds" +
+    "\t\n" +
+    "\tON demographic.uid = numExtraRounds.uid)\n" +
     "    ORDER BY uid";
 
 dbConnection.connect(function(err) {
@@ -174,7 +194,7 @@ function createAuswertungCSV() {
     dbConnection.query(sql, [], function (err, results) {
         if(err) throw err;
 
-        var csvString = "user_id;condition;age;sex;nationality;url_where_from;typing_speed;gaming_time;avg_time_img_basic_bonus;avg_time_img_basic;avg_time_img_bonus;tags_tutorial;tags_basic;tags_bonus;tags_basic_and_bonus;extra_rounds;rating_tutorial_1;rating_tutorial_2;rating_tutorial_mean;rating_basic_1;rating_basic_2;rating_basic_mean;rating_extra_1;rating_extra_2;rating_extra_mean;dga_game_affinity;dga_video_game_frequency;dga_video_game_passion;dga_board_game_frequency;dga_board_game_passion;game_affinity;cs_satsified;cs_easiness;cs_motivation_for_others;cs_motivation_for_me;cs_relevance_of_setting;cs_already_motivated;imp_satisfied_with_concept;imp_satisfied_opt;imp_all_aspects_implemented;imp_satisfied_general;imp_motiv_design;imp_motiv_design_process;imp_optical_comment;imp_aspects_comment;satisfaction_with_implementation;more_or_less_tags_without_concept;feasibility;change_something_with_concept;changes;already_game_designed;tagging_already_known;BF_extraversion;BF_neuroticism;BF_openness_to_experience;BF_conscientiousness;BF_aggreeableness;IMI_interest_enjoyment;IMI_perceived_competence;IMI_perceived_choice;IMI_pressure_tension;SUS;comments\n";
+        var csvString = "user_id;condition;age;sex;sex[freetext];nationality;nationality[freetext];url_where_from;typing_speed;gaming_time;avg_time_img_basic_bonus;avg_time_img_basic;avg_time_img_bonus;tags_tutorial;tags_basic;tags_bonus;tags_basic_and_bonus;extra_rounds;rating_tutorial_1;rating_tutorial_2;rating_tutorial_mean;rating_basic_1;rating_basic_2;rating_basic_mean;rating_extra_1;rating_extra_2;rating_extra_mean;dga_game_affinity;dga_video_game_frequency;dga_video_game_passion;dga_board_game_frequency;dga_board_game_passion;game_affinity;cs_satsified;cs_easiness;cs_motivation_for_others;cs_motivation_for_me;cs_relevance_of_setting;cs_already_motivated;imp_satisfied_with_concept;imp_satisfied_opt;imp_all_aspects_implemented;imp_satisfied_general;imp_motiv_design;imp_motiv_design_process;imp_optical_comment;imp_aspects_comment;satisfaction_with_implementation;more_or_less_tags_without_concept;feasibility;change_something_with_concept;changes;already_game_designed;tagging_already_known;BF_extraversion;BF_neuroticism;BF_openness_to_experience;BF_conscientiousness;BF_aggreeableness;IMI_interest_enjoyment;IMI_perceived_competence;IMI_perceived_choice;IMI_pressure_tension;SUS;comments\n";
         results.forEach(function(row, idx) {
             csvString += cropDBEntry(row.uid, 0)+ ";";
             csvString += cropDBEntry(row.gid, 0)+ ";";
@@ -191,20 +211,28 @@ function createAuswertungCSV() {
             if(implementation == null) implementation = {design_implementation : {}};
             if(bigFive == null) bigFive = {};
 
+         /*   console.log(demographic);
+            console.log(concept);
+            console.log(imi);
+            console.log(implementation);
+            console.log(bigFive);
+*/
             csvString += getAge(checkJSONValue(demographic.age)) + ";";
             csvString += getGender(checkJSONValue(demographic.gender)) + ";";
+            csvString += checkJSONValue(demographic.gender) + ";";
             csvString += getNationality(checkJSONValue(demographic.nationality)) + ";";
+            csvString += checkJSONValue(demographic.nationality) + ";";
             csvString += getWhereFrom(checkJSONValue(demographic.url_where_from)) + ";";
             csvString += checkJSONValue(demographic.speed_test_value).split(" ")[0] + ";";
 
             csvString += checkJSONValue(concept.design_playtime) + ";";
-            if(!row.bonusTime == "0.0000") {
-                csvString += cropDBEntry((row.basicTime + row.bonusTime) / 2) + ";";
-                csvString += cropDBEntry(checkJSONValue(row.basicTime)) + ";";
-                csvString += cropDBEntry(checkJSONValue(row.bonusTime)) + ";";
+            if(!row.bonusTime == "0") {
+                csvString += cropDBEntry(row.overallTime, 4) + ";";
+                csvString += cropDBEntry(checkJSONValue(row.basicTime), 4) + ";";
+                csvString += cropDBEntry(checkJSONValue(row.bonusTime), 4) + ";";
             } else {
-                csvString += cropDBEntry(checkJSONValue(row.basicTime)) + ";";
-                csvString += cropDBEntry(checkJSONValue(row.basicTime)) + ";";
+                csvString += cropDBEntry(checkJSONValue(row.basicTime), 4) + ";";
+                csvString += cropDBEntry(checkJSONValue(row.basicTime), 4) + ";";
                 csvString += "" + ";";
             }
 
@@ -212,19 +240,17 @@ function createAuswertungCSV() {
             csvString += checkJSONValue(row.normTags) + ";";
             csvString += checkJSONValue(row.bonusTags) + ";";
             csvString += checkJSONValue(row.normAndBonusTags) + ";";
+            csvString += checkJSONValue(row.extraRounds) + ";";
 
-            if(row.normTags == row.normAndBonusTags) csvString += "" + ";"
-            else csvString += "1" + ";";
-
-            csvString += cropDBEntry(row.tut_rating_1) + ";";
-            csvString += cropDBEntry(row.tut_rating_2) + ";";
-            csvString += cropDBEntry(row.tut_rating_avg) + ";";
-            csvString += cropDBEntry(row.base_rating_1) + ";";
-            csvString += cropDBEntry(row.base_rating_2) + ";";
-            csvString += cropDBEntry(row.base_rating_avg) + ";";
-            csvString += cropDBEntry(row.bonus_rating_1) + ";";
-            csvString += cropDBEntry(row.bonus_rating_2) + ";";
-            csvString += cropDBEntry(row.bonus_rating_avg) + ";";
+            csvString += cropDBEntry(row.tut_rating_1, 4) + ";";
+            csvString += cropDBEntry(row.tut_rating_2, 4) + ";";
+            csvString += cropDBEntry(row.tut_rating_avg, 4) + ";";
+            csvString += cropDBEntry(row.base_rating_1, 4) + ";";
+            csvString += cropDBEntry(row.base_rating_2, 4) + ";";
+            csvString += cropDBEntry(row.base_rating_avg, 4) + ";";
+            csvString += cropDBEntry(row.bonus_rating_1, 4) + ";";
+            csvString += cropDBEntry(row.bonus_rating_2, 4) + ";";
+            csvString += cropDBEntry(row.bonus_rating_avg, 4) + ";";
 
             /*    if(demographic.speed_test_value !== undefined) {
                 csvString += parseInt(checkJSONValue(implementation.design_implementation.imp_motiv_design_process)) <= 3 ? 0 : 1;
@@ -284,13 +310,13 @@ function createAuswertungCSV() {
                     parseInt(implementation.design_implementation.imp_all_aspects_implemented) +
                     parseInt(implementation.design_implementation.imp_satisfied_general) +
                     parseInt(implementation.design_implementation.imp_motiv_design) +
-                    parseInt(implementation.design_implementation.imp_motiv_design_process)) / 6) + ";";
+                    parseInt(implementation.design_implementation.imp_motiv_design_process)) / 6, 9) + ";";
             } else csvString += "" + ";";
             csvString += getMoreTagsTendency(checkJSONValue(implementation.self_design_more_tags)) + ";";
 
             csvString += getDesignFeasibility(checkJSONValue(concept.design_feasibility)) + ";";
             csvString += getYesNo(checkJSONValue(implementation.change_something)) + ";";
-            csvString += checkJSONValue(implementation.changes).replace(/\n/g, "").replace(/;/g, "") + ";";
+            csvString += '"' + checkJSONValue(implementation.changes).replace(/\n/g, "").replace(/"/g, "\"\"") + '";';
             csvString += getYesNo(checkJSONValue(concept.design_game_already_designed)) + ";";
             csvString += getYesNo(checkJSONValue(concept.image_tagging_known_before)) + ";";
 
@@ -411,12 +437,12 @@ function getMoreTagsTendency(string) {
     if(string.includes("WENIGER")) return "0";
     if(string.includes("GLEICH")) return "1";
     if(string.includes("MEHR")) return "2";
-    return "";
+    return -1;
 }
 
 function getDesignFeasibility(string) {
     if(string == "") return string;
-    if(string.toLowerCase().includes("einschätzbar")) return 0;
+    if(string.toLowerCase().includes("einschätz")) return 0;
     if(string.toLowerCase().includes("leicht")) return 1;
     if(string.toLowerCase().includes("schwer")) return 2;
     if(string.toLowerCase().includes("umsetzbar")) return 3;
@@ -440,7 +466,8 @@ function getAge(string) {
     if(string =="46-52") return 6;
     if(string =="53-59") return 7;
     if(string.includes("60")) return 8;
-    return 0;
+    if(string.includes("nicht beantworten")) return 0;
+    return -1;
 }
 
 function getGender(string) {
@@ -448,7 +475,7 @@ function getGender(string) {
     if(string == "Männlich") return 2;
     if(string == "Weiblich") return 1;
     if(string.includes("Möchte ich nicht") || string.toLowerCase() == "keine angabe") return 0;
-    return string;
+    return 3;
 }
 
 function getNationality(string) {
@@ -459,7 +486,7 @@ function getNationality(string) {
     if(string.toLowerCase().includes("indisch")) return 4;
     if(string.toLowerCase().includes("österreich")) return 5;
     if(string.toLowerCase().includes("schweizerisch")) return 6;
-    if(string.toLowerCase().includes("algerisch")) return 7;
+    if(string.toLowerCase().includes("algerisch") || string.toLowerCase().includes("dz")) return 7;
     return string;
 }
 
