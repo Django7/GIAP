@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a1bb5f-e8dd-4ab6-b6ff-141897f870a9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../API/props/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/props/settings.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/target/classes/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/target/classes/settings.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/api_connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/api_connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,40 +20,41 @@
     <session id="-403694224">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.33" value="1" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.33" value="2" />
           <entry key="project.open.time.36" value="2" />
+          <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.52" value="1" />
           <entry key="project.open.time.74" value="2" />
           <entry key="project.open.time.80" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="3" />
-          <entry key="js" value="8" />
-          <entry key="ts" value="1" />
+          <entry key="html" value="10" />
+          <entry key="js" value="11" />
+          <entry key="ts" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="3" />
-          <entry key="JavaScript" value="8" />
-          <entry key="TypeScript" value="1" />
+          <entry key="HTML" value="10" />
+          <entry key="JavaScript" value="11" />
+          <entry key="TypeScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="235" />
-          <entry key="js" value="422" />
+          <entry key="js" value="428" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="235" />
-          <entry key="JavaScript" value="422" />
+          <entry key="JavaScript" value="428" />
         </counts>
       </usages-collector>
     </session>
@@ -63,17 +64,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+            <state relative-caret-position="17493">
+              <caret line="1031" column="69" selection-start-line="1031" selection-start-column="69" selection-end-line="1031" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/api_connection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2380">
-              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            <state relative-caret-position="374">
+              <caret line="172" column="12" selection-start-line="172" selection-start-column="12" selection-end-line="172" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -81,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1823">
+            <state relative-caret-position="2975">
               <caret line="175" column="58" selection-start-line="175" selection-start-column="58" selection-end-line="175" selection-end-column="58" />
             </state>
           </provider>
@@ -90,13 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/helpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="597" column="37" lean-forward="true" selection-start-line="597" selection-start-column="37" selection-end-line="597" selection-end-column="37" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="10149">
+              <caret line="597" column="37" selection-start-line="597" selection-start-column="37" selection-end-line="597" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -104,17 +100,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/btn_onclick_funs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="1904">
+              <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -122,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/html.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5321">
-              <caret line="313" column="9" selection-start-line="313" selection-start-column="9" selection-end-line="313" selection-end-column="9" />
+            <state relative-caret-position="1768">
+              <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -132,7 +128,7 @@
         <entry file="file://$PROJECT_DIR$/js/statics.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="48" lean-forward="true" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+              <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -285,7 +281,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -324,6 +320,17 @@
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="small_elements" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -562,12 +569,14 @@
       <workItem from="1547216382285" duration="3298000" />
       <workItem from="1547220569515" duration="763000" />
       <workItem from="1547308358614" duration="2690000" />
-      <workItem from="1547463680180" duration="1272000" />
+      <workItem from="1547463680180" duration="1974000" />
+      <workItem from="1547542729620" duration="5673000" />
+      <workItem from="1547645794878" duration="933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1480586000" />
+    <option name="totallyTimeSpent" value="1487894000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -579,8 +588,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22023809" />
@@ -753,36 +761,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/ge/id_points_96.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2921">
-          <caret line="127" column="39" lean-forward="true" selection-start-line="127" selection-start-column="39" selection-end-line="127" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_points_review_125.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_prizes_59.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/id_points_151.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1219">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="28" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_aquarium_339.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="54" selection-start-column="54" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_points_96.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_beat_friend_51_1.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -855,9 +833,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_pts_and_lb.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_welcome_design.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mst_id_beat_friend_51.html">
@@ -962,16 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/id_aquarium_339.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1073">
-          <caret line="201" column="10" selection-start-line="201" selection-start-column="10" selection-end-line="201" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_design_implemented.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -989,13 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="350" column="4" selection-start-line="350" selection-start-column="4" selection-end-line="350" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/typo/typo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1003,71 +961,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="988" column="4" selection-start-line="988" selection-start-column="4" selection-end-line="988" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_stop_survey.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_questionnaire_post_error.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_welcome_design.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mst_survey_frame.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mst_end.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cnt_mobile_device.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/questionnaires.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8007" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/id_aquarium_339.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5141">
+          <caret line="521" column="8" selection-start-line="521" selection-start-column="8" selection-end-line="521" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery-3.3.1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="-519">
           <caret line="3092" column="4" selection-start-line="3092" selection-start-column="4" selection-end-line="3092" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/html.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5321">
-          <caret line="313" column="9" selection-start-line="313" selection-start-column="9" selection-end-line="313" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/helpers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="597" column="37" lean-forward="true" selection-start-line="597" selection-start-column="37" selection-end-line="597" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="17493">
+          <caret line="1031" column="69" selection-start-line="1031" selection-start-column="69" selection-end-line="1031" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1823">
+        <state relative-caret-position="2975">
           <caret line="175" column="58" selection-start-line="175" selection-start-column="58" selection-end-line="175" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10149">
+          <caret line="597" column="37" selection-start-line="597" selection-start-column="37" selection-end-line="597" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/btn_onclick_funs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="1904">
+          <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/html.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        <state relative-caret-position="1768">
+          <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/statics.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="48" lean-forward="true" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/api_connection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2380">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        <state relative-caret-position="374">
+          <caret line="172" column="12" selection-start-line="172" selection-start-column="12" selection-end-line="172" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
         </state>
       </provider>
     </entry>

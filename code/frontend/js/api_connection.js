@@ -166,11 +166,11 @@ function interpret_login(content) {
         USER_GROUP = content['group'].split(',');
         setCookie('usr', USER_NAME);
         setCookie('pwd', USER_PWD);
-        for (var i = 0; i < USER_GROUP.length; i++) {
+  /**      for (var i = 0; i < USER_GROUP.length; i++) {
             if (USER_GROUP[i].indexOf("id_") === 0) {         // workaround for design_implemented being present
                 USER_GROUP.push("design_implemented");
             }
-        }
+        } */
         // Set the logout button visible
         // setVisible($('#btn_quit_study'));
 
