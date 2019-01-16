@@ -596,7 +596,7 @@ function getMainUserGroup() {
     // User groups in the implemented design conditions.
     for (var i = 0; i < USER_GROUP.length; i++) {
         if (USER_GROUP[i].indexOf("id_") === 0) {
-            return USER_GROUP[i];
+    return USER_GROUP[i];
         }
     }
 

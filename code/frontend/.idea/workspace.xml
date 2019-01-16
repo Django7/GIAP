@@ -2,25 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7a1bb5f-e8dd-4ab6-b6ff-141897f870a9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../API/.idea/artifacts/code_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/artifacts/code_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/dataSources/cb51b9ea-400c-4dfd-991c-9f552a193221.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/dataSources/cb51b9ea-400c-4dfd-991c-9f552a193221.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/dataSources/cb51b9ea-400c-4dfd-991c-9f552a193221/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/dataSources/cb51b9ea-400c-4dfd-991c-9f552a193221/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/dataSources/cb51b9ea-400c-4dfd-991c-9f552a193221/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/dataSources/cb51b9ea-400c-4dfd-991c-9f552a193221/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/dataSources/cb51b9ea-400c-4dfd-991c-9f552a193221/storage_v2/_src_/schema/phpmyadmin.q9h56A.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/dataSources/cb51b9ea-400c-4dfd-991c-9f552a193221/storage_v2/_src_/schema/phpmyadmin.q9h56A.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/dataSources/cb51b9ea-400c-4dfd-991c-9f552a193221/storage_v2/_src_/schema/test.kkQ2AA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/dataSources/cb51b9ea-400c-4dfd-991c-9f552a193221/storage_v2/_src_/schema/test.kkQ2AA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/auswertung.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/auswertung.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/main_ratings_per_tag_base.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/main_ratings_per_tag_base.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/statics.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/statics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/props/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/props/settings.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/target/classes/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/target/classes/settings.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/api_connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/api_connection.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,13 +16,65 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-403694224">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.33" value="2" />
+          <entry key="project.open.time.36" value="2" />
+          <entry key="project.open.time.43" value="1" />
+          <entry key="project.open.time.50" value="1" />
+          <entry key="project.open.time.52" value="1" />
+          <entry key="project.open.time.74" value="2" />
+          <entry key="project.open.time.80" value="1" />
+          <entry key="project.opened" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="10" />
+          <entry key="js" value="11" />
+          <entry key="ts" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="10" />
+          <entry key="JavaScript" value="11" />
+          <entry key="TypeScript" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="235" />
+          <entry key="js" value="428" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="235" />
+          <entry key="JavaScript" value="428" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1679">
-              <caret line="75" column="33" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+            <state relative-caret-position="17493">
+              <caret line="1031" column="69" selection-start-line="1031" selection-start-column="69" selection-end-line="1031" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/api_connection.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="172" column="12" selection-start-line="172" selection-start-column="12" selection-end-line="172" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -45,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4140">
-              <caret line="180" column="23" selection-start-line="180" selection-start-column="23" selection-end-line="180" selection-end-column="23" />
+            <state relative-caret-position="2975">
+              <caret line="175" column="58" selection-start-line="175" selection-start-column="58" selection-end-line="175" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -54,13 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/helpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13846">
-              <caret line="602" column="60" selection-start-line="602" selection-start-column="60" selection-end-line="602" selection-end-column="60" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="10149">
+              <caret line="597" column="37" selection-start-line="597" selection-start-column="37" selection-end-line="597" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -68,17 +100,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/btn_onclick_funs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+            <state relative-caret-position="1904">
+              <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+            <state relative-caret-position="357">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -86,38 +118,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/html.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9729">
-              <caret line="423" column="28" selection-start-line="423" selection-start-column="28" selection-end-line="423" selection-end-column="28" />
+            <state relative-caret-position="1768">
+              <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/statics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/ge/id_test_12.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/mst_id_test_12.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -210,7 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_review_210_2.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_review_210_lobby.html" />
         <option value="$PROJECT_DIR$/views/small_elements/mst_id_points_review_210_table.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_review_125_lobby.html" />
@@ -240,7 +250,6 @@
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_levels_498_lobby_no_tutorial_cheer.html" />
         <option value="$PROJECT_DIR$/views/mst_id_levels_498.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_levels_498_1.html" />
-        <option value="$PROJECT_DIR$/js/helpers.js" />
         <option value="$PROJECT_DIR$/js/html.js" />
         <option value="$PROJECT_DIR$/views/mst_id_points_151.html" />
         <option value="$PROJECT_DIR$/js/questionnaires.js" />
@@ -254,15 +263,23 @@
         <option value="$PROJECT_DIR$/views/mst_tagging_environment.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12_2.html" />
-        <option value="$PROJECT_DIR$/js/btn_onclick_funs.js" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/statics.js" />
         <option value="$PROJECT_DIR$/views/mst_id_test_12.html" />
         <option value="$PROJECT_DIR$/js/ge/game_element_helpers.js" />
         <option value="$PROJECT_DIR$/js/ge/id_test_12.js" />
-        <option value="$PROJECT_DIR$/js/statics.js" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/js/helpers.js" />
+        <option value="$PROJECT_DIR$/js/btn_onclick_funs.js" />
+        <option value="$PROJECT_DIR$/js/api_connection.js" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -298,6 +315,22 @@
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="small_elements" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -344,76 +377,76 @@
     </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.id_complex_115">
-    <configuration name="Achiever + Leaderboard + Goals + Statistics" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=xP6dLEk01B&amp;pwd=lqX2RHlK64">
+    <configuration name="Achiever + Leaderboard + Goals + Statistics" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=xP6dLEk01B&amp;pwd=lqX2RHlK64">
       <method v="2" />
     </configuration>
-    <configuration name="Compare_others" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=MqmlExleY7&amp;pwd=UbECwe0FlW">
+    <configuration name="Compare_others" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=MqmlExleY7&amp;pwd=UbECwe0FlW">
       <method v="2" />
     </configuration>
-    <configuration name="Compare_time" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=jTwGA7ij34&amp;pwd=SEiHsqb8ZY">
+    <configuration name="Compare_time" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=jTwGA7ij34&amp;pwd=SEiHsqb8ZY">
       <method v="2" />
     </configuration>
-    <configuration name="Levels_Farm" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=G4eomZlIjG&amp;pwd=KrZVvy1Lty">
+    <configuration name="Levels_Farm" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=G4eomZlIjG&amp;pwd=KrZVvy1Lty">
       <method v="2" />
     </configuration>
-    <configuration name="Progresse_etc" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=8SnYSosLTA&amp;pwd=vaw49X59Bm">
+    <configuration name="Progresse_etc" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=8SnYSosLTA&amp;pwd=vaw49X59Bm">
       <method v="2" />
     </configuration>
-    <configuration name="id_beat_friend_51" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=Tp7uxnfK2v&amp;pwd=s9VXKcvl2u">
+    <configuration name="id_beat_friend_51" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=Tp7uxnfK2v&amp;pwd=s9VXKcvl2u">
       <method v="2" />
     </configuration>
-    <configuration name="id_complex_115" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=qqv8OZ9rAh&amp;pwd=ft8DDwCp22">
+    <configuration name="id_complex_115" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=qqv8OZ9rAh&amp;pwd=ft8DDwCp22">
       <method v="2" />
     </configuration>
-    <configuration name="id_levels_498" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=u7qdb8PHhp&amp;pwd=s9SL5qRNkW">
+    <configuration name="id_levels_498" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=u7qdb8PHhp&amp;pwd=s9SL5qRNkW">
       <method v="2" />
     </configuration>
-    <configuration name="id_levels_498_laptop" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=fS4jLc5mM4&amp;pwd=LZVqDpiA4w">
+    <configuration name="id_levels_498_laptop" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=fS4jLc5mM4&amp;pwd=LZVqDpiA4w">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_151" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=1G69Vby7Ck&amp;pwd=YUqzoks1Ub">
+    <configuration name="id_points_151" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=1G69Vby7Ck&amp;pwd=YUqzoks1Ub">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_96" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=RhhDczKpjO&amp;pwd=ZphvrwZFVK">
+    <configuration name="id_points_96" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=RhhDczKpjO&amp;pwd=ZphvrwZFVK">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_aquarium_339" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=lyN1cx4inv&amp;pwd=BEHbXVyaht">
+    <configuration name="id_points_aquarium_339" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=lyN1cx4inv&amp;pwd=BEHbXVyaht">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_review_125" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=ebTraCmrnc&amp;pwd=A0wNO33Jw2">
+    <configuration name="id_points_review_125" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=ebTraCmrnc&amp;pwd=A0wNO33Jw2">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_review_210" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=bRVetPsY6Z&amp;pwd=LCiXGVDkKL">
+    <configuration name="id_points_review_210" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=bRVetPsY6Z&amp;pwd=LCiXGVDkKL">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_review_438" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=gCth9OFDFZ&amp;pwd=xs9NsCRdu2">
+    <configuration name="id_points_review_438" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=gCth9OFDFZ&amp;pwd=xs9NsCRdu2">
       <method v="2" />
     </configuration>
-    <configuration name="id_points_similar_61" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=0u43fGhvN7&amp;pwd=KQ4PIu310n">
+    <configuration name="id_points_similar_61" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=0u43fGhvN7&amp;pwd=KQ4PIu310n">
       <method v="2" />
     </configuration>
-    <configuration name="id_prizes_59" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=7Szd2Y2Txw&amp;pwd=tMbVvRnwTs">
+    <configuration name="id_prizes_59" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=7Szd2Y2Txw&amp;pwd=tMbVvRnwTs">
       <method v="2" />
     </configuration>
-    <configuration name="id_single_teams_407" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=AjUZsMSHaO&amp;pwd=m1gyqgBBsu">
+    <configuration name="id_single_teams_407" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=AjUZsMSHaO&amp;pwd=m1gyqgBBsu">
       <method v="2" />
     </configuration>
-    <configuration name="id_teams_points_369" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=OcWebSan3r&amp;pwd=pMl4DYcL9h">
+    <configuration name="id_teams_points_369" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=OcWebSan3r&amp;pwd=pMl4DYcL9h">
       <method v="2" />
     </configuration>
-    <configuration name="id_teams_simple_104" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=AeNUGmfZXv&amp;pwd=r8rbSiZdDw">
+    <configuration name="id_teams_simple_104" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=AeNUGmfZXv&amp;pwd=r8rbSiZdDw">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/index.html">
+    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/index.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html?usr=user_name&amp;pwd=safe1" type="JavascriptDebugType" uri="http://localhost:63342/frontend/index.html?usr=user_name&amp;pwd=safe1">
+    <configuration name="index.html?usr=user_name&amp;pwd=safe1" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/frontend/index.html?usr=user_name&amp;pwd=safe1">
       <method v="2" />
     </configuration>
-    <configuration name="test_box.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/test_box.html">
+    <configuration name="test_box.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/test_box.html">
       <method v="2" />
     </configuration>
-    <configuration name="test_box_quest.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/test_box_quest.html">
+    <configuration name="test_box_quest.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/frontend/test_box_quest.html">
       <method v="2" />
     </configuration>
     <list>
@@ -531,12 +564,19 @@
       <workItem from="1544597403191" duration="2021000" />
       <workItem from="1546436245829" duration="1170000" />
       <workItem from="1546605615779" duration="7118000" />
-      <workItem from="1547635043678" duration="2654000" />
+      <workItem from="1546946373599" duration="2093000" />
+      <workItem from="1546959366733" duration="2932000" />
+      <workItem from="1547216382285" duration="3298000" />
+      <workItem from="1547220569515" duration="763000" />
+      <workItem from="1547308358614" duration="2690000" />
+      <workItem from="1547463680180" duration="1974000" />
+      <workItem from="1547542729620" duration="5673000" />
+      <workItem from="1547645794878" duration="933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1470192000" />
+    <option name="totallyTimeSpent" value="1487894000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,17 +588,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15595363" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22023809" />
       <window_info id="Structure" order="2" weight="0.10800843" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.49255952" side_tool="true" weight="0.27704918" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49578503" weight="0.20217392" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.50744045" weight="0.27704918" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" sideWeight="0.49789253" weight="0.32826087" />
+      <window_info anchor="bottom" id="Find" order="4" sideWeight="0.49789253" visible="true" weight="0.32786885" />
       <window_info anchor="bottom" id="Run" order="5" />
       <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.43677557" weight="0.38152173" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
@@ -592,6 +631,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -607,12 +649,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/api_connection.js</url>
-          <line>282</line>
+          <line>286</line>
           <option name="timeStamp" value="285" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/api_connection.js</url>
-          <line>399</line>
+          <line>403</line>
           <option name="timeStamp" value="338" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -719,53 +761,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/questionnaires.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_151.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/id_points_96.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2921">
-          <caret line="127" column="39" lean-forward="true" selection-start-line="127" selection-start-column="39" selection-end-line="127" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="1008" column="14" selection-start-line="1008" selection-start-column="14" selection-end-line="1008" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_points_review_125.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_prizes_59.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/id_points_151.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1219">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="28" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_aquarium_339.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="54" selection-start-column="54" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_points_96.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_beat_friend_51_1.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -840,9 +835,6 @@
     <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_pts_and_lb.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_welcome_design.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/mst_id_beat_friend_51.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -889,13 +881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2465">
           <caret line="145" column="9" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/api_connection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="527" column="21" lean-forward="true" selection-start-line="527" selection-start-column="21" selection-end-line="527" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -952,87 +937,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/id_aquarium_339.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1073">
-          <caret line="201" column="10" selection-start-line="201" selection-start-column="10" selection-end-line="201" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_design_implemented.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1679">
-          <caret line="75" column="33" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/btn_onclick_funs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/html.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9729">
-          <caret line="423" column="28" selection-start-line="423" selection-start-column="28" selection-end-line="423" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ge/id_test_12.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+        <state relative-caret-position="328">
+          <caret line="34" column="51" lean-forward="true" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mst_id_test_12.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
+        <state relative-caret-position="85">
           <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/typo/typo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="332" column="20" selection-start-line="332" selection-start-column="20" selection-end-line="332" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="988" column="4" selection-start-line="988" selection-start-column="4" selection-end-line="988" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_stop_survey.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_questionnaire_post_error.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_welcome_design.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mst_survey_frame.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mst_end.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cnt_mobile_device.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/questionnaires.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8007" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/id_aquarium_339.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5141">
+          <caret line="521" column="8" selection-start-line="521" selection-start-column="8" selection-end-line="521" selection-end-column="8" />
           <folding>
-            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery-3.3.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-519">
+          <caret line="3092" column="4" selection-start-line="3092" selection-start-column="4" selection-end-line="3092" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17493">
+          <caret line="1031" column="69" selection-start-line="1031" selection-start-column="69" selection-end-line="1031" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4140">
-          <caret line="180" column="23" selection-start-line="180" selection-start-column="23" selection-end-line="180" selection-end-column="23" />
+        <state relative-caret-position="2975">
+          <caret line="175" column="58" selection-start-line="175" selection-start-column="58" selection-end-line="175" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/helpers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13846">
-          <caret line="602" column="60" selection-start-line="602" selection-start-column="60" selection-end-line="602" selection-end-column="60" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="10149">
+          <caret line="597" column="37" selection-start-line="597" selection-start-column="37" selection-end-line="597" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/btn_onclick_funs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/html.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/statics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+        <state relative-caret-position="17">
+          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/api_connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="172" column="12" selection-start-line="172" selection-start-column="12" selection-end-line="172" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
         </state>
       </provider>
     </entry>
