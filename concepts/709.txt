@@ -1,0 +1,8 @@
+Das Spiel sollte in Form einer Gamification (2-Spieler Modus) "spielbar" sein.
+Dadurch entsteht ein Wettkampfszenario, wo der Spieler gewinnt, der mehr passende Gefühle/Wörter zu diesem Bild findet. 
+Es sollte durch ein Rundensystem gewährleistet sein, dass die Begriffe nicht einfach in den Raum geworfen werden, wobei Überschneidungen bzw. Verwirrung entstehen könnte. 
+Es wird solange abwechselnd Wörter eingegeben, bis jemand ein falsches nennt oder dem Spieler keines mehr einfällt. 
+Das setzt natürlich voraus, dass im Vorhinein ein bestimmter Datenpool an Begriffen definiert sein muss, welche dann als korrekte/falsche Lösung gewertet werden kann. 
+(Was natürlich bei Gefühlen sich als schwer darstellen lässt, da die Bilder natürlich unterschiedliche Gefühle auslösen) 
+Es besteht pro Spiel (15 Bilder) die Möglichkeit, einen Joker zu benutzen, der das zuvor gezeigte Bild nocheinmal einblenden lässt. 
+Dadurch kann ein Spieler, dem nach ein paar gefundenen Wörtern/Gefühlen nicht mehr einfällt, nochmal die Chance haben neue Begriffe zu erfassen.

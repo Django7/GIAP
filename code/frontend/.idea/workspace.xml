@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c7a1bb5f-e8dd-4ab6-b6ff-141897f870a9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dialogs/dia_impressum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/dialogs/dia_impressum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dialogs/dia_mst_data_privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/dialogs/dia_mst_data_privacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/mst_welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/mst_welcome.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -254,7 +250,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -294,6 +290,12 @@
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="dialogs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -535,12 +537,12 @@
       <workItem from="1547542729620" duration="5673000" />
       <workItem from="1547645794878" duration="933000" />
       <workItem from="1547652436113" duration="163000" />
-      <workItem from="1547805549842" duration="757000" />
+      <workItem from="1547805549842" duration="1411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1488823000" />
+    <option name="totallyTimeSpent" value="1489477000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -555,11 +557,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15595363" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15595363" />
       <window_info id="Structure" order="2" weight="0.10800843" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.49255952" side_tool="true" weight="0.27704918" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49578503" weight="0.20178372" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.50744045" visible="true" weight="0.27647716" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" sideWeight="0.50744045" visible="true" weight="0.27647716" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" sideWeight="0.49789253" weight="0.32786885" />
       <window_info anchor="bottom" id="Run" order="5" />
