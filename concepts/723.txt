@@ -1,0 +1,7 @@
+Ein Arcade Rennspiel wie zum Beispiel Trackmania.
+Schnelle, kurze Srecken, die ich in einer bestimmten Zeit so oft wiederholen kann wie ich möchte, um meine Zeit zu verbessern.
+Verschiedene Hindernisse, die sich auch bewegen können und den Zufallsfaktor mit ins Spiel bringen. 
+Ebenfalls würde ich mir die Interaktion mit anderen Spielern wünschen. 
+Je nach dem wie viele auf einer Strecke fahren mit oder ohne Kollisionen, aber da es um die gefahrene Zeit geht eher komplett ohne Kollisionen, aber vielleicht auch mit anderen Möglichkeiten die Gegner zu beeinflussen. 
+Ob über die direkte Steuerung von Hindernissen oder durch Störgegenstände zum Beispiel. 
+Der Schnellste sollte Punkte für seinen Sieg bekommen und je nach Anzahl der Spieler möglicherweise in einer regionalen und überregionalen Rangliste aufsteigen können.
