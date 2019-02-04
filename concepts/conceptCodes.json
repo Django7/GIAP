@@ -6,13 +6,25 @@
 		"Anti-Cheating",
 		"Fairness",
 		"System Assistance"
-	]
+	],
+	
 	717 : [
-	"Points",
-	"Goals",
-	"Social Competition",
-	"Social Comparison",
-	"Multiplayer",
-	"Anti-Cheating"
+		"Points",
+		"Goals",
+		"Social Competition",
+		"Social Comparison",
+		"Multiplayer",
+		"Anti-Cheating"
+	],
+	
+	726 : [
+		"Social Competition",
+		"Social Comparison",
+		"Real Challenge",
+		"Goal",
+		"Virtual Character (other)",
+		"Progression",
+		"Multiplayer",
+		"Singleplayer"
 	]
 }
