@@ -1,0 +1,7 @@
+Abhängig von der Anzahl der genannten Begriffe bekommt der Spieler Einheiten. 
+Die Einheiten kämpfen dann gegen Wellen an Gegnern oder die Einheiten anderer Spieler. 
+Im Falle eines Singleplayer-Spiels sollten die Wellen bestenfalls einen steigenden Schwierigkeitsgrad aufweisen. 
+Optimalerweise sollte außerdem bei 15 Bildern alle 5 Bilder ein einzigartiger Gegner (Boss) auftauchen. 
+Dadurch würde die Motivation gesteigert bis zum 15 Bild zu überleben und es evtl. mehrfach zu probieren. 
+Eventuell lassen sich Upgrademöglichkeiten der Einheiten einbauen indem mehrere Einheiten zu einer Einheit einer höheren Stufe aufsteigt. 
+Außerdem könnte man die Begriffe kategorisieren und für die unterschiedlichen Kategorien auch unterschiedliche Einheiten ausgeben z.B. positive Emotionen und negative Emotionen oder nach länge der verwendeten Begriffe.

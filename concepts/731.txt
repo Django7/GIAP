@@ -1,0 +1,12 @@
+Ich hätte gern eine Bepunktung für die Anzahl an Worten, die ich pro Bild finde. 
+Dazu könnte man eine Statistik angeben, wie viele Wörter man im Schnitt pro Bild gefunden hat.
+
+Ich fände ein kompetitives Element gut, sodass ich mich mit anderen messen kann, z.B. anhand der Punkte. 
+Falls möglich wäre dann eine Art Kontrolle gut, dass nicht irgendwelche Begriffe (z.b. "in", "blabla") angegeben werden, nur um Punkte zu erzielen. 
+Wenn alle Spieler ihre Bepunktung abgegeben haben, wäre es interessant, die Adjektive der anderen zu sehen. 
+Spieler, die das gleiche Wort gewählt haben könnten Bonuspunkte bekommen.
+
+Außerdem fände ich es cool, wenn jeder Spieler für sein "Lieblingswort" wählen könnte, bzw. dass man angeben kann, wenn ein Wort "unpassend" ist.
+
+Wenn man mit anderen spielt, wäre ein Zeitlimit für die Angabe von Adjektiven sinnvoll. 
+Die Zeit sollte aber nicht zu kurz sein.
