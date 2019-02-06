@@ -72,6 +72,7 @@ var ID_TEAMS_POINTS_369;
 var ID_LEVELS_498;
 var ID_TEST_11;
 var ID_TEST_12;
+var ID_POINTS_731;
 
 /**
  * Sets the statics to their default values
@@ -149,4 +150,6 @@ function reinitGameElements() {
     ID_TEST_11.init('div_it_id_test_11');
     ID_TEST_12 = ID_Test_12();
     ID_TEST_12.init('div_it_id_test_12');
+    ID_POINTS_731 = ID_Points_731();
+    ID_POINTS_731.init('div_it_id_points_731');
 }

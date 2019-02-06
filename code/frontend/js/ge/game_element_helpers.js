@@ -180,6 +180,13 @@ function setUDGETutorial(main_user_group_id) {
             };
             break;
         }
+        case "id_points_731": {
+            UDGE.startTutorial = function () {
+                printLog("start id points 731 tutorial");
+                startIDPoints731Tutorial();
+            };
+            break;
+        }
         default: {
             UDGE.startTutorial = function () {
                 startBasicTutorial();
@@ -384,6 +391,18 @@ function setUDGETaggingEnvironment(main_user_group_id) {
             };
             break;
         }
+        case 'id_points_731': {
+            UDGE.setTaggingEnvironment = function (mst_params, fun_array, frame_only) {
+                mst_params['stats'] = true;
+                mst_params['id_points_731'] = true;
+                fun_array.push(function () {
+                    if (!frame_only) {
+                        ID_POINTS_731.setView();
+                    }
+                })
+            };
+            break;
+        }
         default: {
         }
     }
@@ -499,6 +518,14 @@ function setUDGEEnd(main_user_group_id) {
             };
             break;
         }
+        case "id_points_731": {
+            UDGE.setEnd = function (mst_params, fun_array) {
+                mst_params['leaderboard'] = true;
+                ID_POINTS_731.setPoints(getCookie('731_points'));
+                ID_POINTS_731.setEndView();
+            };
+            break;
+        }
         default: {
             UDGE.setEnd = function (mst_params, fun_array) {
             };
@@ -584,6 +611,13 @@ function setUDGEAfterGetImage(main_user_group_id) {
                 //get10MostUsedTagsForCurrentImage();
                 ID_TEST_12.setTags([{tag: 'unruhig'}, {tag: 'verlassen'}, {tag: 'düster'}, {tag: 'glücklich'}, {tag: 'ruhig'},
                     {tag: 'verträumt'}, {tag: 'dunkel'}, {tag: 'trist'}, {tag: 'warm'}]);
+            };
+            break;
+        }
+        case "id_points_731": {
+            UDGE.afterGetImage = function () {
+                get40MostUsedTagsForCurrentImage();
+                getDistinctMoodsForThisImage();
             };
             break;
         }
@@ -678,6 +712,13 @@ function setUDGEAfterPostImage(main_user_group_id) {
             };
             break;
         }
+        case 'id_points_731': {
+            UDGE.afterPostImage = function () {
+                ID_POINTS_731.storePoints();
+                ID_POINTS_731.generateNewPointsDistribution(1);
+            };
+            break;
+        }
         default: {
             UDGE.afterPostImage = function () {
             };
@@ -728,6 +769,13 @@ function setUDGEAfterFlipImage(main_user_group_id) {
         case 'id_test_12': {
             UDGE.afterFlipImage = function(inTutorial) {
                 ID_TEST_12.setTimer();
+                printLog('image flipped');
+            };
+            break;
+        }
+        case 'id_points_731': {
+            UDGE.afterFlipImage = function(inTutorial) {
+                ID_POINTS_731.startTimer();
                 printLog('image flipped');
             };
             break;
@@ -824,6 +872,12 @@ function setUDGEAfterTagAdded(main_user_group_id) {
             };
             break;
         }
+        case "id_points_731": {
+            UDGE.afterTagAdded = function(event, ui) {
+                ID_POINTS_731.addNewTag();
+            };
+            break;
+        }
         default: {
             UDGE.afterTagAdded = function (event, ui) {
             };
@@ -912,6 +966,12 @@ function setUDGEAfterTagRemoved(main_user_group_id) {
         case "id_test_12": {
             UDGE.afterTagRemoved = function(event, ui) {
                 ID_TEST_12.removeNewTag(ui.tagLabel);
+            };
+            break;
+        }
+        case "id_points_731": {
+            UDGE.afterTagRemoved = function(event, ui) {
+                ID_POINTS_731.removeNewTag();
             };
             break;
         }
@@ -1070,6 +1130,21 @@ function setUDGEOnInterpretCommand(main_user_group_id) {
         case "id_test_12": {
             UDGE.COMMAND_HANDLER['get_most_10_tags_for_this_image'] = function (content) {
                 ID_TEST_12.setTags(content['value']);
+            };
+            break;
+        }
+        case "id_points_731": {
+            UDGE.COMMAND_HANDLER['get_my_tag_count'] = function (content) {
+                ID_POINTS_731.setPoints(content['value'][0]['num']);
+            };
+            UDGE.COMMAND_HANDLER['get_most_40_tags_for_this_image'] = function (content) {
+                ID_POINTS_731.setOtherPlayersTags(content['value']);
+            };
+            UDGE.COMMAND_HANDLER['get_mood_count_for_this_image'] = function (content) {
+                if(content['value'][0] === undefined)
+                    ID_POINTS_731.setDistinctMoods(0);
+                else ID_POINTS_731.setDistinctMoods(content['value'][0]);
+                //ID_POINTS_731.setDistinctMoods(content['value'][0]['num']);
             };
             break;
         }
@@ -1615,6 +1690,33 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
                         }
                     }]
                 });
+            };
+            break;
+        }
+        case "id_points_731": {
+            UDGE.onTutorialFinished = function (event, ui) {
+                BootstrapDialog.show({
+                    title: 'Nickname',
+                    message: $('<div>Bitte gebe hier deinen Nicknamen (1-8 Zeichen) ein, der später im Leaderboard erscheinen soll.</div>' +
+                        '<input class="pt-2 pb-2" type="text" id="dia_nickname_id_points">' +
+                        '<div id="dia_nickname_id_points_error" class="invisible txt_red">Bitte gebe einen Nicknamen mit 1-8 Zeichen an.</div>'),
+                    closable: false,
+                    buttons: [{
+                        label: 'Weiter',
+                        action: function (dialogItself) {
+                            var nick = $('#dia_nickname_id_points').val();
+                            if (nick.length > 0 && nick.length < 9) {
+                                setCookie('lb_username', nick);
+                                dialogItself.close();
+                                deleteCookie('731_points');
+                                viewTutorialFinished();
+                            } else {
+                                setVisible($('#dia_nickname_id_points_error'));
+                            }
+                        }
+                    }]
+                });
+
             };
             break;
         }
@@ -2523,6 +2625,75 @@ function startIDTest12Tutorial_part_2() {
     }
 }
 */
+
+/**
+ * Start the test 11 tutorial
+ */
+function startIDPoints731Tutorial() {
+    var next_img_btn = $('#next_img');
+    next_img_btn.prop('onclick', null).off('click');
+
+    // Create an example view of the right view
+    ID_POINTS_731 = ID_Points_731();
+    ID_POINTS_731.init('div_it_id_points_731');
+
+    viewRightTutorialOverlay(
+        'Prinzip des Bilder-Taggens',
+        $('<div></div>').load('views/dialogs/dia_tutorial_design_implemented.html'),
+        'Weiter',
+        function () {
+            flipIn(5);
+            setTimeout(function () {
+                setVisible($('#div_it_stats'));
+                ID_POINTS_731.setTutorialView();
+                viewLeftTutorialOverlay(
+                    'Der Durchschnitt',
+                    $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_points_731.html'),
+                    'Weiter',
+                    function () {
+                        enableTagFieldAndButton();
+                        var next_btn = $('#next_img');
+                        next_btn.html('Bestätigen');
+                        next_img_btn.prop('onclick', null).off('click');
+                        next_img_btn.click(startIDPoints731Tutorial_part_2);
+                    },
+                    true
+                );
+            }, 5000);
+        },
+        true);
+}
+
+function startIDPoints731Tutorial_part_2() {
+    // Check whether at least one tag was created
+    var tags = $("#myTags").tagit("assignedTags");
+    if (tags.length === 0) {
+        viewInfoOverlay('' +
+            'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
+            'Diese Einschränkung wird im regulären Ablauf wegfallen.');
+    } else {
+        // Disabling the tag field
+        disableTagField();
+
+        // Changing the button
+        var next_img_btn = $('#next_img');
+        next_img_btn.html('Bestätigt');
+        ID_POINTS_731.displayPoints();
+        viewLeftTutorialOverlay(
+            'Wörter anderer Spieler',
+            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_points_731_2.html'),
+            'Weiter',
+            function () {
+                disableTagFieldAndNextButton();
+                $('#next_img_points_731').prop('onclick', null).off('click');
+                $('#next_img_points_731').click(function() {
+                    btn_oc_viewTutorialFinished();
+                });
+            },
+            true
+        );
+    }
+}
 
 
 /*
