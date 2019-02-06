@@ -26,5 +26,16 @@
 		"Progression",
 		"Multiplayer",
 		"Singleplayer"
+	],
+
+	731 : [
+		"Points",
+		"Social Competition",
+		"Social Comparison",
+		"Anti-Cheating",
+		"Fairness",
+		"Bonus",
+		"System Assistance",
+		"Peer Pressure"
 	]
 }
