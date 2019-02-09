@@ -618,6 +618,7 @@ function setUDGEAfterGetImage(main_user_group_id) {
             UDGE.afterGetImage = function () {
                 get40MostUsedTagsForCurrentImage();
                 getDistinctMoodsForThisImage();
+                ID_POINTS_731.renewImgCount();
             };
             break;
         }

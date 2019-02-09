@@ -166,6 +166,7 @@ function interpret_login(content) {
         USER_GROUP = content['group'].split(',');
         setCookie('usr', USER_NAME);
         setCookie('pwd', USER_PWD);
+        setCookie('imgLeft', content['b_images_left']);
   /**      for (var i = 0; i < USER_GROUP.length; i++) {
             if (USER_GROUP[i].indexOf("id_") === 0) {         // workaround for design_implemented being present
                 USER_GROUP.push("design_implemented");
@@ -294,6 +295,7 @@ function interpret_get_image(content) {
         printLog('New image arrived: ' + imageName);
         CURRENT_IMAGE = imageName;
         B_IMGS_LEFT = content['b_images_left'];
+        setCookie('imgLeft', B_IMGS_LEFT);
         if (!ADD_TASKS) {
             printLog('Images left (including this one): ' + content['b_images_left']);
         } else {

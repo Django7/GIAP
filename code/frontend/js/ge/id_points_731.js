@@ -3,7 +3,9 @@ ID_Points_731 = function () {
     var ELT = "",
         AVERAGE_TAGS = (Math.random() * 2 + 6).toFixed(2),
         DISTINCT_TAGS = 0,
+        TAG_COUNT_ALL = 0,
         YOUR_TAGS = 0,
+        PIC_COUNT = 1,
         OTHER_TAGS = [],
         IN_TUTORIAL = false,
         IN_END = false,
@@ -23,15 +25,19 @@ ID_Points_731 = function () {
 
         setView = function() {
             $.get('views/mst_id_points_731.html', function (template) {
-                YOUR_TAGS = 0;
-                AVERAGE_TAGS = (Math.random() * 2 + 6).toFixed(2);
+                if(TAG_COUNT_ALL == 0 && getCookie("731_count_tags_all") != "") {
+                    TAG_COUNT_ALL = parseInt(getCookie("731_count_tags_all"));
+                }
+                AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
 
                 var params = {
                     points: POINTS,
+                    avgTags : AVERAGE_TAGS,
                     end_screen: false
                 };
                 var rendered = Mustache.render(template, params);
                 $('#' + ELT).html(rendered);
+                console.log(AVERAGE_TAGS);
                 $('#averageTags').text(AVERAGE_TAGS);
 
                 var next_btn = $('#next_img');
@@ -47,8 +53,10 @@ ID_Points_731 = function () {
         },
 
         addNewTag = function() {
+            TAG_COUNT_ALL++;
             YOUR_TAGS++;
-            $('#yourTags').text(YOUR_TAGS);
+            AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
+            $('#yourTags').text(AVERAGE_TAGS);
 
             POINTS += POINTS_INCR;
             setPoints(POINTS);
@@ -56,8 +64,10 @@ ID_Points_731 = function () {
         },
 
         removeNewTag = function() {
+            TAG_COUNT_ALL--;
             YOUR_TAGS--;
-            $('#yourTags').text(YOUR_TAGS);
+            AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
+            $('#yourTags').text(AVERAGE_TAGS);
 
             POINTS -= POINTS_INCR;
             setPoints(POINTS);
@@ -112,7 +122,7 @@ ID_Points_731 = function () {
                 var leaderboard = OTHERS;
                 leaderboard.push([YOUR_TAGS * 100, username, '#5b67f1', 1]);
 
-                var lb = $('#div_it_id_test_11_lb');
+                var lb = $('#div_it_id_points_731_lb');
                 lb.html('');
                 lb.jqBarGraph({
                     data: leaderboard,
@@ -140,7 +150,8 @@ ID_Points_731 = function () {
         },
 
         storePoints = function() {
-            setCookie('11_points', POINTS);
+            setCookie('731_points', POINTS);
+            setCookie('731_count_tags_all', TAG_COUNT_ALL);
         },
 
         get3randTags = function () {
@@ -205,6 +216,17 @@ ID_Points_731 = function () {
                 });
             });
 
+        },
+
+        startTimer = function() {
+
+        },
+
+        renewImgCount = function() {
+            if(getCookie("imgLeft") != "") {
+                PIC_COUNT = 15 - parseInt(getCookie("imgLeft")) + 1;
+            }
+            YOUR_TAGS = 0;
         };
 
     /**
@@ -223,6 +245,8 @@ ID_Points_731 = function () {
         storePoints : storePoints,
         setUsername : setUsername,
         setEndView : setEndView,
-        setPoints : setPoints
+        setPoints : setPoints,
+        startTimer : startTimer,
+        renewImgCount : renewImgCount
     };
 };
