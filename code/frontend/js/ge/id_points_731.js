@@ -1,7 +1,26 @@
 ID_Points_731 = function () {
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", 'dictionaries/de/de.dic', false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                var allTextArr = allText.split('\n');
+                allTextArr.forEach(function(line, idx) {
+                    if(idx < 15) return;
+                    DICT.push(line.split('/')[0].toLowerCase());
+                });
+            }
+        }
+    };
+    var DICT = [];
+    rawFile.send(null);
+
     /* The goals list and the element to display the goals in */
     var ELT = "",
-        AVERAGE_TAGS = (Math.random() * 2 + 6).toFixed(2),
         DISTINCT_TAGS = 0,
         TAG_COUNT_ALL = 0,
         YOUR_TAGS = 0,
@@ -9,6 +28,7 @@ ID_Points_731 = function () {
         OTHER_TAGS = [],
         IN_TUTORIAL = false,
         IN_END = false,
+        TIMER,
         OTHERS = [
             [(Math.random() * 14).toFixed(0) * 100, 'ProFlamer', '#607cae', 0],
             [(Math.random() * 14).toFixed(0) * 100, 'McSwizzle', '#607cae', 0],
@@ -28,22 +48,24 @@ ID_Points_731 = function () {
                 if(TAG_COUNT_ALL == 0 && getCookie("731_count_tags_all") != "") {
                     TAG_COUNT_ALL = parseInt(getCookie("731_count_tags_all"));
                 }
-                AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
+                var AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
 
                 var params = {
                     points: POINTS,
                     avgTags : AVERAGE_TAGS,
+                    min : 5,
+                    sec : "00",
                     end_screen: false
                 };
                 var rendered = Mustache.render(template, params);
                 $('#' + ELT).html(rendered);
-                console.log(AVERAGE_TAGS);
                 $('#averageTags').text(AVERAGE_TAGS);
 
                 var next_btn = $('#next_img');
                 next_btn.html('Bestätigen');
                 next_btn.prop('onclick', null).off('click');
-                next_btn.click(displayPoints)
+                next_btn.click(displayPoints);
+                next_btn.click(stopTimer);
             });
         },
 
@@ -52,25 +74,30 @@ ID_Points_731 = function () {
             setView();
         },
 
-        addNewTag = function() {
+        addNewTag = function(label) {
+            if(!DICT.includes(label.toLowerCase())) {
+                $('#myTags li:nth-last-child(2)').css({'background-color' : 'indianred'});
+                YOUR_TAGS--;
+            }
             TAG_COUNT_ALL++;
             YOUR_TAGS++;
-            AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
+            var AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
             $('#yourTags').text(AVERAGE_TAGS);
 
             POINTS += POINTS_INCR;
-            setPoints(POINTS);
             adaptLeaderboard();
         },
 
-        removeNewTag = function() {
+        removeNewTag = function(label) {
+            if(!DICT.includes(label.toLowerCase())) {
+                YOUR_TAGS++;
+            }
             TAG_COUNT_ALL--;
             YOUR_TAGS--;
-            AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
+            var AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
             $('#yourTags').text(AVERAGE_TAGS);
 
             POINTS -= POINTS_INCR;
-            setPoints(POINTS);
             adaptLeaderboard();
         },
 
@@ -91,18 +118,31 @@ ID_Points_731 = function () {
 
                 // Update points
                 POINTS += $("#myTags").tagit("assignedTags").length;
-                var rateTags = get3randTags();
 
                 var params = {
                     end_page: false,
                     points: POINTS,
-                    anyTags : rateTags[0] !== null,
-                    tag1 : rateTags[0] !== null,
-                    tag2 : rateTags[1] !== null,
-                    tag3 : rateTags[2] !== null,
-                    tag1text : rateTags[0],
-                    tag2text : rateTags[1],
-                    tag3text : rateTags[2]
+                    anyTags : OTHER_TAGS[0] !== null,
+                    tag1 : OTHER_TAGS[0] !== null,
+                    tag2 : OTHER_TAGS[1] !== null,
+                    tag3 : OTHER_TAGS[2] !== null,
+                    tag4 : OTHER_TAGS[3] !== null,
+                    tag5 : OTHER_TAGS[4] !== null,
+                    tag6 : OTHER_TAGS[5] !== null,
+                    tag7 : OTHER_TAGS[6] !== null,
+                    tag8 : OTHER_TAGS[7] !== null,
+                    tag9 : OTHER_TAGS[8] !== null,
+                    tag10 : OTHER_TAGS[9] !== null,
+                    tag1text : OTHER_TAGS[0],
+                    tag2text : OTHER_TAGS[1],
+                    tag3text : OTHER_TAGS[2],
+                    tag4text : OTHER_TAGS[3],
+                    tag5text : OTHER_TAGS[4],
+                    tag6text : OTHER_TAGS[5],
+                    tag7text : OTHER_TAGS[6],
+                    tag8text : OTHER_TAGS[7],
+                    tag9text : OTHER_TAGS[8],
+                    tag10text : OTHER_TAGS[9]
                 };
 
                 // Render the statistics, print them and activate the buttons
@@ -120,6 +160,16 @@ ID_Points_731 = function () {
 
                 // Display the ranking
                 var leaderboard = OTHERS;
+
+                $("#myTags").tagit("assignedTags").forEach(function(tag) {
+                    OTHER_TAGS.forEach(function(otherTag, idx) {
+                        if(tag == otherTag) {
+                            YOUR_TAGS++;
+                            $("#tag" + (idx + 1).toString()).css({'background-color' : 'darkorange'});
+                        }
+                    })
+                });
+
                 leaderboard.push([YOUR_TAGS * 100, username, '#5b67f1', 1]);
 
                 var lb = $('#div_it_id_points_731_lb');
@@ -141,28 +191,18 @@ ID_Points_731 = function () {
         setOtherPlayersTags = function(others) {
             OTHER_TAGS = [];
             for(var i = 0; i < others.length; i++) {
-                OTHER_TAGS.push(others[i].top40tags);
+                OTHER_TAGS.push(others[i].tag);
             }
         },
 
         setDistinctMoods = function(num) {
-            DISTINCT_TAGS = num.numDistTags;
+            DISTINCT_TAGS = num.num;
         },
 
         storePoints = function() {
             setCookie('731_points', POINTS);
             setCookie('731_count_tags_all', TAG_COUNT_ALL);
-        },
-
-        get3randTags = function () {
-            var tag1, tag2, tag3;
-            var tempTags = shuffleArray(OTHER_TAGS).splice(0, 3);
-
-            tag1 = tempTags[0] === undefined ? null : tempTags[0];
-            tag2 = tempTags[1] === undefined ? null : tempTags[1];
-            tag3 = tempTags[2] === undefined ? null : tempTags[2];
-
-            return [tag1, tag2, tag3];
+            clearInterval(TIMER);
         },
 
         setUsername = function(name) {
@@ -204,7 +244,7 @@ ID_Points_731 = function () {
                     var leaderboard = OTHERS;
                     leaderboard.push([POINTS * 100, username, '#5b67f1', 1]);
 
-                    var lb = $('#div_it_id_test_11_lb');
+                    var lb = $('#div_it_id_points_731_lb');
                     lb.html('');
                     lb.jqBarGraph({
                         data: leaderboard,
@@ -219,7 +259,26 @@ ID_Points_731 = function () {
         },
 
         startTimer = function() {
+            var min = 5, sec = 0;
+            TIMER = setInterval(function() {
+                sec--;
+                if(sec < 0) {
+                    min --;
+                    if(min < 0) {
+                        $('#next_img').click();
+                        stopTimer();
+                        return;
+                    }
+                    sec = 59;
+                }
 
+                $('#id_731_minutes').text(min);
+                $('#id_731_seconds').text(sec < 10 ? "0" + sec.toString() : sec);
+            }, 1000);
+        },
+
+        stopTimer = function() {
+            clearInterval(TIMER);
         },
 
         renewImgCount = function() {

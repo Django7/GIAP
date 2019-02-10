@@ -616,7 +616,7 @@ function setUDGEAfterGetImage(main_user_group_id) {
         }
         case "id_points_731": {
             UDGE.afterGetImage = function () {
-                get40MostUsedTagsForCurrentImage();
+                get10MostUsedTagsForCurrentImage();
                 getDistinctMoodsForThisImage();
                 ID_POINTS_731.renewImgCount();
             };
@@ -875,7 +875,7 @@ function setUDGEAfterTagAdded(main_user_group_id) {
         }
         case "id_points_731": {
             UDGE.afterTagAdded = function(event, ui) {
-                ID_POINTS_731.addNewTag();
+                ID_POINTS_731.addNewTag(ui.tagLabel);
             };
             break;
         }
@@ -972,7 +972,7 @@ function setUDGEAfterTagRemoved(main_user_group_id) {
         }
         case "id_points_731": {
             UDGE.afterTagRemoved = function(event, ui) {
-                ID_POINTS_731.removeNewTag();
+                ID_POINTS_731.removeNewTag(ui.tagLabel);
             };
             break;
         }
@@ -1138,14 +1138,14 @@ function setUDGEOnInterpretCommand(main_user_group_id) {
             UDGE.COMMAND_HANDLER['get_my_tag_count'] = function (content) {
                 ID_POINTS_731.setPoints(content['value'][0]['num']);
             };
-            UDGE.COMMAND_HANDLER['get_most_40_tags_for_this_image'] = function (content) {
+            UDGE.COMMAND_HANDLER['get_most_10_tags_for_this_image'] = function (content) {
                 ID_POINTS_731.setOtherPlayersTags(content['value']);
             };
             UDGE.COMMAND_HANDLER['get_mood_count_for_this_image'] = function (content) {
                 if(content['value'][0] === undefined)
                     ID_POINTS_731.setDistinctMoods(0);
                 else ID_POINTS_731.setDistinctMoods(content['value'][0]);
-                //ID_POINTS_731.setDistinctMoods(content['value'][0]['num']);
+                //ID_TEST_11.setDistinctMoods(content['value'][0]['num']);
             };
             break;
         }
@@ -1710,6 +1710,7 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
                                 setCookie('lb_username', nick);
                                 dialogItself.close();
                                 deleteCookie('731_points');
+                                deleteCookie('731_count_tags_all');
                                 viewTutorialFinished();
                             } else {
                                 setVisible($('#dia_nickname_id_points_error'));
