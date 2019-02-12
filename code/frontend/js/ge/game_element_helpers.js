@@ -716,7 +716,7 @@ function setUDGEAfterPostImage(main_user_group_id) {
         case 'id_points_731': {
             UDGE.afterPostImage = function () {
                 ID_POINTS_731.storePoints();
-                ID_POINTS_731.generateNewPointsDistribution(1);
+                ID_POINTS_731.generateNewPointsDistribution();
             };
             break;
         }
@@ -2681,6 +2681,7 @@ function startIDPoints731Tutorial_part_2() {
         var next_img_btn = $('#next_img');
         next_img_btn.html('Bestätigt');
         ID_POINTS_731.displayPoints();
+        ID_POINTS_731.stopTimer();
         viewLeftTutorialOverlay(
             'Wörter anderer Spieler',
             $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_points_731_2.html'),

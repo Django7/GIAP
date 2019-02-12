@@ -30,11 +30,15 @@ ID_Points_731 = function () {
         IN_END = false,
         TIMER,
         OTHERS = [
-            [(Math.random() * 14).toFixed(0) * 100, 'ProFlamer', '#607cae', 0],
-            [(Math.random() * 14).toFixed(0) * 100, 'McSwizzle', '#607cae', 0],
-            [(Math.random() * 14).toFixed(0) * 100, 'Xycor', '#607cae', 0],
-            [(Math.random() * 14).toFixed(0) * 100, 'McDaSchu', '#607cae', 0]
+            [0, 'verdani', '#607cae', 0],
+            [0, 'neo23', '#607cae', 0],
+            [0, 'legolas', '#607cae', 0],
+            [0, 'anork85', '#607cae', 0]
         ],
+        pointsVerd = (Math.random() * 14).toFixed(0) * 100,
+        pointsNeo = (Math.random() * 14).toFixed(0) * 100,
+        pointsLego = (Math.random() * 14).toFixed(0) * 100,
+        pointsAnork = (Math.random() * 14).toFixed(0) * 100,
 
         /**
          * Initializes the compare element
@@ -45,21 +49,25 @@ ID_Points_731 = function () {
 
         setView = function() {
             $.get('views/mst_id_points_731.html', function (template) {
+                $('#id_731_time_text').css({'visibility' : 'visible'});
                 if(TAG_COUNT_ALL == 0 && getCookie("731_count_tags_all") != "") {
                     TAG_COUNT_ALL = parseInt(getCookie("731_count_tags_all"));
+                }
+                if(getCookie("imgLeft") != "") {
+                    PIC_COUNT = 15 - parseInt(getCookie("imgLeft")) + 1;
                 }
                 var AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
 
                 var params = {
                     points: POINTS,
-                    avgTags : AVERAGE_TAGS,
+                    avgTags : AVERAGE_TAGS.toFixed(2),
                     min : 5,
                     sec : "00",
                     end_screen: false
                 };
                 var rendered = Mustache.render(template, params);
                 $('#' + ELT).html(rendered);
-                $('#averageTags').text(AVERAGE_TAGS);
+                $('#averageTags').text(AVERAGE_TAGS.toFixed(2));
 
                 var next_btn = $('#next_img');
                 next_btn.html('Bestätigen');
@@ -75,42 +83,48 @@ ID_Points_731 = function () {
         },
 
         addNewTag = function(label) {
-            if(!DICT.includes(label.toLowerCase())) {
+            if(!isInDICT(label.toLowerCase())) {
                 $('#myTags li:nth-last-child(2)').css({'background-color' : 'indianred'});
                 YOUR_TAGS--;
             }
             TAG_COUNT_ALL++;
             YOUR_TAGS++;
             var AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
-            $('#yourTags').text(AVERAGE_TAGS);
+            $('#yourTags').text(AVERAGE_TAGS.toFixed(2));
 
             POINTS += POINTS_INCR;
             adaptLeaderboard();
         },
 
         removeNewTag = function(label) {
-            if(!DICT.includes(label.toLowerCase())) {
+            if(!isInDICT(label.toLowerCase())) {
                 YOUR_TAGS++;
             }
             TAG_COUNT_ALL--;
             YOUR_TAGS--;
             var AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
-            $('#yourTags').text(AVERAGE_TAGS);
+            $('#yourTags').text(AVERAGE_TAGS.toFixed(2));
 
             POINTS -= POINTS_INCR;
             adaptLeaderboard();
         },
 
-        generateNewPointsDistribution = function(mult) {
+        generateNewPointsDistribution = function() {
+            pointsVerd += (Math.random() * 14).toFixed(0) * 100;
+            pointsNeo += (Math.random() * 14).toFixed(0) * 100;
+            pointsLego += (Math.random() * 14).toFixed(0) * 100;
+            pointsAnork += (Math.random() * 14).toFixed(0) * 100;
+
             OTHERS = [
-                [(Math.random() * 14).toFixed(0) * 100 * mult, 'ProFlamer', '#607cae', 0],
-                [(Math.random() * 14).toFixed(0) * 100 * mult, 'McSwizzle', '#607cae', 0],
-                [(Math.random() * 14).toFixed(0) * 100 * mult, 'Xycor', '#607cae', 0],
-                [(Math.random() * 14).toFixed(0) * 100 * mult, 'McDaSchu', '#607cae', 0]
+                [pointsVerd, 'verdani', '#607cae', 0],
+                [pointsNeo, 'neo23', '#607cae', 0],
+                [pointsLego, 'legolas', '#607cae', 0],
+                [pointsAnork, 'anork85', '#607cae', 0]
             ]
         },
 
         displayPoints = function() {
+            $('#id_731_time_text').css({'visibility' : 'hidden'});
             $.get('views/small_elements/mst_id_points_731_table.html', function (template) {
                 disableTagFieldAndNextButton();
                 var next_img_btn = $('#next_img');
@@ -119,37 +133,47 @@ ID_Points_731 = function () {
                 // Update points
                 POINTS += $("#myTags").tagit("assignedTags").length;
 
+                if(IN_TUTORIAL) {
+                    OTHER_TAGS.push('unruhig');
+                    OTHER_TAGS.push('verlassen');
+                    OTHER_TAGS.push('düster');
+                }
+
                 var params = {
                     end_page: false,
                     points: POINTS,
-                    anyTags : OTHER_TAGS[0] !== null,
-                    tag1 : OTHER_TAGS[0] !== null,
-                    tag2 : OTHER_TAGS[1] !== null,
-                    tag3 : OTHER_TAGS[2] !== null,
-                    tag4 : OTHER_TAGS[3] !== null,
-                    tag5 : OTHER_TAGS[4] !== null,
-                    tag6 : OTHER_TAGS[5] !== null,
-                    tag7 : OTHER_TAGS[6] !== null,
-                    tag8 : OTHER_TAGS[7] !== null,
-                    tag9 : OTHER_TAGS[8] !== null,
-                    tag10 : OTHER_TAGS[9] !== null,
-                    tag1text : OTHER_TAGS[0],
-                    tag2text : OTHER_TAGS[1],
-                    tag3text : OTHER_TAGS[2],
-                    tag4text : OTHER_TAGS[3],
-                    tag5text : OTHER_TAGS[4],
-                    tag6text : OTHER_TAGS[5],
-                    tag7text : OTHER_TAGS[6],
-                    tag8text : OTHER_TAGS[7],
-                    tag9text : OTHER_TAGS[8],
-                    tag10text : OTHER_TAGS[9]
+                    anyTags: OTHER_TAGS[0] !== undefined,
+                    tag1: OTHER_TAGS[0] !== undefined,
+                    tag2: OTHER_TAGS[1] !== undefined,
+                    tag3: OTHER_TAGS[2] !== undefined,
+                    tag4: OTHER_TAGS[3] !== undefined,
+                    tag5: OTHER_TAGS[4] !== undefined,
+                    tag6: OTHER_TAGS[5] !== undefined,
+                    tag7: OTHER_TAGS[6] !== undefined,
+                    tag8: OTHER_TAGS[7] !== undefined,
+                    tag9: OTHER_TAGS[8] !== undefined,
+                    tag10: OTHER_TAGS[9] !== undefined,
+                    tag1text: OTHER_TAGS[0],
+                    tag2text: OTHER_TAGS[1],
+                    tag3text: OTHER_TAGS[2],
+                    tag4text: OTHER_TAGS[3],
+                    tag5text: OTHER_TAGS[4],
+                    tag6text: OTHER_TAGS[5],
+                    tag7text: OTHER_TAGS[6],
+                    tag8text: OTHER_TAGS[7],
+                    tag9text: OTHER_TAGS[8],
+                    tag10text: OTHER_TAGS[9]
                 };
 
                 // Render the statistics, print them and activate the buttons
                 var rendered = Mustache.render(template, params);
                 $('#beat_friend_ranking_etc').html(rendered);
 
-                $('#numTags').text(DISTINCT_TAGS);
+                if(!IN_TUTORIAL) {
+                    $('#numTags').text(DISTINCT_TAGS);
+                } else {
+                    $('#numTags').text(3);
+                }
 
                 var username = getCookie('lb_username');
                 username = username === "" ? 'Du' : username;
@@ -165,12 +189,12 @@ ID_Points_731 = function () {
                     OTHER_TAGS.forEach(function(otherTag, idx) {
                         if(tag == otherTag) {
                             YOUR_TAGS++;
-                            $("#tag" + (idx + 1).toString()).css({'background-color' : 'darkorange'});
+                            $("#tag" + (idx + 1).toString()).css({'background-color' : 'cornflowerblue'});
                         }
                     })
                 });
 
-                leaderboard.push([YOUR_TAGS * 100, username, '#5b67f1', 1]);
+                leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
 
                 var lb = $('#div_it_id_points_731_lb');
                 lb.html('');
@@ -240,9 +264,8 @@ ID_Points_731 = function () {
                     username = username === "" ? 'Du' : username;
 
                     // Display the ranking
-                    generateNewPointsDistribution(15);
                     var leaderboard = OTHERS;
-                    leaderboard.push([POINTS * 100, username, '#5b67f1', 1]);
+                    leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
 
                     var lb = $('#div_it_id_points_731_lb');
                     lb.html('');
@@ -286,6 +309,13 @@ ID_Points_731 = function () {
                 PIC_COUNT = 15 - parseInt(getCookie("imgLeft")) + 1;
             }
             YOUR_TAGS = 0;
+        },
+
+        isInDICT = function(label) {
+            for(var i = 0; i < DICT.length; i++) {
+                if(label === DICT[i].trim()) return true;
+            }
+            return false;
         };
 
     /**
@@ -306,6 +336,7 @@ ID_Points_731 = function () {
         setEndView : setEndView,
         setPoints : setPoints,
         startTimer : startTimer,
+        stopTimer : stopTimer,
         renewImgCount : renewImgCount
     };
 };
