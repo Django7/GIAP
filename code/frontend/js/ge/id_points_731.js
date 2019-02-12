@@ -25,6 +25,7 @@ ID_Points_731 = function () {
         TAG_COUNT_ALL = 0,
         YOUR_TAGS = 0,
         PIC_COUNT = 1,
+        BONUS = 0,
         OTHER_TAGS = [],
         IN_TUTORIAL = false,
         IN_END = false,
@@ -39,6 +40,7 @@ ID_Points_731 = function () {
         pointsNeo = (Math.random() * 14).toFixed(0) * 100,
         pointsLego = (Math.random() * 14).toFixed(0) * 100,
         pointsAnork = (Math.random() * 14).toFixed(0) * 100,
+        username = "",
 
         /**
          * Initializes the compare element
@@ -50,8 +52,17 @@ ID_Points_731 = function () {
         setView = function() {
             $.get('views/mst_id_points_731.html', function (template) {
                 $('#id_731_time_text').css({'visibility' : 'visible'});
+
+                OTHERS[0][0] = pointsVerd;
+                OTHERS[1][0] = pointsNeo;
+                OTHERS[2][0] = pointsLego;
+                OTHERS[3][0] = pointsAnork;
+
                 if(TAG_COUNT_ALL == 0 && getCookie("731_count_tags_all") != "") {
                     TAG_COUNT_ALL = parseInt(getCookie("731_count_tags_all"));
+                }
+                if(BONUS == 0 && getCookie("731_bonus") != "") {
+                    BONUS = parseInt(getCookie("731_bonus"));
                 }
                 if(getCookie("imgLeft") != "") {
                     PIC_COUNT = 15 - parseInt(getCookie("imgLeft")) + 1;
@@ -77,6 +88,46 @@ ID_Points_731 = function () {
             });
         },
 
+        showBoard = function() {
+            $.get('views/small_elements/mst_id_points_731_table.html', function (templateTab) {
+                var params = {
+                    end_page: false,
+                    points: POINTS
+                };
+
+                // Render the statistics, print them and activate the buttons
+                var rendered = Mustache.render(templateTab, params);
+                $('#beat_friend_ranking_etc').html(rendered);
+
+                if(!IN_TUTORIAL) {
+                    $('#numTags').text(DISTINCT_TAGS);
+                } else {
+                    $('#numTags').text(3);
+                }
+
+                username = getCookie('lb_username');
+                username = username === "" ? 'Du' : username;
+
+                if(IN_TUTORIAL){
+                    username = "Du (Bsp.)";
+                }
+
+                // Display the ranking
+                var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
+                leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
+
+                var lb = $('#div_it_id_points_731_lb');
+                lb.html('');
+                lb.jqBarGraph({
+                    data: leaderboard,
+                    animate: true,
+                    sort: 'desc',
+                    height: 200,
+                    width: 370
+                });
+            });
+        },
+
         setTutorialView = function() {
             IN_TUTORIAL = true;
             setView();
@@ -93,7 +144,19 @@ ID_Points_731 = function () {
             $('#yourTags').text(AVERAGE_TAGS.toFixed(2));
 
             POINTS += POINTS_INCR;
-            adaptLeaderboard();
+
+            var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
+            leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
+
+            var lb = $('#div_it_id_points_731_lb');
+            lb.html('');
+            lb.jqBarGraph({
+                data: leaderboard,
+                animate: false,
+                sort: 'desc',
+                height: 200,
+                width: 370
+            });
         },
 
         removeNewTag = function(label) {
@@ -106,7 +169,19 @@ ID_Points_731 = function () {
             $('#yourTags').text(AVERAGE_TAGS.toFixed(2));
 
             POINTS -= POINTS_INCR;
-            adaptLeaderboard();
+
+            var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
+            leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
+
+            var lb = $('#div_it_id_points_731_lb');
+            lb.html('');
+            lb.jqBarGraph({
+                data: leaderboard,
+                animate: false,
+                sort: 'desc',
+                height: 200,
+                width: 370
+            });
         },
 
         generateNewPointsDistribution = function() {
@@ -125,20 +200,21 @@ ID_Points_731 = function () {
 
         displayPoints = function() {
             $('#id_731_time_text').css({'visibility' : 'hidden'});
-            $.get('views/small_elements/mst_id_points_731_table.html', function (template) {
-                disableTagFieldAndNextButton();
-                var next_img_btn = $('#next_img');
-                next_img_btn.html('Bestätigt');
 
-                // Update points
-                POINTS += $("#myTags").tagit("assignedTags").length;
+            disableTagFieldAndNextButton();
+            var next_img_btn = $('#next_img');
+            next_img_btn.html('Bestätigt');
 
-                if(IN_TUTORIAL) {
-                    OTHER_TAGS.push('unruhig');
-                    OTHER_TAGS.push('verlassen');
-                    OTHER_TAGS.push('düster');
-                }
+            // Update points
+            POINTS += $("#myTags").tagit("assignedTags").length;
 
+            if(IN_TUTORIAL) {
+                OTHER_TAGS.push('unruhig');
+                OTHER_TAGS.push('verlassen');
+                OTHER_TAGS.push('düster');
+            }
+
+            $.get('views/small_elements/mst_id_points_731_table.html', function (templateTab) {
                 var params = {
                     end_page: false,
                     points: POINTS,
@@ -166,8 +242,20 @@ ID_Points_731 = function () {
                 };
 
                 // Render the statistics, print them and activate the buttons
-                var rendered = Mustache.render(template, params);
+                var rendered = Mustache.render(templateTab, params);
+                $('#beat_friend_ranking_etc').html('');
                 $('#beat_friend_ranking_etc').html(rendered);
+
+                var bonusOld = BONUS;
+                $("#myTags").tagit("assignedTags").forEach(function(tag) {
+                    OTHER_TAGS.forEach(function(otherTag, idx) {
+                        if(tag == otherTag) {
+                            BONUS++;
+                            $("#tag" + (idx + 1).toString()).css({'background-color' : 'cornflowerblue'});
+                        }
+                    })
+                });
+                $('#id_731_accordance').text(BONUS - bonusOld);
 
                 if(!IN_TUTORIAL) {
                     $('#numTags').text(DISTINCT_TAGS);
@@ -175,7 +263,7 @@ ID_Points_731 = function () {
                     $('#numTags').text(3);
                 }
 
-                var username = getCookie('lb_username');
+                username = getCookie('lb_username');
                 username = username === "" ? 'Du' : username;
 
                 if(IN_TUTORIAL){
@@ -183,24 +271,14 @@ ID_Points_731 = function () {
                 }
 
                 // Display the ranking
-                var leaderboard = OTHERS;
-
-                $("#myTags").tagit("assignedTags").forEach(function(tag) {
-                    OTHER_TAGS.forEach(function(otherTag, idx) {
-                        if(tag == otherTag) {
-                            YOUR_TAGS++;
-                            $("#tag" + (idx + 1).toString()).css({'background-color' : 'cornflowerblue'});
-                        }
-                    })
-                });
-
+                var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
                 leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
 
                 var lb = $('#div_it_id_points_731_lb');
                 lb.html('');
                 lb.jqBarGraph({
                     data: leaderboard,
-                    animate: true,
+                    animate: false,
                     sort: 'desc',
                     height: 200,
                     width: 370
@@ -221,10 +299,12 @@ ID_Points_731 = function () {
 
         setDistinctMoods = function(num) {
             DISTINCT_TAGS = num.num;
+            $('#numTags').text(DISTINCT_TAGS);
         },
 
         storePoints = function() {
             setCookie('731_points', POINTS);
+            setCookie('731_bonus', BONUS);
             setCookie('731_count_tags_all', TAG_COUNT_ALL);
             clearInterval(TIMER);
         },
@@ -253,7 +333,9 @@ ID_Points_731 = function () {
 
                     var params = {
                         end_page: true,
-                        anyTags: false
+                        anyTags: false,
+                        accordance: BONUS,
+                        accBonus: BONUS * 100
                     };
 
                     // Render the statistics, print them and activate the buttons
@@ -264,8 +346,8 @@ ID_Points_731 = function () {
                     username = username === "" ? 'Du' : username;
 
                     // Display the ranking
-                    var leaderboard = OTHERS;
-                    leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
+                    var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
+                    leaderboard.push([TAG_COUNT_ALL * 100 + BONUS * 100, username, '#5b67f1', 1]);
 
                     var lb = $('#div_it_id_points_731_lb');
                     lb.html('');
@@ -337,6 +419,7 @@ ID_Points_731 = function () {
         setPoints : setPoints,
         startTimer : startTimer,
         stopTimer : stopTimer,
+        showBoard : showBoard,
         renewImgCount : renewImgCount
     };
 };

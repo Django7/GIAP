@@ -777,6 +777,7 @@ function setUDGEAfterFlipImage(main_user_group_id) {
         case 'id_points_731': {
             UDGE.afterFlipImage = function(inTutorial) {
                 ID_POINTS_731.startTimer();
+                ID_POINTS_731.showBoard();
                 printLog('image flipped');
             };
             break;
@@ -2649,15 +2650,24 @@ function startIDPoints731Tutorial() {
                 setVisible($('#div_it_stats'));
                 ID_POINTS_731.setTutorialView();
                 viewLeftTutorialOverlay(
-                    'Der Durchschnitt',
+                    'Spielprinzip',
                     $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_points_731.html'),
                     'Weiter',
                     function () {
-                        enableTagFieldAndButton();
-                        var next_btn = $('#next_img');
-                        next_btn.html('Bestätigen');
-                        next_img_btn.prop('onclick', null).off('click');
-                        next_img_btn.click(startIDPoints731Tutorial_part_2);
+                        viewLeftTutorialOverlay(
+                            'Spielprinzip',
+                            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_points_731_2.html'),
+                            'Weiter',
+                            function() {
+                                enableTagFieldAndButton();
+                                var next_btn = $('#next_img');
+                                next_btn.html('Bestätigen');
+                                next_img_btn.prop('onclick', null).off('click');
+                                next_img_btn.click(startIDPoints731Tutorial_part_2);
+                                ID_Points_731.startTimer();
+                            },
+                            true
+                        );
                     },
                     true
                 );
@@ -2684,7 +2694,7 @@ function startIDPoints731Tutorial_part_2() {
         ID_POINTS_731.stopTimer();
         viewLeftTutorialOverlay(
             'Wörter anderer Spieler',
-            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_points_731_2.html'),
+            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_points_731_3.html'),
             'Weiter',
             function () {
                 disableTagFieldAndNextButton();
