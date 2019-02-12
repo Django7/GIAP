@@ -610,6 +610,14 @@ function getDistinctMoodsForThisImage(){
 }
 
 /**
+ * Queries the 100 most used tags for the current image
+ */
+function get100MostUsedTagsForCurrentImage(){
+    sendCommand('get_most_100_tags_for_this_image');
+}
+
+
+/**
  * Queries the 20 most used tags for the current image
  */
 function get40MostUsedTagsForCurrentImage(){

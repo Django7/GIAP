@@ -9,90 +9,19 @@
 
 {{#anyTags}}
 <div>
-    <p>Im folgenden siehst du die am meisten vergebenen Stimmungen der anderen Spieler für dieses Bild. Wenn du die Stichwörter als besonders passend empfindest, kannst du sie mit einem Klick liken.</p>
-    <ul class="list-inline">
-        {{#tag1}}
-        <li style="margin-bottom: 5px">
-            <button id="tag1" class="btn btn-dark-gray" onclick="$('#tag1').prop('disabled', true)">
-                {{tag1text}} <span class="glyphicon glyphicon-ok"></span><br>
-                😆
-            </button>
-        </li>
-        {{/tag1}}
-        {{#tag2}}
-        <li style="margin-bottom: 5px">
-            <button id=tag2 class="btn btn-dark-gray" onclick="$('#tag2').prop('disabled', true)">
-                {{tag2text}} <span class="glyphicon glyphicon-ok"></span>
-            </button>
-        </li>
-        {{/tag2}}
-        {{#tag3}}
-        <li style="margin-bottom: 5px">
-            <button id=tag3 class="btn btn-dark-gray" onclick="$('#tag3').prop('disabled', true)">
-                {{tag3text}} <span class="glyphicon glyphicon-ok"></span>
-            </button>
-        </li>
-        {{/tag3}}
-        {{#tag4}}
-        <li style="margin-bottom: 5px">
-            <button id=tag4 class="btn btn-dark-gray" onclick="$('#tag4').prop('disabled', true)">
-                {{tag4text}} <span class="glyphicon glyphicon-ok"></span>
-            </button>
-        </li style="margin-bottom: 5px">
-        {{/tag4}}
-        {{#tag5}}
-        <li style="margin-bottom: 5px">
-            <button id=tag5 class="btn btn-dark-gray" onclick="$('#tag5').prop('disabled', true)">
-                {{tag5text}} <span class="glyphicon glyphicon-ok"></span>
-            </button>
-        </li>
-        {{/tag5}}
-        {{#tag6}}
-        <li style="margin-bottom: 5px">
-            <button id=tag6 class="btn btn-dark-gray" onclick="$('#tag6').prop('disabled', true)">
-                {{tag6text}} <span class="glyphicon glyphicon-ok"></span>
-            </button>
-        </li>
-        {{/tag6}}
-        {{#tag7}}
-        <li style="margin-bottom: 5px">
-            <button id=tag7 class="btn btn-dark-gray" onclick="$('#tag7').prop('disabled', true)">
-                {{tag7text}} <span class="glyphicon glyphicon-ok"></span>
-            </button>
-        </li>
-        {{/tag7}}
-        {{#tag8}}
-        <li style="margin-bottom: 5px">
-            <button id=tag8 class="btn btn-dark-gray" onclick="$('#tag8').prop('disabled', true)">
-                {{tag8text}} <span class="glyphicon glyphicon-ok"></span>
-            </button>
-        </li>
-        {{/tag8}}
-        {{#tag9}}
-        <li style="margin-bottom: 5px">
-            <button id=tag9 class="btn btn-dark-gray" onclick="$('#tag9').prop('disabled', true)">
-                {{tag9text}} <span class="glyphicon glyphicon-ok"></span>
-            </button>
-        </li>
-        {{/tag9}}
-        {{#tag10}}
-        <li style="margin-bottom: 5px">
-            <button id=tag10 class="btn btn-dark-gray" onclick="$('#tag10').prop('disabled', true)">
-                {{tag10text}} <span class="glyphicon glyphicon-ok"></span>
-            </button>
-        </li>
-        {{/tag10}}
+    <p>Im Folgenden siehst du die vergebenen Stimmungen anderer Spieler für dieses Bild. Mit einem Klick auf die Smileys kannst du besonders gut oder schlecht passende Begriffe bewerten, wenn du möchtest.<br>
+    Blau eingefärbte stimmen mit deinen überein.
+    </p>
+    <ul class="list-inline" id="tagList" style="max-height: 250px; overflow: auto">
     </ul>
     <p>Du hast <b><span id="id_731_accordance">0></span></b> Übereinstimmungen mit Tags anderer Spieler. Dies verschafft dir am Ende einen Bonus!</p>
 </div>
+{{/anyTags}}
 
 {{^end_page}}
 <div>
-    <p>Du hast <b>{{accordance}}</b> Übereinstimmungen mit Tags anderer Spieler. Dies hat dir {{accBonus}} Bonuspunkte verschafft!</p>
     <button type="button" class="btn btn-primary w-35 pt-3 pull-right" onclick="btn_oc_postImageTags()" id="next_img_points_731">
         Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
     </button>
 </div>
 {{/end_page}}
-
-{{/anyTags}}

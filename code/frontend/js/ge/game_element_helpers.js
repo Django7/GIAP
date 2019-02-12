@@ -616,7 +616,7 @@ function setUDGEAfterGetImage(main_user_group_id) {
         }
         case "id_points_731": {
             UDGE.afterGetImage = function () {
-                get10MostUsedTagsForCurrentImage();
+                get100MostUsedTagsForCurrentImage();
                 getDistinctMoodsForThisImage();
                 ID_POINTS_731.renewImgCount();
             };
@@ -1139,7 +1139,7 @@ function setUDGEOnInterpretCommand(main_user_group_id) {
             UDGE.COMMAND_HANDLER['get_my_tag_count'] = function (content) {
                 ID_POINTS_731.setPoints(content['value'][0]['num']);
             };
-            UDGE.COMMAND_HANDLER['get_most_10_tags_for_this_image'] = function (content) {
+            UDGE.COMMAND_HANDLER['get_most_100_tags_for_this_image'] = function (content) {
                 ID_POINTS_731.setOtherPlayersTags(content['value']);
             };
             UDGE.COMMAND_HANDLER['get_mood_count_for_this_image'] = function (content) {
@@ -2664,7 +2664,6 @@ function startIDPoints731Tutorial() {
                                 next_btn.html('Bestätigen');
                                 next_img_btn.prop('onclick', null).off('click');
                                 next_img_btn.click(startIDPoints731Tutorial_part_2);
-                                ID_Points_731.startTimer();
                             },
                             true
                         );

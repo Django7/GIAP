@@ -30,6 +30,7 @@ ID_Points_731 = function () {
         IN_TUTORIAL = false,
         IN_END = false,
         TIMER,
+        numShownTags = 5,
         OTHERS = [
             [0, 'verdani', '#607cae', 0],
             [0, 'neo23', '#607cae', 0],
@@ -91,7 +92,7 @@ ID_Points_731 = function () {
         showBoard = function() {
             $.get('views/small_elements/mst_id_points_731_table.html', function (templateTab) {
                 var params = {
-                    end_page: false,
+                    end_page: true,
                     points: POINTS
                 };
 
@@ -218,27 +219,7 @@ ID_Points_731 = function () {
                 var params = {
                     end_page: false,
                     points: POINTS,
-                    anyTags: OTHER_TAGS[0] !== undefined,
-                    tag1: OTHER_TAGS[0] !== undefined,
-                    tag2: OTHER_TAGS[1] !== undefined,
-                    tag3: OTHER_TAGS[2] !== undefined,
-                    tag4: OTHER_TAGS[3] !== undefined,
-                    tag5: OTHER_TAGS[4] !== undefined,
-                    tag6: OTHER_TAGS[5] !== undefined,
-                    tag7: OTHER_TAGS[6] !== undefined,
-                    tag8: OTHER_TAGS[7] !== undefined,
-                    tag9: OTHER_TAGS[8] !== undefined,
-                    tag10: OTHER_TAGS[9] !== undefined,
-                    tag1text: OTHER_TAGS[0],
-                    tag2text: OTHER_TAGS[1],
-                    tag3text: OTHER_TAGS[2],
-                    tag4text: OTHER_TAGS[3],
-                    tag5text: OTHER_TAGS[4],
-                    tag6text: OTHER_TAGS[5],
-                    tag7text: OTHER_TAGS[6],
-                    tag8text: OTHER_TAGS[7],
-                    tag9text: OTHER_TAGS[8],
-                    tag10text: OTHER_TAGS[9]
+                    anyTags: OTHER_TAGS.length !== 0
                 };
 
                 // Render the statistics, print them and activate the buttons
@@ -246,12 +227,36 @@ ID_Points_731 = function () {
                 $('#beat_friend_ranking_etc').html('');
                 $('#beat_friend_ranking_etc').html(rendered);
 
+                var tagsString = "";
+                OTHER_TAGS.forEach(function(tag, idx) {
+                    if(idx === numShownTags && numShownTags !== OTHER_TAGS.length) {
+                        tagsString +=
+                            "<li style=\"margin-bottom: 5px\">\n" +
+                            "   <button class=\"btn btn-dark-gray\" onclick='ID_POINTS_731.increaseShownTags();'>\n" +
+                            "    Mehr Tags anzeigen..." +
+                            "   </button>\n" +
+                            "</li>\n"
+
+                    } else if (idx < numShownTags) {
+                        tagsString +=
+                            "<li style=\"margin-bottom: 5px\">\n" +
+                            "   <button id=\"tag" + idx + "\" class=\"btn btn-dark-gray\">\n" +
+                            "      " + tag + "<br>\n" +
+                            "      <span id=\"happy" + idx + "\" style=\"font-size: 25px\" onclick=\"$('#tag" + idx + "').prop('disabled', true); $('#neutral" + idx + "').css({'display' : 'none'}); $('#negative" + idx + "').css({'display' : 'none'})\">🙂</span>\n" +
+                            "      <span id=\"neutral" + idx + "\" style=\"font-size: 25px\" onclick=\"$('#tag" + idx + "').prop('disabled', true); $('#happy" + idx + "').css({'display' : 'none'}); $('#negative" + idx + "').css({'display' : 'none'})\">😐</span>\n" +
+                            "      <span id=\"negative" + idx + "\" style=\"font-size: 25px\" onclick=\"$('#tag" + idx + "').prop('disabled', true); $('#neutral" + idx + "').css({'display' : 'none'}); $('#happy" + idx + "').css({'display' : 'none'})\">🙁</span>\n" +
+                            "   </button>\n" +
+                            "</li>\n"
+                    }
+                });
+                $('#tagList').html(tagsString);
+
                 var bonusOld = BONUS;
                 $("#myTags").tagit("assignedTags").forEach(function(tag) {
                     OTHER_TAGS.forEach(function(otherTag, idx) {
                         if(tag == otherTag) {
                             BONUS++;
-                            $("#tag" + (idx + 1).toString()).css({'background-color' : 'cornflowerblue'});
+                            $("#tag" + (idx).toString()).css({'background-color' : 'cornflowerblue'});
                         }
                     })
                 });
@@ -398,6 +403,42 @@ ID_Points_731 = function () {
                 if(label === DICT[i].trim()) return true;
             }
             return false;
+        },
+
+        increaseShownTags = function() {
+            numShownTags = numShownTags + 12;
+            var tagsString = "";
+            OTHER_TAGS.forEach(function(tag, idx) {
+                if(idx === numShownTags && numShownTags !== OTHER_TAGS.length) {
+                    tagsString +=
+                        "<li style=\"margin-bottom: 5px\">\n" +
+                        "   <button class=\"btn btn-dark-gray\" onclick='ID_POINTS_731.increaseShownTags();'>\n" +
+                        "    Mehr Tags anzeigen..." +
+                        "   </button>\n" +
+                        "</li>\n"
+
+                } else if (idx < numShownTags) {
+                    tagsString +=
+                        "<li style=\"margin-bottom: 5px\">\n" +
+                        "   <button id=\"tag" + idx + "\" class=\"btn btn-dark-gray\">\n" +
+                        "      " + tag + "<br>\n" +
+                        "      <span id=\"happy" + idx + "\" style=\"font-size: 25px\" onclick=\"$('#tag" + idx + "').prop('disabled', true); $('#neutral" + idx + "').css({'display' : 'none'}); $('#negative" + idx + "').css({'display' : 'none'})\">🙂</span>\n" +
+                        "      <span id=\"neutral" + idx + "\" style=\"font-size: 25px\" onclick=\"$('#tag" + idx + "').prop('disabled', true); $('#happy" + idx + "').css({'display' : 'none'}); $('#negative" + idx + "').css({'display' : 'none'})\">😐</span>\n" +
+                        "      <span id=\"negative" + idx + "\" style=\"font-size: 25px\" onclick=\"$('#tag" + idx + "').prop('disabled', true); $('#neutral" + idx + "').css({'display' : 'none'}); $('#happy" + idx + "').css({'display' : 'none'})\">🙁</span>\n" +
+                        "   </button>\n" +
+                        "</li>\n"
+                }
+            });
+            $('#tagList').html(tagsString);
+
+            $("#myTags").tagit("assignedTags").forEach(function(tag) {
+                OTHER_TAGS.forEach(function(otherTag, idx) {
+                    if(tag == otherTag) {
+                        BONUS++;
+                        $("#tag" + (idx).toString()).css({'background-color' : 'cornflowerblue'});
+                    }
+                })
+            });
         };
 
     /**
@@ -420,6 +461,7 @@ ID_Points_731 = function () {
         startTimer : startTimer,
         stopTimer : stopTimer,
         showBoard : showBoard,
-        renewImgCount : renewImgCount
+        renewImgCount : renewImgCount,
+        increaseShownTags : increaseShownTags
     };
 };
