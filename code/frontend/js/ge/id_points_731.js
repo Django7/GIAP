@@ -26,6 +26,7 @@ ID_Points_731 = function () {
         YOUR_TAGS = 0,
         PIC_COUNT = 1,
         BONUS = 0,
+        POINTS = 0,
         OTHER_TAGS = [],
         IN_TUTORIAL = false,
         IN_END = false,
@@ -67,6 +68,11 @@ ID_Points_731 = function () {
                 }
                 if(getCookie("imgLeft") != "") {
                     PIC_COUNT = 15 - parseInt(getCookie("imgLeft")) + 1;
+                }
+                console.log("Cookie:", getCookie('731_points'), YOUR_TAGS);
+                if(getCookie('731_points') !== "" && YOUR_TAGS === 0) {
+                    console.log("HERE");
+                    YOUR_TAGS = parseInt(getCookie('731_points'));
                 }
                 var AVERAGE_TAGS = TAG_COUNT_ALL / PIC_COUNT;
 
@@ -115,7 +121,7 @@ ID_Points_731 = function () {
 
                 // Display the ranking
                 var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
-                leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
+                leaderboard.push([YOUR_TAGS * 100, username, '#5b67f1', 1]);
 
                 var lb = $('#div_it_id_points_731_lb');
                 lb.html('');
@@ -135,7 +141,7 @@ ID_Points_731 = function () {
         },
 
         addNewTag = function(label) {
-            if(!isInDICT(label.toLowerCase())) {
+            if(!isInDICT(label.toLowerCase(), false)) {
                 $('#myTags li:nth-last-child(2)').css({'background-color' : 'indianred'});
                 YOUR_TAGS--;
             }
@@ -147,7 +153,7 @@ ID_Points_731 = function () {
             POINTS += POINTS_INCR;
 
             var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
-            leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
+            leaderboard.push([YOUR_TAGS * 100, username, '#5b67f1', 1]);
 
             var lb = $('#div_it_id_points_731_lb');
             lb.html('');
@@ -161,7 +167,7 @@ ID_Points_731 = function () {
         },
 
         removeNewTag = function(label) {
-            if(!isInDICT(label.toLowerCase())) {
+            if(!isInDICT(label.toLowerCase(), true)) {
                 YOUR_TAGS++;
             }
             TAG_COUNT_ALL--;
@@ -172,7 +178,7 @@ ID_Points_731 = function () {
             POINTS -= POINTS_INCR;
 
             var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
-            leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
+            leaderboard.push([YOUR_TAGS * 100, username, '#5b67f1', 1]);
 
             var lb = $('#div_it_id_points_731_lb');
             lb.html('');
@@ -251,16 +257,16 @@ ID_Points_731 = function () {
                 });
                 $('#tagList').html(tagsString);
 
-                var bonusOld = BONUS;
+                var newBonus = 0;
                 $("#myTags").tagit("assignedTags").forEach(function(tag) {
                     OTHER_TAGS.forEach(function(otherTag, idx) {
                         if(tag == otherTag) {
-                            BONUS++;
+                            newBonus++;
                             $("#tag" + (idx).toString()).css({'background-color' : 'cornflowerblue'});
                         }
                     })
                 });
-                $('#id_731_accordance').text(BONUS - bonusOld);
+                $('#id_731_accordance').text(newBonus);
 
                 if(!IN_TUTORIAL) {
                     $('#numTags').text(DISTINCT_TAGS);
@@ -277,7 +283,7 @@ ID_Points_731 = function () {
 
                 // Display the ranking
                 var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
-                leaderboard.push([TAG_COUNT_ALL * 100, username, '#5b67f1', 1]);
+                leaderboard.push([YOUR_TAGS * 100, username, '#5b67f1', 1]);
 
                 var lb = $('#div_it_id_points_731_lb');
                 lb.html('');
@@ -308,7 +314,7 @@ ID_Points_731 = function () {
         },
 
         storePoints = function() {
-            setCookie('731_points', POINTS);
+            setCookie('731_points', YOUR_TAGS);
             setCookie('731_bonus', BONUS);
             setCookie('731_count_tags_all', TAG_COUNT_ALL);
             clearInterval(TIMER);
@@ -326,7 +332,9 @@ ID_Points_731 = function () {
 
                 var params = {
                     end_screen: true,
-                    points: POINTS
+                    points: POINTS,
+                    accordance: BONUS,
+                    accBonus: BONUS * 100
                 };
 
                 // Render the statistics, print them and activate the buttons
@@ -352,7 +360,7 @@ ID_Points_731 = function () {
 
                     // Display the ranking
                     var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
-                    leaderboard.push([TAG_COUNT_ALL * 100 + BONUS * 100, username, '#5b67f1', 1]);
+                    leaderboard.push([YOUR_TAGS * 100 + BONUS * 100, username, '#5b67f1', 1]);
 
                     var lb = $('#div_it_id_points_731_lb');
                     lb.html('');
@@ -395,13 +403,22 @@ ID_Points_731 = function () {
             if(getCookie("imgLeft") != "") {
                 PIC_COUNT = 15 - parseInt(getCookie("imgLeft")) + 1;
             }
-            YOUR_TAGS = 0;
         },
 
-        isInDICT = function(label) {
+        isInDICT = function(label, remove) {
+            for(var j = 0; j < OTHER_TAGS.length; j++) {
+                if(OTHER_TAGS[j] === label) {
+                    if(!remove) {
+                        BONUS++;
+                    } else BONUS --;
+                    return true;
+                }
+            }
+
             for(var i = 0; i < DICT.length; i++) {
                 if(label === DICT[i].trim()) return true;
             }
+
             return false;
         },
 
@@ -434,7 +451,6 @@ ID_Points_731 = function () {
             $("#myTags").tagit("assignedTags").forEach(function(tag) {
                 OTHER_TAGS.forEach(function(otherTag, idx) {
                     if(tag == otherTag) {
-                        BONUS++;
                         $("#tag" + (idx).toString()).css({'background-color' : 'cornflowerblue'});
                     }
                 })
