@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c7a1bb5f-e8dd-4ab6-b6ff-141897f870a9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ge/id_points_731.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ge/id_points_731.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/mst_id_points_731.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/mst_id_points_731.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/statics.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/statics.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/statics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+            <state relative-caret-position="150">
+              <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -38,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
+            <state relative-caret-position="61525">
               <caret line="2677" column="9" selection-start-line="2677" selection-start-column="9" selection-end-line="2677" selection-end-column="9" />
             </state>
           </provider>
@@ -62,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/mst_id_points_731.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -74,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            <state relative-caret-position="115">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -83,20 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ge/id_points_731.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="407" column="44" lean-forward="true" selection-start-line="407" selection-start-column="44" selection-end-line="407" selection-end-column="44" />
-              <folding>
-                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#button#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#button#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#button#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#button#0;n#li#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="9361">
+              <caret line="407" column="44" selection-start-line="407" selection-start-column="44" selection-end-line="407" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -113,7 +100,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/small_elements/mst_id_points_731_table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
+            <state relative-caret-position="253">
               <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#2;n#!!top" expanded="true" />
@@ -258,9 +245,9 @@
         <option value="$PROJECT_DIR$/js/api_connection.js" />
         <option value="$PROJECT_DIR$/js/ge/game_element_helpers.js" />
         <option value="$PROJECT_DIR$/views/small_elements/mst_id_points_731_table.html" />
-        <option value="$PROJECT_DIR$/js/statics.js" />
         <option value="$PROJECT_DIR$/js/ge/id_points_731.js" />
         <option value="$PROJECT_DIR$/views/mst_id_points_731.html" />
+        <option value="$PROJECT_DIR$/js/statics.js" />
       </list>
     </option>
   </component>
@@ -292,7 +279,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -331,6 +317,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -574,12 +561,13 @@
       <workItem from="1549528641308" duration="9699000" />
       <workItem from="1549830608606" duration="226000" />
       <workItem from="1549956128700" duration="8281000" />
-      <workItem from="1550048428738" duration="5772000" />
+      <workItem from="1550048428738" duration="6831000" />
+      <workItem from="1550140271755" duration="811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1548283000" />
+    <option name="totallyTimeSpent" value="1550153000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -592,14 +580,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15542677" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15542677" />
       <window_info id="Structure" order="2" weight="0.10800843" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.49255952" side_tool="true" weight="0.27704918" />
       <window_info anchor="bottom" id="Version Control" order="1" sideWeight="0.49578503" weight="0.20178372" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" sideWeight="0.50744045" visible="true" weight="0.2753623" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.50744045" visible="true" weight="0.2753623" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" sideWeight="0.49789253" weight="0.32786885" />
       <window_info anchor="bottom" id="Run" order="5" />
@@ -1013,6 +1000,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_731.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61525">
+          <caret line="2677" column="9" selection-start-line="2677" selection-start-column="9" selection-end-line="2677" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/api_connection.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14306">
@@ -1027,6 +1028,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/id_points_731.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9361">
+          <caret line="407" column="44" selection-start-line="407" selection-start-column="44" selection-end-line="407" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2967">
@@ -1034,23 +1049,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_731.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="2677" column="9" selection-start-line="2677" selection-start-column="9" selection-end-line="2677" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/small_elements/mst_id_points_731_table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
+        <state relative-caret-position="253">
           <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#div#2;n#!!top" expanded="true" />
@@ -1058,43 +1059,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/views/mst_id_points_731.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        <state relative-caret-position="322">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/statics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/id_points_731.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="407" column="44" lean-forward="true" selection-start-line="407" selection-start-column="44" selection-end-line="407" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#button#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#button#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#button#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#button#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#button#0;n#li#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_points_731.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        <state relative-caret-position="150">
+          <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
         </state>
       </provider>
     </entry>
