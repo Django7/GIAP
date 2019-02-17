@@ -187,6 +187,13 @@ function setUDGETutorial(main_user_group_id) {
             };
             break;
         }
+        case "id_compare_746": {
+            UDGE.startTutorial = function () {
+                printLog("start id compare 746 tutorial");
+                startIDCompare746Tutorial();
+            };
+            break;
+        }
         default: {
             UDGE.startTutorial = function () {
                 startBasicTutorial();
@@ -403,6 +410,18 @@ function setUDGETaggingEnvironment(main_user_group_id) {
             };
             break;
         }
+        case 'id_compare_746': {
+            UDGE.setTaggingEnvironment = function (mst_params, fun_array, frame_only) {
+                mst_params['stats'] = true;
+                mst_params['id_compare_746'] = true;
+                fun_array.push(function () {
+                    if (!frame_only) {
+                        ID_COMPARE_746.setView();
+                    }
+                })
+            };
+            break;
+        }
         default: {
         }
     }
@@ -526,6 +545,12 @@ function setUDGEEnd(main_user_group_id) {
             };
             break;
         }
+        case "id_compare_746": {
+            UDGE.setEnd = function (mst_params, fun_array) {
+                ID_COMPARE_746.setEndView();
+            };
+            break;
+        }
         default: {
             UDGE.setEnd = function (mst_params, fun_array) {
             };
@@ -619,6 +644,13 @@ function setUDGEAfterGetImage(main_user_group_id) {
                 get100MostUsedTagsForCurrentImage();
                 getDistinctMoodsForThisImage();
                 ID_POINTS_731.renewImgCount();
+            };
+            break;
+        }
+        case "id_compare_746": {
+            UDGE.afterGetImage = function () {
+                getAllOtherTags();
+                getNumOtherTaggers();
             };
             break;
         }
@@ -717,6 +749,12 @@ function setUDGEAfterPostImage(main_user_group_id) {
             UDGE.afterPostImage = function () {
                 ID_POINTS_731.storePoints();
                 ID_POINTS_731.generateNewPointsDistribution();
+            };
+            break;
+        }
+        case 'id_compare_746': {
+            UDGE.afterPostImage = function () {
+                ID_COMPARE_746.storePoints();
             };
             break;
         }
@@ -880,6 +918,12 @@ function setUDGEAfterTagAdded(main_user_group_id) {
             };
             break;
         }
+        case "id_compare_746": {
+            UDGE.afterTagAdded = function(event, ui) {
+                ID_COMPARE_746.afterTagAdded();
+            };
+            break;
+        }
         default: {
             UDGE.afterTagAdded = function (event, ui) {
             };
@@ -974,6 +1018,12 @@ function setUDGEAfterTagRemoved(main_user_group_id) {
         case "id_points_731": {
             UDGE.afterTagRemoved = function(event, ui) {
                 ID_POINTS_731.removeNewTag(ui.tagLabel);
+            };
+            break;
+        }
+        case "id_compare_746": {
+            UDGE.afterTagRemoved = function(event, ui) {
+                ID_COMPARE_746.afterTagRemoved();
             };
             break;
         }
@@ -1147,6 +1197,15 @@ function setUDGEOnInterpretCommand(main_user_group_id) {
                     ID_POINTS_731.setDistinctMoods(0);
                 else ID_POINTS_731.setDistinctMoods(content['value'][0]);
                 //ID_TEST_11.setDistinctMoods(content['value'][0]['num']);
+            };
+            break;
+        }
+        case "id_compare_746": {
+            UDGE.COMMAND_HANDLER['get_all_other_tags'] = function (content) {
+                ID_COMPARE_746.setOtherTags(content['value']);
+            };
+            UDGE.COMMAND_HANDLER['get_num_other_taggers'] = function (content) {
+                ID_COMPARE_746.setNumOtherTaggers(content['value'][0]['num']);
             };
             break;
         }
@@ -1720,6 +1779,13 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
                     }]
                 });
 
+            };
+            break;
+        }
+        case "id_compare_746": {
+            UDGE.onTutorialFinished = function (event, ui) {
+                setCookie('746_points', 0);
+                viewTutorialFinished();
             };
             break;
         }
@@ -2699,6 +2765,75 @@ function startIDPoints731Tutorial_part_2() {
                 disableTagFieldAndNextButton();
                 $('#next_img_points_731').prop('onclick', null).off('click');
                 $('#next_img_points_731').click(function() {
+                    btn_oc_viewTutorialFinished();
+                });
+            },
+            true
+        );
+    }
+}
+
+/**
+ * Start the compare 746 tutorial
+ */
+function startIDCompare746Tutorial() {
+    var next_img_btn = $('#next_img');
+    next_img_btn.prop('onclick', null).off('click');
+
+    // Create an example view of the right view
+    ID_COMPARE_746 = ID_Compare_746();
+    ID_COMPARE_746.init('div_it_id_compare_746');
+
+    viewRightTutorialOverlay(
+        'Prinzip des Bilder-Taggens',
+        $('<div></div>').load('views/dialogs/dia_tutorial_design_implemented.html'),
+        'Weiter',
+        function () {
+            flipIn(5);
+            setTimeout(function () {
+                setVisible($('#div_it_stats'));
+                ID_COMPARE_746.setTutorialView();
+                viewLeftTutorialOverlay(
+                    'Der Durchschnitt',
+                    $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_compare_746.html'),
+                    'Weiter',
+                    function () {
+                        enableTagFieldAndButton();
+                        var next_btn = $('#next_img');
+                        next_btn.html('Bestätigen');
+                        next_img_btn.prop('onclick', null).off('click');
+                        next_img_btn.click(startIDCompare746Tutorial_part_2);
+                    },
+                    true
+                );
+            }, 5000);
+        },
+        true);
+}
+
+function startIDCompare746Tutorial_part_2() {
+    // Check whether at least one tag was created
+    var tags = $("#myTags").tagit("assignedTags");
+    if (tags.length === 0) {
+        viewInfoOverlay('' +
+            'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
+            'Diese Einschränkung wird im regulären Ablauf wegfallen.');
+    } else {
+        // Disabling the tag field
+        disableTagField();
+
+        // Changing the button
+        var next_img_btn = $('#next_img');
+        next_img_btn.html('Bestätigt');
+        ID_COMPARE_746.displayAccordances();
+        viewLeftTutorialOverlay(
+            'Wörter anderer Spieler',
+            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_compare_746_2.html'),
+            'Weiter',
+            function () {
+                disableTagFieldAndNextButton();
+                $('#next_img_compare_746').prop('onclick', null).off('click');
+                $('#next_img_compare_746').click(function() {
                     btn_oc_viewTutorialFinished();
                 });
             },

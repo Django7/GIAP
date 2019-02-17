@@ -658,3 +658,11 @@ function get10MostUsedTagsForCurrentImage(){
 function getNumberOfImagesWorkedOn(){
     sendCommand('get_worked_images')
 }
+
+function getAllOtherTags(){
+    sendCommand('get_all_other_tags');
+}
+
+function getNumOtherTaggers(){
+    sendCommand('get_num_other_taggers');
+}
