@@ -56,16 +56,46 @@ ID_Compare_746 = function () {
 
                 //Calculate accordances
                 var ownTags = $("#myTags").tagit("assignedTags");
-                var htmlString = "";
-                ownTags.forEach(function(ownTag) {
+                var counts = [];
+                ownTags.forEach(function(ownTag, idx) {
                     for(var i=0; i<OTHER_TAGS.length; i++) {
                         if(ownTag === OTHER_TAGS[i]) {
-                            htmlString += "<p>" + ownTag + ": <b>" + ((OTHER_TAGS_COUNT[i] / NUM_OTHER_TAGGERS) * 100).toFixed(2).toString() + "%</b></p>\n";
+                            counts[idx] = ((OTHER_TAGS_COUNT[i] / NUM_OTHER_TAGGERS) * 100);
                             return;
                         }
                     }
-                    htmlString += "<p>" + ownTag + ": <b>0.00%</b></p>\n";
+                    counts[idx] = 0.00;
                 });
+
+                var newOrder = [];
+                var lowerThan = 101;
+                for(var i=0; i<ownTags.length; i++) {
+                    var max = -1;
+                    for(var j=0; j<ownTags.length; j++) {
+                        if(counts[j] > max && counts[j] < lowerThan) {
+                            max = counts[j];
+                        }
+                    }
+                    for(var j=0; j<ownTags.length; j++) {
+                        if(counts[j] == max) {
+                            newOrder.push(j);
+                        }
+                    }
+                    lowerThan = max;
+                }
+
+                var orderedCounts = [];
+                var orderedOwnTags = [];
+                for(var i=0; i<counts.length; i++) {
+                    orderedOwnTags[i] = ownTags[newOrder[i]];
+                    orderedCounts[i] = counts[newOrder[i]];
+                }
+
+                var htmlString = "";
+                for(var i=0; i<orderedOwnTags.length; i++) {
+                    htmlString += "<p>" + orderedOwnTags[i] + ": <b>" + orderedCounts[i].toFixed(2).toString() + "%</b></p>\n";
+                }
+
                 $('#accordancesDiv').html('');
                 $('#accordancesDiv').html(htmlString);
             });
