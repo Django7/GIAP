@@ -1,0 +1,5 @@
+Ich persönlich bin der Ansicht, dass der nachträgliche Austausch bzw. der Vergleich und das Feedback von anderen Spielern motivierend sein kann. 
+Ein Algorithmus könnte dem Teilnehmer nach dem Bild-Tagging ein Feedback geben, inwiefern sich seine Ideen mit jenen Ideen und Eindrücken anderer Spieler deckt. 
+Eine höhere Deckungsrate könnte mit einem höheren Score belohnt werden; bei einer vergleichsweise höheren Wortzahl könnte das ebenfalls zu einem höheren Score ("Gewinnen") führen. 
+Auf diese Weise wäre der Spieler automatisch dazu gehalten, mehr Wörter anzugeben, aber wiederum auch gleichzeitig diese Auswahl mit verschärftem Bewusstsein zu treffen. 
+Der Ansporn, mit dem Score die anderen Teilnehmer zu übertreffen, wäre hierbei letztlich die treibende Motivation.
