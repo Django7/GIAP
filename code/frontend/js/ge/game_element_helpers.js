@@ -194,6 +194,13 @@ function setUDGETutorial(main_user_group_id) {
             };
             break;
         }
+        case "id_compare_750": {
+            UDGE.startTutorial = function () {
+                printLog("start id compare 750 tutorial");
+                startIDCompare750Tutorial();
+            };
+            break;
+        }
         default: {
             UDGE.startTutorial = function () {
                 startBasicTutorial();
@@ -422,6 +429,18 @@ function setUDGETaggingEnvironment(main_user_group_id) {
             };
             break;
         }
+        case 'id_compare_750': {
+            UDGE.setTaggingEnvironment = function (mst_params, fun_array, frame_only) {
+                mst_params['stats'] = true;
+                mst_params['id_compare_750'] = true;
+                fun_array.push(function () {
+                    if (!frame_only) {
+                        ID_COMPARE_750.setView();
+                    }
+                })
+            };
+            break;
+        }
         default: {
         }
     }
@@ -551,6 +570,12 @@ function setUDGEEnd(main_user_group_id) {
             };
             break;
         }
+        case "id_compare_750": {
+            UDGE.setEnd = function (mst_params, fun_array) {
+                ID_COMPARE_750.setEndView();
+            };
+            break;
+        }
         default: {
             UDGE.setEnd = function (mst_params, fun_array) {
             };
@@ -651,6 +676,14 @@ function setUDGEAfterGetImage(main_user_group_id) {
             UDGE.afterGetImage = function () {
                 getAllOtherTags();
                 getNumOtherTaggers();
+            };
+            break;
+        }
+        case "id_compare_750": {
+            UDGE.afterGetImage = function () {
+                getAllOtherTags();
+                getNumOtherTaggers();
+                getDistinctMoodsForThisImage();
             };
             break;
         }
@@ -755,6 +788,13 @@ function setUDGEAfterPostImage(main_user_group_id) {
         case 'id_compare_746': {
             UDGE.afterPostImage = function () {
                 ID_COMPARE_746.storePoints();
+            };
+            break;
+        }
+        case 'id_compare_750': {
+            UDGE.afterPostImage = function () {
+                ID_COMPARE_750.storePoints();
+                ID_COMPARE_750.generateNewPointsDistribution();
             };
             break;
         }
@@ -924,6 +964,12 @@ function setUDGEAfterTagAdded(main_user_group_id) {
             };
             break;
         }
+        case "id_compare_750": {
+            UDGE.afterTagAdded = function(event, ui) {
+                ID_COMPARE_750.afterTagAdded(ui.tagLabel);
+            };
+            break;
+        }
         default: {
             UDGE.afterTagAdded = function (event, ui) {
             };
@@ -1024,6 +1070,12 @@ function setUDGEAfterTagRemoved(main_user_group_id) {
         case "id_compare_746": {
             UDGE.afterTagRemoved = function(event, ui) {
                 ID_COMPARE_746.afterTagRemoved();
+            };
+            break;
+        }
+        case "id_compare_750": {
+            UDGE.afterTagRemoved = function(event, ui) {
+                ID_COMPARE_750.afterTagRemoved(ui.tagLabel);
             };
             break;
         }
@@ -1206,6 +1258,18 @@ function setUDGEOnInterpretCommand(main_user_group_id) {
             };
             UDGE.COMMAND_HANDLER['get_num_other_taggers'] = function (content) {
                 ID_COMPARE_746.setNumOtherTaggers(content['value'][0]['num']);
+            };
+            break;
+        }
+        case "id_compare_750": {
+            UDGE.COMMAND_HANDLER['get_all_other_tags'] = function (content) {
+                ID_COMPARE_750.setOtherTags(content['value']);
+            };
+            UDGE.COMMAND_HANDLER['get_num_other_taggers'] = function (content) {
+                ID_COMPARE_750.setNumOtherTaggers(content['value'][0]['num']);
+            };
+            UDGE.COMMAND_HANDLER['get_mood_count_for_this_image'] = function (content) {
+                ID_COMPARE_750.setDistinctMoods(content['value'][0]['num']);
             };
             break;
         }
@@ -1789,7 +1853,33 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
             };
             break;
         }
+        case "id_compare_750": {
+            UDGE.onTutorialFinished = function (event, ui) {
+                BootstrapDialog.show({
+                    title: 'Nickname',
+                    message: $('<div>Bitte gebe hier deinen Nicknamen (1-8 Zeichen) ein, der später im Leaderboard erscheinen soll.</div>' +
+                        '<input class="pt-2 pb-2" type="text" id="dia_nickname_id_points">' +
+                        '<div id="dia_nickname_id_points_error" class="invisible txt_red">Bitte gebe einen Nicknamen mit 1-8 Zeichen an.</div>'),
+                    closable: false,
+                    buttons: [{
+                        label: 'Weiter',
+                        action: function (dialogItself) {
+                            var nick = $('#dia_nickname_id_points').val();
+                            if (nick.length > 0 && nick.length < 9) {
+                                setCookie('lb_username', nick);
+                                dialogItself.close();
+                                deleteCookie('750_points');
+                                viewTutorialFinished();
+                            } else {
+                                setVisible($('#dia_nickname_id_points_error'));
+                            }
+                        }
+                    }]
+                });
 
+            };
+            break;
+        }
         default: {
             UDGE.onTutorialFinished = function (event, ui) {
                 viewTutorialFinished();
@@ -2834,6 +2924,75 @@ function startIDCompare746Tutorial_part_2() {
                 disableTagFieldAndNextButton();
                 $('#next_img_compare_746').prop('onclick', null).off('click');
                 $('#next_img_compare_746').click(function() {
+                    btn_oc_viewTutorialFinished();
+                });
+            },
+            true
+        );
+    }
+}
+
+/**
+ * Start the compare 750 tutorial
+ */
+function startIDCompare750Tutorial() {
+    var next_img_btn = $('#next_img');
+    next_img_btn.prop('onclick', null).off('click');
+
+    // Create an example view of the right view
+    ID_COMPARE_750 = ID_Compare_750();
+    ID_COMPARE_750.init('div_it_id_compare_750');
+
+    viewRightTutorialOverlay(
+        'Prinzip des Bilder-Taggens',
+        $('<div></div>').load('views/dialogs/dia_tutorial_design_implemented.html'),
+        'Weiter',
+        function () {
+            flipIn(5);
+            setTimeout(function () {
+                setVisible($('#div_it_stats'));
+                ID_COMPARE_750.setTutorialView();
+                viewLeftTutorialOverlay(
+                    'Das Tagging',
+                    $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_compare_750.html'),
+                    'Weiter',
+                    function () {
+                        enableTagFieldAndButton();
+                        var next_btn = $('#next_img');
+                        next_btn.html('Bestätigen');
+                        next_img_btn.prop('onclick', null).off('click');
+                        next_img_btn.click(startIDCompare750Tutorial_part_2);
+                    },
+                    true
+                );
+            }, 5000);
+        },
+        true);
+}
+
+function startIDCompare750Tutorial_part_2() {
+    // Check whether at least one tag was created
+    var tags = $("#myTags").tagit("assignedTags");
+    if (tags.length === 0) {
+        viewInfoOverlay('' +
+            'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
+            'Diese Einschränkung wird im regulären Ablauf wegfallen.');
+    } else {
+        // Disabling the tag field
+        disableTagField();
+
+        // Changing the button
+        var next_img_btn = $('#next_img');
+        next_img_btn.html('Bestätigt');
+        ID_COMPARE_750.displayAccordances();
+        viewLeftTutorialOverlay(
+            'Wörter anderer Spieler',
+            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_compare_750_2.html'),
+            'Weiter',
+            function () {
+                disableTagFieldAndNextButton();
+                $('#next_img_compare_750').prop('onclick', null).off('click');
+                $('#next_img_compare_750').click(function() {
                     btn_oc_viewTutorialFinished();
                 });
             },

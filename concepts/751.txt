@@ -1,0 +1,8 @@
+Zu einem Spiel gehört für mich ein Belohnungssystem mit gezielten Reizen für eine bestimmte Zielgruppe. 
+Mein Spielekonzept appeliert an den Wettbewerbstyp als Spielertyp und sieht so aus, dass jeder Spieler versuchen musst zu einem Bild die passenden Wörter zu finden, welche dieses Bild beschreibt. 
+Der Spieler nimmt an dass das Bild bereits von euch getaggt wurde (was es nicht ist), und versucht so viele Punkte wie möglich zu bekommen. 
+Es wird zu jedem Bild eine Rangliste gezeigt mit den Teilnehmern und ihren Punkten. 
+Jedes erratene Stichwort gibt einen Punkt. 
+Der Spieler will versuchen zu den Highscore zu bekommen.
+
+Da ihr noch keine Stichwörter habt zu den Bildern müsst ihr dann hierbei einen randomizer benutzen der entscheidet wie viele Wörter von Teilnehmer x richtig erraten wurden und gibt ihm dann die Punkte (von sicht des Users sicht das alles korrekt aus).

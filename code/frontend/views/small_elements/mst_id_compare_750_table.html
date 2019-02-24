@@ -1,0 +1,20 @@
+<div>
+    <h3>Ranking</h3>
+    <div class="card no-border bg-gray w-100 leaderboard" id="div_it_id_compare_750_lb"></div>
+</div>
+
+<div>
+    <p id="numTagsText">Dieses Bild wurde mit insgesamt <span id="numTags" style="font-weight: bold">0</span> verschiedenen Tags von anderen Spielern versehen.</p>
+</div>
+
+{{^end_page}}
+<div>
+    <br>
+    <p>Die Prozentzahlen im Folgenden sagen dir, wie viele der anderen Teilnehmer den entsprechenden Tag verwendet haben:</p>
+    <div id="accordancesDiv" style="max-height: 350px; overflow-y: auto"></div>
+    <p>Du hast <b><span id="basePoints">{{basePoints}}</span></b> Punkte für deine eingegebenen Worte und <b><span id="accordancePoints">{{extraPoints}}</span></b> Punkte für deine Übereinstimmung mit anderen Spielern erhalten.</p>
+    <button type="button" class="btn btn-primary w-35 pt-3 pull-right" onclick="btn_oc_postImageTags()" id="next_img_compare_750">
+        Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+</div>
+{{/end_page}}

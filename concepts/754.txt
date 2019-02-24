@@ -1,0 +1,7 @@
+In diesem Spielekonzept wird das Spiel als Mehrspieler-Spiel (mindestens zu dritt, online) gespielt.
+
+Runde für Runde wird von einem wechselnden Spieler, dem "Beschreiber", jeweils die Stimmung eines Bildes mit maximal 3 Stichwörtern beschrieben.
+Die restlichen Spieler ("Ratespieler") bekommen das vom "Beschreiber" beschriebene Bild angezeigt und müssen innerhalb einer Minute möglichst alle Stichwörter erraten. 
+Für jedes erratene Stichwort bekommen die Spieler einen Punkt, also maximal 3 Punkte.
+
+Danach werden dem "Beschreiber" die übrigen, falschen Begriffe angezeigt, und er muss versuchen, sie den "Ratespielern" zuzuordnen. Für jede korrekte Zuordnung bekommt der "Beschreiber" einen Punkt.
