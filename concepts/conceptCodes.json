@@ -58,4 +58,17 @@
 		"Social Comparison",
 		"Social Competition"
 	]
+	
+	752 : [
+	    "Appearance",
+	    "Virtual Character (other)",
+	    "Unspecific Reward"
+	]
+	
+	754 : [
+	    "Multiplayer",
+		"Time Pressure",
+		"Goals",
+		"Points"
+	]
 }
