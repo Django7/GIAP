@@ -4,6 +4,7 @@ ID_Compare_750 = function () {
         POINTS = 0,
         OTHER_TAGS = [],
         OTHER_TAGS_COUNT = [],
+        SHOW_POINTS_BOARD = true,
         NUM_OTHER_TAGGERS = 0,
         DISTINCT_TAGS = 0,
         BASE_POINTS_ROUND = 0,
@@ -116,8 +117,6 @@ ID_Compare_750 = function () {
                 // Render the statistics, print them and activate the buttons
                 var rendered = Mustache.render(templateTab, params);
                 $('#id_compare_750_table').html(rendered);
-
-                $('#numTagsText').css({'display' : 'none'});
 
                 username = getCookie('lb_username');
                 username = username === "" ? 'Du' : username;
@@ -278,6 +277,29 @@ ID_Compare_750 = function () {
                 $('#' + ELT).html(rendered);
             });
 
+        },
+
+        toggleLeaderboard = function() {
+            var leaderboard = [];
+            if(SHOW_POINTS_BOARD) {
+                SHOW_POINTS_BOARD = false;
+                //TODO
+            } else {
+                SHOW_POINTS_BOARD = true;
+                leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
+                leaderboard.push([(POINTS * 100).toFixed(0), username, '#5b67f1', 1]);
+            }
+
+            // Display the ranking
+            var lb = $('#div_it_id_compare_750_lb');
+            lb.html('');
+            lb.jqBarGraph({
+                data: leaderboard,
+                animate: false,
+                sort: 'desc',
+                height: 200,
+                width: 370
+            });
         };
 
     /**
@@ -296,6 +318,7 @@ ID_Compare_750 = function () {
         storePoints : storePoints,
         generateNewPointsDistribution : generateNewPointsDistribution,
         setEndView : setEndView,
-        setPoints : setPoints
+        setPoints : setPoints,
+        toggleLeaderboard : toggleLeaderboard
     };
 };
