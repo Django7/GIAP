@@ -860,6 +860,13 @@ function setUDGEAfterFlipImage(main_user_group_id) {
             };
             break;
         }
+        case 'id_compare_750' : {
+            UDGE.afterFlipImage = function(inTutorial) {
+                ID_COMPARE_750.incSharedPoints();
+                printLog('image flipped');
+            };
+            break;
+        }
         default: {
             UDGE.afterFlipImage = function (inTutorial) {
             };

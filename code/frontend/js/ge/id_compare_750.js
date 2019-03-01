@@ -2,6 +2,10 @@ ID_Compare_750 = function () {
     /* The goals list and the element to display the goals in */
     var ELT = "",
         POINTS = 0,
+        SHAREPOINTS = 0,
+        POINTS_START_ROUND = 0,
+        SHAREPOINTS_START_ROUND = 0,
+        CONFIRMED_TAGS = false,
         OTHER_TAGS = [],
         OTHER_TAGS_COUNT = [],
         SHOW_POINTS_BOARD = true,
@@ -15,10 +19,14 @@ ID_Compare_750 = function () {
             [0, 'legolas', '#607cae', 0],
             [0, 'anork85', '#607cae', 0]
         ],
-        pointsVerd = Math.max(parseFloat(((Math.random() * 20).toFixed(1) * 100).toFixed(0)), 100),
-        pointsNeo = Math.max(parseFloat(((Math.random() * 20).toFixed(1) * 100).toFixed(0)), 100),
-        pointsLego = Math.max(parseFloat(((Math.random() * 20).toFixed(1) * 100).toFixed(0)), 100),
-        pointsAnork = Math.max(parseFloat(((Math.random() * 20).toFixed(1) * 100).toFixed(0)), 100),
+        pointsVerd = (6 + parseFloat((Math.random() * 2).toFixed(0))) * 100,
+        pointsNeo = (3 + parseFloat((Math.random() * 2).toFixed(0))) * 100,
+        pointsLego = (2 + parseFloat((Math.random() * 2).toFixed(0))) * 100,
+        pointsAnork = (parseFloat((Math.random() * 2).toFixed(0))) * 100,
+        sharePointsVerd = 0,
+        sharePointsNeo = 0,
+        sharePointsLego = 0,
+        sharePointsAnork = 0,
         username = "",
         IN_TUTORIAL = false,
         IN_END = false,
@@ -39,10 +47,22 @@ ID_Compare_750 = function () {
                 OTHER_TAGS.push('düster');
                 OTHER_TAGS_COUNT.push(2);
                 NUM_OTHER_TAGGERS = 63;
+
+                var sumShare = Math.floor((OTHER_TAGS_COUNT[0] / NUM_OTHER_TAGGERS) * 100) + Math.floor((OTHER_TAGS_COUNT[1] / NUM_OTHER_TAGGERS) * 100) + Math.floor((OTHER_TAGS_COUNT[2] / NUM_OTHER_TAGGERS) * 100);
+
+                sharePointsVerd = sumShare * 10 - 10;
+                sharePointsNeo = Math.round(3/4 * sumShare) * 10;
+                sharePointsLego = Math.round(2/4 * sumShare) * 10;
+                sharePointsAnork = Math.round(1/4 * sumShare) * 10;
             }
 
             EXTRA_POINTS_ROUND = 0;
             BASE_POINTS_ROUND = 0;
+
+            POINTS_START_ROUND = POINTS;
+            SHAREPOINTS_START_ROUND = SHAREPOINTS;
+
+            CONFIRMED_TAGS = false;
 
             $.get('views/mst_id_compare_750.html', function (template) {
                 OTHERS[0][0] = parseInt(pointsVerd);
@@ -114,6 +134,8 @@ ID_Compare_750 = function () {
                     extraPoints : EXTRA_POINTS_ROUND * 10
                 };
 
+                CONFIRMED_TAGS = true;
+
                 // Render the statistics, print them and activate the buttons
                 var rendered = Mustache.render(templateTab, params);
                 $('#id_compare_750_table').html(rendered);
@@ -138,7 +160,7 @@ ID_Compare_750 = function () {
                     height: 200,
                     width: 370
                 });
-
+                if(!SHOW_POINTS_BOARD) toggleLeaderboard();
                 disableTagFieldAndNextButton();
                 var next_img_btn = $('#next_img');
                 next_img_btn.html('Bestätigt');
@@ -202,9 +224,9 @@ ID_Compare_750 = function () {
                     BASE_POINTS_ROUND++;
                     var accom = OTHER_TAGS_COUNT[i] / NUM_OTHER_TAGGERS;
                     accom *= 100;
-                    accom = Math.floor(accom) / 10;
-                    EXTRA_POINTS_ROUND += accom * 10;
-                    POINTS += accom;
+                    accom = Math.floor(accom);
+                    EXTRA_POINTS_ROUND += accom;
+                    SHAREPOINTS += accom;
                     return;
                 }
             }
@@ -217,9 +239,9 @@ ID_Compare_750 = function () {
                     BASE_POINTS_ROUND--;
                     var accom = OTHER_TAGS_COUNT[i] / NUM_OTHER_TAGGERS;
                     accom *= 100;
-                    accom = Math.floor(accom) / 10;
-                    EXTRA_POINTS_ROUND -= accom * 10;
-                    POINTS -= accom;
+                    accom = Math.floor(accom);
+                    EXTRA_POINTS_ROUND -= accom;
+                    SHAREPOINTS -= accom;
                     return;
                 }
             }
@@ -249,17 +271,28 @@ ID_Compare_750 = function () {
         },
 
         generateNewPointsDistribution = function() {
-            pointsVerd += Math.max(parseFloat(((Math.random() * 20).toFixed(1) * 100).toFixed(0)), 100),
-            pointsNeo += Math.max(parseFloat(((Math.random() * 20).toFixed(1) * 100).toFixed(0)), 100),
-            pointsLego += Math.max(parseFloat(((Math.random() * 20).toFixed(1) * 100).toFixed(0)), 100),
-            pointsAnork += Math.max(parseFloat(((Math.random() * 20).toFixed(1) * 100).toFixed(0)), 100),
+            pointsVerd += (6 + parseFloat((Math.random() * 2).toFixed(0))) * 100;
+            pointsNeo += (3 + parseFloat((Math.random() * 2).toFixed(0))) * 100;
+            pointsLego += (2 + parseFloat((Math.random() * 2).toFixed(0))) * 100;
+            pointsAnork += (parseFloat((Math.random() * 2).toFixed(0))) * 100;
 
             OTHERS = [
                 [pointsVerd, 'verdani', '#607cae', 0],
                 [pointsNeo, 'neo23', '#607cae', 0],
                 [pointsLego, 'legolas', '#607cae', 0],
                 [pointsAnork, 'anork85', '#607cae', 0]
-            ]
+            ];
+        },
+
+        incSharedPoints = function() {
+            var summedShare = 0;
+            OTHER_TAGS_COUNT.forEach(function(count) {
+                summedShare += Math.floor((count / NUM_OTHER_TAGGERS) * 100);
+            });
+            sharePointsVerd += summedShare * 10 - 10;
+            sharePointsNeo += Math.round(3/4 * summedShare) * 10;
+            sharePointsLego += Math.round(2/4 * summedShare) * 10;
+            sharePointsAnork += Math.round(1/4 * summedShare) * 10;
         },
 
         setEndView = function() {
@@ -283,11 +316,34 @@ ID_Compare_750 = function () {
             var leaderboard = [];
             if(SHOW_POINTS_BOARD) {
                 SHOW_POINTS_BOARD = false;
-                //TODO
+                $('#LBHeading').text('Ranking (Überschneidungen)');
+                OTHERS = [
+                    [sharePointsVerd, 'verdani', '#607cae', 0],
+                    [sharePointsNeo, 'neo23', '#607cae', 0],
+                    [sharePointsLego, 'legolas', '#607cae', 0],
+                    [sharePointsAnork, 'anork85', '#607cae', 0]
+                ];
+                leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
+                if(CONFIRMED_TAGS) {
+                    leaderboard.push([(SHAREPOINTS * 10).toFixed(0), username, '#5b67f1', 1]);
+                } else {
+                    leaderboard.push([(SHAREPOINTS_START_ROUND * 10).toFixed(0), username, '#5b67f1', 1]);
+                }
             } else {
                 SHOW_POINTS_BOARD = true;
+                $('#LBHeading').text('Ranking (Allgemein)');
+                OTHERS = [
+                    [pointsVerd, 'verdani', '#607cae', 0],
+                    [pointsNeo, 'neo23', '#607cae', 0],
+                    [pointsLego, 'legolas', '#607cae', 0],
+                    [pointsAnork, 'anork85', '#607cae', 0]
+                ];
                 leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
-                leaderboard.push([(POINTS * 100).toFixed(0), username, '#5b67f1', 1]);
+                if (CONFIRMED_TAGS) {
+                    leaderboard.push([(POINTS * 100).toFixed(0), username, '#5b67f1', 1]);
+                } else {
+                    leaderboard.push([(POINTS_START_ROUND * 100).toFixed(0), username, '#5b67f1', 1]);
+                }
             }
 
             // Display the ranking
@@ -319,6 +375,7 @@ ID_Compare_750 = function () {
         generateNewPointsDistribution : generateNewPointsDistribution,
         setEndView : setEndView,
         setPoints : setPoints,
+        incSharedPoints : incSharedPoints,
         toggleLeaderboard : toggleLeaderboard
     };
 };
