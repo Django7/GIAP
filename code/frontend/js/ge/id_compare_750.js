@@ -256,6 +256,9 @@ ID_Compare_750 = function () {
         },
 
         setOtherTags = function(others) {
+            OTHER_TAGS.length = 0;
+            OTHER_TAGS_COUNT.length = 0;
+
             others.forEach(function (tagAndCount) {
                 OTHER_TAGS.push(tagAndCount.tag);
                 OTHER_TAGS_COUNT.push(tagAndCount.tag_count);
