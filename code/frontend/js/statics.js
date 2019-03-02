@@ -79,8 +79,8 @@ var ID_COMPARE_750;
  * Sets the statics to their default values
  */
 function initStaticEnvironment() {
-    //SERVER_URL = 'ws://m.schubhan.de:8025/ws/wscon';
-    SERVER_URL = 'ws://localhost:8025/ws/wscon';
+    SERVER_URL = 'ws://m.schubhan.de:8025/ws/wscon';
+    //SERVER_URL = 'ws://localhost:8025/ws/wscon';
     //SERVER_URL = 'wss://dobuch.de/ws/wscon/';
     PLATFORM_OPEN = true;
     DEBUGGING = true;
