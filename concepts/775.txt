@@ -1,0 +1,8 @@
+Einführung eines Leaderboards, als auch eines automatischen Bewertungsschemas. 
+Das Bewertungsschema verarbeitet die Begriffe und man hat direktes Feedback, wie "gut" man abschneidet. 
+Das Leaderboard ist dabei die Motivation immer weiter zu machen und sich über die Konkurrenz zu erheben. 
+
+Diese beiden Konzepte sollen die kompetetetive Natur mancher Menschen anregen. 
+
+Zusätzlich wäre eine grafische Oberfläche wünschenswert mitsamt Abzeichen und kostümisierbaren Inhalten, so in etwa ein Avatar dem man ansehen kann, wie weit fortgeschritten der User ist. 
+Sprich hier würde ich mir eine Annährung an Online-Rollenspiele wünschen, mitsamt einer daraus resultierenden Hub-World für Mitglieder, die sich in ihrer Wortgewandheit und Billdverständnisses messen können.
