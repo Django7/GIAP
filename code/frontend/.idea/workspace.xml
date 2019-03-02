@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="251b9650-a7a1-4a4b-b478-9c7849714cd7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/ge/id_points_751.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/mst_id_points_751.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/small_elements/mst_id_points_751_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ge/game_element_helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ge/game_element_helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ge/id_points_751.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ge/id_points_751.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/statics.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/statics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/mst_tagging_environment.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/mst_tagging_environment.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -27,17 +21,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/mst_tagging_environment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="223" column="36" lean-forward="true" selection-start-line="223" selection-start-column="36" selection-end-line="223" selection-end-column="36" />
+            <state relative-caret-position="494">
+              <caret line="225" column="19" selection-start-line="225" selection-start-column="19" selection-end-line="225" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="3143" column="26" lean-forward="true" selection-start-line="3143" selection-start-column="26" selection-end-line="3143" selection-end-column="26" />
+            <state relative-caret-position="2515">
+              <caret line="834" column="59" selection-start-line="834" selection-start-column="30" selection-end-line="834" selection-end-column="59" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -48,17 +42,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/statics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="161" column="47" lean-forward="true" selection-start-line="161" selection-start-column="47" selection-end-line="161" selection-end-column="47" />
+            <state relative-caret-position="310">
+              <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/ge/id_points_751.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="105" column="17" lean-forward="true" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/ge/id_points_751.js">
+        <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1047">
-              <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+            <state relative-caret-position="69">
+              <caret line="3" column="104" lean-forward="true" selection-start-line="3" selection-start-column="104" selection-end-line="3" selection-end-column="104" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/ge/id_points_731.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="215" column="22" selection-start-line="215" selection-start-column="22" selection-end-line="215" selection-end-column="56" />
+              <folding>
+                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#button#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#button#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#button#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#button#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#button#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#button#0;n#li#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/mst_id_points_751.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" column="28" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -66,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/small_elements/mst_id_points_751_table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="127" selection-start-line="8" selection-start-column="127" selection-end-line="8" selection-end-column="127" />
+            <state relative-caret-position="161">
+              <caret line="7" column="52" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -85,6 +118,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>.text</find>
+      <find>id_points_751</find>
+      <find>ID_POINTS_751.gener</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -100,12 +135,13 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/views/mst_id_points_751.html" />
         <option value="$PROJECT_DIR$/views/small_elements/mst_id_points_751_table.html" />
-        <option value="$PROJECT_DIR$/js/statics.js" />
-        <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751.html" />
         <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751_2.html" />
-        <option value="$PROJECT_DIR$/views/mst_tagging_environment.html" />
-        <option value="$PROJECT_DIR$/js/ge/id_points_751.js" />
         <option value="$PROJECT_DIR$/js/ge/game_element_helpers.js" />
+        <option value="$PROJECT_DIR$/js/ge/id_points_731.js" />
+        <option value="$PROJECT_DIR$/js/statics.js" />
+        <option value="$PROJECT_DIR$/views/mst_tagging_environment.html" />
+        <option value="$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751.html" />
+        <option value="$PROJECT_DIR$/js/ge/id_points_751.js" />
       </list>
     </option>
   </component>
@@ -134,13 +170,13 @@
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="ge" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="dialogs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -182,7 +218,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25302000" />
+    <option name="totallyTimeSpent" value="29340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -218,13 +254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="78" column="59" selection-start-line="78" selection-start-column="59" selection-end-line="78" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/mst_id_compare_750.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -239,20 +268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/id_points_731.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2185">
-          <caret line="37" column="41" lean-forward="true" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/id_compare_746.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -305,13 +320,6 @@
     <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_test_12.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751_2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -326,48 +334,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/mst_id_points_751.html">
+    <entry file="file://$PROJECT_DIR$/js/ge/id_compare_746.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        <state relative-caret-position="161">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/small_elements/mst_id_points_751_table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="127" selection-start-line="8" selection-start-column="127" selection-end-line="8" selection-end-column="127" />
+        <state relative-caret-position="161">
+          <caret line="7" column="52" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mst_id_points_751.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/id_points_731.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="215" column="22" selection-start-line="215" selection-start-column="22" selection-end-line="215" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#button#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#button#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#button#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#button#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#button#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#button#0;n#li#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dialogs/dia_tutorial_ge_id_points_751.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="104" lean-forward="true" selection-start-line="3" selection-start-column="104" selection-end-line="3" selection-end-column="104" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/statics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="161" column="47" lean-forward="true" selection-start-line="161" selection-start-column="47" selection-end-line="161" selection-end-column="47" />
+        <state relative-caret-position="310">
+          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="75" column="70" lean-forward="true" selection-start-line="75" selection-start-column="70" selection-end-line="75" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mst_tagging_environment.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="223" column="36" lean-forward="true" selection-start-line="223" selection-start-column="36" selection-end-line="223" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ge/id_points_751.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1047">
-          <caret line="27" column="45" lean-forward="true" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+        <state relative-caret-position="494">
+          <caret line="225" column="19" selection-start-line="225" selection-start-column="19" selection-end-line="225" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ge/game_element_helpers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="3143" column="26" lean-forward="true" selection-start-line="3143" selection-start-column="26" selection-end-line="3143" selection-end-column="26" />
+        <state relative-caret-position="2515">
+          <caret line="834" column="59" selection-start-line="834" selection-start-column="30" selection-end-line="834" selection-end-column="59" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ge/id_points_751.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="105" column="17" lean-forward="true" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
         </state>
       </provider>
     </entry>
