@@ -12,10 +12,10 @@ ID_Points_751 = function () {
             [0, 'legolas', '#607cae', 0],
             [0, 'anork85', '#607cae', 0]
         ],
-        pointsVerd = parseInt((Math.random() * 14).toFixed(0)),
-        pointsNeo = parseInt((Math.random() * 14).toFixed(0)),
-        pointsLego = parseInt((Math.random() * 14).toFixed(0)) ,
-        pointsAnork = parseInt((Math.random() * 14).toFixed(0)),
+        pointsVerd = 6 + parseInt((Math.random() * 2).toFixed(0)),
+        pointsNeo =  4 + parseInt((Math.random() * 2).toFixed(0)),
+        pointsLego = 2 + parseInt((Math.random() * 2).toFixed(0)) ,
+        pointsAnork = 1 + parseInt((Math.random() * 2).toFixed(0)),
         username = "",
 
         /**
@@ -100,7 +100,7 @@ ID_Points_751 = function () {
                         return;
                     }
                 }
-                if(Math.random() * 5 < 1) {
+                if(Math.random() * 5 <= 1) {
                     POINTS++;
                     POINTS_ROUND++;
                 }
@@ -133,10 +133,10 @@ ID_Points_751 = function () {
         },
 
         generateNewPointsDistribution = function() {
-            pointsVerd += parseInt((Math.random() * 8).toFixed(0));
-            pointsNeo += parseInt((Math.random() * 8).toFixed(0));
-            pointsLego += parseInt((Math.random() * 8).toFixed(0));
-            pointsAnork += parseInt((Math.random() * 8).toFixed(0));
+            pointsVerd += 6 + parseInt((Math.random() * 2).toFixed(0));
+            pointsNeo += 4 + parseInt((Math.random() * 2).toFixed(0));
+            pointsLego += 2 + parseInt((Math.random() * 2).toFixed(0));
+            pointsAnork += 1 + parseInt((Math.random() * 2).toFixed(0));
 
             OTHERS = [
                 [pointsVerd, 'verdani', '#607cae', 0],

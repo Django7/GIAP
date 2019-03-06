@@ -1,0 +1,11 @@
+In Anlehnung an die TV-Show "Familien Duell":
+
+Die Bilder müssen zuvor von einem Teilnehmerpool mit Stimmungswörtern beantwortet werden. 
+Die Antworten werden gesammelt und ausgezählt. 
+Das Wort mit der häufigsten Nennung (bspw. das Wort "traurig" wurde von 79 % der Befragten für das dementsprechende Bild genannt) wird in der Reihenfolge nach oben verortet, das Zweithäufigste danach (bspw. 58 % der Befragten verwendeten das Wort "ruhig"), usw... 
+
+Das Spiel:
+
+Nachdem der Teilnehmer das Bild für 15 Sekunden gesehen hat, soll dieser die Stimmungswörter aufschreiben von denen er der Meinung ist, dass ein zuvor befragter Pool an Leuten das Bild mit den dementsprechenden Wörtern assoziiert.
+
+Für übereinstimmende Nennungen von Teilnehmer und Pool gibt es die prozentuale Häufigkeit der Wortnennung als Punktezahl, d. h. bei der Wortnennung "ruhig" würde der Teilnehmer 58 Punkte generieren.
