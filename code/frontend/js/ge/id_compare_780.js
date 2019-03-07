@@ -2,6 +2,7 @@ ID_Compare_780 = function () {
     /* The goals list and the element to display the goals in */
     var ELT = "",
         POINTS = 0,
+        POINTS_ROUND = 0,
         OTHER_TAGS = [],
         OTHER_TAGS_COUNT = [],
         NUM_OTHER_TAGGERS = 0,
@@ -16,6 +17,8 @@ ID_Compare_780 = function () {
         },
 
         setView = function() {
+            POINTS_ROUND = 0;
+
             $.get('views/mst_id_compare_780.html', function (template) {
                 var params = {
                     end_screen: false
@@ -38,12 +41,6 @@ ID_Compare_780 = function () {
                 var next_img_btn = $('#next_img');
                 next_img_btn.html('Bestätigt');
 
-                var params = {
-                    end_page: false
-                };
-                var rendered = Mustache.render(template, params);
-                $('#wordStatsDiv').html(rendered);
-                $('#shortTextDiv').css({'display' : 'none'});
                 if(IN_TUTORIAL) {
                     OTHER_TAGS.push('unruhig');
                     OTHER_TAGS_COUNT.push(3);
@@ -60,11 +57,11 @@ ID_Compare_780 = function () {
                 ownTags.forEach(function(ownTag, idx) {
                     for(var i=0; i<OTHER_TAGS.length; i++) {
                         if(ownTag === OTHER_TAGS[i]) {
-                            counts[idx] = ((OTHER_TAGS_COUNT[i] / NUM_OTHER_TAGGERS) * 100);
+                            counts[idx] = Math.round((OTHER_TAGS_COUNT[i] / NUM_OTHER_TAGGERS) * 100);
                             return;
                         }
                     }
-                    counts[idx] = 0.00;
+                    counts[idx] = 0;
                 });
 
                 var newOrder = [];
@@ -93,8 +90,22 @@ ID_Compare_780 = function () {
 
                 var htmlString = "";
                 for(var i=0; i<orderedOwnTags.length; i++) {
-                    htmlString += "<p>" + orderedOwnTags[i] + ": <b>" + orderedCounts[i].toFixed(2).toString() + "%</b></p>\n";
+                    htmlString += "<p>" + orderedOwnTags[i] + ": <b>" + orderedCounts[i].toString() + "%</b></p>\n";
                 }
+
+                counts.forEach(function(num) {
+                    POINTS += num;
+                    POINTS_ROUND += num;
+                });
+
+                var params = {
+                    end_page: false,
+                    overallPoints : POINTS,
+                    reachedPoints : POINTS_ROUND
+                };
+                var rendered = Mustache.render(template, params);
+                $('#wordStatsDiv').html(rendered);
+                $('#shortTextDiv').css({'display' : 'none'});
 
                 $('#accordancesDiv').html('');
                 $('#accordancesDiv').html(htmlString);
@@ -107,11 +118,11 @@ ID_Compare_780 = function () {
         },
 
         afterTagAdded = function(label) {
-            POINTS++;
+            //POINTS++;
         },
 
         afterTagRemoved = function(label) {
-            POINTS--;
+            //POINTS--;
         },
 
         setPoints = function(pts) {
