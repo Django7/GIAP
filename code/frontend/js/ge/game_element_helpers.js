@@ -208,6 +208,13 @@ function setUDGETutorial(main_user_group_id) {
             };
             break;
         }
+        case "id_compare_780": {
+            UDGE.startTutorial = function () {
+                printLog("start id compare 780 tutorial");
+                startIDCompare780Tutorial();
+            };
+            break;
+        }
         default: {
             UDGE.startTutorial = function () {
                 startBasicTutorial();
@@ -460,6 +467,18 @@ function setUDGETaggingEnvironment(main_user_group_id) {
             };
             break;
         }
+        case 'id_compare_780': {
+            UDGE.setTaggingEnvironment = function (mst_params, fun_array, frame_only) {
+                mst_params['stats'] = true;
+                mst_params['id_compare_780'] = true;
+                fun_array.push(function () {
+                    if (!frame_only) {
+                        ID_COMPARE_780.setView();
+                    }
+                })
+            };
+            break;
+        }
         default: {
         }
     }
@@ -601,6 +620,12 @@ function setUDGEEnd(main_user_group_id) {
             };
             break;
         }
+        case "id_compare_780": {
+            UDGE.setEnd = function (mst_params, fun_array) {
+                ID_COMPARE_780.setEndView();
+            };
+            break;
+        }
         default: {
             UDGE.setEnd = function (mst_params, fun_array) {
             };
@@ -715,6 +740,13 @@ function setUDGEAfterGetImage(main_user_group_id) {
         case "id_points_751": {
             UDGE.afterGetImage = function () {
                 getAllOtherTags();
+            };
+            break;
+        }
+        case "id_compare_780": {
+            UDGE.afterGetImage = function () {
+                getAllOtherTags();
+                getNumOtherTaggers();
             };
             break;
         }
@@ -833,6 +865,12 @@ function setUDGEAfterPostImage(main_user_group_id) {
             UDGE.afterPostImage = function () {
                 ID_POINTS_751.storePoints();
                 ID_POINTS_751.generateNewPointsDistribution();
+            };
+            break;
+        }
+        case 'id_compare_780': {
+            UDGE.afterPostImage = function () {
+                ID_COMPARE_780.storePoints();
             };
             break;
         }
@@ -1021,6 +1059,12 @@ function setUDGEAfterTagAdded(main_user_group_id) {
             };
             break;
         }
+        case "id_compare_780": {
+            UDGE.afterTagAdded = function(event, ui) {
+                ID_COMPARE_780.afterTagAdded();
+            };
+            break;
+        }
         default: {
             UDGE.afterTagAdded = function (event, ui) {
             };
@@ -1133,6 +1177,12 @@ function setUDGEAfterTagRemoved(main_user_group_id) {
         case "id_points_751": {
             UDGE.afterTagRemoved = function(event, ui) {
                 ID_POINTS_751.afterTagRemoved(ui.tagLabel);
+            };
+            break;
+        }
+        case "id_compare_780": {
+            UDGE.afterTagRemoved = function(event, ui) {
+                ID_COMPARE_780.afterTagRemoved();
             };
             break;
         }
@@ -1333,6 +1383,15 @@ function setUDGEOnInterpretCommand(main_user_group_id) {
         case "id_points_751": {
             UDGE.COMMAND_HANDLER['get_all_other_tags'] = function (content) {
                 ID_POINTS_751.setOtherTags(content['value']);
+            };
+            break;
+        }
+        case "id_compare_780": {
+            UDGE.COMMAND_HANDLER['get_all_other_tags'] = function (content) {
+                ID_COMPARE_780.setOtherTags(content['value']);
+            };
+            UDGE.COMMAND_HANDLER['get_num_other_taggers'] = function (content) {
+                ID_COMPARE_780.setNumOtherTaggers(content['value'][0]['num']);
             };
             break;
         }
@@ -1967,6 +2026,13 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
                     }]
                 });
 
+            };
+            break;
+        }
+        case "id_compare_780": {
+            UDGE.onTutorialFinished = function (event, ui) {
+                setCookie('780_points', 0);
+                viewTutorialFinished();
             };
             break;
         }
@@ -3152,6 +3218,75 @@ function startIDPoints751Tutorial_part_2() {
                 disableTagFieldAndNextButton();
                 $('#next_img_points_751').prop('onclick', null).off('click');
                 $('#next_img_points_751').click(function() {
+                    btn_oc_viewTutorialFinished();
+                });
+            },
+            true
+        );
+    }
+}
+
+/**
+ * Start the compare 746 tutorial
+ */
+function startIDCompare780Tutorial() {
+    var next_img_btn = $('#next_img');
+    next_img_btn.prop('onclick', null).off('click');
+
+    // Create an example view of the right view
+    ID_COMPARE_780 = ID_Compare_780();
+    ID_COMPARE_780.init('div_it_id_compare_780');
+
+    viewRightTutorialOverlay(
+        'Prinzip des Bilder-Taggens',
+        $('<div></div>').load('views/dialogs/dia_tutorial_design_implemented.html'),
+        'Weiter',
+        function () {
+            flipIn(5);
+            setTimeout(function () {
+                setVisible($('#div_it_stats'));
+                ID_COMPARE_780.setTutorialView();
+                viewLeftTutorialOverlay(
+                    'Das Tagging',
+                    $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_compare_780.html'),
+                    'Weiter',
+                    function () {
+                        enableTagFieldAndButton();
+                        var next_btn = $('#next_img');
+                        next_btn.html('Bestätigen');
+                        next_img_btn.prop('onclick', null).off('click');
+                        next_img_btn.click(startIDCompare780Tutorial_part_2);
+                    },
+                    true
+                );
+            }, 5000);
+        },
+        true);
+}
+
+function startIDCompare780Tutorial_part_2() {
+    // Check whether at least one tag was created
+    var tags = $("#myTags").tagit("assignedTags");
+    if (tags.length === 0) {
+        viewInfoOverlay('' +
+            'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
+            'Diese Einschränkung wird im regulären Ablauf wegfallen.');
+    } else {
+        // Disabling the tag field
+        disableTagField();
+
+        // Changing the button
+        var next_img_btn = $('#next_img');
+        next_img_btn.html('Bestätigt');
+        ID_COMPARE_780.displayAccordances();
+        viewLeftTutorialOverlay(
+            'Wörter anderer Spieler',
+            $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_compare_780_2.html'),
+            'Weiter',
+            function () {
+                disableTagFieldAndNextButton();
+                $('#next_img_compare_780').prop('onclick', null).off('click');
+                $('#next_img_compare_780').click(function() {
                     btn_oc_viewTutorialFinished();
                 });
             },
