@@ -196,10 +196,9 @@ function createAuswertungCSV() {
 
         var csvString = "user_id;condition;age;sex;sex[freetext];nationality;nationality[freetext];url_where_from;typing_speed;gaming_time;avg_time_img_basic_bonus;avg_time_img_basic;avg_time_img_bonus;tags_tutorial;tags_basic;tags_bonus;tags_basic_and_bonus;extra_rounds;rating_tutorial_1;rating_tutorial_2;rating_tutorial_mean;rating_basic_1;rating_basic_2;rating_basic_mean;rating_extra_1;rating_extra_2;rating_extra_mean;dga_game_affinity;dga_video_game_frequency;dga_video_game_passion;dga_board_game_frequency;dga_board_game_passion;game_affinity;cs_satsified;cs_easiness;cs_motivation_for_others;cs_motivation_for_me;cs_relevance_of_setting;cs_already_motivated;imp_satisfied_with_concept;imp_satisfied_opt;imp_all_aspects_implemented;imp_satisfied_general;imp_motiv_design;imp_motiv_design_process;imp_optical_comment;imp_aspects_comment;satisfaction_with_implementation;more_or_less_tags_without_concept;feasibility;change_something_with_concept;changes;already_game_designed;tagging_already_known;BF_extraversion;BF_neuroticism;BF_openness_to_experience;BF_conscientiousness;BF_aggreeableness;IMI_interest_enjoyment;IMI_perceived_competence;IMI_perceived_choice;IMI_pressure_tension;SUS;comments\n";
         results.forEach(function(row, idx) {
-            if(row.uid > 717) return;
+            if(row.uid > 751 && row.uid !== 780) return;
             csvString += cropDBEntry(row.uid, 0)+ ";";
             csvString += cropDBEntry(row.gid, 0)+ ";";
-
             var demographic = JSON.parse(JSON.parse(row.demographic));
             var concept = JSON.parse(JSON.parse(row.concept));
             var imi = JSON.parse(JSON.parse(row.imi));
