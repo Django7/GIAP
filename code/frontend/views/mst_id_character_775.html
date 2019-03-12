@@ -1,0 +1,35 @@
+{{^end_screen}}
+<div>
+    <h3 id="LBHeading">Ranking </h3>
+    <div class="card no-border bg-gray w-100 leaderboard" id="div_it_id_character_775_lb"></div>
+</div>
+<div>
+     {{#start_charac}}
+        <img src="../img/‪character_images/character.png" id = "charac_image_775" align = left>
+    {{/start_charac}}
+    {{#charac_1}}
+        <img src="../img/‪character_images/Stoff.png" align = left>
+    {{/charac_1}}
+    {{#charac_2}}
+        <img src="../img/‪character_images/Leder.png" align = left>
+    {{/charac_2}}
+    {{#charac_3}}
+        <img src="../img/‪character_images/ersterRitter.png" align = left>
+    {{/charac_3}}
+    {{#charac_4}}
+        <img src="../img/‪character_images/Ritter.png" align = left>
+    {{/charac_4}}
+    <h3 id="RatingHeading">Bewertung deiner Tags </h3>
+    <div id="ratingDiv" style="max-height: 400px; overflow-y: auto"></div>
+</div>
+<button type="button" id="next_img_character_775" class="invisible btn btn-primary w-35 pt-3 pull-right" onclick="{{btn_listener}}">
+    Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+</button>
+{{/end_screen}}
+
+{{#end_screen}}
+<div>
+    Du hast alle 15 Runden abgeschlossen. Danke für deine Teilnahme!
+
+</div>
+{{/end_screen}}

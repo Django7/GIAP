@@ -1,6 +1,6 @@
 /** The server URL **/
-//var SERVER_URL = 'ws://localhost:8025/ws/wscon';
-var SERVER_URL = 'ws://m.schubhan.de:8025/ws/wscon';
+var SERVER_URL = 'ws://localhost:8025/ws/wscon';
+//var SERVER_URL = 'ws://m.schubhan.de:8025/ws/wscon';
 //var SERVER_URL = 'wss://dobuch.de/ws/wscon/';
 
 /** If false, new users get an error message and cannot go beyond the welcome page **/
@@ -77,13 +77,14 @@ var ID_COMPARE_746;
 var ID_COMPARE_750;
 var ID_POINTS_751;
 var ID_COMPARE_780;
+var ID_CHARACTER_775;
 
 /**
  * Sets the statics to their default values
  */
 function initStaticEnvironment() {
-    SERVER_URL = 'ws://m.schubhan.de:8025/ws/wscon';
-    //SERVER_URL = 'ws://localhost:8025/ws/wscon';
+    //SERVER_URL = 'ws://m.schubhan.de:8025/ws/wscon';
+    SERVER_URL = 'ws://localhost:8025/ws/wscon';
     //SERVER_URL = 'wss://dobuch.de/ws/wscon/';
     PLATFORM_OPEN = true;
     DEBUGGING = true;
@@ -164,4 +165,6 @@ function reinitGameElements() {
     ID_POINTS_751.init('div_it_id_points_751');
     ID_COMPARE_780 = ID_Compare_780();
     ID_COMPARE_780.init('div_it_id_compare_780');
+    ID_CHARACTER_775 = ID_Character_775();
+    ID_CHARACTER_775.init('div_it_id_character_775')
 }
