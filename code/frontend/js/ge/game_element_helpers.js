@@ -2132,6 +2132,7 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
                             if (nick.length > 0 && nick.length < 9) {
                                 setCookie('lb_username', nick);
                                 dialogItself.close();
+                                ID_CHARACTER_775.setOtherPoints();
                                 viewTutorialFinished();
                             } else {
                                 setVisible($('#dia_nickname_id_points_error'));

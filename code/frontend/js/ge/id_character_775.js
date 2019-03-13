@@ -30,6 +30,7 @@ ID_Character_775 = function () {
 
         setTutorialView = function () {
             IN_TUTORIAL = true;
+            setOtherPoints();
             setIDCharacter775View(true);
         },
 
@@ -46,8 +47,7 @@ ID_Character_775 = function () {
 
         setIDCharacter775View = function (in_tutorial) {
             if (in_tutorial) {
-                TOP10TAGS = [{tag: 'unruhig'}, {tag: 'verlassen'}, {tag: 'düster'}, {tag: 'glücklich'}, {tag: 'ruhig'},
-                    {tag: 'verträumt'}, {tag: 'dunkel'}, {tag: 'trist'}, {tag: 'warm'}];
+                TOP10TAGS = ['unruhig', 'verlassen', 'düster', 'glücklich', 'ruhig', 'verträumt', 'dunkel', 'trist', 'warm'];
             }
             $.get('views/mst_id_character_775.html', function (template) {
                 var params = {
@@ -92,25 +92,41 @@ ID_Character_775 = function () {
 
     checkCharacter = function () {
         if (TOTAL_TAGS === 25) {
-            $('#charac_image_775').src = "img/character_images/Stoff.png";
+            showNewItem();
         }
         if (TOTAL_TAGS === 50) {
-            $('#charac_image_775').src = "img/character_images/Leder.png";
+            showNewItem();
         }
         if (TOTAL_TAGS === 75) {
-            $('#charac_image_775').src = "img/character_images/ersterRitter.png";
+            showNewItem();
         }
         if (TOTAL_TAGS === 100) {
-            $('#charac_image_775').src = "img/character_images/Ritter.png";
+            showNewItem();
+
         }
     },
+
+        showNewItem = function () {
+            BootstrapDialog.show({
+                title: 'neues Item',
+                message: $('<div>Super, du hast ein neues Item für deinen Character freigeschaltet.</div>'),
+                closable: false,
+                buttons: [{
+                    label: 'Weiter',
+                    action: function (dialogItself) {
+                        dialogItself.close();
+                        setIDCharacter775View(false);
+                    }
+                }]
+            });
+        },
 
         rateTags = function () {
             disableTagFieldAndNextButton();
             var next_img_btn = $('#next_img');
             next_img_btn.html('Bestätigt');
             var ownTags = $("#myTags").tagit('assignedTags');
-            printLog("top10:" + TOP10TAGS);
+            printLog(ownTags + 'top10:' + TOP10TAGS);
             var rating = [];
             for (var i = 0; i < ownTags.length; i++) {
                 if (compareTags(TOP10TAGS, ownTags[i])) {
@@ -118,15 +134,15 @@ ID_Character_775 = function () {
                     continue;
                 }
                 if (compareTags(TOP15TAGS, ownTags[i])) {
-                    rating[i] = "sehr gut";
+                    rating[i] = "sehr gut passend";
                     continue;
                 }
                 if (compareTags(TOP20TAGS, ownTags[i])) {
-                    rating[i] = "gut";
+                    rating[i] = "gut passend";
                     continue;
                 }
                 if (compareTags(TOP25TAGS, ownTags[i])) {
-                    rating[i] = "in Ordnung";
+                    rating[i] = "passend";
                     continue;
                 }
                 if (compareTags(TOP40TAGS, ownTags[i])) {
@@ -136,7 +152,7 @@ ID_Character_775 = function () {
                 if (compareTags(TOP100TAGS, ownTags[i])) {
                     rating[i] = "ausbaufähig";
                 } else {
-                    rating[i] = "schlecht";
+                    rating[i] = "unpassend";
                 }
             }
             var htmlString = "";
@@ -225,7 +241,6 @@ ID_Character_775 = function () {
             }
 
             // Display the ranking
-            setOtherPoints();
             var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
             leaderboard.push([TOTAL_TAGS, username, '#5b67f1', 1]);
 
