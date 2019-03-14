@@ -16,6 +16,10 @@ ID_Character_775 = function () {
         TOP40TAGS = [],
         TOP100TAGS = [],
         username = '',
+        pointsVerd,
+        pointsNeo,
+        pointsLego,
+        pointsAnork,
 
 
         init = function (element) {
@@ -53,7 +57,7 @@ ID_Character_775 = function () {
                 var params = {
                     end_screen: false,
                     start_charac: TOTAL_TAGS < 25,
-                    charac_1:  TOTAL_TAGS > 24 && TOTAL_TAGS < 50,
+                    charac_1: TOTAL_TAGS > 24 && TOTAL_TAGS < 50,
                     charac_2: TOTAL_TAGS > 49 && TOTAL_TAGS < 75,
                     charac_3: TOTAL_TAGS > 74 && TOTAL_TAGS < 100,
                     charac_4: TOTAL_TAGS > 99
@@ -74,6 +78,7 @@ ID_Character_775 = function () {
         addNewTag = function () {
             TOTAL_TAGS++
             checkCharacter();
+            checkAchievement();
             updateLeaderboard();
         },
 
@@ -90,35 +95,75 @@ ID_Character_775 = function () {
             TOTAL_TAGS = pts;
         },
 
-    checkCharacter = function () {
-        if (TOTAL_TAGS === 25) {
-            showNewItem();
-        }
-        if (TOTAL_TAGS === 50) {
-            showNewItem();
-        }
-        if (TOTAL_TAGS === 75) {
-            showNewItem();
-        }
-        if (TOTAL_TAGS === 100) {
-            showNewItem();
+        checkCharacter = function () {
+            if (TOTAL_TAGS === 25) {
+                showNewItem(false);
+            }
+            if (TOTAL_TAGS === 50) {
+                showNewItem(false);
+            }
+            if (TOTAL_TAGS === 75) {
+                showNewItem(false);
+            }
+            if (TOTAL_TAGS === 100) {
+                showNewItem(true);
 
-        }
-    },
+            }
+        },
 
-        showNewItem = function () {
-            BootstrapDialog.show({
-                title: 'neues Item',
-                message: $('<div>Super, du hast ein neues Item für deinen Character freigeschaltet.</div>'),
-                closable: false,
-                buttons: [{
-                    label: 'Weiter',
-                    action: function (dialogItself) {
-                        dialogItself.close();
-                        setIDCharacter775View(false);
-                    }
-                }]
-            });
+        checkAchievement = function () {
+            if (TOTAL_TAGS === 1) {
+                if (!IN_TUTORIAL) {
+                    showNewAchievementDialog('Amateur', 'Dein erstes Tag erstellt!');
+                }
+            }
+            if (TOTAL_TAGS === 20) {
+                showNewAchievementDialog('Novize', '20 Tags erstellt!');
+            }
+            if (TOTAL_TAGS === 40) {
+                showNewAchievementDialog('Fortgeschritten', '40 Tags erstellt!');
+            }
+            if (TOTAL_TAGS === 60) {
+                showNewAchievementDialog('Profi', '60 Tags erstellt!');
+            }
+            if (TOTAL_TAGS === 80) {
+                showNewAchievementDialog('Achiever', '80 Tags erstellt!');
+            }
+            if (TOTAL_TAGS === 100) {
+                showNewAchievementDialog('TagEm-König', '100 Tags erstellt!');
+            }
+
+        },
+
+        showNewItem = function (last) {
+            if (!last) {
+                BootstrapDialog.show({
+                    title: 'Neuer Look',
+                    message: $('<div>Super, du hast neue Items für deinen Character freigeschaltet.</div>'),
+                    closable: false,
+                    buttons: [{
+                        label: 'Weiter',
+                        action: function (dialogItself) {
+                            dialogItself.close();
+                            setIDCharacter775View(false);
+                        }
+                    }]
+                });
+            } else {
+                BootstrapDialog.show({
+                    title: 'Neuer Look',
+                    message: $('<div>Super, du hast neue Items für deinen Character freigeschaltet. <br>' +
+                        'Dies ist der finale Look deines Characters!</div>'),
+                    closable: false,
+                    buttons: [{
+                        label: 'Weiter',
+                        action: function (dialogItself) {
+                            dialogItself.close();
+                            setIDCharacter775View(false);
+                        }
+                    }]
+                });
+            }
         },
 
         rateTags = function () {
@@ -222,13 +267,13 @@ ID_Character_775 = function () {
 
         },
 
-        checkArray = function (arr1, arr2) {
-            for (var i = 0; i < arr2.length; i++) ;
-            {
-                if (arr1.containsElement(arr2[i])) {
-                    arr2[i] = null;
-                }
-            }
+        resetOtherPoints = function () {
+            OTHERS = [
+                [pointsVerd, 'verdani', '#607cae', 0],
+                [pointsNeo, 'neo23', '#607cae', 0],
+                [pointsLego, 'legolas', '#607cae', 0],
+                [pointsAnork, 'anork85', '#607cae', 0]
+            ];
         },
 
 
@@ -241,6 +286,7 @@ ID_Character_775 = function () {
             }
 
             // Display the ranking
+            resetOtherPoints();
             var leaderboard = [OTHERS[0], OTHERS[1], OTHERS[2], OTHERS[3]];
             leaderboard.push([TOTAL_TAGS, username, '#5b67f1', 1]);
 
@@ -271,10 +317,6 @@ ID_Character_775 = function () {
         },
 
         setOtherPoints = function () {
-            var pointsVerd,
-                pointsNeo,
-                pointsLego,
-                pointsAnork;
             if (IN_TUTORIAL) {
                 pointsVerd = 103;
                 pointsNeo = 85;

@@ -1,6 +1,9 @@
 {{^end_screen}}
+<button type="button" id="next_img_character_775" class="invisible btn btn-primary w-35 pt-3 pull-right" onclick="{{btn_listener}}">
+    Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+</button>
 <div>
-    <h3 id="LBHeading">Ranking </h3>
+    <h3 id="LBHeading">Ranking (Anzahl Tags) </h3>
     <div class="card no-border bg-gray w-100 leaderboard" id="div_it_id_character_775_lb"></div>
 </div>
 <div>
@@ -11,20 +14,17 @@
         <img src="img/‪character_images/firstCH.png" align = right>
     {{/charac_1}}
     {{#charac_2}}
-        <img src="img/‪character_images/secondCh.png.png" align = right>
+        <img src="img/‪character_images/secondCh.png" align = right>
     {{/charac_2}}
     {{#charac_3}}
-        <img src="img/‪character_images/thirdCh.png.png" align = right>
+        <img src="img/‪character_images/thirdCh.png" align = right>
     {{/charac_3}}
     {{#charac_4}}
         <img src="img/‪character_images/fourthCh.png" align = right>
     {{/charac_4}}
     <h3 id="RatingHeading">Bewertung deiner Tags </h3>
-    <div id="ratingDiv" style="max-height: 400px; overflow-y: auto"></div>
+    <div id="ratingDiv" style="max-height: 350px; overflow-y: auto"></div>
 </div>
-<button type="button" id="next_img_character_775" class="invisible btn btn-primary w-35 pt-3 pull-right" onclick="{{btn_listener}}">
-    Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
-</button>
 {{/end_screen}}
 
 {{#end_screen}}
