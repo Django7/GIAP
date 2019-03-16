@@ -71,4 +71,21 @@
 		"Goals",
 		"Points"
 	]
+	
+	773 : [
+	    "Lottery",
+	    "Prizes"
+	]
+	
+	775 : [
+	   "Multiplayer",
+	   "Sozial Competition",
+	   "Sozial Comparison",
+	   "Achievments",
+	   "Progression",
+	   "Goals",
+	   "Virtual Character (other)",
+	   "Analogy",
+	   "Customization"
+	]
 }

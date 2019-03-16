@@ -2133,7 +2133,7 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
                                 setCookie('lb_username', nick);
                                 dialogItself.close();
                                 ID_CHARACTER_775.setOtherPoints();
-                                showNewAchievementDialog('Anfänger', 'Den Testlauf überleben');
+                                ID_CHARACTER_775.showFirstAchievement();
                                 viewTutorialFinished();
                             } else {
                                 setVisible($('#dia_nickname_id_points_error'));

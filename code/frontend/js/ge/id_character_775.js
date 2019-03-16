@@ -20,6 +20,7 @@ ID_Character_775 = function () {
         pointsNeo,
         pointsLego,
         pointsAnork,
+        achiev0,
 
 
         init = function (element) {
@@ -60,7 +61,21 @@ ID_Character_775 = function () {
                     charac_1: TOTAL_TAGS > 24 && TOTAL_TAGS < 50,
                     charac_2: TOTAL_TAGS > 49 && TOTAL_TAGS < 75,
                     charac_3: TOTAL_TAGS > 74 && TOTAL_TAGS < 100,
-                    charac_4: TOTAL_TAGS > 99
+                    charac_4: TOTAL_TAGS > 99,
+                    achiev0_false: !achiev0,
+                    achiev0: achiev0,
+                    achiev1_false: TOTAL_TAGS < 1,
+                    achiev1: TOTAL_TAGS > 0,
+                    achiev2_false: TOTAL_TAGS < 20,
+                    achiev2: TOTAL_TAGS > 19,
+                    achiev3_false: TOTAL_TAGS < 40,
+                    achiev3: TOTAL_TAGS > 39,
+                    achiev4_false: TOTAL_TAGS < 60,
+                    achiev4: TOTAL_TAGS > 59,
+                    achiev5_false: TOTAL_TAGS < 80,
+                    achiev5: TOTAL_TAGS > 79,
+                    achiev6_false: TOTAL_TAGS < 100,
+                    achiev6: TOTAL_TAGS > 99
                 };
                 var rendered = Mustache.render(template, params);
                 $('#' + ELT).html(rendered);
@@ -85,6 +100,7 @@ ID_Character_775 = function () {
         removeNewTag = function () {
             TOTAL_TAGS--;
             updateLeaderboard();
+            setIDCharacter775View(false);
         },
 
         storePoints = function () {
@@ -115,31 +131,42 @@ ID_Character_775 = function () {
             if (TOTAL_TAGS === 1) {
                 if (!IN_TUTORIAL) {
                     showNewAchievementDialog('Amateur', 'Dein erstes Tag erstellt!');
+                    setIDCharacter775View(false);
                 }
             }
             if (TOTAL_TAGS === 20) {
                 showNewAchievementDialog('Novize', '20 Tags erstellt!');
+                $('#achiev2').removeClass("achievement_inactive").addClass("achievement");
+                setIDCharacter775View(false);
             }
             if (TOTAL_TAGS === 40) {
                 showNewAchievementDialog('Fortgeschritten', '40 Tags erstellt!');
+                setIDCharacter775View(false);
             }
             if (TOTAL_TAGS === 60) {
                 showNewAchievementDialog('Profi', '60 Tags erstellt!');
+                setIDCharacter775View(false);
             }
             if (TOTAL_TAGS === 80) {
                 showNewAchievementDialog('Achiever', '80 Tags erstellt!');
+                setIDCharacter775View(false);
             }
             if (TOTAL_TAGS === 100) {
                 showNewAchievementDialog('TagEm-König', '100 Tags erstellt!');
+                setIDCharacter775View(false);
             }
+        },
 
+        showFirstAchievement = function() {
+            showNewAchievementDialog('Anfänger', 'Den Testlauf überleben');
+            achiev0 = true;
         },
 
         showNewItem = function (last) {
             if (!last) {
                 BootstrapDialog.show({
                     title: 'Neuer Look',
-                    message: $('<div>Super, du hast neue Items für deinen Character freigeschaltet.</div>'),
+                    message: $('<div>Super, du hast neue Items für deinen Avatar freigeschaltet.</div>'),
                     closable: false,
                     buttons: [{
                         label: 'Weiter',
@@ -152,7 +179,7 @@ ID_Character_775 = function () {
             } else {
                 BootstrapDialog.show({
                     title: 'Neuer Look',
-                    message: $('<div>Super, du hast neue Items für deinen Character freigeschaltet. <br>' +
+                    message: $('<div>Super, du hast neue Items für deinen Avatar freigeschaltet. <br>' +
                         'Dies ist der finale Look deines Characters!</div>'),
                     closable: false,
                     buttons: [{
@@ -335,6 +362,10 @@ ID_Character_775 = function () {
                 [pointsAnork, 'anork85', '#607cae', 0]
             ];
 
+        },
+
+        disableButton = function() {
+            $('extra_study_character_775').prop('disabled', true);
         };
 
     /**
@@ -352,6 +383,8 @@ ID_Character_775 = function () {
         setOtherPoints: setOtherPoints,
         saveTags: saveTags,
         storePoints: storePoints,
-        setPoints: setPoints
+        setPoints: setPoints,
+        disableButton : disableButton,
+        showFirstAchievement : showFirstAchievement
     };
 };
