@@ -470,22 +470,22 @@ hr {
     color: white;
     font-size: 14px;
     border: 3px solid black;
-    float: left;
     text-align: center;
     vertical-align: middle;
+    clear: right;
 }
 
-.achievement:after {
-    content: "\f091";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;                           /* TO CHECK */
-    text-decoration: inherit;
-    position: absolute;
-    font-size: 30px;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
+.achievements {
+    float: right;
+    clear: right;
+}
+
+.rating {
+    float: left;
+}
+
+.picture {
+    float: right;
 }
 
 .achievement:hover {
@@ -495,8 +495,8 @@ hr {
 .achievement_inactive {
     opacity: 0.3;
     font-size: 12px;
+    color: black;
     border: 3px solid;
-    float: left;
 }
 
 .goal_success {

@@ -16,10 +16,10 @@ ID_Character_775 = function () {
         TOP40TAGS = [],
         TOP100TAGS = [],
         username = '',
-        pointsVerd,
-        pointsNeo,
-        pointsLego,
-        pointsAnork,
+        pointsVerd = 0,
+        pointsNeo = 0,
+        pointsLego = 0,
+        pointsAnork= 0,
         achiev0,
 
 
@@ -107,8 +107,8 @@ ID_Character_775 = function () {
             setCookie('points_775', TOTAL_TAGS);
         },
 
-        setPoints = function (pts) {
-            TOTAL_TAGS = pts;
+        setPoints = function () {
+            TOTAL_TAGS = getCookie('points_775');
         },
 
         checkCharacter = function () {
@@ -157,7 +157,7 @@ ID_Character_775 = function () {
             }
         },
 
-        showFirstAchievement = function() {
+        showFirstAchievement = function () {
             showNewAchievementDialog('Anfänger', 'Den Testlauf überleben');
             achiev0 = true;
         },
@@ -180,7 +180,7 @@ ID_Character_775 = function () {
                 BootstrapDialog.show({
                     title: 'Neuer Look',
                     message: $('<div>Super, du hast neue Items für deinen Avatar freigeschaltet. <br>' +
-                        'Dies ist der finale Look deines Characters!</div>'),
+                        'Dies ist der finale Look deines Avatars!</div>'),
                     closable: false,
                     buttons: [{
                         label: 'Weiter',
@@ -364,7 +364,7 @@ ID_Character_775 = function () {
 
         },
 
-        disableButton = function() {
+        disableButton = function () {
             $('extra_study_character_775').prop('disabled', true);
         };
 
@@ -384,7 +384,7 @@ ID_Character_775 = function () {
         saveTags: saveTags,
         storePoints: storePoints,
         setPoints: setPoints,
-        disableButton : disableButton,
-        showFirstAchievement : showFirstAchievement
+        disableButton: disableButton,
+        showFirstAchievement: showFirstAchievement
     };
 };

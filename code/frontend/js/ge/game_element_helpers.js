@@ -987,7 +987,7 @@ function setUDGEAfterFlipImage(main_user_group_id) {
         }
         case 'id_character_775': {
             UDGE.afterFlipImage = function (inTutorial) {
-                //To DO
+                ID_CHARACTER_775.setPoints();
             };
             break;
         }
@@ -3462,7 +3462,7 @@ function startIDCharacter775Tutorial_part_2 () {
         ID_CHARACTER_775.rateTags();
         ID_CHARACTER_775.setPoints(0);
         viewLeftTutorialOverlay(
-            'Character und Leaderboard',
+            'Avatar, Ranking und Abzeichen',
             $('<div></div>').load('views/dialogs/dia_tutorial_ge_id_character_775_2.html'),
             'Weiter',
             function () {

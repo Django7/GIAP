@@ -1,84 +1,141 @@
 {{^end_screen}}
-<button type="button" id="next_img_character_775" class="invisible btn btn-primary w-35 pt-3 pull-right" onclick="{{btn_listener}}">
+<button type="button" id="next_img_character_775" class="invisible btn btn-primary w-35 pt-3 pull-right"
+        onclick="{{btn_listener}}">
     Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
 </button>
 <div>
     <h3 id="LBHeading">Ranking (Anzahl Tags) </h3>
     <div class="card no-border bg-gray w-100 leaderboard" id="div_it_id_character_775_lb"></div>
 </div>
-<br>
-<div>
-    {{#achiev0_false}}
-    <div id=achiev0 class="achievement_inactive" style="width: 70px" >Anfänger</div>
-    {{/achiev0_false}}
-    {{#achiev0}}
-    <div class="achievement" style=" height: 40px; width: 70px" >Anfänger</div>
-    {{/achiev0}}
-    {{#achiev1_false}}
-    <div id=achiev1 class="achievement_inactive" style="width: 60px" >Amateur</div>
-    {{/achiev1_false}}
-    {{#achiev1}}
-    <div class="achievement" style=" height: 40px; width: 60px" >Amateur</div>
-    {{/achiev1}}
-    {{#achiev2_false}}
-    <div id=achiev2 class="achievement_inactive" style="width: 60px" >Novize</div>
-    {{/achiev2_false}}
-    {{#achiev2}}
-    <div class="achievement" style=" height: 40px; width: 60px" >Novize</div>
-    {{/achiev2}}
-    {{#achiev3_false}}
-    <div id=achiev3 class="achievement_inactive" style="width: 100px" >Fortgeschritten</div>
-    {{/achiev3_false}}
-    {{#achiev3}}
-    <div class="achievement" style=" height: 40px; width: 100px" >Fortgeschritten</div>
-    {{/achiev3}}
-    {{#achiev4_false}}
-    <div id=achiev4 class="achievement_inactive" style="width: 60px" >Profi</div>
-    {{/achiev4_false}}
-    {{#achiev4}}
-    <div class="achievement" style=" height: 40px; width: 60px" >Profi</div>
-    {{/achiev4}}
-    {{#achiev5_false}}
-    <div id=achiev5 class="achievement_inactive" style="width: 70px" >Achiever</div>
-    {{/achiev5_false}}
-    {{#achiev5}}
-    <div class="achievement" style="height: 40px; width: 70px" >Achiever</div>
-    {{/achiev5}}
-    {{#achiev6_false}}
-    <div id=achiev6 class="achievement_inactive" style="width: 70px" >TagEm-König</div>
-    {{/achiev6_false}}
-    {{#achiev6}}
-    <div class="achievement" style=" height: 40px; width: 70px" >TagEm-König</div>
-    {{/achiev6}}
-    <br>
-    <br>
-     {{#start_charac}}
-        <img src="img/‪character_images/othercharac.png" id = "charac_image_775" align = right>
+<div class="rating">
+    <h3 id="RatingHeading">Bewertung deiner Tags </h3>
+    <div id="ratingDiv" style="max-height: 350px; overflow-y: auto"></div>
+</div>
+<div class="picture">
+    {{#start_charac}}
+    <img src="img/‪character_images/othercharac.png" id="charac_image_775" align=right>
     {{/start_charac}}
     {{#charac_1}}
-        <img src="img/‪character_images/firstCH.png" align = right>
+    <img src="img/‪character_images/firstCH.png" align=right>
     {{/charac_1}}
     {{#charac_2}}
-        <img src="img/‪character_images/secondCh.png" align = right>
+    <img src="img/‪character_images/secondCh.png" align=right>
     {{/charac_2}}
     {{#charac_3}}
-        <img src="img/‪character_images/thirdCh.png" align = right>
+    <img src="img/‪character_images/thirdCh.png" align=right>
     {{/charac_3}}
     {{#charac_4}}
-        <img src="img/‪character_images/fourthCh.png" align = right>
+    <img src="img/‪character_images/fourthCh.png" align=right>
     {{/charac_4}}
-    <h3 id="RatingHeading">Bewertung deiner Tags </h3>
-    <div id="ratingDiv" style="max-height: 300px; overflow-y: auto"></div>
+</div>
+<div id="achievements" class="achievements" style="display: flex; justify-content: flex-end">
+    <h4 align="right">Abzeichen:</h4>
+    <div id="achievement_list" style="max-height: 100px; overflow-y: auto";>
+        {{#achiev6}}
+        <div class="achievement" style=" height: 50px; width: 100px">
+            <div class="stacked-icons">
+  <span class="fa-stack fa-2x">
+    <i class="fa fa-trophy" aria-hidden="true" style="font-size: 30px; color: goldenrod"></i>
+    <strong class="fa-stack-1x trophy-text" style="font-size: 10px; color: black">TagEm-König</strong>
+  </span>
+            </div>
+        </div>
+        {{/achiev6}}
+        {{#achiev5}}
+        <div class="achievement" style=" height: 50px; width: 100px">
+            <div class="stacked-icons">
+  <span class="fa-stack fa-2x">
+    <i class="fa fa-trophy" aria-hidden="true" style="font-size: 30px; color: silver"></i>
+    <strong class="fa-stack-1x trophy-text" style="font-size: 12px; color: black">Achiever</strong>
+  </span>
+            </div>
+        </div>
+        {{/achiev5}}
+        {{#achiev4}}
+        <div class="achievement" style=" height: 50px; width: 100px">
+            <div class="stacked-icons">
+  <span class="fa-stack fa-2x">
+    <i class="fa fa-trophy" aria-hidden="true" style="font-size: 30px; color: red"></i>
+    <strong class="fa-stack-1x trophy-text" style="font-size: 12px; color: black">Profi</strong>
+  </span>
+            </div>
+        </div>
+        {{/achiev4}}
+        {{#achiev3}}
+        <div class="achievement" style=" height: 50px; width: 100px">
+            <div class="stacked-icons">
+  <span class="fa-stack fa-2x">
+    <i class="fa fa-trophy" aria-hidden="true" style="font-size: 30px; color: darkblue"></i>
+    <strong class="fa-stack-1x trophy-text" style="font-size: 9px; color: black">Fortgeschritten</strong>
+  </span>
+            </div>
+        </div>
+        {{/achiev3}}
+        {{#achiev2}}
+        <div class="achievement" style=" height: 50px; width: 100px">
+            <div class="stacked-icons">
+  <span class="fa-stack fa-2x">
+    <i class="fa fa-trophy" aria-hidden="true" style="font-size: 30px; color: green"></i>
+    <strong class="fa-stack-1x trophy-text" style="font-size: 12px; color: black">Novize</strong>
+  </span>
+            </div>
+        </div>
+        {{/achiev2}}
+        {{#achiev1}}
+        <div class="achievement" style=" height: 50px; width: 100px">
+            <div class="stacked-icons">
+  <span class="fa-stack fa-2x">
+    <i class="fa fa-trophy" aria-hidden="true" style="font-size: 30px; color: yellow"></i>
+    <strong class="fa-stack-1x trophy-text" style="font-size: 12px; color: black">Amateur</strong>
+  </span>
+            </div>
+        </div>
+        {{/achiev1}}
+        {{#achiev0}}
+        <div class="achievement" style=" height: 50px; width: 100px">
+            <div class="stacked-icons">
+  <span class="fa-stack fa-2x">
+    <i class="fa fa-trophy" aria-hidden="true" style="font-size: 30px"></i>
+    <strong class="fa-stack-1x trophy-text" style="font-size: 12px; color: black">Anfänger</strong>
+  </span>
+            </div>
+        </div>
+        {{/achiev0}}
+        {{#achiev0_false}}
+        <div id=achiev0 class="achievement_inactive" style="width: 70px">Anfänger</div>
+        {{/achiev0_false}}
+        {{#achiev1_false}}
+        <div id=achiev1 class="achievement_inactive" style="width: 60px">Amateur</div>
+        {{/achiev1_false}}
+        {{#achiev2_false}}
+        <div id=achiev2 class="achievement_inactive" style="width: 60px">Novize</div>
+        {{/achiev2_false}}
+        {{#achiev3_false}}
+        <div id=achiev3 class="achievement_inactive" style="width: 100px">Fortgeschritten</div>
+        {{/achiev3_false}}
+        {{#achiev4_false}}
+        <div id=achiev4 class="achievement_inactive" style="width: 60px">Profi</div>
+        {{/achiev4_false}}
+        {{#achiev5_false}}
+        <div id=achiev5 class="achievement_inactive" style="width: 70px">Achiever</div>
+        {{/achiev5_false}}
+        {{#achiev6_false}}
+        <div id=achiev6 class="achievement_inactive" style="width: 70px">TagEm-König</div>
+        {{/achiev6_false}}
+    </div>
 </div>
 {{/end_screen}}
 
 {{#end_screen}}
 <div>
-    Du hast alle 15 Runden abgeschlossen. Danke für deine Teilnahme!
+    Du hast alle 15 Runden abgeschlossen. Danke für deine Teilnahme!<br>
     Du hast jetzt noch die Möglichkeit dich optional für weitere Studien anzumelden.<br>
-    Anhand deiner Leistung hier versuchen wir dich mit anderen Tailnehmern zusammen zu bringen, damit ihr euch in eurer Wortgewandtheit und
-    eures Bildverständnisses messen könnt. Wenn du Interesse hast klicke bitte auf Registrieren.
-    <button type="button" id="extra_study_character_775" class="btn btn-primary w-35 pt-3 pull-right" onclick="disableButton()">
-        Registrieren. </button>
+    Anhand deiner Leistung hier versuchen wir dich mit anderen Teilnehmern zusammen zu bringen, damit ihr euch in eurer
+    Wortgewandtheit und eurem Bildverständnis messen könnt.<br>
+    Wenn du Interesse hast klicke bitte auf Registrieren.<br>
+    <button type="button" id="extra_study_character_775" class="btn btn-primary w-35 pt-3 pull-right"
+            onclick="disableButton()">
+        Registrieren
+    </button>
 </div>
 {{/end_screen}}
