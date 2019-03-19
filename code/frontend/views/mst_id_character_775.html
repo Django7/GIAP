@@ -29,18 +29,17 @@
     {{/charac_4}}
 </div>
 <div id="achievements" class="achievements" style="display: flex; justify-content: flex-end">
-    <h4 align="right">Abzeichen:</h4>
-    <div id="achievement_list" style="max-height: 110px; overflow-y: auto; text-align: center">
+    <div id="achievement_list" style="max-height: 120px; overflow-y: auto; text-align: center">
         {{#achiev6}}
         <div class="achievement" style=" width: 150px">
             <div class="achievement-icon2" style="justify-content: center">
                 <span class="icon2"><span class="icon-trophy2"><i class="fa fa-trophy" style=" font-size: 18px; color: goldenrod;"></i></span></span>
             </div>
             <div class="achievement-text2">
-                <p class="achievement-notification2" style="font-size: 60%"><strong>TagEm-König</strong></p>
+                <p class="achievement-notification2" style="font-size: 80%"><strong>TagEm-König</strong></p>
             </div>
         </div>
-        <br>
+        <p class="small_space"></p>
         {{/achiev6}}
         {{#achiev5}}
         <div class="achievement" style=" width: 150px">
@@ -51,7 +50,7 @@
                 <p class="achievement-notification2"><strong>Achiever</strong></p>
             </div>
         </div>
-            <br>
+        <p class="small_space"></p>
         {{/achiev5}}
         {{#achiev4}}
         <div class="achievement" style=" width: 150px">
@@ -62,7 +61,7 @@
                 <p class="achievement-notification2"><strong>Profi</strong></p>
             </div>
         </div>
-            <br>
+        <p class="small_space"></p>
         {{/achiev4}}
         {{#achiev3}}
         <div class="achievement" style=" width: 150px">
@@ -70,10 +69,10 @@
                 <span class="icon2"> <span class="icon-trophy2"><i class="fa fa-trophy" style=" font-size: 18px; color: blue;"></i></span></span>
             </div>
             <div class="achievement-text2">
-                <p class="achievement-notification2" style="font-size: 60%;"><strong>Fortgeschritten</strong></p>
+                <p class="achievement-notification2" style="font-size: 70%" ><strong>Fortgeschritten</strong></p>
             </div>
         </div>
-            <br>
+        <p class="small_space"></p>
         {{/achiev3}}
         {{#achiev2}}
         <div class="achievement" style=" width: 150px">
@@ -84,7 +83,7 @@
                 <p class="achievement-notification2"><strong>Novize</strong></p>
             </div>
         </div>
-            <br>
+        <p class="small_space"></p>
         {{/achiev2}}
         {{#achiev1}}
         <div class="achievement" style=" width: 150px">
@@ -95,7 +94,7 @@
                 <p class="achievement-notification2"><strong>Amateur</strong></p>
             </div>
         </div>
-            <br>
+        <p class="small_space"></p>
         {{/achiev1}}
         {{#achiev0}}
         <div class="achievement" style=" width: 150px">
@@ -106,28 +105,90 @@
                 <p class="achievement-notification2"><strong>Anfänger</strong></p>
             </div>
         </div>
-        <br>
+        <p class="small_space"></p>
         {{/achiev0}}
         {{#achiev0_false}}
-        <div id=achiev0 class="achievement_inactive" style="width: 70px">Anfänger</div> <br><br>
+        <div class="achievement" style=" width: 150px; opacity: 0.3">
+            <div class="achievement-icon2" style="justify-content: center; top: 12px">
+                <span class="icon2"><span class="icon-trophy2"><i class="fa fa-trophy" style=" font-size: 18px; color: white;"></i></span></span>
+            </div>
+            <div class="achievement-text2">
+                <p class="achievement-notification2"><strong>Anfänger</strong></p>
+                <p class="achievement-name2" style="font-size: 70%; left: 5px"> Tutorial geschafft</p>
+            </div>
+        </div>
+        <p class="small_space"></p>
         {{/achiev0_false}}
         {{#achiev1_false}}
-        <div id=achiev1 class="achievement_inactive" style="width: 70px">Amateur</div> <br><br>
+        <div class="achievement" style=" width: 150px; opacity: 0.3">
+            <div class="achievement-icon2" style="justify-content: center; top: 12px">
+                <span class="icon2"><span class="icon-trophy2"><i class="fa fa-trophy" style=" font-size: 18px; color: yellow;"></i></span></span>
+            </div>
+            <div class="achievement-text2">
+                <p class="achievement-notification2"><strong>Amateur</strong></p>
+                <p class="achievement-name2" style="font-size: 70%">1. Tag</p>
+            </div>
+        </div>
+        <p class="small_space"></p>
         {{/achiev1_false}}
         {{#achiev2_false}}
-        <div id=achiev2 class="achievement_inactive" style="width: 70px">Novize</div> <br><br>
+        <div class="achievement" style=" width: 150px; opacity: 0.3">
+            <div class="achievement-icon2" style="justify-content: center; top:12px">
+                <span class="icon2"><span class="icon-trophy2"><i class="fa fa-trophy" style=" font-size: 18px; color: green;"></i></span></span>
+            </div>
+            <div class="achievement-text2">
+                <p class="achievement-notification2"><strong>Novize</strong></p>
+                <p class="achievement-name2" style="font-size: 70%">20 Tags</p>
+            </div>
+        </div>
+        <p class="small_space"></p>
         {{/achiev2_false}}
         {{#achiev3_false}}
-        <div id=achiev3 class="achievement_inactive" style="width: 100px">Fortgeschritten</div> <br><br>
+        <div class="achievement" style=" width: 150px; opacity: 0.3">
+            <div class="achievement-icon2" style="justify-content: center; top:12px">
+                <span class="icon2"> <span class="icon-trophy2"><i class="fa fa-trophy" style=" font-size: 18px; color: blue;"></i></span></span>
+            </div>
+            <div class="achievement-text2">
+                <p class="achievement-notification2" style="font-size: 70%" ><strong>Fortgeschritten</strong></p>
+                <p class="achievement-name2" style="font-size: 70%">40 Tags</p>
+            </div>
+        </div>
+        <p class="small_space"></p>
         {{/achiev3_false}}
         {{#achiev4_false}}
-        <div id=achiev4 class="achievement_inactive" style="width: 70px">Profi</div> <br><br>
+        <div class="achievement" style=" width: 150px; opacity: 0.3">
+            <div class="achievement-icon2" style="justify-content: center; top:12px">
+                <span class="icon2"><span class="icon-trophy2"><i class="fa fa-trophy" style=" font-size: 18px; color: red;"></i></span></span>
+            </div>
+            <div class="achievement-text2">
+                <p class="achievement-notification2"><strong>Profi</strong></p>
+                <p class="achievement-name2" style="font-size: 70%">60 Tags</p>
+            </div>
+        </div>
+        <p class="small_space"></p>
         {{/achiev4_false}}
         {{#achiev5_false}}
-        <div id=achiev5 class="achievement_inactive" style="width: 70px">Achiever</div> <br><br>
+        <div class="achievement" style=" width: 150px; opacity: 0.3">
+            <div class="achievement-icon2" style="justify-content: center; top:12px">
+                <span class="icon2"><span class="icon-trophy2"><i class="fa fa-trophy" style=" font-size: 18px; color: silver;"></i></span></span>
+            </div>
+            <div class="achievement-text2">
+                <p class="achievement-notification2"><strong>Achiever</strong></p>
+                <p class="achievement-name2" style="font-size: 70%">80 Tags</p>
+            </div>
+        </div>
+        <p class="small_space"></p>
         {{/achiev5_false}}
         {{#achiev6_false}}
-        <div id=achiev6 class="achievement_inactive" style="width: 70px">TagEm-König</div>
+        <div class="achievement" style=" width: 150px; opacity: 0.3">
+            <div class="achievement-icon2" style="justify-content: center; top:12px">
+                <span class="icon2"><span class="icon-trophy2"><i class="fa fa-trophy" style=" font-size: 18px; color: goldenrod;"></i></span></span>
+            </div>
+            <div class="achievement-text2">
+                <p class="achievement-notification2" style="font-size: 80%"><strong>TagEm-König</strong></p>
+                <p class="achievement-name2" style="font-size: 70%">100 Tags</p>
+            </div>
+        </div>
         {{/achiev6_false}}
     </div>
 </div>

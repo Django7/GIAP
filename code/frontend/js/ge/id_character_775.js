@@ -136,7 +136,6 @@ ID_Character_775 = function () {
             }
             if (TOTAL_TAGS === 20) {
                 showNewAchievementDialog('Novize', '20 Tags erstellt!');
-                $('#achiev2').removeClass("achievement_inactive").addClass("achievement");
                 setIDCharacter775View(false);
             }
             if (TOTAL_TAGS === 40) {
