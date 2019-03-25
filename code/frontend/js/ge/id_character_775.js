@@ -197,7 +197,6 @@ ID_Character_775 = function () {
             var next_img_btn = $('#next_img');
             next_img_btn.html('Bestätigt');
             var ownTags = $("#myTags").tagit('assignedTags');
-            printLog(ownTags + 'top10:' + TOP10TAGS);
             var rating = [];
             for (var i = 0; i < ownTags.length; i++) {
                 if (compareTags(TOP10TAGS, ownTags[i])) {

@@ -1,0 +1,8 @@
+Das Spiel wird für einen Zeitraum von einigen Tagen freigeschaltet. 
+Für die Eingabe der Stichworte wird ein Zeitlimit gesetzt, sodass das Spiel eine gewisse Dynamik bekommt. 
+Die gewählten Stichworte haben eine unterschiedliche Wertigkeit, die sich danach bemisst, wie häufig das jeweilige Stichwort von den anderen Spielern benutzt wurde. 
+Für ein Stichwort das viele Spieler eingegeben haben, bekomme ich mehr Punkte, wie für ein Stichwort das nur ich verwendet habe. 
+Nach Bearbeitung aller Bilder werden die eingegebene Stichworte gespeichtert. 
+Nach Ablauf der Frist erfolgt eine Gesamtabrechnung, bei der alle Ergebnisse aller Teilnehmer ausgewertet werden. 
+Je nach dem wer viele Stichwörter mit einer hohen "Wertigkeit" eingegeben hat, bekommt eine hohe Gesamtpunktzahl und belegt in dem Ranking eine gute Platzierung. 
+Die ersten drei Spieler erhalten einen kleinen Sachpreis/ Gutschein.

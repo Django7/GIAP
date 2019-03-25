@@ -1,0 +1,26 @@
+{{^end_screen}}
+<button type="button" id="next_img_compare_787" class="invisible btn btn-primary w-35 pt-3 pull-right"
+        onclick="{{btn_listener}}">
+    Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+</button>
+<div>
+    <h3 id="LBHeading">Ranking  </h3>
+    <div class="card no-border bg-gray w-100 leaderboard" id="div_it_id_compare_787_lb"></div>
+</div>
+<br>
+<div>
+<h4 id="winner_787" class="invisible"> <b>Klasse!</b> Du hast diese Runde gewonnen.</h4>
+<h4 id="no_win_787" class="invisible"> <b>Schade.</b> Diese Runde haben deine Tags leider nicht für den Sieg gereicht.</h4>
+</div>
+<div>
+    <h3 id="xtraPointsHeading">Extra-Punkte deiner Tags: </h3>
+    <div id="xtraPointsDiv" style="max-height: 350px; overflow-y: auto"></div>
+</div>
+
+{{/end_screen}}
+{{#end_screen}}
+<div>
+    Du hast alle 15 Runden abgeschlossen. Danke für deine Teilnahme!<br>
+    Insgesamt hast du <b>{{rounds_won}}</b> Runden gewonnen.
+</div>
+{{/end_screen}}
