@@ -42,7 +42,6 @@ ID_Compare_787 = function () {
                 };
                 var rendered = Mustache.render(template, params);
                 $('#' + ELT).html(rendered);
-                showLeaderboard();
                 var next_btn = $('#next_img');
                 next_btn.html('Bestätigen');
                 next_btn.prop('onclick', null).off('click');
@@ -70,13 +69,9 @@ ID_Compare_787 = function () {
         },
 
         addNewTag = function () {
-            POINTS_ROUND += 100;
-            updateLeaderboard();
         },
 
         removeNewTag = function () {
-            POINTS_ROUND -= 100;
-            updateLeaderboard();
         },
 
         saveTags = function (tags, number) {
@@ -197,7 +192,8 @@ ID_Compare_787 = function () {
             }
             $('#xtraPointsDiv').html('');
             $('#xtraPointsDiv').html(htmlString);
-            updateLeaderboard();
+            setVisible($('#LBHeading'));
+            showLeaderboard();
             if (winner) {
                 setVisible($('#winner_787'));
                 rounds_won +=1;
@@ -282,17 +278,17 @@ ID_Compare_787 = function () {
         },
 
         getRandomTagCount = function() {
-            var tags = [400, 500, 600];
+            var tags = [4, 5, 6];
             return tags[Math.floor(Math.random()*tags.length)];
         },
 
         setOtherPoints = function () {
-            verdPoints = 700 + getRandomXtra(7);
-            neoPoints = 700 + getRandomXtra(7);
+            verdPoints = getRandomXtra(7);
+            neoPoints = getRandomXtra(7);
             var lego = getRandomTagCount();
-            legoPoints = lego + getRandomXtra(lego / 100);
+            legoPoints = getRandomXtra(lego);
             var anork = getRandomTagCount();
-            anorkPoints = anork + getRandomXtra(anork / 100);
+            anorkPoints = getRandomXtra(anork);
             OTHERS = [
                 [verdPoints, 'verdani', '#607cae', 0],
                 [neoPoints, 'neo23', '#607cae', 0],
