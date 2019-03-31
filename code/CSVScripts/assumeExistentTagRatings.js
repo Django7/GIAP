@@ -30,18 +30,23 @@ function assumeTagRatings() {
 }
 
 function updateTag(idx) {
+    if(idx === tags.length) {
+        console.log('finished!');
+        dbConnection.destroy();
+        process.exit(0);
+    }
     dbConnection.query(
         "SELECT rating, rating_2 FROM image_tags WHERE iid = " + tags[idx].iid + " AND tag = '" + tags[idx].tag + "' LIMIT 1;", [], function(err, results) {
             if(err) throw err;
-            if(results.rating == null) {
+            if(results[0].rating == null) {
                 idx++;
                 updateTag(idx);
                 return;
             }
             dbConnection.query(
-                "UPDATE image_tags SET rating = " + results.rating + ", rating_2 = " + results.rating_2 + " WHERE iid = " + tags[idx].iid + " AND  tag = '" + tags[idx].tag + "';", [], function(err) {
+                "UPDATE image_tags SET rating = " + results[0].rating + ", rating_2 = " + results[0].rating_2 + " WHERE iid = " + tags[idx].iid + " AND  tag = '" + tags[idx].tag + "';", [], function(err) {
                     if(err) throw err;
-                    console.log("Updated tag " + tags[idx].tag + " with rating = " + results.rating);
+                    console.log("Updated tag " + tags[idx].tag + " with rating = " + results[0].rating);
                     idx++;
                     updateTag(idx);
                 }
