@@ -1,0 +1,9 @@
+Es gibt eine feste Auswahl an Beschreibungswörtern, um die angezeigten Bilder näher zu beschreiben. 
+Ziel des Spieles ist es, möglichst alle Beschreibungsörter zu verwenden. 
+Dabei ist aber zu beachten, dass nicht einfach Beschreibungswörter unpassend zugeordnet werden können. 
+Für falsch angegebene Beschreibungswörter wird jeweils ein Punkt abgezogen. 
+D. h. im schlimmsten Fall (alle Wörter wurden falsch angewendet) hat man einen Minuspunktestand in der Höhe der Anzahl der Beschreibungswörter. 
+Bestmögliches Ergebnis ist der Punktestand mit der Anzahl der Beschreibungswörtern. 
+Als Beispiel nehmen wir eine Anzahl von einem Beschreibungswort pro Bild. 
+Bei 15 Bildern sind dies dann mindestens 15 Wörter.  
+In Angebot stehen aber zum Beispiel 25 Beschreibungswörter.

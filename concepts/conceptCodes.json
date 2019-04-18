@@ -90,19 +90,68 @@
 	]
 	
 	786 : [
-	   "Time Pressure",
-	   "Points",
-	   "Multiplayer",
-	   "Social Comparison",
-	   "Social Competition",
-	   "Prizes"
-	   ]
+	    "Time Pressure",
+	    "Points",
+	    "Multiplayer",
+	    "Social Comparison",
+	    "Social Competition",
+	    "Prizes"
+	    ]
 	   
 	787 : [
-       "Multiplayer",
-       "Social Competition",
-	   "Social Comparison",
-	   "Points"
-	   ]
+        "Multiplayer",
+        "Social Competition",
+	    "Social Comparison",
+	    "Points"
+	    ]
+	   
+	788 : [
+        "Analogy",
+        "Multiplayer",
+        "Time Pressure",
+	    "Visible Progress",
+        "Points",
+        "Bonus",
+        "Visual Appearance",
+        "Progression",
+        "Virtual Character (other)",
+        "Social Comparison",
+        "Social Competition"
+        ]
+
+    794 : [
+        "Goals",
+        "Points",
+        "Punishment"
+        ]
+
+    795 : [
+        "Prizes",
+        "Mini Games",
+        "Unlockables",
+        "Multiplayer",
+        "Social Competition",
+        "Social Comparison"
+        ]		
+		
+	796 : [
+	    "Points",
+		"Multiplayer",
+		"Social Competition",
+		"Social Comparison",
+		"Time Pressure",
+		"Prizes",
+		"Customization"
+	    ]
+
+	797 : [
+	    "Points",
+		"Goals",
+		"Multiplayer",
+		"Social Competition",
+		"Social Comparison",
+		"Punishment"
+		]
+	
 	   
 }
