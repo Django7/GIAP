@@ -1,0 +1,9 @@
+Es sollte ein Onlinespiel sein, das von n Personen asynchron gespielt werden kann. 
+Es soll als Einzelspiel basierend auf den Ergebnissen anderer aufgesetzt werden, in dem über 3 Runden jeweils 5 Bilder getaggt werden müssen. 
+In einer Runde sind die Bilder 5 Sekunden sichtbar und dann hat man  n Sekunden Zeit, Stichwörter einzugeben. 
+Pro Stichwort gibt es einen Punkt. 
+Gibt man ein Stichwort an, das auch mehrere andere Spieler angegeben haben, erhält man 2 Punkte. 
+Grundannahme: Die Bilder sollen nicht mit irgendwelchen Stichwörtern getaggt werden, sondern mit "realistischen", die von einer Vielzahl an Betrachtern verwendet wurden.  
+Ziel ist es eine möglichst hohe Punktzahl  zu erreichen. 
+Visualisiert werden könnte das Ziel als Gipfel eines Berges, dem der Bergsteiger pro Punkt näher kommt und bei Erreichen einer vorgegebenen Punktegrenze erreicht. 
+Bei Erreichen des Gipfels erhält der Spieler ein Ranking bezogen auf die anderen Spieler, das sich aus Zeit und Punktwert ergibt.
