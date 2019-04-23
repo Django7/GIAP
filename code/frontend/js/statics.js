@@ -79,6 +79,7 @@ var ID_POINTS_751;
 var ID_COMPARE_780;
 var ID_CHARACTER_775;
 var ID_COMPARE_787;
+var ID_MATCH_797;
 
 /**
  * Sets the statics to their default values
@@ -170,4 +171,6 @@ function reinitGameElements() {
     ID_CHARACTER_775.init('div_it_id_character_775');
     ID_COMPARE_787 = ID_Compare_787();
     ID_COMPARE_787.init('div_it_id_compare_787');
+    ID_MATCH_797 = ID_Match_797();
+    ID_MATCH_797.init('div_it_id_match_797');
 }

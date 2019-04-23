@@ -1,0 +1,14 @@
+Es braucht einen Anreiz, also eine Belohnung. 
+Man könnte für jedes Stichwort Punkte vergeben. 
+Für ein Stichwort einen Punkt, für 5 Stichworte 10, für 10 Stichworte 50. 
+Also mit großem Punkteanstieg je mehr Stichworte genannt werden. 
+Anschließend kann man sich mit den erspielten Punkten eine Prämie aussuchen. 
+Dies könnten Einkaufsgutscheine sein oder aber auch Minispiele die auf diversen Seiten im internet über Flash-Player implementiert sind. 
+Voraussetzung wäre dann allerdings nach wie vor, dass der Spieler auch gewillt ist diese Minispiele zu spielen. 
+Man könnte den Spieler auch mit Cartoons oder ähnlichem belohnen, je mehr Punkte erspielt werden desto ausführlicher ist der Cartoon. 
+
+Eine weitere Abwandlung dieses Konzepts könnte ein Spiel gegen andere Spieler sein die auch gerade spielen: 
+ich und ein anderer sehen die Bilder gleichzeitig und schreiben gleichzeitig Stichworte auf, jedoch unabhängig voneinander. 
+Derjenige der mehr Stichworte schreibt gewinnt und bekommt einen Preis (z.B. einen Cartoon gezeigt). 
+Oder aber: Ich und ein anderer spielen gleichzeitig und wenn einer ein Stichwort aufschreibt kann der andere dieses nicht mehr nennen. 
+Für diese Mehrspieleroptionen muss jedoch ein definierter Wortpool pro Bild existieren, sonst werden einfach nur Wörter gespammt.

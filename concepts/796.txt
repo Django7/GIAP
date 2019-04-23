@@ -1,0 +1,6 @@
+Bezüglich den Bilder kann für jedes ein Pool an Stichworten von den Entwicklern festgelegt werden, die allerdings nicht angezeigt werden. 
+Erst nachdem der Nutzer seine Stichworte eingetragen hat, werden die vorgegebenen Stichworte sichtbar und der Nutzer erhält Punkte bei Überschneidungen mit den Vorgaben. 
+Im Vergleich zu anderen Nutzern kann somit eine Rangliste erstellt werden, in der die Bestplatzierten präsentiert werden und man sich mit anderen messen kann. 
+Der Reiz oder Druck in der Sache besteht in der Einschränkung, dass man nur einen Versuch hat, möglichst viele Stichworte zu nennen. 
+Des Weiteren kann es eine zeitliche Einschränkung geben, in welcher das Spiel absolviert werden muss, und am Ende gibt es einen Preis. 
+Bei angemessener Resonanz können weitere Bilder hinzugefügt werden, oder als Erweiterung von dem User ein Bild plus seine Kommentare angehängt werden, sodass Mitbestimmung seitens der Nutzer besteht.

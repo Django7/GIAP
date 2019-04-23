@@ -151,3 +151,13 @@ function btn_oc_setUserNameForLeaderboard() {
         }
     }
 }
+
+/**
+ * implements the file upload function for user 796 (id_match_797)
+ */
+function uploadExtraPicture(){
+    $('#fileUpload_797').click();
+    $('#fileUpload_797').prop('disabled', true);
+    setVisible($('#filesUploaded'));
+
+}
