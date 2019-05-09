@@ -1,0 +1,19 @@
+{{^end_screen}}
+<div> Andere Spieler haben im Durchschnitt <b>{{tags_other}}</b> Tags für dieses Bild gefunden.</div> <br>
+<div id="tags_809_more" class="invisible"> Super! Du hast <b id="tag_809_more"></b> Tags gefunden.</div> <br>
+<div id="tags_809_less" class="invisible"> Du hast <b id="tag_809_less"></b> Tags gefunden.</div> <br>
+<br>
+<button type="button" id="next_img_compare_809" class="invisible btn btn-primary w-35 pt-3 pull-right"
+        onclick="{{btn_listener}}">
+    Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+</button>
+{{/end_screen}}
+{{#end_screen}}
+<div>
+    Du hast alle 15 Runden abgeschlossen. Danke für deine Teilnahme!<br>
+    Verteilung deiner Tags: <br>
+    Visuell: <b> {{visuell_809}}% </b> <br>
+    Gefühlvoll: <b> {{gefuehlvoll_809}}% </b> <br>
+    Kreativ: <b> {{kreativ_809}}% </b> <br>
+</div>
+{{/end_screen}}

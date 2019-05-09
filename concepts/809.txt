@@ -1,0 +1,10 @@
+Man könnte eine globale Rangliste erstellen, mit den gefundenen Wörtern. 
+Es wäre ein Ansporn zu wissen, dass der Durchschnitt bei diesem Bild 20 Wörter gefunden hat, ich mir aber bei 10 schon schwer tue. 
+Dann will ich mehr Wörter finden. 
+Um zu verhindern, dass ein Spieler wahllos belanglose Wörter hinschreibt, kann man die die Wörter ausblenden oder löschen, ob das möglich ist weiß ich nicht.
+
+
+Es wäre auch interessant zu analysieren, ob der jeweilige Spieler eher kreativer, visueller oder gefÜhlvoller die Bilder beschreibt. 
+Ich habe jetzt alles nur rein visuell beschrieben.
+Am Ende würde man dann zu einer bestimmten Gruppe zählen. 
+Ich wäre wohl zu 75% visuell, andere würden eher zu der Kategorie zählen, die eine Stimmung beschreiben.

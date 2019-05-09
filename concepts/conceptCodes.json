@@ -152,6 +152,47 @@
 		"Social Comparison",
 		"Punishment"
 		]
+		
+	801 : [
+		"Multiplayer",
+		"Social Competition",
+		"Social Comparison",
+		"Points",
+		"Time Pressure",
+		"Goals",
+		"Friends"
+		]
+		
+	807 : [
+		"Unspecific Reward",
+		"Single Player",
+		"Multiplayer", 
+		"Social Competition",
+		"Social Comparison",
+		"Points",
+		"Progression",
+		"Surveillance"
+		]
+		
+	809 : [
+		"Mulitplayer",
+		"Social Competition",
+		"Social Comparison",
+		"Goals",
+		"Peer Pressure"
+		]
+		
+	825 : [
+		"Unspecific Reward",
+		"Visible Progress",
+		"Progression",
+		"Single Player",
+		"Multiplayer",
+		"Social Competition",
+		"Social Comparison",
+		"Notification"
+		]
+		
 	
 	   
 }

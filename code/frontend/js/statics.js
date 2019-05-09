@@ -80,6 +80,8 @@ var ID_COMPARE_780;
 var ID_CHARACTER_775;
 var ID_COMPARE_787;
 var ID_MATCH_797;
+var ID_COMPARE_809;
+var ID_COMPARE_COLUMN_825;
 
 /**
  * Sets the statics to their default values
@@ -173,4 +175,8 @@ function reinitGameElements() {
     ID_COMPARE_787.init('div_it_id_compare_787');
     ID_MATCH_797 = ID_Match_797();
     ID_MATCH_797.init('div_it_id_match_797');
+    ID_COMPARE_809 = ID_Compare_809();
+    ID_COMPARE_809.init('div_it_id_compare_809');
+    ID_COMPARE_COLUMN_825 = ID_Compare_Column_825();
+    ID_COMPARE_COLUMN_825.init('div_it_id_compare_column_825');
 }

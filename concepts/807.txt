@@ -1,0 +1,14 @@
+Hauptzweck eines solchen Spiels ist in diesem Falle wohl, das Belohnungszentrum der Spielenden zu stimulieren. 
+Das kann dadurch erreicht werden, dass Spieler besonderen Belohnungen erhalten können. 
+In einem beschränkten Rahmen wie dem hier vorliegenden, ist dies allerdings nur schwer möglich, da die Belohnungen nur im Kontext dieser Webseite ausgegeben werden können.
+
+Denkbar ist zum einen ein Einspielermodus dergestalt, dass mit jedem Begriff, den man einem Bild zuordnet, im folgenden Spielverlauf weniger Bilder zu untertiteln sind. 
+Da laut Aufgabenstellung jedoch insgesamt 15 Bilder bearbeitet werden sollen, müsste man in der Ausgangssituation mit mehr Bildern (30, 50,...) beginnen.
+
+Denkbar ist auch ein Mehrspielermodus, in dem mehrere Spieler online gegeneinander antreten. 
+Dies kann entweder in Echtzeit geschehen, oder in Form eines Highscore, einer Bestenliste. 
+Mögliches Kriterium für eine höhere Punktezahl wäre dann die Zahl der angegebenen Begriffe, wobei natürlich eine Kontrolle auf Sinnhaftigkeit ein möglichst kompetetives und damit motivierendes Spieleerlebnis ermöglichen müsste.
+
+Ob jedoch bei geforderter Aufgabenstellung (intuitve, subjektive Eindrücke benennen), eine solche überhaupt möglich ist, ist zweifelhaft.
+Wie hoch die Motivation in diesem Fall wirklich ist, ist fraglich. 
+Deshalb würde obiger Einspielermodus wohl mehr Sinn ergeben.

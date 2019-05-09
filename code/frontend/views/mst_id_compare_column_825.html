@@ -1,0 +1,24 @@
+{{^end_screen}}
+<div> Andere Spieler haben im Durchschnitt <b>{{tags_other}}</b> Tags für dieses Bild gefunden.</div>
+<br>
+<h3>Dein Fortschritt an Tags insgesamt:</h3>
+<p> Anzahl Tags über alle Bilder: <b id="points_825"> 0 </b></p>
+<div class="progressbar-825">
+    <div id="progress_825"></div>
+</div>
+<div>
+    <b> <p style="float:left"> 0 </p> <p style="float:right"> 105 </p> </b>
+</div>
+<br><br>
+<button type="button" id="next_img_compare_column_825" class="invisible btn btn-primary w-35 pt-3 pull-right"
+        onclick="{{btn_listener}}">
+    Nächstes Bild <span class="glyphicon glyphicon-arrow-right"></span>
+</button>
+{{/end_screen}}
+{{#end_screen}}
+<div>
+    Du hast alle 15 Runden abgeschlossen. Danke für deine Teilnahme!<br>
+    <h3 id="LBHeading">Ranking  </h3>
+    <div class="card no-border bg-gray w-100 leaderboard" id="div_it_id_compare_column_825_lb"></div>
+</div>
+{{/end_screen}}
