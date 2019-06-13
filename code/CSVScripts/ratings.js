@@ -33,7 +33,7 @@ var sql =
 var sql2 =
     "SELECT iid, tag, COALESCE(rating, \"\") AS rating_1, COALESCE(rating_2, \"\") AS rating_2\n" +
     "FROM image_tags\n" +
-    "GROUP BY iid, tag\n" +
+    "GROUP BY iid, tag, rating_1, rating_2\n" +
     "ORDER BY iid, tag";
 
 var sql3 =
