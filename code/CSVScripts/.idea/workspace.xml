@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea896ae2-1fb9-4534-8756-678e7b51a114" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tags_marc_lea.csvmerged.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tags_marc_test.csvmerged.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tags_tamino_lea.csvmerged.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tags_tamino_test.csvmerged.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSV/auswertung.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CSV/auswertung.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auswertung.js" beforeDir="false" afterPath="$PROJECT_DIR$/auswertung.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbconnect.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dbconnect.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/timings.js" beforeDir="false" afterPath="$PROJECT_DIR$/timings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/replaceCorrectedTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/replaceCorrectedTags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags_gms.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tags_gms.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updateTagsInDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/updateTagsInDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TagJudge/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TagJudge/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TagJudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TagJudge/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,20 +47,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auswertung.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-330">
+            <state relative-caret-position="-6672">
               <caret line="198" selection-start-line="198" selection-end-line="198" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dbconnect.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
-              <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -84,9 +94,7 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CSV/auswertung.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="-1991" />
-          </provider>
+          <provider selected="true" editor-type-id="csv-text-editor" />
           <provider editor-type-id="csv-table-editor">
             <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
           </provider>
@@ -143,9 +151,9 @@
         <option value="$PROJECT_DIR$/assumeExistentTagRatings.js" />
         <option value="$PROJECT_DIR$/replaceCorrectedTags.js" />
         <option value="$PROJECT_DIR$/ratings.js" />
-        <option value="$PROJECT_DIR$/dbconnect.properties" />
         <option value="$PROJECT_DIR$/timings.js" />
         <option value="$PROJECT_DIR$/auswertung.js" />
+        <option value="$PROJECT_DIR$/dbconnect.properties" />
       </list>
     </option>
   </component>
@@ -279,21 +287,23 @@
       <workItem from="1560497979499" duration="1056000" />
       <workItem from="1561816253608" duration="113000" />
       <workItem from="1561816384093" duration="1132000" />
+      <workItem from="1561925560648" duration="1621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107313000" />
+    <option name="totallyTimeSpent" value="108934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18598525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18598525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.20289855" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20289855" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3110368" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -313,12 +323,38 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.properties" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/updateTagsInDB.js</url>
-          <line>33</line>
+          <line>38</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -450,40 +486,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CSV/timings.csv">
+    <entry file="file://$PROJECT_DIR$/CSV/auswertung.csv">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSV/timings.csv">
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CSV/ratings_per_tag.csv">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auswertung.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6672">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dbconnect.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSV/auswertung.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="-1991" />
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auswertung.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="198" selection-start-line="198" selection-end-line="198" />
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>

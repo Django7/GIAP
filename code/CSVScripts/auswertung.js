@@ -487,6 +487,7 @@ function getNationality(string) {
     if(string.toLowerCase().includes("österreich")) return 5;
     if(string.toLowerCase().includes("schweizerisch")) return 6;
     if(string.toLowerCase().includes("algerisch") || string.toLowerCase().includes("dz")) return 7;
+    if(string.toLowerCase().includes("lux")) return 8;
     return string;
 }
 
