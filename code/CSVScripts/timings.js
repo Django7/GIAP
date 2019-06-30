@@ -57,6 +57,6 @@ function createTimingsCSV() {
 }
 
 function cropDBEntry(entry, floatLength = 2) {
-    if(entry == "") return "";
+    if(entry === "") return "";
     return parseFloat(entry).toFixed(floatLength).toString().replace(".", ",");
 }

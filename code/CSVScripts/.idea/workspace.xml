@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ea896ae2-1fb9-4534-8756-678e7b51a114" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSV/aggregations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CSV/aggregations.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSV/auswertung.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CSV/auswertung.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSV/ratings_per_tag.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CSV/ratings_per_tag.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSV/timings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CSV/timings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auswertung.js" beforeDir="false" afterPath="$PROJECT_DIR$/auswertung.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbconnect.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dbconnect.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timings.js" beforeDir="false" afterPath="$PROJECT_DIR$/timings.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,26 +22,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aggregations.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
+            <state relative-caret-position="2568">
               <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ratings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="33" selection-start-line="33" selection-end-line="36" selection-end-column="24" />
+            <state relative-caret-position="840">
+              <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/auswertung.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10008">
-              <caret line="417" selection-start-line="417" selection-end-line="419" selection-end-column="32" />
+            <state relative-caret-position="-330">
+              <caret line="198" selection-start-line="198" selection-end-line="198" />
             </state>
           </provider>
         </entry>
@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/dbconnect.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -76,20 +76,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/timings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+            <state relative-caret-position="552">
+              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSV/auswertung.csv">
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="-1991" />
+          </provider>
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CSV/timings.csv">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="csv-text-editor" />
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CSV/ratings_per_tag.csv">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="csv-text-editor" />
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -123,13 +139,13 @@
         <option value="$PROJECT_DIR$/aggregations.js" />
         <option value="$PROJECT_DIR$/InsertTagsInDB.js" />
         <option value="$PROJECT_DIR$/updateTagsInDB.js" />
-        <option value="$PROJECT_DIR$/ratings.js" />
         <option value="$PROJECT_DIR$/insertTagsInDB.js" />
+        <option value="$PROJECT_DIR$/assumeExistentTagRatings.js" />
+        <option value="$PROJECT_DIR$/replaceCorrectedTags.js" />
+        <option value="$PROJECT_DIR$/ratings.js" />
+        <option value="$PROJECT_DIR$/dbconnect.properties" />
         <option value="$PROJECT_DIR$/timings.js" />
         <option value="$PROJECT_DIR$/auswertung.js" />
-        <option value="$PROJECT_DIR$/assumeExistentTagRatings.js" />
-        <option value="$PROJECT_DIR$/dbconnect.properties" />
-        <option value="$PROJECT_DIR$/replaceCorrectedTags.js" />
       </list>
     </option>
   </component>
@@ -193,7 +209,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.ratings.js">
+  <component name="RunManager" selected="Node.js.auswertung.js">
     <configuration name="aggregations.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="aggregations.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -211,9 +227,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.ratings.js" />
-        <item itemvalue="Node.js.timings.js" />
         <item itemvalue="Node.js.auswertung.js" />
+        <item itemvalue="Node.js.timings.js" />
+        <item itemvalue="Node.js.ratings.js" />
         <item itemvalue="Node.js.aggregations.js" />
         <item itemvalue="Node.js.assumeExistingtTagRatings.js" />
       </list>
@@ -259,29 +275,31 @@
       <workItem from="1552413500975" duration="3319000" />
       <workItem from="1554026961216" duration="2880000" />
       <workItem from="1554200171805" duration="2538000" />
-      <workItem from="1560455399782" duration="1375000" />
+      <workItem from="1560455399782" duration="1728000" />
+      <workItem from="1560497979499" duration="1056000" />
+      <workItem from="1561816253608" duration="113000" />
+      <workItem from="1561816384093" duration="1132000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104659000" />
+    <option name="totallyTimeSpent" value="107313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18598525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18598525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20289855" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.31176472" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20289855" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3110368" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32941177" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32887402" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32887402" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -308,6 +326,11 @@
           <url>file://$PROJECT_DIR$/assumeExistingtTagRatings.js</url>
           <line>32</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/timings.js</url>
+          <line>41</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -392,10 +415,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/replaceCorrectedTags.js" />
     <entry file="file://$PROJECT_DIR$/assumeExistingtTagRatings.js" />
-    <entry file="file://$PROJECT_DIR$/auswertung.js">
+    <entry file="file://$PROJECT_DIR$/aggregations.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10008">
-          <caret line="417" selection-start-line="417" selection-end-line="419" selection-end-column="32" />
+        <state relative-caret-position="2568">
+          <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ratings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -413,37 +443,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbconnect.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aggregations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/timings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        <state relative-caret-position="552">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CSV/timings.csv">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/CSV/ratings_per_tag.csv">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ratings.js">
+    <entry file="file://$PROJECT_DIR$/dbconnect.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="33" selection-start-line="33" selection-end-line="36" selection-end-column="24" />
+        <state relative-caret-position="96">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSV/auswertung.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-1991" />
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auswertung.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
         </state>
       </provider>
     </entry>
