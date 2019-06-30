@@ -20,17 +20,22 @@ dbConnection.connect(function(err) {
 
 function updateTagRatings() {
     var lineReader = require('readline').createInterface({
-        input: require('fs').createReadStream('tags.csvmerged.csv')
+        input: require('fs').createReadStream('tags_marc_test.csvmerged.csv', 'utf8')
     });
+    var utf8 = require('utf8');
 
     var numLines = 0;
 
     lineReader.on('line', function (line) {
-        var variables = line.split(";");
+        var variables = line.split(",");
+
+        var iconv = require('iconv-lite');
+
+        var buff   = new Buffer(variables[2], 'utf8');
 
         var iid = variables[0];
         var freq = variables[1];
-        var tag = variables[2];
+        var tag = iconv.decode(iconv.decode(buff, 'ISO-8859-1'), 'UTF-8');
         var rating1 = variables[3];
         var rating2 = variables[4];
 

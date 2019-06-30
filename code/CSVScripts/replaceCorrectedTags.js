@@ -34,7 +34,7 @@ function replaceCorrectedTags() {
                 if(err) throw err;
                 numLines++;
                 console.log(numLines);
-                if(numLines === 1328) {
+                if(numLines === 1846) {
                     console.log('finished!');
                     dbConnection.destroy();
                     process.exit(0);

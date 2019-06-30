@@ -7,25 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3706a11-77a8-4e97-a0e3-40c63dfcd14a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../CSVScripts/insertTagsInDB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/artifacts/code_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/artifacts/code_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/props/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/props/settings.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/target/classes/SQL/results_aggregations.SQL" beforeDir="false" afterPath="$PROJECT_DIR$/../API/target/classes/SQL/results_aggregations.SQL" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/target/classes/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../API/target/classes/settings.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CSVScripts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/aggregations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/aggregations.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/auswertung.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/auswertung.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_grouped.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_grouped.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_per_tag.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/ratings_per_tag.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/CSV/timings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/CSV/timings.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/assumeExistingtTagRatings.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/assumeExistingtTagRatings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CSVScripts/auswertung.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/auswertung.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CSVScripts/dbconnect.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/dbconnect.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/replaceCorrectedTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/replaceCorrectedTags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSVScripts/tags_gms.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/tags_gms.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CSVScripts/updateTagsInDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/../CSVScripts/updateTagsInDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dextreem/tj/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dextreem/tj/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/js/statics.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/js/statics.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,23 +28,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dextreem/tj/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="55" column="52" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
+            <state relative-caret-position="936">
+              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Map.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -65,27 +48,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dextreem/tj/gui/TagJudgeGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="1968">
+              <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1565#1566#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dextreem/tj/Tags.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1633">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="-1560">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#1685#1686#0" expanded="true" />
                 <element signature="e#1748#1749#0" expanded="true" />
                 <element signature="e#1783#1784#0" expanded="true" />
                 <element signature="e#1820#1821#0" expanded="true" />
+                <element signature="e#1850#1851#0" expanded="true" />
                 <element signature="e#1887#1888#0" expanded="true" />
                 <element signature="e#1918#1919#0" expanded="true" />
                 <element signature="e#2006#2007#0" expanded="true" />
@@ -106,6 +88,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>fehler</find>
+      <find>split</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,17 +107,16 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="x" value="240" />
+    <option name="y" value="125" />
+    <option name="width" value="1440" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -142,11 +124,6 @@
             <path>
               <item name="TagJudge" type="b2602c69:ProjectViewProjectNode" />
               <item name="TagJudge" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TagJudge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TagJudge" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TagJudge" type="b2602c69:ProjectViewProjectNode" />
@@ -163,9 +140,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544627142015" />
@@ -173,6 +152,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -186,11 +166,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main_merging">
+  <component name="RunManager" selected="Application.Main_discussing">
     <configuration name="Main_discussing" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.dextreem.tj.Main" />
       <module name="TagJudge" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;$USER_HOME$/Desktop/tags.csv&quot; &quot;$USER_HOME$/Desktop/relations.csv&quot; &quot;$PROJECT_DIR$/../../images&quot; &quot;DISCUSS&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$USER_HOME$/Desktop/tags_tamino_lea.csvmerged.csv&quot; &quot;$USER_HOME$/Desktop/relations.csv&quot; &quot;$PROJECT_DIR$/../../images&quot; &quot;DISCUSS&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -198,7 +178,7 @@
     <configuration name="Main_merging" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.dextreem.tj.Main" />
       <module name="TagJudge" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;$USER_HOME$/Desktop/tags1.csv&quot; &quot;$USER_HOME$/Desktop/tags.csv&quot; &quot;MERGE&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$USER_HOME$/Desktop/tags_marc_marc.csv&quot; &quot;$USER_HOME$/Desktop/tags_marc_lea.csv&quot; &quot;MERGE&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -206,7 +186,7 @@
     <configuration name="Main_tagging" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.dextreem.tj.Main" />
       <module name="TagJudge" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;$USER_HOME$/Desktop/tags1.csv&quot; &quot;$USER_HOME$/Desktop/relations.csv&quot; &quot;$PROJECT_DIR$/../../images&quot; &quot;&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$USER_HOME$/Desktop/tags.csv&quot; &quot;$USER_HOME$/Desktop/relations.csv&quot; &quot;$PROJECT_DIR$/../../images&quot; &quot;&quot;" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -244,16 +224,23 @@
       <workItem from="1529740776457" duration="1209000" />
       <workItem from="1543399794291" duration="814000" />
       <workItem from="1544600203194" duration="7200000" />
+      <workItem from="1559053205179" duration="156000" />
+      <workItem from="1559053472452" duration="3545000" />
+      <workItem from="1559814234618" duration="896000" />
+      <workItem from="1560001347583" duration="748000" />
+      <workItem from="1560174913034" duration="457000" />
+      <workItem from="1560322537017" duration="3139000" />
+      <workItem from="1560427689771" duration="595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39789000" />
+    <option name="totallyTimeSpent" value="49325000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.112469435" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09127517" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -262,12 +249,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32871974" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.24798155" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32794118" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.24705882" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2272203" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.22647059" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32934782" />
@@ -292,16 +279,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/dextreem/tj/gui/TagJudgeGui.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/dextreem/tj/Main.java</url>
           <line>32</line>
           <properties />
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/dextreem/tj/gui/TagJudgeGui.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -309,50 +296,43 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/dextreem/tj/ImageRelation.java" />
     <entry file="jar://F:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/ArrayList.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Map.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/dextreem/tj/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dextreem/tj/gui/TagJudgeGui.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dextreem/tj/gui/TagJudgeGui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="1968">
+          <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1565#1566#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dextreem/tj/Tags.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1633">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="-1560">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1685#1686#0" expanded="true" />
             <element signature="e#1748#1749#0" expanded="true" />
             <element signature="e#1783#1784#0" expanded="true" />
             <element signature="e#1820#1821#0" expanded="true" />
+            <element signature="e#1850#1851#0" expanded="true" />
             <element signature="e#1887#1888#0" expanded="true" />
             <element signature="e#1918#1919#0" expanded="true" />
             <element signature="e#2006#2007#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dextreem/tj/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="55" column="52" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
