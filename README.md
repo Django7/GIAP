@@ -32,7 +32,6 @@ It consists of two folders:
     b) tables_example_content.sql
 
     c) subsequent_tables_example_content.sql
-    
 
 ## Java IDE:
 1. Open settings.properties
@@ -56,12 +55,13 @@ It consists of two folders:
 # Creating a new Game Concept
 
 1. Group in DB anlegen nach dem Schema "id\_[concept name]_[id]"
-2. User anlegen mit zugewiesener groupID in users_groups Schema.
-3. In "views" eine HTML Datei anlegen (id\_[concept name]_[id].html).
-4. In js/ge/ eine JS datei anlegen und in der index.html einbinden (id\_[concept name]_[id].js).
-5. In mst_taggin_environment.html einen Abschnitt für neues Game Concept einfügen.
-6. In statics.js 
-	-> eine variable für neues Game Concept anlegen.
-	-> in reinitGameElement() hinterlegen.
-7. In game_element_helpers.js 
-	-> In allen Funktionen in init_user_designed_game_elements(main_user_group_id) neues Game Concept als case einfügen
+2. Assign groupID to respective user in users_groups table (DB)
+3. Create a HTML file in "views" (mst_id\_[concept name]_[id].html)
+4. Add concept to mst_taggin_environment.html
+5. Create a JS file in js/ge/ (id\_[concept name]_[id].js) 
+6. Add js file to \<script> of index.html
+7. In statics.js: 
+   -> Create a variable for game concept
+   -> Add to reinitGameElement()
+8. In game_element_helpers.js: 
+  -> Add to all functions in init_user_designed_game_elements(main_user_group_id) as new case
