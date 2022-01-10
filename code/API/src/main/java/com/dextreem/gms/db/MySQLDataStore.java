@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.*;
+import java.util.concurrent.SynchronousQueue;
 
 /**
  * This class provides methods to use a MySQL database as data store.
@@ -410,6 +411,26 @@ public class MySQLDataStore implements DataStoreConnector {
         return -1;
     }
 
+    public int getChosenGroup(int uid, String usr){
+        connect();
+
+        if (!user_exists(usr)) {
+            return -1;
+        }
+        try {
+            String sql = "SELECT chosen_group FROM choice WHERE uid=?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, uid);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("chosen_group");
+            }
+        } catch (SQLException ex) {
+            logger.error(String.format("Error while getting chosen_group for user '%s'", usr));
+        }
+        return -1;
+    }
+
     /**
      * Gets the user name to a certain user ID
      *
@@ -612,6 +633,42 @@ public class MySQLDataStore implements DataStoreConnector {
         return null;
     }
 
+
+    public int getTutorial1Count(){
+        connect();
+
+        try{
+            String sql = "SELECT count(uid) AS amount FROM choice WHERE tutorial=1";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                System.out.println("Players with rel tutorial first:"+rs.getInt("amount"));
+                return rs.getInt("amount");
+            }
+        }
+        catch (SQLException ex) {
+            logger.error("Error while getting the number of people who used tutorial 1");
+        }
+        return 0;
+    }
+
+    public int getTutorial2Count(){
+        connect();
+
+        try{
+            String sql = "SELECT count(uid) AS amount FROM choice WHERE tutorial=2";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                System.out.println("Players with abs tutorial first:"+rs.getInt("amount"));
+                return rs.getInt("amount");
+            }
+        }
+        catch (SQLException ex) {
+            logger.error("Error while getting the number of people who used tutorial 2");
+        }
+        return 0;
+    }
     /**
      * Creates a new user.
      * User name and password is assumed to be neither null nor empty!
@@ -652,6 +709,34 @@ public class MySQLDataStore implements DataStoreConnector {
                     new RowKeyValuePair("visible_for_others", 0));
         }
 
+        if ("absolute_leaderboard".equals(group_name)) {
+            insertToTable("absolute_leaderboard",
+                    new RowKeyValuePair("uid", userID),
+                    new RowKeyValuePair("points", 0),
+                    new RowKeyValuePair("points_incr", 100),
+                    new RowKeyValuePair("representation", "points"),
+                    new RowKeyValuePair("visible_for_others", 0));
+        }
+
+        if ("relative_leaderboard".equals(group_name)) {
+            insertToTable("relative_leaderboard",
+                    new RowKeyValuePair("uid", userID),
+                    new RowKeyValuePair("points", 0),
+                    new RowKeyValuePair("points_incr", 100),
+                    new RowKeyValuePair("representation", "points"),
+                    new RowKeyValuePair("visible_for_others", 0));
+        }
+
+        if ("choice".equals(group_name)) {
+            insertToTable("choice",
+                    new RowKeyValuePair("uid", userID),
+                    new RowKeyValuePair("points", 0),
+                    new RowKeyValuePair("points_incr", 100),
+                    new RowKeyValuePair("chosen_group", 0),
+                    new RowKeyValuePair("tutorial", 0),
+                    new RowKeyValuePair("representation", "points"),
+                    new RowKeyValuePair("visible_for_others", 0));
+        }
         return true;
     }
 
@@ -708,7 +793,6 @@ public class MySQLDataStore implements DataStoreConnector {
     @Override
     public synchronized ImageFile getImage(int userID) {
         connect();
-
         String resourcePath = Props.getProp("api.img.path");
         String name = getUserName(userID);
 
@@ -928,6 +1012,43 @@ public class MySQLDataStore implements DataStoreConnector {
             preparedStatement.execute();
         } catch (SQLException ex) {
             logger.error(String.format("Error while updating 'image_log' for user '%s' (ID: %d) with tags '%s' for the TUTORIAL image %s", username, userID, tags, image_name));
+        }
+    }
+
+    public void insertChosenLeaderboard(int userID, String chosen_leaderboard){
+        connect();
+        logger.debug(chosen_leaderboard);
+        int flag;
+        if (chosen_leaderboard.equals("1")){
+            flag = 1;
+        }else{
+            flag = 2;
+        }
+        logger.debug(flag);
+        String username = getUserName(userID);
+        try {
+            String update = "UPDATE choice SET chosen_group=? WHERE uid=?";
+            PreparedStatement preparedStatement = connection.prepareStatement(update);
+            preparedStatement.setInt(1, flag);
+            preparedStatement.setInt(2, userID);
+            preparedStatement.execute();
+        }catch (SQLException ex) {
+            logger.error(String.format("Error while updating 'chosen_leaderboard' for user '%s' (ID: %d) with '%s'", username, userID, chosen_leaderboard));
+        }
+    }
+
+    public void insertTutorial(int userID, int tutorial){
+        connect();
+        logger.debug(tutorial);
+        String username = getUserName(userID);
+        try {
+            String update = "UPDATE choice SET tutorial=? WHERE uid=?";
+            PreparedStatement preparedStatement = connection.prepareStatement(update);
+            preparedStatement.setInt(1, tutorial);
+            preparedStatement.setInt(2, userID);
+            preparedStatement.execute();
+        }catch (SQLException ex) {
+            logger.error(String.format("Error while updating 'tutorial' for user '%s' (ID: %d) with '%s'", username, userID, tutorial));
         }
     }
 

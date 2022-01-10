@@ -219,7 +219,7 @@ function viewRightTutorialOverlay(title, msg, btn_name, callafter, close) {
     putElementOnTop(elt);
 }
 
-/**
+/** 
  * Views a tutorial overlay
  * @param title The title to show
  * @param msg The message to show
@@ -552,6 +552,28 @@ function replaceInArrayGeneric(array, key, key_position, new_val, new_val_positi
     return array;
 }
 
+
+/** updated die Punkte und sortiert das array */
+function replaceInAbsoluteArrayGeneric(array, key, key_position, new_val, new_val_position) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i][key_position] === key) {
+            array[i][new_val_position] = new_val;
+        }
+    }
+
+    // Sort the array
+    array = array.sort(function (a, b) {
+        if (a[2] > b[2]) {
+            return -1;
+        }
+        if (a[2] < b[2]) {
+            return 1;
+        }
+        return 0;
+    });
+
+    return array;
+}
 /**
  * Let's you download a file with respective filename and content
  * @param filename The filename suggested to the user
@@ -606,7 +628,7 @@ function getMainUserGroup() {
     // }
 
     // The usual three game conditions "td", "design", and "none".
-    if(!arrayContainsOnOfThoseElements(USER_GROUP, ["td", "design", "none"])){
+    if(!arrayContainsOnOfThoseElements(USER_GROUP, ["td", "design", "none","absolute","relative","choice"])){
         printWarn("Warning: Undefined user's main group (and not in none, design or td)!!!");
     }
 

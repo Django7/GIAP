@@ -128,6 +128,7 @@ public interface DataStoreConnector {
      */
     int getUserID(String usr);
 
+    int getChosenGroup(int uid, String usr);
     /**
      * Gets an user name by ID
      *
@@ -366,4 +367,12 @@ public interface DataStoreConnector {
      * @since v1.0
      */
     String[] getFinishedQuestionnaires(int userID);
+
+    void insertChosenLeaderboard(int userID, String leaderboard_chosen);
+
+    int getTutorial1Count();
+
+    int getTutorial2Count();
+
+    void insertTutorial(int userID, int tutorial);
 }

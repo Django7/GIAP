@@ -58,6 +58,20 @@ function json_get_points_message() {
 }
 
 /**
+ * Returns a json string to query the current points
+ * @returns {string}
+ */
+ function json_get_chosen_leaderboard_message() {
+    return JSON.stringify({
+       "type" : "GET",
+       "content" : {
+           "leaderboard_chosen" : 1
+       }
+    });
+}
+
+
+/**
  * Returns a json string to query the leaderboard
  * @param user
  * @returns {string}
@@ -67,6 +81,16 @@ function json_get_leaderboard_message(user) {
         "type" : "GET",
         "content":{
             "leaderboard" : 1,
+            "name" : user
+        }
+    });
+}
+
+function json_get_tutorial_message(user){
+    return JSON.stringify({
+        "type" : "GET",
+        "content":{
+            "tutorial" : 1,
             "name" : user
         }
     });
@@ -112,6 +136,30 @@ function json_post_message(tags) {
             "name" : CURRENT_IMAGE
         }
     });
+}
+
+
+/** Returns a josn string to send to the server
+ *  Notifies the server which leaderboard was chosen
+ *  1 = absolute leaderboard, 2 = relative leaderboard
+*/
+
+function json_post_choice_absolute(){
+    return JSON.stringify({
+        "type" : "POST",
+        "content": {
+            "chosen_lb" : "1"
+        }
+    })
+}
+
+function json_post_choice_relative(){
+    return JSON.stringify({
+        "type" : "POST",
+        "content": {
+            "chosen_lb" : "2"
+        }
+    })
 }
 
 /**

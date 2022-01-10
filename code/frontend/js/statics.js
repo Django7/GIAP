@@ -1,6 +1,6 @@
 /** The server URL **/
 var SERVER_URL = 'ws://localhost:8025/ws/wscon';
-//var SERVER_URL = 'ws://m.schubhan.de:8025/ws/wscon';
+//var SERVER_URL = 'ws://m.schubhan.de:8025/wscon';
 //var SERVER_URL = 'wss://dobuch.de/ws/wscon/';
 
 /** If false, new users get an error message and cannot go beyond the welcome page **/
@@ -11,6 +11,7 @@ var DEBUGGING = true;
 
 /** Tutorial pics **/
 var TUTORIAL_PICS = [];
+var TUTORIAL_PICS_CHOICE = [];
 var TUTORIAL_PIC = 0;
 var TUTORIAL_EXAMPLES = [];
 
@@ -55,6 +56,17 @@ var POINTS_INCR = 0;
 var LEADERBOARD_ARRAY = [];
 var DESIGN_CHARS_MIN = 700;
 
+/** statistics for absolute and relative study**/
+var POINTS_ABSOLUTE = -1;
+var POINTS_RELATIVE = -1;
+
+/**other */
+var INITIAL_LEADERBOARD_STATE = 0;
+var CURRENT_PLAYER_POSITION = -1;
+var VISIBLE_PLAYERS = 2;
+var NICKNAME = "Du";
+var LEADERBOARD_CHOSEN = 0;
+
 /** Image statistics (number of tags per image + duration) and goals **/
 var ID_PRIZES_59;
 var ID_POINTS_151;
@@ -94,7 +106,9 @@ function initStaticEnvironment() {
     DEBUGGING = true;
 
     TUTORIAL_PICS = ['img/abstract_0001.jpg', 'img/abstract_0002.jpg', 'img/abstract_0003.jpg'];
+    TUTORIAL_PICS_CHOICE = ['img/abstract_0001.jpg', 'img/abstract_0002.jpg'];
     TUTORIAL_EXAMPLES = ['unruhig, verlassen, düster', 'glücklich, ruhig, verträumt', 'dunkel, trist, warm'];
+    TUTORIAL_EXAMPLES_CHOICE = ['unruhig, verlassen, düster', 'glücklich, ruhig, verträumt'];
     TUTORIAL_PIC = 0;
     DECREASE_POINTS = true;
     USER_NAME = "Lucid Lynx";
@@ -111,6 +125,8 @@ function initStaticEnvironment() {
     ADD_IMGS = 0;
     RECONNECTING = false;
     POINTS = -1;
+    POINTS_ABSOLUTE = -1;
+    POINTS_RELATIVE = -1;
     POINTS_INCR = 0;
     LEADERBOARD_ARRAY = [];
     DESIGN_CHARS_MIN = 700;

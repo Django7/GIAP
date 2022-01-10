@@ -43,6 +43,142 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
          'inc_points', 'POST',
          'UPDATE game_td_points SET points = ((SELECT count(*) FROM image_tags WHERE uid=%UID% AND length(tag) > 0 AND iid NOT IN (SELECT iid FROM images WHERE name LIKE \'TUTORIAL%\')) * points_incr) WHERE uid=%UID%');
 
+
+
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'absolute_leaderboard'),
+   'get_points', '', 'SELECT points, points_incr FROM absolute_leaderboard WHERE uid = %UID%');
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'absolute_leaderboard'),
+   'get_leaderboard', '',
+   'SELECT users.name, points FROM absolute_leaderboard INNER JOIN users ON absolute_leaderboard.uid = users.uid WHERE absolute_leaderboard.uid = %UID% OR visible_for_others = 1 ORDER BY points DESC');
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'absolute_leaderboard'),
+   'set_points', '', 'INSERT INTO absolute_leaderboard (points, last_update) VALUE (?, ?)');
+/* INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'game_custom_jokes'),
+   'get_joke', '', 'SELECT * FROM game_custom_jokes ORDER BY RAND() LIMIT 1'); */
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE ((SELECT gid
+          FROM `groups`
+          WHERE name = 'absolute_leaderboard'),
+         'inc_points', 'POST',
+         'UPDATE absolute_leaderboard SET points = ((SELECT count(*) FROM image_tags WHERE uid=%UID% AND length(tag) > 0 AND iid NOT IN (SELECT iid FROM images WHERE name LIKE \'TUTORIAL%\')) * points_incr) WHERE uid=%UID%');
+
+
+
+
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'absolute_leaderboard'),
+   'get_points', '', 'SELECT points, points_incr FROM absolute_leaderboard WHERE uid = %UID%');
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'absolute_leaderboard'),
+   'get_leaderboard', '',
+   'SELECT users.name, points FROM absolute_leaderboard INNER JOIN users ON absolute_leaderboard.uid = users.uid WHERE absolute_leaderboard.uid = %UID% OR visible_for_others = 1 ORDER BY points DESC');
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'absolute_leaderboard'),
+   'set_points', '', 'INSERT INTO absolute_leaderboard (points, last_update) VALUE (?, ?)');
+/* INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'game_custom_jokes'),
+   'get_joke', '', 'SELECT * FROM game_custom_jokes ORDER BY RAND() LIMIT 1'); */
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE ((SELECT gid
+          FROM `groups`
+          WHERE name = 'absolute_leaderboard'),
+         'inc_points', 'POST',
+         'UPDATE absolute_leaderboard SET points = ((SELECT count(*) FROM image_tags WHERE uid=%UID% AND length(tag) > 0 AND iid NOT IN (SELECT iid FROM images WHERE name LIKE \'TUTORIAL%\')) * points_incr) WHERE uid=%UID%');
+
+
+
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'relative_leaderboard'),
+   'get_points', '', 'SELECT points, points_incr FROM relative_leaderboard WHERE uid = %UID%');
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'relative_leaderboard'),
+   'get_leaderboard', '',
+   'SELECT users.name, points FROM relative_leaderboard INNER JOIN users ON relative_leaderboard.uid = users.uid WHERE relative_leaderboard.uid = %UID% OR visible_for_others = 1 ORDER BY points DESC');
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'relative_leaderboard'),
+   'set_points', '', 'INSERT INTO relative_leaderboard (points, last_update) VALUE (?, ?)');
+/* INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'game_custom_jokes'),
+   'get_joke', '', 'SELECT * FROM game_custom_jokes ORDER BY RAND() LIMIT 1'); */
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE ((SELECT gid
+          FROM `groups`
+          WHERE name = 'relative_leaderboard'),
+         'inc_points', 'POST',
+         'UPDATE relative_leaderboard SET points = ((SELECT count(*) FROM image_tags WHERE uid=%UID% AND length(tag) > 0 AND iid NOT IN (SELECT iid FROM images WHERE name LIKE \'TUTORIAL%\')) * points_incr) WHERE uid=%UID%');
+
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'choice'),
+   'get_points', '', 'SELECT points, points_incr FROM choice WHERE uid = %UID%');
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'choice'),
+   'get_leaderboard', '',
+   'SELECT users.name, points FROM choice INNER JOIN users ON choice.uid = users.uid WHERE choice.uid = %UID% OR visible_for_others = 1 ORDER BY points DESC');
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'choice'),
+   'set_points', '', 'INSERT INTO choice (points, last_update) VALUE (?, ?)');
+/* INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE
+  ((SELECT gid
+    FROM `groups`
+    WHERE name = 'game_custom_jokes'),
+   'get_joke', '', 'SELECT * FROM game_custom_jokes ORDER BY RAND() LIMIT 1'); */
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE ((SELECT gid
+          FROM `groups`
+          WHERE name = 'choice'),
+         'inc_points', 'POST',
+         'UPDATE choice SET points = ((SELECT count(*) FROM image_tags WHERE uid=%UID% AND length(tag) > 0 AND iid NOT IN (SELECT iid FROM images WHERE name LIKE \'TUTORIAL%\')) * points_incr) WHERE uid=%UID%');
+
+
 /* achievements */
 /* INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
@@ -70,7 +206,7 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
 
 INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
-          FROM `groups`
+          FROM `groups`name
           WHERE name = 'game_levels_farm'), 'get_stats', '',
          'SELECT count(*) AS tag_counter, TIMESTAMPDIFF(SECOND, start_time, end_time) AS duration FROM image_tags INNER JOIN image_log ON image_log.iid = image_tags.iid WHERE image_tags.uid=%UID% AND image_log.uid=%UID%  AND length(tag) > 0 AND image_tags.iid NOT IN (SELECT iid FROM images WHERE name LIKE \'TUTORIAL%\') GROUP BY image_log.iid, start_time, end_time;');
 
@@ -114,6 +250,8 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
           WHERE name = 'game_summary'), 'get_all_my_tags', '',
          'SELECT name, GROUP_CONCAT(DISTINCT tag SEPARATOR \', \') AS my_tags FROM images INNER JOIN image_tags it ON images.iid = it.iid WHERE uid = %UID% AND name NOT LIKE \'TUTORIAL%\' AND length(tag) > 0 GROUP BY images.iid;');
 */
+
+/* - dennis 21_07_2021 test ist irrelevant
 INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM `groups`
@@ -137,17 +275,36 @@ INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
 INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM `groups`
+          WHERE name = 'absolute_leaderboard'), 'set_questionnaire_duration', '',
+         'INSERT INTO questionnaires_duration (uid, quest_name, duration) VALUE (%UID%, ?, ?);');
+         
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE ((SELECT gid
+          FROM `groups`
+          WHERE name = 'relative_leaderboard'), 'set_questionnaire_duration', '',
+         'INSERT INTO questionnaires_duration (uid, quest_name, duration) VALUE (%UID%, ?, ?);');
+        
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE ((SELECT gid
+          FROM `groups`
+          WHERE name = 'choice'), 'set_questionnaire_duration', '',
+         'INSERT INTO questionnaires_duration (uid, quest_name, duration) VALUE (%UID%, ?, ?);');
+  
+INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
+  VALUE ((SELECT gid
+          FROM `groups`
           WHERE name = 'design_implemented'), 'set_questionnaire_duration', '',
          'INSERT INTO questionnaires_duration (uid, quest_name, duration) VALUE (%UID%, ?, ?);');
 
 INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
   VALUE ((SELECT gid
           FROM `groups`
-          WHERE name = 'design_task'), 'set_questionnaire_duration', '',
+          WHERE name = 'design_task'), 'segidt_questionnaire_duration', '',
          'INSERT INTO questionnaires_duration (uid, quest_name, duration) VALUE (%UID%, ?, ?);');
 
 
 /* Custom Game Commands */
+/* - dennis für meinen zweck irrelevant
 INSERT INTO users_groups_commands (gid, command, trigger_cmds, sql_command)
 VALUES (5, 'get_most_40_tags_for_this_image', '',
         'SELECT top40tags FROM (SELECT tag AS top40tags, count(*) AS tagCount FROM image_tags WHERE iid = (SELECT iid FROM image_log WHERE uid = %UID% AND in_work = 1) GROUP BY tag ORDER BY tagCount DESC LIMIT 40) AS tagsTable');

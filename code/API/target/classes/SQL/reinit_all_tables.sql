@@ -8,7 +8,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
-  uid       INT(11) NOT NULL AUTO_INCREMENT,
+  uid       INT NOT NULL AUTO_INCREMENT,
   name      TINYTEXT,
   pwd       TINYTEXT,
   mail      TINYTEXT,
@@ -19,7 +19,7 @@ CREATE TABLE users (
 
 DROP TABLE IF EXISTS `groups`;
 CREATE TABLE `groups` (
-  gid   INT(11) NOT NULL AUTO_INCREMENT,
+  gid   INT NOT NULL AUTO_INCREMENT,
   id    TINYTEXT,
   name  TINYTEXT,
   basic BIT              DEFAULT 0,
@@ -28,16 +28,16 @@ CREATE TABLE `groups` (
 
 DROP TABLE IF EXISTS users_groups;
 CREATE TABLE users_groups (
-  uid INT(11),
-  gid INT(11),
+  uid INT,
+  gid INT,
   FOREIGN KEY (uid) REFERENCES users (uid),
   FOREIGN KEY (gid) REFERENCES `groups` (gid)
 );
 
 DROP TABLE IF EXISTS users_groups_commands;
 CREATE TABLE users_groups_commands (
-  cmdid        INT(11) NOT NULL AUTO_INCREMENT,
-  gid          INT(11),
+  cmdid        INT NOT NULL AUTO_INCREMENT,
+  gid          INT,
   command      TINYTEXT,
   trigger_cmds TEXT,
   sql_command  TEXT,
@@ -47,7 +47,7 @@ CREATE TABLE users_groups_commands (
 
 DROP TABLE IF EXISTS game_td_points;
 CREATE TABLE game_td_points (
-  uid                INT(11),
+  uid                INT,
   points             DOUBLE,
   points_incr        DOUBLE,
   representation     TINYTEXT,
@@ -56,17 +56,52 @@ CREATE TABLE game_td_points (
   FOREIGN KEY (uid) REFERENCES users (uid)
 );
 
+DROP TABLE IF EXISTS absolute_leaderboard;
+CREATE TABLE absolute_leaderboard (
+  uid                INT,
+  points             DOUBLE,
+  points_incr        DOUBLE,
+  representation     TINYTEXT,
+  visible_for_others BIT DEFAULT 0,
+  last_update        DATETIME,
+  FOREIGN KEY (uid) REFERENCES users (uid)
+);
+
+DROP TABLE IF EXISTS relative_leaderboard;
+CREATE TABLE relative_leaderboard (
+  uid                INT,
+  points             DOUBLE,
+  points_incr        DOUBLE,
+  representation     TINYTEXT,
+  visible_for_others BIT DEFAULT 0,
+  last_update        DATETIME,
+  FOREIGN KEY (uid) REFERENCES users (uid)
+);
+
+DROP TABLE IF EXISTS choice;
+CREATE TABLE choice (
+  uid                INT,
+  points             DOUBLE,
+  points_incr        DOUBLE,
+  chosen_group		 INT, /*0 = not chosen yet;1 = absolute leaderboard chosen;2= relative leaderboard chosen*/
+  tutorial			INT,
+  representation     TINYTEXT,
+  visible_for_others BIT DEFAULT 0,
+  last_update        DATETIME,
+  FOREIGN KEY (uid) REFERENCES users (uid)
+);
+
 DROP TABLE IF EXISTS game_custom_jokes;
 CREATE TABLE game_custom_jokes (
-  jid  INT(11) NOT NULL AUTO_INCREMENT,
+  jid  INT NOT NULL AUTO_INCREMENT,
   joke TEXT,
   PRIMARY KEY (jid)
 );
 
 DROP TABLE IF EXISTS users_game_custom_jokes;
 CREATE TABLE users_game_custom_jokes (
-  uid       INT(11),
-  jid       INT(11),
+  uid       INT,
+  jid       INT,
   last_used DATETIME,
   FOREIGN KEY (uid) REFERENCES users (uid),
   FOREIGN KEY (jid) REFERENCES game_custom_jokes (jid)
@@ -74,7 +109,7 @@ CREATE TABLE users_game_custom_jokes (
 
 DROP TABLE IF EXISTS images;
 CREATE TABLE images (
-  iid                 INT(11) NOT NULL AUTO_INCREMENT,
+  iid                 INT NOT NULL AUTO_INCREMENT,
   name                TEXT,
   basic_image         BIT              DEFAULT 0,
   extra_round_counter SMALLINT         DEFAULT 0,
@@ -83,8 +118,8 @@ CREATE TABLE images (
 
 DROP TABLE IF EXISTS image_log;
 CREATE TABLE image_log (
-  uid        INT(11),
-  iid        INT(11),
+  uid        INT,
+  iid        INT,
   start_time DATETIME,
   end_time   DATETIME,
   in_work    BIT DEFAULT 0,
@@ -94,8 +129,8 @@ CREATE TABLE image_log (
 
 DROP TABLE IF EXISTS image_tags;
 CREATE TABLE image_tags (
-  uid INT(11),
-  iid INT(11),
+  uid INT,
+  iid INT,
   tag TEXT,
   FOREIGN KEY (uid) REFERENCES users (uid),
   FOREIGN KEY (iid) REFERENCES images (iid)
@@ -103,7 +138,7 @@ CREATE TABLE image_tags (
 
 DROP TABLE IF EXISTS achievements;
 CREATE TABLE achievements (
-  aid            INT(11) NOT NULL AUTO_INCREMENT,
+  aid            INT NOT NULL AUTO_INCREMENT,
   name           TINYTEXT,
   description    TEXT,
   pts_to_trigger DOUBLE,
@@ -112,15 +147,15 @@ CREATE TABLE achievements (
 
 DROP TABLE IF EXISTS achievements_users;
 CREATE TABLE achievements_users (
-  aid INT(11),
-  uid INT(11),
+  aid INT,
+  uid INT,
   FOREIGN KEY (aid) REFERENCES achievements (aid),
   FOREIGN KEY (uid) REFERENCES users (uid)
 );
 
 DROP TABLE IF EXISTS questionnaires;
 CREATE TABLE questionnaires (
-  qid        INT(11) NOT NULL AUTO_INCREMENT,
+  qid        INT NOT NULL AUTO_INCREMENT,
   quest_name TEXT,
   json_quest TEXT,
   PRIMARY KEY (qid)
@@ -128,8 +163,8 @@ CREATE TABLE questionnaires (
 
 DROP TABLE IF EXISTS questionnaires_users;
 CREATE TABLE questionnaires_users (
-  qid         INT(11),
-  uid         INT(11),
+  qid         INT,
+  uid         INT,
   json_answer TEXT,
   submit_time DATETIME,
   FOREIGN KEY (qid) REFERENCES questionnaires (qid),
@@ -139,7 +174,7 @@ CREATE TABLE questionnaires_users (
 
 DROP TABLE IF EXISTS questionnaires_duration;
 CREATE TABLE questionnaires_duration (
-  uid        INT(11),
+  uid        INT,
   quest_name TINYTEXT,
   duration   TINYTEXT,
   FOREIGN KEY (uid) REFERENCES users (uid)
@@ -148,7 +183,7 @@ CREATE TABLE questionnaires_duration (
 /* #############  Pre defined GAME ELEMENTS ############### */
 DROP TABLE IF EXISTS goals;
 CREATE TABLE goals (
-  gid        INT(11) NOT NULL AUTO_INCREMENT,
+  gid        INT NOT NULL AUTO_INCREMENT,
   text       TEXT,
   type       TINYTEXT,
   comparator TINYTEXT,
@@ -157,8 +192,8 @@ CREATE TABLE goals (
 
 DROP TABLE IF EXISTS goals_users;
 CREATE TABLE goals_users (
-  gid         INT(11),
-  uid         INT(11),
+  gid         INT,
+  uid         INT,
   identifier  TEXT,
   trigger_val TINYTEXT,
   FOREIGN KEY (gid) REFERENCES goals (gid),

@@ -12,12 +12,30 @@ INSERT INTO users (name, pwd, mail) VALUE ('peter', 'safe4', 'mail4');
 INSERT INTO users (name, pwd, mail, login) VALUE ('verdani', '', '', 0);
 INSERT INTO users (name, pwd, mail, login) VALUE ('neo23', '', '', 0);
 INSERT INTO users (name, pwd, mail, login) VALUE ('legolas', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('Luis', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('lou95', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('eeeee', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('mia', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('Jan', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('hi', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('12345', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('name', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('mike', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('Michael7', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('David', '', '', 0);
 INSERT INTO users (name, pwd, mail, login) VALUE ('anork85', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('marcccc', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('Manu', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('andi', '', '', 0);
+INSERT INTO users (name, pwd, mail, login) VALUE ('Luigi', '', '', 0);
 
 /* the groups */
 INSERT INTO `groups` (name, id, basic) VALUE ('none', 'none', 1);
 INSERT INTO `groups` (name, id, basic) VALUE ('game_td_points', 'td', 1);
 INSERT INTO `groups`(name, id, basic) VALUE ('design_task', 'design', 1);
+INSERT INTO `groups`(name, id, basic) VALUE ('absolute_leaderboard', 'absolute', 1);
+INSERT INTO `groups`(name, id, basic) VALUE ('relative_leaderboard', 'relative', 1);
+INSERT INTO `groups`(name, id, basic) VALUE ('choice', 'choice', 1);
 INSERT INTO `groups` (name, id, basic) VALUE ('design_implemented', 'design_implemented', 0);
 
 /* map users to user groups */
@@ -25,7 +43,7 @@ INSERT INTO users_groups (uid, gid) VALUE (1, 1);
 INSERT INTO users_groups (uid, gid) VALUE (2, 2);
 INSERT INTO users_groups (uid, gid) VALUE (3, 3);
 INSERT INTO users_groups (uid, gid) VALUE (4, 4);
-/* INSERT INTO users_groups (uid, gid) VALUE (5, 5); */
+INSERT INTO users_groups (uid, gid) VALUE (5, 5); 
 
 /* insert default points to users */
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
@@ -33,17 +51,161 @@ INSERT INTO game_td_points (uid, points, points_incr, representation, last_updat
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update)
   VALUE (2, 0, 100, 'points', NOW());
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update)
-  VALUE (4, 0, 100, 'points', NOW());
+  VALUE (3, 0, 100, 'points', NOW());
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
-  VALUE (5, 0, 100, 'points', NOW(), 0);
-/* INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
-  VALUE (618, 6000, 0, 'points', NOW(), 1);
+  VALUE (4, 0, 100, 'points', NOW(), 0);
+ INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (5, 6000, 0, 'points', NOW(), 1);
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
-  VALUE (619, 2900, 0, 'points', NOW(), 1);
+  VALUE (6, 2900, 0, 'points', NOW(), 1);
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
-  VALUE (620, 1100, 0, 'points', NOW(), 1);
+  VALUE (7, 1100, 0, 'points', NOW(), 1);
 INSERT INTO game_td_points (uid, points, points_incr, representation, last_update, visible_for_others)
-  VALUE (621, 10200, 0, 'points', NOW(), 1); */
+  VALUE (8, 10200, 0, 'points', NOW(), 1); 
+  
+  /* insert default points to users in absolute_leaderboard condition*/
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (1, 0, 100, 'points', NOW(), 0);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update)
+  VALUE (2, 0, 100, 'points', NOW());
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update)
+  VALUE (3, 0, 100, 'points', NOW());
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (4, 0, 100, 'points', NOW(), 0);
+ INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (5, 1100, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (6, 1600, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (7, 2000, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (8, 2400, 0, 'points', NOW(), 1); 
+   INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (9, 2900, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (10, 3400, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (11, 3800, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (12, 4200, 0, 'points', NOW(), 1); 
+   INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (13, 4800, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (14, 5300, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (15, 5700, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (16, 6300, 0, 'points', NOW(), 1); 
+ INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (17, 7000, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (18, 7400, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (19, 7900, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (20, 8300, 0, 'points', NOW(), 1); 
+   INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (21, 8800, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (22, 9200, 0, 'points', NOW(), 1);
+INSERT INTO absolute_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (23, 9700, 0, 'points', NOW(), 1);
+
+
+  /* insert default points to users in relative_leaderboard condition*/
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (1, 0, 100, 'points', NOW(), 0);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update)
+  VALUE (2, 0, 100, 'points', NOW());
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update)
+  VALUE (3, 0, 100, 'points', NOW());
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (4, 0, 100, 'points', NOW(), 0);
+ INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (5, 1100, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (6, 1600, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (7, 2000, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (8, 2400, 0, 'points', NOW(), 1); 
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (9, 2900, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (10, 3400, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (11, 3800, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (12, 4200, 0, 'points', NOW(), 1); 
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (13, 4800, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (14, 5300, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (15, 5700, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (16, 6300, 0, 'points', NOW(), 1); 
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (17, 7000, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (18, 7400, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (19, 7900, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (20, 8300, 0, 'points', NOW(), 1); 
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (21, 8800, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (22, 9200, 0, 'points', NOW(), 1);
+INSERT INTO relative_leaderboard (uid, points, points_incr, representation, last_update, visible_for_others)
+  VALUE (23, 9700, 0, 'points', NOW(), 1);
+
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (1, 0, 100, 0, 0,   'points', NOW(), 0);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update)
+  VALUE (2, 0, 100, 0, 0,  'points', NOW());
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update)
+  VALUE (3, 0, 100, 0, 0,  'points', NOW());
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (4, 0, 100, 0, 0, 'points', NOW(), 0);
+ INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (5, 1100, 0, 0, 0,  'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (6, 1600, 0, 0, 0,  'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (7, 2000, 0, 0, 0,  'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (8, 2400, 0, 0, 0,  'points', NOW(), 1); 
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (9, 2900, 0, 0, 0,  'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (10, 3400, 0, 0, 0,  'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (11, 3800, 0, 0, 0,  'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (12, 4200, 0, 0, 0,  'points', NOW(), 1); 
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (13, 4800, 0, 0, 0,  'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (14, 5300, 0, 0, 0,  'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (15, 5700, 0, 0, 0,  'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (16, 6300, 0, 0, 0,   'points', NOW(), 1); 
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (17, 7000, 0, 0, 0,   'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (18, 7400, 0, 0, 0,   'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (19, 7900, 0, 0, 0,   'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (20, 8300, 0, 0,  0,  'points', NOW(), 1); 
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (21, 8800, 0, 0,  0,  'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (22, 9200, 0, 0, 0,   'points', NOW(), 1);
+INSERT INTO choice (uid, points, points_incr, chosen_group, tutorial, representation, last_update, visible_for_others)
+  VALUE (23, 9700, 0, 0, 0,   'points', NOW(), 1);
 
 # Insert the tutorial image to the
 INSERT INTO images (name, basic_image) VALUE ('TUTORIAL_1', 0);
@@ -172,8 +334,17 @@ INSERT INTO images (name, basic_image, extra_round_counter) VALUE ('abstract_011
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('design', '"dummy"');
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_normal', '"dummy"');
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_design', '"dummy"');
+
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_absolute', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_relative', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_control', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_choice_absolute', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_choice_relative', '"dummy"');
+
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('demographics', '"dummy"');
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('big_five', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('kim_enjoyment_choice1', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('kim_enjoyment_choice2', '"dummy"');
 
 
 INSERT INTO image_tags (uid, iid, tag) VALUES (1, 1, 'ruhig');

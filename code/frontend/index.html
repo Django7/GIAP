@@ -29,7 +29,10 @@
     <link rel="stylesheet" href="css/bootstrap-dialog.min.css">
     <link rel="stylesheet" href="css/survey.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/Choice_screen.css">
     <link rel="stylesheet" href="css/aquarium.css">
+    <!--<link rel="stylesheet" href="css/modern.min.css">--> 
+    <!--<link rel="stylesheet" href="css/survey.min.css">-->
 
     <link rel="stylesheet" type="text/css" href="css/slick.css"/>
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
@@ -52,6 +55,8 @@
             <input type="button" class="btn btn-primary ml-3" onclick="btn_oc_viewDataPrivacy()"
                    value="Datenschutzhinweise"/>
             <input type="button" class="btn btn-primary ml-3" onclick="btn_oc_viewImpressum()" value="Impressum"/>
+            <input type="button" class="btn btn-primary ml-3" onclick="btn_oc_viewChoice()" value="Go to choice"/>
+            <input type="button" class="btn btn-primary ml-3" onclick="btn_oc_end_questionnaire()" value="Go to end questionnaire"/>
             <input type="button" class="btn btn-danger mr-3 pull-right invisible" id="btn_quit_study" onclick="btn_oc_stopSurvey()" value="Studie vorzeitig beenden"/>
         </div>
     </footer>
@@ -85,6 +90,7 @@
 <script type="text/javascript" src="js/ge/id_compare_809.js"></script>
 <script type="text/javascript" src="js/ge/id_compare_column_825.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1"></script>
 <script type="text/javascript" src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -107,6 +113,8 @@
 <script type="text/javascript" src="js/jquery.qtip.min.js"></script>
 <script type="text/javascript" src="js/typo/typo.js"></script>
 <script type="text/javascript" src="js/curse_words.js"></script>
+
+<script type="text/typescript" src="Survey/survey.jquery.d.ts"></script> 
 
 </body>
 </html>

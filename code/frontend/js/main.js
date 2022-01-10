@@ -1,3 +1,4 @@
+
 /**
  * Initializes the webapp
  * 1. Loads and sets the welcome text
@@ -27,7 +28,8 @@ function heartbeating() {
  * Sets the survey style to our bootstrap theme
  */
 function initSurvey() {
-    Survey.Survey.cssType = "bootstrap";
+    //Survey.Survey.cssType = "bootstrap";
+   Survey.StylesManager.applyTheme("bootstrap");
 }
 
 /**
@@ -36,12 +38,12 @@ function initSurvey() {
  */
 function flipImage(inTutorial) {
     printLog('Flipping image triggered');
-    $('#div_it_img_card').flip(true);
+  $('#div_it_img_card').flip(true);
 
-    setTaggingField();
+    setTaggingField(); //hier wird anschließend auch das leaderboard increased
 
     // Trigger events after flipping the image
-    UDGE.afterFlipImage(inTutorial);
+  UDGE.afterFlipImage(inTutorial);
 }
 
 /**
@@ -51,7 +53,7 @@ function flipImage(inTutorial) {
 function flipIn(sec) {
     $('#div_it_flip_sec').html(sec);
     if (sec === 0) {
-        flipImage(false);
+       flipImage(false);
     } else {
         setTimeout(function () {
             flipIn(sec - 1);
@@ -128,6 +130,8 @@ function setFinalTaggingEnvironment() {
  * @param mst_params The initial mustache parameters.
  */
 function setGenericTaggingEnvironment(container, fun_array, mst_params, frame_only) {
+
+    printLog("ich werde nach jedem bild neu ausgeführt");
     /* Check if the user is in the design condition.
     If yes, show only this, no other element, and especially no tagging environment.*/
     if (arrayContainsElement(USER_GROUP, "design")) {
@@ -139,6 +143,8 @@ function setGenericTaggingEnvironment(container, fun_array, mst_params, frame_on
             });
         }
         return;
+
+        // Django, hier anstatt getLeaderboard zu verwenden in absolute/relative conditions, ein BSP setzen wie bei dem Tutorial?
     } else { /* Otherwise, add the game elements to the tagging environment */
         if (getMainUserGroup() === null) {
             if (arrayContainsElement(USER_GROUP, "td")) {
@@ -150,6 +156,16 @@ function setGenericTaggingEnvironment(container, fun_array, mst_params, frame_on
                     getLeaderboard();
                 }]);
             }
+            if (arrayContainsOnOfThoseElements(USER_GROUP, ['absolute','relative','choice'])) {
+                mst_params['stats'] = true;
+                mst_params['points'] = true;
+                mst_params['leaderboard'] = true;
+                fun_array = fun_array.concat([function () {
+                    getPoints();
+                    getLeaderboard();
+                }]);
+            }
+            
         } else {
             UDGE.setTaggingEnvironment(mst_params, fun_array, frame_only);
         }
@@ -165,15 +181,17 @@ function setTaggingTutorial() {
     var mc = $('#main_container');
 
     var fun_array = [function () {
-        setExampleImage();
+        if (arrayContainsElement(USER_GROUP, "choice")){setExampleImageChoice();}
+        else {setExampleImage();}
         setImageFlipper();
         disableTagFieldAndNextButton();
-        // setTaggingField();
+         setTaggingField();  //django
     }];
     var mst_params = {tutorial: true};
 
     // TODO: Merge tutorials
     // TODO: Remove else-ifs and append them intelligently
+    // Django TODO: create cases for absoluteLB, relativeLB, Choice, none kann bleiben
     if (arrayContainsElement(USER_GROUP, "design_implemented")) {
         mst_params['tutorial_implemented_design'] = true;
         setVisibleTutorialViews(mst_params);
@@ -191,6 +209,7 @@ function setTaggingTutorial() {
             startBasicTutorial();
         }]);
     } else if (arrayContainsElement(USER_GROUP, "td")) {
+        printLog("td ausgewählt");
         mst_params['tutorial_normal'] = true;
         mst_params['stats'] = true;
         mst_params['points'] = true;
@@ -199,6 +218,49 @@ function setTaggingTutorial() {
             setExamplePointsAndLB();
             startPAndLTutorial()
         }]);
+    } else if (arrayContainsElement(USER_GROUP, "absolute")) {
+        printLog("absolute ausgewählt");
+        mst_params['tutorial_normal'] = true;
+        mst_params['stats'] = true;
+        mst_params['points'] = true;
+        mst_params['leaderboard'] = true;
+        fun_array = fun_array.concat([function () {
+            setExamplePointsLBAbsolute();
+            //createScoreboardTable();
+            //setstandardLeaderboard();
+            startPAndLTutorial()
+        }]);      
+    } else if (arrayContainsElement(USER_GROUP, "relative")) {
+        printLog("relative ausgewählt");
+        mst_params['tutorial_normal'] = true;
+        mst_params['stats'] = true;
+        mst_params['points'] = true;
+        mst_params['leaderboard'] = true;
+        fun_array = fun_array.concat([function () {
+            setExamplePointsLBRelative();
+            //createScoreboardTable();
+            //setstandardLeaderboard();
+            startPAndLTutorial()
+        }]);     
+    } else if (arrayContainsElement(USER_GROUP, "choice")) {
+        printLog("choice ausgewählt");
+        mst_params['tutorial_normal'] = true;
+        mst_params['stats'] = true;
+        mst_params['points'] = true;
+        mst_params['leaderboard'] = true;
+        fun_array = fun_array.concat([function () {
+            //setExamplePointsLBRelative(); //wir starten hier mit dem relativen leaderboard, nach dem zwischensurvey wird dann das absolute abgespielt
+            //createScoreboardTable();
+            //setstandardLeaderboard();
+
+//HIER WEITERMACHEN
+
+            send(json_get_tutorial_message());
+
+
+
+
+        }]);     
     }else if(arrayContainsElement(USER_GROUP, "id_test_12")) {
         mst_params['tutorial_normal'] = true;
         setVisibleTutorialViews(mst_params);
@@ -232,6 +294,9 @@ function setVisibleTutorialViews(mst_params) {
  * CAUTION: This could lead to an infinite loop if not used properly.
  */
 function setEnd() {
+
+    printLog("SETEND TRIGGERED");
+
     var $btn_quit_study = $('#btn_quit_study');
     var $main_controller = $('#main_container');
 
@@ -246,14 +311,14 @@ function setEnd() {
     var mst_params = {
         normal: true,
         show_quest_btn: true,
-        show_extra_btn: true,
+        show_extra_btn: false,
         g_add_round: true,
         design_implemented : arrayContainsElement(USER_GROUP, 'design_implemented'),
         generic_implementation : arrayContainsElement(USER_GROUP, 'generic_implementation')
     };
 
     // Final questionnaire already submitted?
-    if (QUESTS['end_normal'] || QUESTS['end_design']) {
+    if (QUESTS['end_normal'] || QUESTS['end_design'] ||  QUESTS['end_absolute']) {
         mst_params['show_quest_btn'] = false;
         mst_params['show_extra_btn'] = false;
         mst_params['with_frame'] = true;
@@ -298,6 +363,8 @@ function setEnd() {
             mst_params['leaderboard'] = true;
         }
 
+       
+
         UDGE.setEnd(mst_params, fun_array);
     }
 
@@ -339,6 +406,7 @@ function startBasicTutorial() {
  *
  */
 function nextTutorialImage() {
+    printLog("next Tutorial Image aufgerufen")
     var tags = [];
     $('#myTags').each(function () {
         tags.push($(this).text())
@@ -350,6 +418,7 @@ function nextTutorialImage() {
             'Diese Einschränkung wird im regulären Ablauf wegfallen.');
     } else {
         if (TUTORIAL_PIC >= TUTORIAL_PICS.length) {
+            printLog("tutorial finished");
             btn_oc_viewTutorialFinished();
         } else {
             // Post tutorial images
@@ -404,6 +473,51 @@ function startPAndLTutorial() {
     next_img_btn.prop('onclick', null).off('click');
     next_img_btn.prop('disabled', true);
 
+    // The statistic view (right part of the screen)  
+    var div_it_stats = $('#div_it_stats');
+    setInvisible(div_it_stats); 
+
+    viewRightTutorialOverlay(
+        'Stimmung im Bild',
+        $('<div></div>').load('views/dialogs/dia_tutorial_image_front.html'),
+        'Weiter', 
+        function () {
+            flipIn(5);
+            setTimeout(function () {
+                viewRightTutorialOverlay(
+                    'Stichworte erstellen',
+                    $('<div></div>').load('views/dialogs/dia_tutorial_image_back.html'),
+                    'Weiter',
+                    function () {
+                        setVisible(div_it_stats);
+                        viewLeftTutorialOverlay(
+                            'Punkte und Bestenliste',
+                            $('<div></div>').load('views/dialogs/dia_tutorial_pts_and_lb.html'),
+                            'Weiter',
+                            function () {
+                                enableTagFieldAndButton();
+                                next_img_btn.click(nextTutorialImage);
+
+                                
+                            },
+                            true
+                        );
+                    },
+                    true);
+            }, 5000);
+        },
+        true);
+}
+
+
+function startChoiceTutorial1() {
+
+    LEADERBOARD_CHOSEN=3;
+
+    var next_img_btn = $('#next_img');
+    next_img_btn.prop('onclick', null).off('click');
+    next_img_btn.prop('disabled', true);
+
     // The statistic view (right part of the screen)
     var div_it_stats = $('#div_it_stats');
     setInvisible(div_it_stats);
@@ -423,20 +537,334 @@ function startPAndLTutorial() {
                         setVisible(div_it_stats);
                         viewLeftTutorialOverlay(
                             'Punkte und Bestenliste',
-                            $('<div></div>').load('views/dialogs/dia_tutorial_pts_and_lb.html'),
+                            $('<div></div>').load('views/dialogs/dialogs_abs_rel_choice/dia_tutorial_leaderboard_choice.html'),
                             'Weiter',
                             function () {
-                                enableTagFieldAndButton();
-                                next_img_btn.click(nextTutorialImage);
+                                viewLeftTutorialOverlay(
+                                    'Relative Bestenliste',
+                                    $('<div></div>').load('views/dialogs/dialogs_abs_rel_choice/dia_tutorial1_leaderboard_choice_relative.html'),
+                                    'Weiter',
+                                    function () {
+                                        enableTagFieldAndButton();
+                                        next_img_btn.click(CCT1_after_first_ImageTagging);
+                                        //next_img_btn.click(CCT_after_first_ImageTagging); //Um besser zu verstehen wie du das leaderboard empfindest, möchten wir dass du kurz diese fragen beantwortest:
+                                    },
+                                    true);
                             },
                             true
                         );
                     },
                     true);
             }, 5000);
-        },
+        }, 
         true);
 }
+
+//CCT: continue choice tutorial (alle funktionen, welche das choice tutorial beinhaltet)
+function CCT1_after_first_ImageTagging(){
+    //var div_it_stats = $('#div_it_stats');
+    //setInvisible(div_it_stats);
+
+    printLog("CCT gestartet");
+    var tags = [];
+    $('#myTags').each(function () {
+        tags.push($(this).text())
+    });
+    tags = tags[0].split('×').join(','); 
+    if (tags.length === 0) {
+        viewInfoOverlay('' +
+            'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
+            'Diese Einschränkung wird im regulären Ablauf wegfallen.');
+    } else {
+  
+        LEADERBOARD_CHOSEN=4;
+
+            postImageTags();
+            $('#div_it_img_card').flip(false);
+
+            $('.tagit-choice').remove();
+
+                startEnjoymentChoice1Survey(CCT1_choice_second_tutorial);
+            
+            }
+
+ 
+}  //CCT
+
+function CCT1_choice_second_tutorial(){
+    
+   /* var next_img_btn = $('#next_img');
+    next_img_btn.prop('onclick', null).off('click');
+    next_img_btn.prop('disabled', true);*/
+    //printLog("111111111111111" + next_img_btn);
+    
+
+    var div_it_stats = $('#div_it_stats');
+    setVisible(div_it_stats);
+    var mc = $('#main_container');
+    
+    var mst_params = {tutorial: true};
+    mst_params['tutorial_normal'] = true;
+    mst_params['stats'] = true;
+    mst_params['points'] = true;
+    mst_params['leaderboard'] = true;
+    var fun_array = [function () {
+
+        var next_img_btn = $('#next_img');
+        next_img_btn.prop('onclick', null).off('click');
+        next_img_btn.prop('disabled', true);
+        
+        setExampleImageChoice();
+        //setExamplePointsLBAbsolute();
+        setImageFlipper();
+        disableTagFieldAndNextButton(); 
+        setTimeout( function () {
+        viewLeftTutorialOverlay(
+            'Absolute Bestenliste',
+            $('<div></div>').load('views/dialogs/dialogs_abs_rel_choice/dia_tutorial1_leaderboard_choice_absolute.html'),
+            'Weiter',
+             
+            function () {
+                flipIn(5);
+                enableTagFieldAndButton();
+                next_img_btn.click(CCT1_after_second_ImageTagging);
+                 //Um besser zu verstehen wie du das leaderboard empfindest, möchten wir dass du kurz diese fragen beantwortest:
+            },
+            true); 
+        }, 1000);
+            
+        setExamplePointsLBAbsolute(); 
+        //setTaggingField();  //django
+    }];
+    renderAndSetMustacheElement(mc, 'views/mst_tagging_environment.html', mst_params, fun_array, false);
+    //var div_it_stats = $('#div_it_stats');
+    //setVisible(div_it_stats);  
+    
+}
+
+function CCT1_after_second_ImageTagging(){
+    printLog("CCT Part 2 gestartet");
+    var tags = [];
+    $('#myTags').each(function () {
+        tags.push($(this).text())
+    });
+    tags = tags[0].split('×').join(',');
+    if (tags.length === 0) {
+        viewInfoOverlay('' +
+            'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
+            'Diese Einschränkung wird im regulären Ablauf wegfallen.');
+    } else {
+
+        
+            postImageTags();
+            $('#div_it_img_card').flip(false);
+
+            $('.tagit-choice').remove();
+
+                //setExampleImageChoice();
+                //$('#next_img').prop('disabled', false);
+
+                //flipIn(5);
+
+
+
+
+                // Change the message if it's the last image
+               /* if (TUTORIAL_PIC >= TUTORIAL_PICS.length) {
+                    setInvisible($('#tut_next_img_label'));
+                    setVisible($('#tut_next_img_end_label'));
+                }*/
+                //setInvisible(div_it_stats);
+                startEnjoymentChoice2Survey(CCT1_after_second_Survey);
+            
+            }
+    //setVisible($('#choice_process'));
+}
+
+function CCT1_after_second_Survey(){
+    btn_oc_viewChoice1();
+}
+
+
+
+function startChoiceTutorial2() {
+
+    LEADERBOARD_CHOSEN=4;
+
+    var next_img_btn = $('#next_img');
+    next_img_btn.prop('onclick', null).off('click');
+    next_img_btn.prop('disabled', true);
+
+    // The statistic view (right part of the screen)
+    var div_it_stats = $('#div_it_stats');
+    setInvisible(div_it_stats);
+
+    viewRightTutorialOverlay(
+        'Stimmung im Bild',
+        $('<div></div>').load('views/dialogs/dia_tutorial_image_front.html'),
+        'Weiter',
+        function () {
+            flipIn(5);
+            setTimeout(function () {
+                viewRightTutorialOverlay(
+                    'Stichworte erstellen',
+                    $('<div></div>').load('views/dialogs/dia_tutorial_image_back.html'),
+                    'Weiter',
+                    function () {
+                        setVisible(div_it_stats);
+                        viewLeftTutorialOverlay(
+                            'Punkte und Bestenliste',
+                            $('<div></div>').load('views/dialogs/dialogs_abs_rel_choice/dia_tutorial_leaderboard_choice.html'),
+                            'Weiter',
+                            function () {
+                                viewLeftTutorialOverlay(
+                                    'Absolute Bestenliste',
+                                    $('<div></div>').load('views/dialogs/dialogs_abs_rel_choice/dia_tutorial2_leaderboard_choice_absolute.html'),
+                                    'Weiter',
+                                    function () {
+                                        enableTagFieldAndButton();
+                                        next_img_btn.click(CCT2_after_first_ImageTagging);
+                                        //next_img_btn.click(CCT_after_first_ImageTagging); //Um besser zu verstehen wie du das leaderboard empfindest, möchten wir dass du kurz diese fragen beantwortest:
+                                    },
+                                    true);
+                            },
+                            true
+                        );
+                    },
+                    true);
+            }, 5000);
+        }, 
+        true);
+}
+
+//CCT: continue choice tutorial (alle funktionen, welche das choice tutorial beinhaltet)
+function CCT2_after_first_ImageTagging(){
+    //var div_it_stats = $('#div_it_stats');
+    //setInvisible(div_it_stats);
+
+    printLog("CCT gestartet");
+    var tags = [];
+    $('#myTags').each(function () {
+        tags.push($(this).text())
+    });
+    tags = tags[0].split('×').join(','); 
+    if (tags.length === 0) {
+        viewInfoOverlay('' +
+            'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
+            'Diese Einschränkung wird im regulären Ablauf wegfallen.');
+    } else {
+  
+        LEADERBOARD_CHOSEN=3;
+
+            postImageTags();
+            $('#div_it_img_card').flip(false);
+
+            $('.tagit-choice').remove();
+
+                startEnjoymentChoice1Survey(CCT2_choice_second_tutorial);
+            
+            }
+
+ 
+}  //CCT
+
+function CCT2_choice_second_tutorial(){
+    
+   /* var next_img_btn = $('#next_img');
+    next_img_btn.prop('onclick', null).off('click');
+    next_img_btn.prop('disabled', true);*/
+    //printLog("111111111111111" + next_img_btn);
+    
+
+    var div_it_stats = $('#div_it_stats');
+    setVisible(div_it_stats);
+    var mc = $('#main_container');
+    
+    var mst_params = {tutorial: true};
+    mst_params['tutorial_normal'] = true;
+    mst_params['stats'] = true;
+    mst_params['points'] = true;
+    mst_params['leaderboard'] = true;
+    var fun_array = [function () {
+
+        var next_img_btn = $('#next_img');
+        next_img_btn.prop('onclick', null).off('click');
+        next_img_btn.prop('disabled', true);
+        
+        setExampleImageChoice();
+        //setExamplePointsLBAbsolute();
+        setImageFlipper();
+        disableTagFieldAndNextButton(); 
+        setTimeout( function () {
+        viewLeftTutorialOverlay(
+            'Absolute Bestenliste',
+            $('<div></div>').load('views/dialogs/dialogs_abs_rel_choice/dia_tutorial2_leaderboard_choice_relative.html'),
+            'Weiter',
+             
+            function () {
+                flipIn(5);
+                enableTagFieldAndButton();
+                next_img_btn.click(CCT2_after_second_ImageTagging);
+                 //Um besser zu verstehen wie du das leaderboard empfindest, möchten wir dass du kurz diese fragen beantwortest:
+            },
+            true); 
+        }, 1000);
+            
+        setExamplePointsLBRelative(); 
+        //setTaggingField();  //django
+    }];
+    renderAndSetMustacheElement(mc, 'views/mst_tagging_environment.html', mst_params, fun_array, false);
+    //var div_it_stats = $('#div_it_stats');
+    //setVisible(div_it_stats);  
+    
+}
+
+function CCT2_after_second_ImageTagging(){
+    printLog("CCT Part 2 gestartet");
+    var tags = [];
+    $('#myTags').each(function () {
+        tags.push($(this).text())
+    });
+    tags = tags[0].split('×').join(',');
+    if (tags.length === 0) {
+        viewInfoOverlay('' +
+            'Damit du den Ablauf besser üben kannst, möchten wir dich bitten, hier <strong>mindestens ein Stichwort</strong> einzugeben. ' +
+            'Diese Einschränkung wird im regulären Ablauf wegfallen.');
+    } else {
+
+        
+            postImageTags();
+            $('#div_it_img_card').flip(false);
+
+            $('.tagit-choice').remove();
+
+                //setExampleImageChoice();
+                //$('#next_img').prop('disabled', false);
+
+                //flipIn(5);
+
+
+
+
+                // Change the message if it's the last image
+               /* if (TUTORIAL_PIC >= TUTORIAL_PICS.length) {
+                    setInvisible($('#tut_next_img_label'));
+                    setVisible($('#tut_next_img_end_label'));
+                }*/
+                //setInvisible(div_it_stats);
+                startEnjoymentChoice2Survey(CCT2_after_second_Survey);
+            
+            }
+    //setVisible($('#choice_process'));
+}
+
+function CCT2_after_second_Survey(){
+    btn_oc_viewChoice2();
+}
+
+
+
+
 
 /**
  * Starts the Aquarium tutorial

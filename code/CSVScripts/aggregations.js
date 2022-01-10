@@ -3,6 +3,8 @@ var fs = require('fs');
 var propertiesReader = require('properties-reader');
 var properties = propertiesReader('dbconnect.properties');
 
+
+// gibt durchschnittliche zeiten für die bilder an
 var dbConnection = mysql.createConnection({
     host: properties.get('db.host'),
     user: properties.get('db.user'),

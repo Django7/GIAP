@@ -56,6 +56,41 @@ CREATE TABLE game_td_points (
   FOREIGN KEY (uid) REFERENCES users (uid)
 );
 
+DROP TABLE IF EXISTS absolute_leaderboard;
+CREATE TABLE absolute_leaderboard (
+  uid                INT,
+  points             DOUBLE,
+  points_incr        DOUBLE,
+  representation     TINYTEXT,
+  visible_for_others BIT DEFAULT 0,
+  last_update        DATETIME,
+  FOREIGN KEY (uid) REFERENCES users (uid)
+);
+
+DROP TABLE IF EXISTS relative_leaderboard;
+CREATE TABLE relative_leaderboard (
+  uid                INT,
+  points             DOUBLE,
+  points_incr        DOUBLE,
+  representation     TINYTEXT,
+  visible_for_others BIT DEFAULT 0,
+  last_update        DATETIME,
+  FOREIGN KEY (uid) REFERENCES users (uid)
+);
+
+DROP TABLE IF EXISTS choice;
+CREATE TABLE choice (
+  uid                INT,
+  points             DOUBLE,
+  points_incr        DOUBLE,
+  chosen_group		 INT, /*0 = not chosen yet;1 = absolute leaderboard chosen;2= relative leaderboard chosen*/
+  tutorial			INT,
+  representation     TINYTEXT,
+  visible_for_others BIT DEFAULT 0,
+  last_update        DATETIME,
+  FOREIGN KEY (uid) REFERENCES users (uid)
+);
+
 DROP TABLE IF EXISTS game_custom_jokes;
 CREATE TABLE game_custom_jokes (
   jid  INT NOT NULL AUTO_INCREMENT,

@@ -2,6 +2,8 @@ var mysql = require('mysql');
 var propertiesReader = require('properties-reader');
 var properties = propertiesReader('dbconnect.properties');
 
+// vllt schreibfehler?
+
 var dbConnection = mysql.createConnection({
     host: properties.get('db.host'),
     user: properties.get('db.user'),

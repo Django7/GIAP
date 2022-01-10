@@ -710,7 +710,7 @@ hr {
 
 .matrixtable td:first-child {
     font-weight: bold;
-    /*width: 25%;*/
+    width: 40%;
 }
 
 .matrixtable td:not(:first-child) {
@@ -1011,3 +1011,31 @@ hr {
      */
     animation-delay: .4s;
 }
+
+
+.scoreboardTable {
+    padding: 0;
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    }
+
+.scoreboardTableHeaderRow {
+    /**color: darkorange;**/
+    font-weight: bold;
+    height: 50px;
+    }
+
+.scoreboardTableBodyRow:nth-child(odd){background-color: rgba(128, 128, 128, 0.050);}
+    #latestUserScore {
+    background-color: crimson;
+    }
+
+.scoreboardTableBodyRow:hover{
+    background-color: darkorange;
+    }
+
+.scoreboardTable tr td {
+    height: 25px;
+    }

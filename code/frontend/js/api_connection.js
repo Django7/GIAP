@@ -81,6 +81,7 @@ function login_if_url_parameters_set() {
  * @param msg The message to send
  */
 function send(msg) {
+    printLog("send a message")
     if (null !== wsc && wsc.readyState === wsc.CONNECTING) {
         // wait 5 seconds and try to send again
         setTimeout(function () {
@@ -192,6 +193,7 @@ function interpret_login(content) {
             } else if (inNotDesignAndTutDone() || inFinishedDesignAndTutDone()) {
                 // If this is the case, wait 1 second for the server to fetch possible questionnaires
                 setTaggingEnvironment();
+                //dashier ist der Fall, wenn der User nicht in design implemented, sondern none,td,absolute, relative ist
             } else if (QUESTS['demographic'] && !arrayContainsElement(USER_GROUP, 'design_implemented')) {
                 viewWelcomeOverlay();
             } else {
@@ -268,6 +270,30 @@ function interpret_get(content) {
         interpret_get_points(content);
     } else if (content['status'] === 'get_leaderboard') {
         interpret_get_leaderboard(content);
+        printLog(content);
+
+    }else if (content['status'] === 'get_absolute_leaderboard') {
+        interpret_get_absolute_leaderboard(content);
+        printLog(content);
+    }else if (content['status'] === 'get_relative_leaderboard') {
+        interpret_get_relative_leaderboard(content);
+        printLog(content);
+
+    }else if (content['status'] === 'tutorial_relative_first_chosen') {
+        interpret_tutorial_rel_chosen();
+        printLog(content);
+    }else if (content['status'] === 'tutorial_absolute_first_chosen') {
+        interpret_tutorial_abs_chosen();
+        printLog(content);
+
+    }else if (content['status'] === 'leaderboard_chosen_absolute') {
+        startChoiceAbsoluteEndSurvey(function () {
+            setEnd();
+        });
+    }else if (content['status'] === 'leaderboard_chosen_relative') {
+        startChoiceRelativeEndSurvey(function () {
+            setEnd();
+        });
     }
 }
 
@@ -310,7 +336,7 @@ function interpret_get_image(content) {
             setEnd();
             // setEnd_NoImagesLeft();
         } else if (content['img'] === 'RESEND') {
-            flipImage(false);
+            //flipImage(false);
             // In bonus round, decrease the images left
             if (ADD_TASKS && ADD_IMGS > 0) {
                 --ADD_IMGS;
@@ -336,6 +362,8 @@ function interpret_get_image(content) {
 function interpret_get_points(content) {
     printLog("received points");
     // Extract points and points to increase
+    POINTS_ABSOLUTE = content['value'][0]['points'];
+    POINTS_RELATIVE = content['value'][0]['points'];
     POINTS = content['value'][0]['points'];
     POINTS_INCR = content['value'][0]['points_incr'];
     setPoints(content['value'][0]['points']);
@@ -347,8 +375,37 @@ function interpret_get_points(content) {
  */
 function interpret_get_leaderboard(content) {
     printLog('received leaderboard');
-    setLeaderboardFromAPI(content['value']);
+    setAbsoluteLeaderboardFromAPI(content['value']);
 }
+
+function interpret_get_absolute_leaderboard(content) {
+    printLog('received leaderboard');
+    setAbsoluteLeaderboardFromAPI(content['value']);
+}
+
+function interpret_get_relative_leaderboard(content) {
+    printLog('received leaderboard');
+    setRelativeLeaderboardFromAPI(content['value']);
+}
+
+function interpret_tutorial_rel_chosen(){
+    printLog('tutorial rel first was chosen');
+    setExamplePointsLBRelative();
+    startChoiceTutorial1();
+}
+
+
+function interpret_tutorial_abs_chosen(){
+    printLog('tutorial abs first was chosen');
+    setExamplePointsLBAbsolute();
+    startChoiceTutorial2();
+}
+
+/**
+ * Interets the GET answer of a tutorial
+ * @param content
+ */
+
 
 /**
  * Interprets an API's POST answer:
@@ -479,7 +536,7 @@ function getPoints() {
 /**
  * Asking for the current leaderboard
  */
-function getLeaderboard() {
+function getLeaderboard() { 
     var user = "";
     send(json_get_leaderboard_message(user));
 }

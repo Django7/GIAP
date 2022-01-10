@@ -252,6 +252,7 @@ function setUDGETutorial(main_user_group_id) {
         }
         default: {
             UDGE.startTutorial = function () {
+                printLog("start basic tutorial");
                 startBasicTutorial();
             };
         }
@@ -2089,7 +2090,7 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
                                     title: 'Spiel bereit',
                                     message: $('<div></div>').load('views/small_elements/mst_id_single_teams_407_modus_chooser.html'),
                                     closable: false,
-                                    buttons: [{
+                                    buttons: [{             //hier an choice erinnern
                                         label: 'Singleplayer',
                                         action: function (dialogItself) {
                                             setCookie('407_view_type', 'single');
@@ -2459,8 +2460,34 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
         }
         default: {
             UDGE.onTutorialFinished = function (event, ui) {
-                viewTutorialFinished();
+                startEnjoymentChoice1Survey(function () {BootstrapDialog.show({
+                    title: 'Nickname',
+                    message: $('<div>Bitte gebe hier deinen Nicknamen (1-8 Zeichen) ein, der später im Ranking erscheinen soll.</div>' +
+                        '<input class="pt-2 pb-2" type="text" id="dia_nickname_id_points">' +
+                        '<div id="dia_nickname_id_points_error" class="invisible txt_red">Bitte gebe einen Nicknamen mit 1-8 Zeichen an.</div>'),
+                    closable: false,
+                    buttons: [{
+                        label: 'Weiter',
+                        action: function (dialogItself) {
+                            var nick = $('#dia_nickname_id_points').val();
+                            if (nick.length > 0 && nick.length < 9) {
+                                setCookie('lb_username', nick);
+                                dialogItself.close();
+                                
+                                //startEnjoymentChoice1Survey(viewTutorialFinished);
+                                viewTutorialFinished();
+                            } else {
+                                setVisible($('#dia_nickname_id_points_error'));
+                            }
+                        }
+                    }]
+                });});
+                
+                //printLog("UDGE bei tutorial finished angekommen");
+                //viewTutorialFinished();
             };
+
+            
         }
     }
 }
@@ -4077,7 +4104,7 @@ function startIDCompareColumn825Tutorial_part_2() {
  */
 
 /**
- * Sets te fixed Example Image
+ * Sets the fixed Example Image
  */
 function setExampleImage() {
     if (TUTORIAL_PIC >= TUTORIAL_PICS.length) {
@@ -4094,13 +4121,125 @@ function setExampleImage() {
     }
 }
 
+function setExampleImageChoice() {
+    if (TUTORIAL_PIC >= TUTORIAL_PICS_CHOICE.length) {
+        printErr('Tried to show a non existing tutorial image (index out of array).');
+    } else {
+        // Set the image
+        setImage(TUTORIAL_PICS_CHOICE[TUTORIAL_PIC]);
+        //printLog(TUTORIAL_PICS_CHOICE[TUTORIAL_PIC]+TUTORIAL_EXAMPLES_CHOICE[TUTORIAL_PIC]);
+        // Set the respective examples
+        setExampleMorales(TUTORIAL_EXAMPLES_CHOICE[TUTORIAL_PIC]);
+
+        // Increase the tutorial pic counter and set the new image string (for posting).
+        ++TUTORIAL_PIC;
+        CURRENT_IMAGE = "TUTORIAL_" + TUTORIAL_PIC;
+    }
+}
+
 /**
  * Sets some example points for the tutorial
  */
 function setExamplePoints() {
+    POINTS_ABSOLUTE = 1200;
+    POINTS_RELATIVE = 1200;
     POINTS = 1200;
     POINTS_INCR = 100;
     setPoints(1200);
+}
+
+function setMainPoints() {
+    POINTS_ABSOLUTE = 0;
+    POINTS_RELATIVE = 0;
+    POINTS_INCR = 100;
+    setPoints(0);
+}
+
+/**
+ * Sets example points for the tutorial in the absolute condition
+ */
+ /*function setExamplePointsLBAbsolute() {
+    setExamplePoints();
+    printLog('POINTS_ABSOLUTE auf 0 gesetzt' + POINTS_ABSOLUTE)
+    var leaderboard = [
+        {'name': 'verdani', points: 10200},
+        {'name': 'neo23', points: 6000},
+        {'name': 'legolas', points: 2900},
+        {'name': 'Du (Bsp.)', points: 1200},
+        {'name': 'anork85', points: 1100}
+    ];
+    setAbsoluteLeaderboardFromAPI(leaderboard);
+}*/
+
+
+function setExamplePointsLBAbsolute() {
+    setExamplePoints();
+    printLog('POINTS_ABSOLUTE auf 0 gesetzt' + POINTS_ABSOLUTE)
+    var leaderboard = [
+        {'name': 'verdani', points: 9700},
+        {'name': 'neo23', points: 9200},
+        {'name': 'legolas', points: 8800},
+        {'name': 'Luis', points: 8300},
+        {'name': 'lou95', points: 7900},
+        {'name': 'eeeee', points: 7400},
+        {'name': 'mia', points: 7000},
+        {'name': 'Jan', points: 6300},
+        {'name': 'hi', points: 5700},
+        {'name': '12345', points: 5300},
+        {'name': 'name', points: 4800},
+        {'name': 'mike', points: 4200},
+        {'name': 'Michael7', points: 3800},
+        {'name': 'David', points: 3400},
+        {'name': 'anork85', points: 2900},
+        {'name': 'marcccc', points: 2400},
+        {'name': 'Manu', points: 2000},
+        {'name': 'andi', points: 1600},
+        {'name': 'Du (Bsp.)', points: 1200},
+        {'name': 'luigi', points: 1100},
+    ];
+    setAbsoluteLeaderboardFromAPI(leaderboard);
+}
+
+
+/*function setExamplePointsLBRelative() {
+    setExamplePoints();
+    printLog('POINTS_ABSOLUTE auf 0 gesetzt' + POINTS_ABSOLUTE)
+    var leaderboard = [
+        {'name': 'verdani', points: 10200},
+        {'name': 'neo23', points: 6000},
+        {'name': 'legolas', points: 2900},
+        {'name': 'Du (Bsp.)', points: 1200},
+        {'name': 'anork85', points: 1100}
+    ];
+    setRelativeLeaderboardFromAPI(leaderboard);
+}*/
+
+function setExamplePointsLBRelative() {
+    setExamplePoints();
+    printLog('POINTS_RELATIVE auf 0 gesetzt' + POINTS_RELATIVE)
+    var leaderboard = [
+        {'name': 'verdani', points: 9700},
+        {'name': 'neo23', points: 9200},
+        {'name': 'legolas', points: 8800},
+        {'name': 'Luis', points: 8300},
+        {'name': 'lou95', points: 7900},
+        {'name': 'eeeee', points: 7400},
+        {'name': 'mia', points: 7000},
+        {'name': 'Jan', points: 6300},
+        {'name': 'hi', points: 5700},
+        {'name': '12345', points: 5300},
+        {'name': 'name', points: 4800},
+        {'name': 'mike', points: 4200},
+        {'name': 'Michael7', points: 3800},
+        {'name': 'David', points: 3400},
+        {'name': 'anork85', points: 2900},
+        {'name': 'marcccc', points: 2400},
+        {'name': 'Manu', points: 2000},
+        {'name': 'andi', points: 1600},
+        {'name': 'Du (Bsp.)', points: 1200},
+        {'name': 'luigi', points: 1100},
+    ];
+    setRelativeLeaderboardFromAPI(leaderboard);
 }
 
 /**
@@ -4127,6 +4266,10 @@ function disableTagFieldAndNextButton() {
     disableNextButton();
 }
 
+function disableTagFieldAndLastButton() {
+    disableTagField();
+    disableLastButton();
+}
 /**
  * Disables the tagging field
  */
@@ -4143,6 +4286,9 @@ function disableNextButton() {
     $('#next_img').prop('disabled', true);
 }
 
+function disableLastButton() {
+    $('#last_img').prop('disabled', true);
+}
 /**
  * Enables the tag field and the button to go to the next image
  */
@@ -4151,6 +4297,10 @@ function enableTagFieldAndButton() {
     enableNextButton();
 }
 
+function enableLastTagFieldAndButton() {
+    enableTagField();
+    enableLastButton();
+}
 /**
  * Enables the tagging field
  */
@@ -4166,6 +4316,10 @@ function enableNextButton() {
     $('#next_img').prop('disabled', false);
 }
 
+function enableLastButton() {
+    $('#last_img').prop('disabled', false);
+}
+
 /*
     ##################### POINTS ########################
  */
@@ -4177,13 +4331,44 @@ function increaseVisiblePoints(event, ui) {
     if (arrayContainsOnOfThoseElements(USER_GROUP, ['design_implemented', 'id_test_12'])) {
         // Trigger self designed stuff
         UDGE.afterTagAdded(event, ui);
-    } else {
+    } else if(arrayContainsOnOfThoseElements(USER_GROUP, ['absolute'])){
+        POINTS_ABSOLUTE += POINTS_INCR;
+        setPoints(POINTS_ABSOLUTE);
+        adaptLeaderboardAbsolute();
+    } else if(arrayContainsOnOfThoseElements(USER_GROUP, ['relative'])){
+        POINTS_RELATIVE += POINTS_INCR;
+        setPoints(POINTS_RELATIVE);
+        adaptLeaderboardRelative();
+    } else if(arrayContainsOnOfThoseElements(USER_GROUP, ['choice'])){
+        if(LEADERBOARD_CHOSEN == 2){
+        POINTS_RELATIVE += POINTS_INCR;
+        setPoints(POINTS_RELATIVE);
+        adaptLeaderboardRelative();
+        } 
+        else if(LEADERBOARD_CHOSEN == 1){
+        POINTS_ABSOLUTE += POINTS_INCR;
+        setPoints(POINTS_ABSOLUTE);
+        adaptLeaderboardAbsolute();
+        }
+        else if(LEADERBOARD_CHOSEN == 3){
+        POINTS_RELATIVE += POINTS_INCR;
+        setPoints(POINTS_RELATIVE);
+        adaptLeaderboardRelative();
+    }
+        else if(LEADERBOARD_CHOSEN == 4){
+        POINTS_ABSOLUTE += POINTS_INCR;
+        setPoints(POINTS_ABSOLUTE);
+        adaptLeaderboardAbsolute();
+    
+     
+       // else if(LEADERBOARD_CHOSEN == 0){}
+    }else {
         POINTS += POINTS_INCR;
         setPoints(POINTS);
         adaptLeaderboard();
     }
 }
-
+}
 /**
  * Defines what happens after a tag was removed
  */
@@ -4193,7 +4378,15 @@ function decreaseVisiblePoints(event, ui) {
         if (arrayContainsOnOfThoseElements(USER_GROUP, ['design_implemented', 'id_test_12'])) {
             // Trigger self designed stuff
             UDGE.afterTagRemoved(event, ui);
-        } else {
+        } else if(arrayContainsOnOfThoseElements(USER_GROUP, ['absolute'])){
+            POINTS_ABSOLUTE -= POINTS_INCR;
+            setPoints(POINTS_ABSOLUTE);
+            adaptLeaderboardAbsolute();
+        } else if(arrayContainsOnOfThoseElements(USER_GROUP, ['relative'])){
+            POINTS_RELATIVE -= POINTS_INCR;
+            setPoints(POINTS_RELATIVE);
+            adaptLeaderboardRelative();
+        }    else {
             POINTS -= POINTS_INCR;
             setPoints(POINTS);
             adaptLeaderboard();
@@ -4211,6 +4404,16 @@ function decreaseVisiblePoints(event, ui) {
 function adaptLeaderboard() {
     LEADERBOARD_ARRAY = replaceInArrayGeneric(LEADERBOARD_ARRAY, 1, 3, POINTS, 0);
     setLeaderboard(false);
+}
+
+function adaptLeaderboardAbsolute() {
+    LEADERBOARD_ARRAY = replaceInAbsoluteArrayGeneric(LEADERBOARD_ARRAY, 1, 3, POINTS_ABSOLUTE, 2);
+    createDynamicLeaderboard();
+}
+
+function adaptLeaderboardRelative() {
+    LEADERBOARD_ARRAY = replaceInAbsoluteArrayGeneric(LEADERBOARD_ARRAY, 1, 3, POINTS_RELATIVE, 2);
+    createRelativeDynamicLeaderboard();
 }
 
 /*

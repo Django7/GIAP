@@ -46,6 +46,7 @@ public class Main {
     }
 
     private static Map<Integer, String> readRelationMap(String path) {
+        System.out.println(path);
         try {
             FileReader fr = new FileReader(path);
             BufferedReader br = new BufferedReader(fr);

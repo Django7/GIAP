@@ -13,7 +13,7 @@ function btn_oc_welcomeScreen_next() {
     if (arrayContainsElement(USER_GROUP, 'design')) {
         startDemographicsSurveyDesign(function () {
             viewWelcomeOverlay();
-        });
+        });                                     //hier die condition hinzufügen
     } else if (arrayContainsElement(USER_GROUP, 'design_implemented')) {
         startDemographicsBigFiveSurvey(function () {
             viewWelcomeOverlay();
@@ -22,6 +22,11 @@ function btn_oc_welcomeScreen_next() {
         startDemographicsSurveyNormal(function () {
             viewWelcomeOverlay();
         });
+    } else if (arrayContainsOnOfThoseElements(USER_GROUP, ['absolute','relative','choice'])) {
+      /*  startShortcutSurvey(function () {
+            viewWelcomeOverlay();
+        });*/
+        viewWelcomeOverlay();
     } else {
         printErr("Could not find a starting survey for user in group(s) " + USER_GROUP);
     }
@@ -48,6 +53,31 @@ function btn_oc_stopSurvey() {
     viewStopSurvey();
 }
 
+
+function btn_oc_viewChoice1(){
+    viewChoiceOverlay1();
+}
+
+function btn_oc_viewChoice2(){
+    viewChoiceOverlay2();
+}
+
+function btn_oc_absoluteLBchosen(){
+    
+    printLog("LEFT BUTTON CHOSEN");
+    LEADERBOARD_CHOSEN = 1;
+    send(json_post_choice_absolute());
+    UDGE.onTutorialFinished();
+    //setTaggingEnvironment();
+}
+
+function btn_oc_relativeLBchosen(){
+    
+    LEADERBOARD_CHOSEN = 2;
+    send(json_post_choice_relative());
+    UDGE.onTutorialFinished();
+    //setTaggingEnvironment();
+}
 /**
  * Shows the tutorial finished dialog
  */
@@ -110,13 +140,23 @@ function btn_oc_download_quest() {
  */
 function btn_oc_end_questionnaire() {
     if (arrayContainsElement(USER_GROUP, 'design_implemented')) {
-        startEndDesignSurvey(function () {
+        startEndDesignSurvey(function () { 
             setEnd();
         });
     } else if (arrayContainsElement(USER_GROUP, 'design')) {
         printErr('Tried to start survey when in design task. This should not happen!');
+    } else if(arrayContainsElement(USER_GROUP, 'absolute')){
+        startAbsoluteEndSurvey(function () {
+            setEnd();
+        });
+    } else if(arrayContainsElement(USER_GROUP, 'relative')){
+        startRelativeEndSurvey(function () {
+            setEnd();
+        });
+    } else if(arrayContainsElement(USER_GROUP, 'choice')){
+        send(json_get_chosen_leaderboard_message());
     } else {
-        startEndNormalSurvey(function () {
+        startControlndSurvey(function () {
             setEnd();
         });
     }

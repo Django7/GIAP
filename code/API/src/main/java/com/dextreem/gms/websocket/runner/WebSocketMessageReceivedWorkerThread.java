@@ -3,6 +3,7 @@ package com.dextreem.gms.websocket.runner;
 import com.dextreem.gms.Constants;
 import com.dextreem.gms.db.CommandExecutionReturn;
 import com.dextreem.gms.db.DataStoreConnector;
+import com.dextreem.gms.db.RowKeyValuePair;
 import com.dextreem.gms.error.API_IllegalArgumentException;
 import com.dextreem.gms.helper.ImageFile;
 import com.dextreem.gms.helper.Props;
@@ -103,11 +104,18 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
                     return interpretLogout(wsm) && executeTriggeredCommands(wsm.getType());
                 }
                 case GET: {
-                    wsm.checkParameters(".points", ".leaderboard", ".image");
+                    wsm.checkParameters(".points", ".leaderboard", ".image", ".leaderboard_chosen", ".tutorial");
                     return interpretGet(wsm) && executeTriggeredCommands(wsm.getType());
                 }
-                case POST: {
+                /*case POST: {
                     wsm.checkParameters("!tags", "!name", "?start_time", "?end_time");
+                    return interpretPost(wsm) && executeTriggeredCommands(wsm.getType());
+                }*/
+                    //changed POST to either accept the standard post, distinguishable by the presence of tags, or the chosen leaderboard, distinguished by the exclusive parameter chosen_lb
+                case POST: {
+                    logger.debug("POST MESSAGE ARRIVED");
+                    wsm.checkParameters(".tags", "?name", ".chosen_lb", "?start_time", "?end_time");
+
                     return interpretPost(wsm) && executeTriggeredCommands(wsm.getType());
                 }
                 case QUESTIONNAIRE: {
@@ -407,6 +415,9 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
     private boolean interpretGet(WebSocketMessageReceived wsm) {
         String user = sessionManager.sessionToCustomSession(webSocket.getRemoteSocketAddress()).getUser();
         int userID = dataStore.getUserID(user);
+        int userGroup = dataStore.getUserGroupID(userID);
+        String userGroupName = dataStore.getGroupName(userGroup);
+        logger.debug("User Group Name is:"+ userGroupName);
 
         if (wsm.getContent().containsKey("points")) {
             logger.debug("Interpret and execute 'get_points' command");
@@ -429,7 +440,26 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
                 return false;
             }
             String result_json = cer.toString();
-            answerGet("get_leaderboard", result_json);
+            logger.debug(result_json);
+            // hier vllt was ganz komisches machen: gruppe des users vergleichen, und dann in den status setzen ¯\_(ツ)_/¯ ?
+            if ("absolute_leaderboard".equals(userGroupName)) {
+                answerGet("get_absolute_leaderboard", result_json);
+            }
+
+            else if ("relative_leaderboard".equals(userGroupName)) {
+                answerGet("get_relative_leaderboard", result_json);
+
+            } else if ("choice".equals(userGroupName)) {
+                int chosen_group = dataStore.getChosenGroup(uid, user);
+                    if (chosen_group == 1){
+                        answerGet("get_absolute_leaderboard", result_json);
+                    } else if (chosen_group == 2){
+                        answerGet("get_relative_leaderboard", result_json);
+                    }
+            }
+
+
+            else answerGet("get_leaderboard", result_json);
         } else if (wsm.getContent().containsKey("image")) {
 
             if (!wsm.getContent().containsKey("all")) {
@@ -454,6 +484,39 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
                     success = success && answerGetAllImages(image, images.size());
                 }
                 return success;
+            }
+        } else if(wsm.getContent().containsKey("leaderboard_chosen")) {
+            logger.debug("Interpret and execute 'get_chosen_leaderboard' command");
+            int uid = dataStore.getUserID(user);
+            int chosen_group = dataStore.getChosenGroup(uid, user);
+            String result_json = Integer.toString(chosen_group);
+            if (chosen_group == 1) {
+                answerGet("leaderboard_chosen_absolute", result_json);
+            } else if (chosen_group == 2) {
+                answerGet("leaderboard_chosen_relative", result_json);
+            } else {
+                logger.debug("No Group Chosen! This should not happen...except in testing phase, in this case its fine *thumbs up*");
+                answerGet("leaderboard_chosen_relative", result_json);
+            }
+
+        }else if(wsm.getContent().containsKey("tutorial")){
+            int countTut1 = dataStore.getTutorial1Count();
+            int countTut2 = dataStore.getTutorial2Count();
+            String result_json = Integer.toString(countTut1,countTut2);
+
+            //Relative first = 1, Absolute first=2
+            if (countTut1 < countTut2) {
+                dataStore.insertTutorial(userID,1);
+                answerGet("tutorial_relative_first_chosen", result_json);
+            } else if (countTut1 > countTut2) {
+                dataStore.insertTutorial(userID,2);
+                answerGet("tutorial_absolute_first_chosen", result_json);
+            } else if (countTut1 == countTut2) {
+                dataStore.insertTutorial(userID,1);
+                answerGet("tutorial_relative_first_chosen", result_json);
+            } else {
+                logger.debug("No tutorial chosen! Well, this should not happen, ever... ");
+                answerGet("tutorial_relative_first_chosen", result_json);
             }
 
         } else {
@@ -564,10 +627,20 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
     private boolean interpretPost(WebSocketMessageReceived wsm) {
         String user = sessionManager.sessionToCustomSession(webSocket.getRemoteSocketAddress()).getUser();
         int userID = dataStore.getUserID(user);
+        logger.debug("interpret Post Message");
+        logger.debug(wsm.getContent());
+        if(wsm.containsContent("chosen_lb")){
+            String leaderboard_chosen = wsm.getContentString("chosen_lb");
+            logger.debug ("storing chosen leaderboard");
+            dataStore.insertChosenLeaderboard(userID, leaderboard_chosen);
+            return true;
+        } else {
 
         String tags_string = wsm.getContentString("tags");
         String image_name = wsm.getContentString("name");
-        if (image_name.startsWith("TUTORIAL")) {
+
+
+         if (image_name.startsWith("TUTORIAL")) {
             logger.debug("Storing TUTORIAL image tags.");
             dataStore.insertTutorialImage(userID, image_name, tags_string);
             return true;
@@ -580,6 +653,7 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
                 logger.warn(String.format("Could not store tags (%s) for image %s, user: %s (%s).", tags_string, image_name, user, userID));
                 answerPost(resourceBundle.getString("answer.error"));
             }
+        }
         }
         return false;
     }

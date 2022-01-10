@@ -13,7 +13,7 @@ public class Tags {
     private final List<String> lines;
     private final Map<Integer, String> ir;
 
-    public static final String SEPARATOR = ",";
+    public static final String SEPARATOR = ";";
 
     private int fileIndex;
     private String[] currentLine;

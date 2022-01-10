@@ -2,6 +2,8 @@ var mysql = require('mysql');
 var propertiesReader = require('properties-reader');
 var properties = propertiesReader('dbconnect.properties');
 
+
+// Fügt ratings in die DB ein
 var dbConnection = mysql.createConnection({
     host: properties.get('db.host'),
     user: properties.get('db.user'),

@@ -4,7 +4,7 @@
   "dependencies": {
     "express": "^4.15.2",
     "iconv-lite": "^0.4.24",
-    "mysql": "^2.15.0",
+    "mysql": "^2.18.1",
     "properties-reader": "^0.0.16",
     "utf8": "^3.0.0"
   }

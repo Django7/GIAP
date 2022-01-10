@@ -1,0 +1,60 @@
+
+
+
+.choice_process {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    padding: 5px;
+}
+
+.choice_buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.flex_child{
+    flex: 1;
+    
+    /*border: 2px solid rgb(194, 29, 29);*/
+}  
+
+
+.flex_button_2{
+    display: flex;
+    justify-content: center;
+}
+
+.choice_img {
+    border: 7px solid rgb(46, 109, 165);
+    border-radius: 15px;
+    /*width: 200%;*/
+    padding: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+  
+.flex_button{
+    
+    flex: 1;
+    padding-left: 2px;
+    justify-content: center;
+    /*border: 2px solid rgb(194, 29, 29);*/
+}  
+
+.border_blue{
+    border: 2px solid rgb(46, 109, 165);
+}
+
+.choice_ {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.choice_right {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}

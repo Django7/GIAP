@@ -2,6 +2,8 @@ var mysql = require('mysql');
 var propertiesReader = require('properties-reader');
 var properties = propertiesReader('dbconnect.properties');
 
+//dient dazu tags nicht doppelt zu raten
+
 var dbConnection = mysql.createConnection({
     host: properties.get('db.host'),
     user: properties.get('db.user'),

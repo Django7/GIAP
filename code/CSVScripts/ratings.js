@@ -3,6 +3,8 @@ var fs = require('fs');
 var propertiesReader = require('properties-reader');
 var properties = propertiesReader('dbconnect.properties');
 
+// holt sich die ratings aus der db
+
 var dbConnection = mysql.createConnection({
     host: properties.get('db.host'),
     user: properties.get('db.user'),
