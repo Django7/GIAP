@@ -3,8 +3,6 @@ package com.dextreem.tj.gui;
 import com.dextreem.tj.Tags;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
@@ -97,6 +95,8 @@ public class TagJudgeGui{
         String tag = tags.getTag();
         String frequency = tags.getFrequency();
         String filename = tags.getFileName();
+
+        System.out.println(filename + "Hallo");
 
         if (!filename.equals(currentImage)){
             currentImage = filename;

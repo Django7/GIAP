@@ -61,11 +61,11 @@ public class Tags {
     }
 
     public String getFileName() {
-        return ir.get(Integer.parseInt(currentLine[0]));
+        return ir.get(Integer.parseInt(currentLine[1]));
     }
 
     public String getFrequency(){
-        return currentLine[1];
+        return currentLine[0];
     }
 
     public String getTag() {

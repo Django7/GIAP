@@ -1,7 +1,8 @@
 package com.dextreem.gms.websocket.model;
 
 import com.dextreem.gms.error.API_IllegalArgumentException;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -15,7 +16,7 @@ public class WebSocketMessageReceived {
     private JsonObject content = null;
 
 
-    private final Logger logger = Logger.getLogger(WebSocketMessageReceived.class);
+    private final Logger logger = LoggerFactory.getLogger(WebSocketMessageReceived.class);
 
     /**
      * Creates a new -empty- WebSocket message

@@ -25,7 +25,7 @@ function establishConnection() {
         };
 
         wsc.onmessage = function (msg) {
-            printLog('Received message: ' + msg.data.substring(0, 300));
+            //printLog('Received message: ' + msg.data.substring(0, 300));
             interpretMessage(msg.data);
         };
 
@@ -188,12 +188,15 @@ function interpret_login(content) {
         } else {
             var design_finished = (arrayContainsElement(USER_GROUP, 'design')) && (QUESTS['design']);
             var normal_finished = (!arrayContainsElement(USER_GROUP, 'design')) && (QUESTS['end_normal']);
+            //this is the case, if the user has done all images, or finished the OLD end questionnaires
             if (content['b_images_left'] === '0' || design_finished || normal_finished) {
-                setEnd();
+                btn_oc_end_questionnaire();
+                //setEnd();
+              // in our study, this happens if the user is done with the tutorial and has images left
             } else if (inNotDesignAndTutDone() || inFinishedDesignAndTutDone()) {
                 // If this is the case, wait 1 second for the server to fetch possible questionnaires
                 setTaggingEnvironment();
-                //dashier ist der Fall, wenn der User nicht in design implemented, sondern none,td,absolute, relative ist
+                //this happens only, if the user has images left, and no tutorial is done
             } else if (QUESTS['demographic'] && !arrayContainsElement(USER_GROUP, 'design_implemented')) {
                 viewWelcomeOverlay();
             } else {
@@ -270,30 +273,58 @@ function interpret_get(content) {
         interpret_get_points(content);
     } else if (content['status'] === 'get_leaderboard') {
         interpret_get_leaderboard(content);
-        printLog(content);
+        //printLog(content);
 
     }else if (content['status'] === 'get_absolute_leaderboard') {
         interpret_get_absolute_leaderboard(content);
-        printLog(content);
+        //printLog(content);
     }else if (content['status'] === 'get_relative_leaderboard') {
         interpret_get_relative_leaderboard(content);
-        printLog(content);
+        //printLog(content);
 
     }else if (content['status'] === 'tutorial_relative_first_chosen') {
         interpret_tutorial_rel_chosen();
-        printLog(content);
+        //printLog(content);
     }else if (content['status'] === 'tutorial_absolute_first_chosen') {
         interpret_tutorial_abs_chosen();
-        printLog(content);
+        //printLog(content);
 
-    }else if (content['status'] === 'leaderboard_chosen_absolute') {
-        startChoiceAbsoluteEndSurvey(function () {
-            setEnd();
+    }else if (content['status'] === 'leaderboard_chosen_absolute') {   
+            startIMI(function () {
+                startTaskPerception(function () {
+                    startLBS_C_ABS(function(){
+                        startChoice_C_ABS(function () {
+                            startDemographic_Gami(function () {
+                                startBasics_Gami(function () {
+                                    startFinal_C_ABS(function () {
+                                        startDebrief_C_ABS(function (){
+                                        setEnd();
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
         });
     }else if (content['status'] === 'leaderboard_chosen_relative') {
-        startChoiceRelativeEndSurvey(function () {
-            setEnd();
+        startIMI(function () {
+            startTaskPerception(function () {
+                startLBS_C_REL(function(){
+                    startChoice_C_REL(function () {
+                        startDemographic_Gami(function () {
+                            startBasics_Gami(function () {
+                                startFinal_C_REL(function () {
+                                    startDebrief_C_ABS(function (){
+                                    setEnd();
+                                });
+                            });
+                        });
+                    });
+                });
+            });
         });
+    });
     }
 }
 
@@ -336,7 +367,7 @@ function interpret_get_image(content) {
             setEnd();
             // setEnd_NoImagesLeft();
         } else if (content['img'] === 'RESEND') {
-            //flipImage(false);
+            flipImage(false);
             // In bonus round, decrease the images left
             if (ADD_TASKS && ADD_IMGS > 0) {
                 --ADD_IMGS;
@@ -374,29 +405,24 @@ function interpret_get_points(content) {
  * @param content
  */
 function interpret_get_leaderboard(content) {
-    printLog('received leaderboard');
     setAbsoluteLeaderboardFromAPI(content['value']);
 }
 
 function interpret_get_absolute_leaderboard(content) {
-    printLog('received leaderboard');
     setAbsoluteLeaderboardFromAPI(content['value']);
 }
 
 function interpret_get_relative_leaderboard(content) {
-    printLog('received leaderboard');
     setRelativeLeaderboardFromAPI(content['value']);
 }
 
 function interpret_tutorial_rel_chosen(){
-    printLog('tutorial rel first was chosen');
     setExamplePointsLBRelative();
     startChoiceTutorial1();
 }
 
 
 function interpret_tutorial_abs_chosen(){
-    printLog('tutorial abs first was chosen');
     setExamplePointsLBAbsolute();
     startChoiceTutorial2();
 }

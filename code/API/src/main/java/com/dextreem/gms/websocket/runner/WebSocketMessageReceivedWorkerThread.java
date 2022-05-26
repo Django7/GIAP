@@ -13,7 +13,9 @@ import com.dextreem.gms.websocket.model.WebSocketMessageReceived;
 import com.dextreem.gms.websocket.model.WebSocketMessageReceivedType;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.java_websocket.WebSocket;
 
 import javax.json.JsonArray;
@@ -34,7 +36,7 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
 
     private final Pattern name_pattern = Pattern.compile(Props.getProp("api.names.pattern"));
     private final Pattern password_pattern = Pattern.compile(Props.getProp("api.password.pattern"));
-    private final Logger logger = Logger.getLogger(WebSocketMessageReceivedWorkerThread.class);
+    private final Logger logger = LoggerFactory.getLogger(WebSocketMessageReceivedWorkerThread.class);
 
     private final ResourceBundle resourceBundle = ResourceBundle.getBundle("texts", Locale.forLanguageTag(Props.getProp("api.client.messages.lang")));
 
@@ -93,6 +95,7 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
             switch (wsm.getType()) {
                 case REGISTER: {
                     wsm.checkParameters("!name", "!pwd", "?email");
+                   // System.setProperty("api.group.distribution","");
                     return interpretRegister(wsm) && executeTriggeredCommands(wsm.getType());
                 }
                 case LOGIN: {
@@ -114,7 +117,7 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
                     //changed POST to either accept the standard post, distinguishable by the presence of tags, or the chosen leaderboard, distinguished by the exclusive parameter chosen_lb
                 case POST: {
                     logger.debug("POST MESSAGE ARRIVED");
-                    wsm.checkParameters(".tags", "?name", ".chosen_lb", "?start_time", "?end_time");
+                    wsm.checkParameters(".tags", "?name", ".chosen_lb", "?start_time", "?end_time");  //DTest
 
                     return interpretPost(wsm) && executeTriggeredCommands(wsm.getType());
                 }
@@ -194,8 +197,9 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
             if (Constants.IN_JUNIT_TEST_MODE && null == dataStore) {
                 return true;
             }
-
+            System.out.println(getGroupAssignment());
             dataStore.createUser(name, pwd, mail, getGroupAssignment());
+
             answerRegister(resourceBundle.getString("answer.ok"));
             return true;
         }
@@ -210,12 +214,19 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
      */
     private String getGroupAssignment() {
         String[] basicGroupNames = Props.getProp("api.group.distribution").split(",");
+        //if (Props.getProp("api.group.test").toLowerCase().equals("yes")){
+        //    System.out.println(Props.getProp("api.group.distribution"));
+        //    return Props.getProp("api.group.distribution");
+       // }
+
+
         if (Props.getProp("api.group.distribution.force").toLowerCase().equals("yes")) {
 
             // Count the number of occurences of each group in the distribution to get the weight
             Map<String, Integer> occ = new HashMap<>();
             for (String group : basicGroupNames) {
                 if (occ.containsKey(group)) {
+                    System.out.println(System.getProperty("api.group.distribution"));
                     occ.put(group, occ.get(group) + 1);
                 } else {
                     occ.put(group, 1);
@@ -628,13 +639,16 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
         String user = sessionManager.sessionToCustomSession(webSocket.getRemoteSocketAddress()).getUser();
         int userID = dataStore.getUserID(user);
         logger.debug("interpret Post Message");
-        logger.debug(wsm.getContent());
+        //logger.debug(wsm.getContent());
         if(wsm.containsContent("chosen_lb")){
             String leaderboard_chosen = wsm.getContentString("chosen_lb");
             logger.debug ("storing chosen leaderboard");
             dataStore.insertChosenLeaderboard(userID, leaderboard_chosen);
             return true;
-        } else {
+        }
+
+
+        else {
 
         String tags_string = wsm.getContentString("tags");
         String image_name = wsm.getContentString("name");
@@ -819,7 +833,7 @@ public class WebSocketMessageReceivedWorkerThread implements Runnable {
      * @return true if the interpretation was successful, false otherwise (in this case, returns always false)
      */
     private boolean interpretUnknown(WebSocketMessageReceived wsm) {
-        logger.fatal("Peter panic: unknown command type.");
+        logger.error("Peter panic: unknown command type.");
         answerUnknown(String.format(resourceBundle.getString("answer.unknown.command"), wsm.getType().toString()));
         return false;
     }

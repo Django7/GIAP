@@ -3,7 +3,8 @@ package com.dextreem.gms.db;
 import com.dextreem.gms.error.API_IllegalArgumentException;
 import com.dextreem.gms.helper.ImageFile;
 import com.dextreem.gms.helper.Props;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.*;
@@ -25,7 +26,7 @@ public class MySQLDataStore implements DataStoreConnector {
     private final String PWD = Props.getProp("api.db.usr.pwd");
 
 
-    private final Logger logger = Logger.getLogger(MySQLDataStore.class);
+    private final Logger logger = LoggerFactory.getLogger(MySQLDataStore.class);
 
     private Connection connection = null;
 
@@ -74,7 +75,7 @@ public class MySQLDataStore implements DataStoreConnector {
 
             connection = DriverManager.getConnection(DB_URL, USR, PWD);
         } catch (SQLException ex) {
-            logger.fatal(String.format("Error while trying to establish a connection to %s:", DB_URL));
+            logger.error(String.format("Error while trying to establish a connection to %s:", DB_URL));
             ex.printStackTrace();
             return false;
         }
@@ -694,7 +695,7 @@ public class MySQLDataStore implements DataStoreConnector {
         }
 
         // Create new user and add respective group assignment.
-        insertToTable("users", new RowKeyValuePair("name", name), new RowKeyValuePair("pwd", pwd), new RowKeyValuePair("mail", email));
+        insertToTable("users", new RowKeyValuePair("name", name), new RowKeyValuePair("pwd", pwd), new RowKeyValuePair("mail", email), new RowKeyValuePair( "first_login", new java.sql.Timestamp(new java.util.Date().getTime())));
         int userID = getUserID(name);
         int groupID = getGroupID(group_name);
         insertToTable("users_groups", new RowKeyValuePair("uid", userID), new RowKeyValuePair("gid", groupID));
@@ -967,7 +968,7 @@ public class MySQLDataStore implements DataStoreConnector {
         String username = getUserName(userID);
         try {
             // Insert the tags
-            insertImageTags(userID, image_name, tags);
+            insertImageTagsMult(userID, image_name, tags);
 
             String sql = "" +
                     "UPDATE image_log\n" +
@@ -1001,7 +1002,7 @@ public class MySQLDataStore implements DataStoreConnector {
         String username = getUserName(userID);
         try {
             // Insert the tags
-            insertImageTags(userID, image_name, tags);
+            insertImageTagsMult(userID, image_name, tags);
 
             String sql = "" +
                     "INSERT INTO image_log (uid, iid, start_time, end_time, in_work) " +
@@ -1024,7 +1025,7 @@ public class MySQLDataStore implements DataStoreConnector {
         }else{
             flag = 2;
         }
-        logger.debug(flag);
+        //logger.debug(flag);
         String username = getUserName(userID);
         try {
             String update = "UPDATE choice SET chosen_group=? WHERE uid=?";
@@ -1039,7 +1040,7 @@ public class MySQLDataStore implements DataStoreConnector {
 
     public void insertTutorial(int userID, int tutorial){
         connect();
-        logger.debug(tutorial);
+        //logger.debug(tutorial);
         String username = getUserName(userID);
         try {
             String update = "UPDATE choice SET tutorial=? WHERE uid=?";
@@ -1067,24 +1068,79 @@ public class MySQLDataStore implements DataStoreConnector {
         }
 
         String[] tag_array = tags.split(",");
+        if(tag_array[0].equals("")){return;}
         String sql = "" +
                 "INSERT INTO image_tags (uid, iid, tag) " +
                 "VALUE (?, (SELECT iid FROM images WHERE name=?), ?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        for (int i = 0; i < tag_array.length; i++) {
-            String tag = tag_array[i];
-            preparedStatement.setInt(1, userID);
-            preparedStatement.setString(2, image_name);
-            preparedStatement.setString(3, tag);
-            preparedStatement.addBatch();
 
-            // Execute at maximum a batch of 500 image tags
-            if ((i > 0 && i % 500 == 0) || i == tag_array.length - 1) {
+        // amount of images reduced to a maximum of 50 due to the db restrictions from heroku
+        int num = tag_array.length;
+        //logger.debug("Length of tag_array actually transmitted: "+ num);
+        int num_of_tags = 50;
+        if(num < 50){
+            num_of_tags = num;
+        }
+        for (int i = 0; i < num_of_tags; i++) {
+            String tag = tag_array[i];
+            if(tag.length()<=30){
+                preparedStatement.setInt(1, userID);
+                preparedStatement.setString(2, image_name);
+                preparedStatement.setString(3, tag);
+                preparedStatement.addBatch();
+            }
+                // Execute at maximum a batch of 50 image tags
+            if ((i > 0 && i % 50 == 0) || i == num_of_tags - 1) {
                 preparedStatement.executeBatch();
             }
+
         }
     }
 
+    private void insertImageTagsMult(int userID, String image_name, String tags) throws SQLException {
+        // no connect needed,
+        if (null == tags) {
+            return;
+        }
+
+        String[] tag_array = tags.split(",");
+        if(tag_array[0].equals("")){return;}
+        String sql = "" +
+                "INSERT INTO image_tags (uid, iid, tag) " +
+                "VALUES (?, (SELECT iid FROM images WHERE name=?), ?)";
+
+
+
+        int num = tag_array.length;
+        logger.debug("Length of tag_array actually transmitted: "+ num);
+        int num_of_tags = 50;
+        if(num < 50){
+            num_of_tags = num;
+        }
+
+        for(int j=1;j<num_of_tags;j++){
+            sql+=(", (?, (SELECT iid FROM images WHERE name=?), ?)");
+        }
+
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        //for (int i = 0; i < tag_array.length; i++) {
+        for (int i = 0; i < num_of_tags; i++) {
+            String tag = tag_array[i];
+            preparedStatement.setInt((1+(i*3)), userID);
+            preparedStatement.setString((2+(i*3)), image_name);
+            preparedStatement.setString((3+(i*3)), tag);
+            //preparedStatement.addBatch();
+
+            // Execute at maximum a batch of 50 image tags
+            //if ((i > 0 && i % 500 == 0) || i == tag_array.length - 1) {
+            if ((i > 0 && i % 50 == 0) || i == num_of_tags - 1 ) {
+                logger.debug("Length of tag_array send to data base: "+ (i+1));
+                //preparedStatement.executeBatch();
+                preparedStatement.execute();
+            }
+        }
+    }
     /**
      * Sets a certain image to in_work, preventing the API in returning other images.
      * Besides that, sets the start_time to the current time.
@@ -1540,8 +1596,103 @@ public class MySQLDataStore implements DataStoreConnector {
     public int getNumOfFinishedUsers(String group) {
         connect();
 
-        String quest_name = group.equals("design_task") ? "design" : "end_normal";
+        String quest_name = group.equals("design_task") ? "design" :
+                            group.equals("none")? "debrief_control" :
+                            group.equals("absolute_leaderboard")? "debrief_abs" :
+                            group.equals("relative_leaderboard")? "debrief_rel" : "debrief_C_abs";
+                            //group.equals("choice")? "debrief_C_abs" : "debrief_C_rel"; //Problem: choice teilt sich in 2 gruppen auf, daher wird es hier in zwei verschiedene statements gesplittet
+
+      //  String quest_name_choice = "end_choice_relative";
+
+      //  if (group.equals("choice")){
+
         try {
+            String quest_id = "" +
+                    "SELECT count(*) AS num\n" +
+                    "FROM users_groups\n" +
+                    "  INNER JOIN questionnaires_users ON users_groups.uid = questionnaires_users.uid\n" +
+                    "WHERE gid = (SELECT gid\n" +
+                    "  FROM `groups`\n" +
+                    "  WHERE name = ?)\n" +
+                    " AND qid = (SELECT qid\n" +
+                    "  FROM questionnaires\n" +
+                    "  WHERE quest_name = ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(quest_id);
+            preparedStatement.setString(1, group);
+            preparedStatement.setString(2, quest_name);
+            //preparedStatement.setString(3, quest_name_choice);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("num");
+            }
+        } catch (SQLException ex) {
+            logger.error(String.format("Error while getting a group's (%s) number of finished users.", group));
+            ex.printStackTrace();
+        //}
+        /*}else{try {
+            String quest_id = "" +
+                    "SELECT count(*) AS num\n" +
+                    "FROM users_groups\n" +
+                    "  INNER JOIN questionnaires_users ON users_groups.uid = questionnaires_users.uid\n" +
+                    "WHERE gid = (SELECT gid\n" +
+                    "  FROM `groups`\n" +
+                    "  WHERE name = ?)\n" +
+                    " AND qid = (SELECT qid\n" +
+                    "  FROM questionnaires\n" +
+                    "  WHERE quest_name = ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(quest_id);
+            preparedStatement.setString(1, group);
+            preparedStatement.setString(2, quest_name);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("num");
+            }
+        } catch (SQLException ex) {
+            logger.error(String.format("Error while getting a group's (%s) number of finished users.", group));
+            ex.printStackTrace();
+        }*/
+        }
+        return -1;
+    }
+}
+
+/*public int getNumOfFinishedUsers(String group) {
+        connect();
+
+        String quest_name = group.equals("design_task") ? "design" :
+                            group.equals("none")? "end_control" :
+                            group.equals("absolute_leaderboard")? "end_absolute" :
+                            group.equals("relative_leaderboard")? "end_relative" :
+                            group.equals("choice")? "end_choice_relative" : "end_choice_absolute"; //Problem: choice tailt sich in 2 gruppen auf, daher wird es hier in zwei verschiedene statements gesplittet
+
+        String quest_name_choice = "end_choice_relative";
+
+        if (group.equals("choice")){
+
+        try {
+            String quest_id = "" +
+                    "SELECT count(*) AS num\n" +
+                    "FROM users_groups\n" +
+                    "  INNER JOIN questionnaires_users ON users_groups.uid = questionnaires_users.uid\n" +
+                    "WHERE gid = (SELECT gid\n" +
+                    "  FROM `groups`\n" +
+                    "  WHERE name = ?)\n" +
+                    " AND qid = (SELECT qid\n" +
+                    "  FROM questionnaires\n" +
+                    "  WHERE quest_name = ? OR quest_name = ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(quest_id);
+            preparedStatement.setString(1, group);
+            preparedStatement.setString(2, quest_name);
+            preparedStatement.setString(3, quest_name_choice);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("num");
+            }
+        } catch (SQLException ex) {
+            logger.error(String.format("Error while getting a group's (%s) number of finished users.", group));
+            ex.printStackTrace();
+        }
+        }else{try {
             String quest_id = "" +
                     "SELECT count(*) AS num\n" +
                     "FROM users_groups\n" +
@@ -1563,6 +1714,6 @@ public class MySQLDataStore implements DataStoreConnector {
             logger.error(String.format("Error while getting a group's (%s) number of finished users.", group));
             ex.printStackTrace();
         }
+        }
         return -1;
-    }
-}
+    }s*/

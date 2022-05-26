@@ -1,11 +1,11 @@
 <div class="row">
-    <div class="col-md-7 col-md-offset-3 h-100">
+    <div class="col-md-9 col-md-offset-2 h-200">
         {{#platform_closed}}
-        <h3>Hallo!</h3>
+        <h3 style="font-size:34px">Hallo!</h3>
         <p>
-            <strong>Vielen Dank, dass du an der Studie teilnehmen möchtest.</strong>
+            <strong style="font-size:24px">Vielen Dank, dass du an der Studie teilnehmen möchtest.</strong>
         </p>
-        <p>
+        <p style="font-size:16px">
             Die Registrierung ist abgeschlossen und es können keine neuen Teilnehmer mehr angenommen werden.
             Solltest du bereits teilgenommen haben und deine E-Mail-Adresse hinterlegt haben, bekommst du in den
             nächsten Tagen eine Nachricht von uns.
@@ -21,22 +21,22 @@
         {{/design_implemented}}
 
         {{^design_implemented}}
-        <h3>Hallo!</h3>
-        <p>
+        <h3 style="font-size:34px">Hallo!</h3>
+        <p style="font-size:22px">
             <strong>Vielen Dank, dass du an der Studie teilnehmen möchtest.</strong>
         </p>
         {{/design_implemented}}
 
-        <p>
+        <p style="font-size:22px">
             Im Folgenden zeigen wir dir nacheinander <strong>mehrere Bilder</strong> für jeweils eine <strong>kurze
             Zeit</strong>.
             Für jedes Bild bitten wir dich, uns in Form von Stichwörtern mitzuteilen, was dir zur
             <strong>Stimmung im jeweiligen Bild</strong> in den Sinn kommt.
             Dieser Prozess nennt sich <strong>Bilder-Tagging</strong> und hilft uns bei der Verbesserung der affektiven
             Bildklassifizierung.
-        </p>
+        </p >
 
-        <p>
+        <p style="font-size:22px">
             {{^design_implemented}}
             Die Teilnahme an dieser Studie dauert in etwa <strong>20 Minuten</strong>.
             {{/design_implemented}}
@@ -47,23 +47,23 @@
 
             Informationen zur Nutzung deiner Daten können in den <a href="javascript:btn_oc_viewDataPrivacy()">Datenschutzhinweisen</a>
             nachgelesen werden.
-            Diese Studie wird von Dennis Gudea im Rahmen einer Bachelor Arbeit am DFKI (Deutsches Forschungszentrum 
-            für Künstliche Intelligenz) durchgeführt.
+            Diese Studie wird von Dennis Gudea im Rahmen einer Bachelorarbeit des Studiengangs Medieninformatik an der Universität des Saarlandes und am DFKI (Deutsches Forschungszentrum 
+            für Künstliche Intelligenz) durchgeführt. 
         </p>
-
+<!--
         <p>
             Hinweis für Nutzer von <strong>SurveyCircle</strong>: Am Ende der Studie findest du einen SurveyCircle-Key.
-        </p>
+        </p>-->
 
-        <div>
-            <label for="data_privacy">
-                <input type="checkbox" name="data_privacy" id="data_privacy"/> Ich habe die <a
+        <div >
+            <label for="data_privacy" style="font-size:22px">
+                <input type="checkbox" name="data_privacy" id="data_privacy" /> Ich habe die <a
                     href="javascript:btn_oc_viewDataPrivacy()"> Hinweise zum Datenschutz</a> und die
                 Teilnahmeinformationen gelesen, verstanden und bin damit einverstanden, dass meine Daten für
                 wissenschaftliche Forschungszwecke verwendet werden dürfen.
             </label>
         </div>
-        <input type="button" class="btn btn-primary" value="Weiter" onclick="btn_oc_welcomeScreen_next()">
+        <input type="button" class="btn btn-primary" value="Weiter" style="font-size: 22px" onclick="btn_oc_welcomeScreen_next()">
         {{/platform_closed}}
     </div>
 </div>

@@ -3,7 +3,7 @@ var propertiesReader = require('properties-reader');
 var properties = propertiesReader('dbconnect.properties');
 
 
-// genutzt um post_ratings_per_tag_base in db einzufügen 
+// genutzt um post_ratings_per_tag_base in db einzufügen //oder halt main_ratings_per_tag_base
 var dbConnection = mysql.createConnection({
     host: properties.get('db.host'),
     user: properties.get('db.user'),

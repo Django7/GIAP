@@ -14,6 +14,7 @@ CREATE TABLE users (
   mail      TINYTEXT,
   login     BIT              DEFAULT 1,
   login_ctr SMALLINT         DEFAULT 0,
+  first_login 	DATETIME,
   PRIMARY KEY (uid)
 );
 
@@ -132,6 +133,9 @@ CREATE TABLE image_tags (
   uid INT,
   iid INT,
   tag TEXT,
+  rating INT,
+  rating_2 INT,
+  mean_rating float,
   FOREIGN KEY (uid) REFERENCES users (uid),
   FOREIGN KEY (iid) REFERENCES images (iid)
 );
@@ -203,4 +207,4 @@ CREATE TABLE goals_users (
 
 /* Allow the foreign key checks again */
 SET FOREIGN_KEY_CHECKS = 1;
-
+SET @@auto_increment_increment=1;

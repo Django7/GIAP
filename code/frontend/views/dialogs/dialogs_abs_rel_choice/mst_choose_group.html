@@ -1,0 +1,64 @@
+<div id="choose_group">
+    <div >
+        <p>
+        <strong> Hier kannst du die Condition auswählen in welche du dich befinden möchtest (nur zu Testzwecken)</strong>
+        </p>
+    
+        <p>
+        Es gibt insgesamt vier Conditions zur Auswahl: Control, Absolute, Relative, Choice
+        </p>
+
+        <p>
+            <strong> Erklärung zu den Unterschieden der Conditions:</strong>
+        </p>
+
+
+        <p>
+        <strong>Control:</strong> In der Control Condition befindet sich keine Gamification
+        </p>
+        
+        <p>
+            <strong>Absolute:</strong> In der Absolute Condition befindet sich ein absolutes Leaderboard, welches im Tutorial erklärt wird.
+        </p>
+
+        <p>
+            <strong>Relative:</strong> In der Relative Condition befindet sich ein relatives Leaderboard, welches im Tutorial erklärt wird.
+        </p>
+
+        <p>
+            <strong>Choice:</strong> In der Choice Condition werden im Tutorial jeweils einmal das absolute und einmal das relative Leaderboard vorgestellt.
+            Um zu ermitteln welches Leaderboard zuerst vorgestellt wird die aktuelle Anzahl an Teilnehmern verwendet, um immer abwechselnd das jeweils andere Leaderboard zuerst zu präsentieren.
+            Am Ende des tutorials hat man die Möglichkeit sich für ein Leaderboard zu entscheiden.
+        </p>
+
+        <p>
+        <strong>Genereller Ablauf der Studie.</strong>
+        </p>
+        <ul>
+            <li>Die Tutorials bestehen jeweils aus zwei Bildern.</li>
+            <li>Nach dem Tutorial, bzw nach jedem Bild in der Choice Condition erscheint ein Fragebogen bzgl des empfundenen Vergnügens (IMI enjoyment subscale).</li>
+            <li>Am Ende des Tutorials darf man sich einen Usernamen geben, welcher im Leaderboard erscheint.</li>
+            <li>Die Hauptaufgabe besteht aus 15 Bildern.</li>
+            <li>Nach der Hauptaufgabe wird der Finale Fragebogen gestartet, welcher aus 6 bzw 7 Seiten besteht, abhängig ob man sich in der Control condition oder einer gamifizierten Condition befindet.</li>
+            <li>Nach dem letzten Fragebogen ist die Studie beendet.</li>
+            <li>Es werden während der Studie Cookies gesetzt, welche z.b Loginparameter oder das gewählte Leaderboard speichern. D.h. wenn Cookies während der Studie gelöscht werden, startet die Studie von Neuem.</li>
+            <li>Das Tutorial wird nicht gespeichert und muss bei Reload erneut komplett abgeschlossen werden. Dies dient dazu sicherzugehen, dass User das Tutorial nicht mit großen zeitlichen Lücken abschließen.</li>
+            <li>Während der Hauptaufgabe werden alle bereits bearbeiteten Bilder gespeichert, d.h sollte der User z.b nach dem 3. Bild die Seite erneut laden, sind die Tags dieser drei Bilder gespeichert und der User hat nachwievor nurnoch 12 Bilder zu taggen.</li>
+            <li>Bereits beendete Seiten der Fragebögen werden in der DB gespeichert und nicht erneut abgefragt sollte der User die Seite neu laden.</li>
+        </ul>
+        <p></p>
+        <div class="fit center-block mt-3 flex_button_2">
+                <button type="button flex_button" class="btn btn-primary w-80 pt-3" value="start_with_control_condition" onclick="btn_post_chosen_group_none()">Wähle Control Condition.</button>
+        </div><p></p>
+                <div class="fit center-block mt-3 flex_button_2">
+                <button type="button flex_button" class="btn btn-primary w-80 pt-3" value="start_with_absolute_condition" onclick="btn_post_chosen_group_absolute()">Wähle Absolute Condition.</button>
+        </div><p></p>
+                <div class="fit center-block mt-3 flex_button_2">
+                <button type="button flex_button" class="btn btn-primary w-80 pt-3" value="start_with_relative_condition" onclick="btn_post_chosen_group_relative()">Wähle Relative Condition.</button>
+        </div><p></p>
+                <div class="fit center-block mt-3 flex_button_2">
+                <button type="button flex_button" class="btn btn-primary w-80 pt-3" value="start_with_choice_condition" onclick="btn_post_chosen_group_choice()">Wähle Choice Condition.</button>
+        </div><p></p>
+
+    </div>
+</div>

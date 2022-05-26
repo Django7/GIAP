@@ -33,7 +33,7 @@ function updateTagRatings() {
 
         var iconv = require('iconv-lite');
 
-        var buff   = new Buffer(variables[2], 'utf8');
+        var buff   = new Buffer.from(variables[2], 'utf8');
 
         var iid = variables[0];
         var freq = variables[1];

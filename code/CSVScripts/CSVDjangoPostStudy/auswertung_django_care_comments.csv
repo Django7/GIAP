@@ -1,0 +1,171 @@
+user_id;condition;chosen_group;tags_tutorial;tags_basic;rating_tutorial_1;rating_tutorial_2;rating_tutorial_mean;rating_basic_1;rating_basic_2;rating_basic_mean;cc_usable;cc_comments;end_usable
+21;5;0;7;77;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+31;6;2;8;84;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+61;4;0;10;72;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+81;6;2;15;64;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+181;6;2;8;65;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+191;4;0;5;77;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+241;5;0;9;61;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+261;5;0;12;93;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+311;6;2;7;101;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+421;4;0;5;46;NaN;NaN;NaN;NaN;NaN;NaN;1;Es hat etwas gedauert bis mir mehr Stimmungen eingefallen sind die ich als Tags benutzen konnte.;1
+431;6;2;8;58;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+461;6;2;8;52;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+471;6;2;5;57;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+501;4;0;2;15;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+511;5;2;7;50;NaN;NaN;NaN;NaN;NaN;NaN;;;
+521;5;2;6;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+531;5;0;6;53;NaN;NaN;NaN;NaN;NaN;NaN;0;schöne Bilder, zu viele Fragen zum schluss;0
+541;5;0;2;15;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+551;5;0;2;;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+631;6;2;8;64;NaN;NaN;NaN;NaN;NaN;NaN;;;
+691;6;2;11;17;NaN;NaN;NaN;NaN;NaN;NaN;;;
+751;6;2;6;36;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+881;6;2;8;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+931;6;2;4;34;NaN;NaN;NaN;NaN;NaN;NaN;;;
+941;6;2;6;31;NaN;NaN;NaN;NaN;NaN;NaN;;;
+951;6;2;6;36;NaN;NaN;NaN;NaN;NaN;NaN;;;
+961;6;2;6;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1011;6;2;4;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1071;6;2;10;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1091;6;2;9;28;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1101;6;2;10;13;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1201;6;2;6;22;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1221;6;2;6;9;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1271;6;2;9;34;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1291;6;2;6;34;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1311;6;2;7;34;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1321;6;2;2;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1331;6;2;6;15;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1451;6;2;8;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1661;4;0;10;56;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+1671;6;2;4;36;NaN;NaN;NaN;NaN;NaN;NaN;0;Das gefühlsmäßige Bewerten von Bildern als Spiel zu sehen ist interessant, allerdings wird nicht jeder ein ausreichenden Wortschatz aufweisen, um die Bilder angemessen und vollständig zu beschreiben. Deshalb sehe ich diese Anwendung eher als ein Gemeinschaftsspiel, wo nicht der Einzelne zählt.;1
+1781;6;2;7;43;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+1801;6;2;7;29;NaN;NaN;NaN;NaN;NaN;NaN;0;;1
+1871;6;2;4;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+1911;6;2;1;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2001;6;2;9;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2091;6;2;8;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2151;6;2;2;5;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2191;6;2;7;28;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2211;6;2;5;33;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2221;6;2;10;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2231;6;2;14;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2251;6;2;3;15;NaN;NaN;NaN;NaN;NaN;NaN;1;Nein;1
+2261;6;2;6;26;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2381;4;0;15;114;NaN;NaN;NaN;NaN;NaN;NaN;1;Wenn es wirklich um die Rangliste geht, habt ihr/ hast du mich echt gekriegt. Coole Sache! ;1
+2451;4;0;5;48;NaN;NaN;NaN;NaN;NaN;NaN;1;Am besten 10 Sekunden Zeit, die Bilder anzuschauen ;1
+2461;4;0;5;46;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+2511;4;0;7;91;NaN;NaN;NaN;NaN;NaN;NaN;1;Ich habe mich während des Taggings gefragt, inwieweit meine Interaktion mit dem User Design und meine Antwortzeiten zu der Analyse der Studie beitragen. Ich fand die Studie aufregend, die Bilder sehr ansprechend und gut getroffen für eine interpretative Aufgabe wie diese. Mehr davon :);1
+2661;6;2;2;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2681;6;2;15;177;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+2761;6;2;1;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+2781;6;2;5;18;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+2801;5;0;20;112;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+2871;5;0;5;41;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+2881;6;2;6;70;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+2921;5;0;15;69;NaN;NaN;NaN;NaN;NaN;NaN;1;Es war interessant da mal mit zu machen. :);1
+2931;5;0;5;208;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+2981;6;2;9;81;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+3081;6;2;16;235;NaN;NaN;NaN;NaN;NaN;NaN;1;Unterschiedliche Bilder verwenden, da sich die Stichwörter wiederholen;1
+3111;6;2;6;51;NaN;NaN;NaN;NaN;NaN;NaN;1;Das mit der geforderten Größe des Browserfensters war aus meinen Augen unnötig. Die Bilder waren trotzdem klein dargestellt. Außerdem hätte ich die Bilder gerne länger auf mich wirken lassen, bevor es wieder weggenommen wird und ich mir meine Worte überlege. Mir war etwas unklar inwieweit es Worte sein sollten, die meine Gefühle beschreiben könnten oder Worte, die jemand anderes mit dieser Stimmung assoziieren könnte.;1
+3151;6;2;9;57;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+3201;6;2;8;15;NaN;NaN;NaN;NaN;NaN;NaN;;;
+3211;6;2;14;105;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+3271;6;2;7;69;NaN;NaN;NaN;NaN;NaN;NaN;1;Eine Option, keine Rangliste zu haben, um keinen möglichen Druck zu verspüren/gezwungen zu sein, mehr Tags anzugeben als man wirklich von seinem ersten Eindruck geben möchte. Man hat 5 Sekunden, um sich das Bild anzuschauen, dann sollte man vielleicht nur die ersten paar Gedanken eintippen, vielleicht so 2 oder 3.;1
+3331;5;2;9;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+3361;4;2;10;7;NaN;NaN;NaN;NaN;NaN;NaN;;;
+3491;4;0;4;35;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+3581;6;2;12;111;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+3591;5;2;3;1;NaN;NaN;NaN;NaN;NaN;NaN;;;
+3671;4;0;14;151;NaN;NaN;NaN;NaN;NaN;NaN;1;Hätte gerne am schluss gesehen was andere zu den Bildern schreiben, da ich gerne gewusst hätte, was anderen eingefallen ist und wie sehr sich die einschätzungen anderer unterscheiden. Ich weiß das ich sehr ungewöhnliche und teils spezifische Beschreibungen verwendet habe. Und auch ein paar mal das Format brechen musste um das zu schreiben, was ich wollte. Hätte gerne gesehen wie andere Leute beschreiben (gerne auch anonymisiert) und ob es da bei den Personen einen Roten Faden gibt, in der Art, wie sie beschreiben. Generell spannend wäre ein Test, der untersucht, wie Neurodivergente und Neurotypische Personen Bilder taggen - also das man am Anfang, Fragen aus ADHS und Autismus Diagnosebögen hat (aber gut formuliert, selbt viele ofizielle Tests sind unfassbar schlecht Formuliert und gerade für Neurodivergente Menschen ungeeignet um das herauszufinden worauf die Fragen eigentlich hinaus wollen) - nach den Fragen werden die Personen dann auf einem Spektrum verordnet, dann beginnt das Taggen der Bilder. Und bei der Auswertung könnte man dann z.B. schauen wie spezifisch sind die Begriffe gewählt, wer schreibt eher Sach-bezogen und wer eher emotional, wie werden Farben und Stimungen jeweils von den Seiten des Spektrums eher wahrgenommen und eingeordnet etc.Denke das wäre eine Spannende Studie.PS: Würde gerne das Ergebniss dieser Studie Wissen!Ansonsten gute und Interessante Studie soweit. Weiter so!;1
+3701;5;0;13;150;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+3721;4;0;6;66;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+3751;6;2;4;33;NaN;NaN;NaN;NaN;NaN;NaN;1;nein ;0
+3761;6;2;13;81;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+3831;5;0;10;63;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+3841;5;0;9;52;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+3851;5;2;5;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+3881;6;2;4;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+3961;6;2;24;251;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+3971;6;2;8;66;NaN;NaN;NaN;NaN;NaN;NaN;1;Ich hätte abschließend schon noch gerne gewusst wie weit Platz 1 eigentlich entfernt war :) (vielleicht hab ich das aber auch einfach verpasst);1
+4041;5;0;5;46;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+4051;4;0;6;45;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+4061;4;0;15;106;NaN;NaN;NaN;NaN;NaN;NaN;1;Es gab viele Regenbilder und/oder Bilder mit Sonnenuntergang, bei denen für mich schwierig war zu bestimmen, ob die Stimmung sich unterscheidet oder gleich ist.;1
+4101;6;2;5;58;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+4111;6;2;11;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+4181;6;2;8;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+4211;6;2;7;66;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+4221;5;0;5;45;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+4251;5;0;4;72;NaN;NaN;NaN;NaN;NaN;NaN;0;;0
+4281;5;2;20;36;NaN;NaN;NaN;NaN;NaN;NaN;;;
+4291;5;2;11;12;NaN;NaN;NaN;NaN;NaN;NaN;;;
+4351;6;2;10;115;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+4431;6;2;5;150;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+4521;6;2;6;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+4561;4;0;8;73;NaN;NaN;NaN;NaN;NaN;NaN;0;;1
+4591;6;2;5;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+4601;6;2;19;113;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+4731;6;2;7;14;NaN;NaN;NaN;NaN;NaN;NaN;;;
+4781;4;0;9;105;NaN;NaN;NaN;NaN;NaN;NaN;1;dachte es geht primär um das Bildtagging und dachte die Ranglisten Sache war nur damit man mehr Ergebnisse hat zum auswerten. Im Nachinein finde jedoch das es mich nur motiviert wenn es realitisch ist schnell auf zufzusteigen aber wiederum uninteressant wenn es zu einfach ist. LG :);1
+4841;6;2;11;117;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+4851;5;0;5;40;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+4901;6;2;10;61;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+4921;4;0;6;40;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+4931;4;0;12;81;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+5031;6;2;6;31;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+5081;6;2;3;2;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5101;5;2;5;32;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5141;5;0;7;53;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+5191;6;2;8;61;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+5201;6;2;9;66;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+5241;5;0;10;38;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+5251;6;2;8;85;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+5261;5;0;4;23;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+5311;4;0;10;127;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+5331;6;2;10;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5361;6;2;5;14;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5451;6;2;1;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5461;6;2;11;32;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+5471;6;2;4;4;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5511;6;2;8;65;NaN;NaN;NaN;NaN;NaN;NaN;1;Stimmungsbegriff genauer definieren: nur Adjektive oder generelle Gefühle und Ideen zu BIldern?;1
+5681;4;2;4;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5691;4;0;6;28;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+5701;6;2;6;45;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+5711;6;2;13;85;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+5721;6;2;6;61;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+5731;6;2;5;41;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+5741;6;2;10;57;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+5751;6;2;6;99;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+5761;4;2;10;68;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5771;5;2;5;20;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5781;4;2;23;95;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5791;4;2;7;70;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5801;5;2;9;44;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5811;5;2;12;74;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5821;4;2;14;120;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5831;4;2;9;56;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5841;4;2;9;62;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5851;4;2;5;24;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5861;4;2;15;83;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5871;5;2;18;64;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5881;5;2;4;27;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5891;5;0;2;18;NaN;NaN;NaN;NaN;NaN;NaN;0;;1
+5921;4;2;6;12;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5931;4;2;6;16;NaN;NaN;NaN;NaN;NaN;NaN;;;
+5981;4;2;4;32;NaN;NaN;NaN;NaN;NaN;NaN;;;
+6101;4;0;6;53;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+6111;4;0;4;62;NaN;NaN;NaN;NaN;NaN;NaN;1;420;1
+6121;4;2;10;27;NaN;NaN;NaN;NaN;NaN;NaN;;;
+6131;4;0;22;79;NaN;NaN;NaN;NaN;NaN;NaN;0;nein;1
+6141;4;0;18;106;NaN;NaN;NaN;NaN;NaN;NaN;0;;1
+6151;5;2;4;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+6161;5;0;13;42;NaN;NaN;NaN;NaN;NaN;NaN;0;;1
+6171;5;0;19;81;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+6181;5;2;6;71;NaN;NaN;NaN;NaN;NaN;NaN;;;
+6201;6;2;5;62;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+6271;5;0;7;62;NaN;NaN;NaN;NaN;NaN;NaN;1;;1
+6291;6;2;2;1;NaN;NaN;NaN;NaN;NaN;NaN;;;
+6321;6;2;8;38;NaN;NaN;NaN;NaN;NaN;NaN;;;1
+6331;6;2;1;;NaN;NaN;NaN;NaN;NaN;NaN;;;
+6391;6;2;6;42;NaN;NaN;NaN;NaN;NaN;NaN;0;;1

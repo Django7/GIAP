@@ -132,6 +132,9 @@ CREATE TABLE image_tags (
   uid INT,
   iid INT,
   tag TEXT,
+  rating INT,
+  rating_2 INT,
+  mean_rating float,
   FOREIGN KEY (uid) REFERENCES users (uid),
   FOREIGN KEY (iid) REFERENCES images (iid)
 );
@@ -203,4 +206,3 @@ CREATE TABLE goals_users (
 
 /* Allow the foreign key checks again */
 SET FOREIGN_KEY_CHECKS = 1;
-

@@ -1,5 +1,6 @@
 /** The server URL **/
-var SERVER_URL = 'ws://localhost:8025/ws/wscon';
+var SERVER_URL = 'wss://image-tagging-backend.herokuapp.com/ws/wscon';
+//var SERVER_URL = 'ws://localhost:8025/ws/wscon';
 //var SERVER_URL = 'ws://m.schubhan.de:8025/wscon';
 //var SERVER_URL = 'wss://dobuch.de/ws/wscon/';
 
@@ -47,8 +48,8 @@ var RECONNECTING = false;
 // Field to remember the state of auto-scrolling the elements
 var AUTOSCROLL = true;
 var CURRENT_SLIDE = 0;
-var WIN_MIN_WIDTH = 1000;
-var WIN_MIN_HEIGHT = 600;
+var WIN_MIN_WIDTH = 1240;
+var WIN_MIN_HEIGHT =700;
 
 /** User's current state, containing its points, leaderboards, etc. **/
 var POINTS = -1;
@@ -100,14 +101,17 @@ var ID_COMPARE_COLUMN_825;
  */
 function initStaticEnvironment() {
     //SERVER_URL = 'ws://m.schubhan.de:8025/ws/wscon';
-    SERVER_URL = 'ws://localhost:8025/ws/wscon';
+    SERVER_URL = 'wss://image-tagging-backend.herokuapp.com/ws/wscon';
+    //SERVER_URL = 'ws://localhost:8025/ws/wscon';
     //SERVER_URL = 'wss://dobuch.de/ws/wscon/';
     PLATFORM_OPEN = true;
     DEBUGGING = true;
 
-    TUTORIAL_PICS = ['img/abstract_0001.jpg', 'img/abstract_0002.jpg', 'img/abstract_0003.jpg'];
+    TUTORIAL_PICS = ['img/abstract_0001.jpg', 'img/abstract_0002.jpg'];
+    //, 'img/abstract_0003.jpg'
     TUTORIAL_PICS_CHOICE = ['img/abstract_0001.jpg', 'img/abstract_0002.jpg'];
-    TUTORIAL_EXAMPLES = ['unruhig, verlassen, düster', 'glücklich, ruhig, verträumt', 'dunkel, trist, warm'];
+    TUTORIAL_EXAMPLES = ['unruhig, verlassen, düster', 'glücklich, ruhig, verträumt'];
+    //, 'dunkel, trist, warm'
     TUTORIAL_EXAMPLES_CHOICE = ['unruhig, verlassen, düster', 'glücklich, ruhig, verträumt'];
     TUTORIAL_PIC = 0;
     DECREASE_POINTS = true;
@@ -132,8 +136,8 @@ function initStaticEnvironment() {
     DESIGN_CHARS_MIN = 700;
     AUTOSCROLL = true;
     CURRENT_SLIDE = 0;
-    WIN_MIN_WIDTH = 1000;
-    WIN_MIN_HEIGHT = 600;
+    WIN_MIN_WIDTH = 1240;
+    WIN_MIN_HEIGHT = 700;
     AUTOSCROLL = true;
     reinitGameElements();
 }

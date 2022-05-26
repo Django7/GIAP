@@ -3,20 +3,23 @@ package com.dextreem.gms;
 import com.dextreem.gms.db.MySQLDataStore;
 import com.dextreem.gms.helper.Props;
 import com.dextreem.gms.websocket.MyWebSocketServer;
-import org.apache.log4j.Logger;
+//log4j - logger.log4j
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Created by user_name-pc on 29.01.2018.
+ * Created by user_name-pc on 29.01.2018.   
  */
 public class Main {
     private static final String versionNumber = "2.1 (* Final version for additional study.)";
 
     @SuppressWarnings("WeakerAccess")
-    final static Logger logger = Logger.getLogger(Main.class);
+    final static Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
         logger.info("Starting API...");
@@ -31,8 +34,8 @@ public class Main {
         if (mySQLDataStore.connect()) {
             logger.info("Connecting to database: success!");
         } else {
-            logger.fatal("Connecting to database: fail!");
-            logger.fatal("Could not connect to database. Please try again! Exiting...");
+            logger.error("Connecting to database: fail!");
+            logger.error("Could not connect to database. Please try again! Exiting...");
             return;
         }
 
@@ -45,15 +48,23 @@ public class Main {
                 wss.startServer(mySQLDataStore);
             }
         }catch(NullPointerException ex){
-            logger.fatal(String.format("NPE occured while starting the WebSocket server with ssl property: %s", Props.getProp("api.ws.use.ssl")));
+            logger.error(String.format("NPE occured while starting the WebSocket server with ssl property: %s", Props.getProp("api.ws.use.ssl")));
             throw ex;
         }
         logger.info("Started WebSocket server");
 
         logger.info("API started!");
 
+try {
+    while (true) {
+        System.out.println("Still running");
+        Thread.sleep(10000);
+    }
+}catch ( InterruptedException ex) {
+    ex.printStackTrace();
+}
         /* To block the program from closing immediately */
-        System.out.println("To shutdown, please enter exit");
+        /*System.out.println("To shutdown, please enter exit");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
 
@@ -77,6 +88,6 @@ public class Main {
 //            wss.stop();
             wss.stopServer();
             logger.info("Done! Bye...");
-        }
+        }*/
     }
 }

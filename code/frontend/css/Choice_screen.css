@@ -27,9 +27,9 @@
 
 .choice_img {
     border: 7px solid rgb(46, 109, 165);
-    border-radius: 15px;
+    border-radius: 10px;
     /*width: 200%;*/
-    padding: 10px;
+    padding: 6px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;

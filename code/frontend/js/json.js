@@ -139,7 +139,7 @@ function json_post_message(tags) {
 }
 
 
-/** Returns a josn string to send to the server
+/** Returns a json string to send to the server
  *  Notifies the server which leaderboard was chosen
  *  1 = absolute leaderboard, 2 = relative leaderboard
 */

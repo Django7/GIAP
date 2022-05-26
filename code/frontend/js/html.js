@@ -36,7 +36,6 @@ function setImageFlipper() {
  * Activates the tag-it field
  */
 function setTaggingField(autocomplete_tags) {
-    printLog("TAGGING FIELD SET");
     autocomplete_tags = autocomplete_tags || [];
 
     var tagitField = $('#myTags');
@@ -134,6 +133,120 @@ function startEndDesignSurvey(callafter) {
         getConcept();
     });
 }
+
+
+
+//test
+
+function startIMI(callafter) {
+    startSurveyGeneric('imi', QUEST_IMI ,callafter, null);
+}
+
+function startIMIControl(callafter) {
+    startSurveyGeneric('imi_control', QUEST_IMI_CONTROL ,callafter, null);
+}
+
+function startTaskPerception(callafter) {
+    startSurveyGeneric('task_perception', QUEST_TASK_PERCEPTION ,callafter, null);
+}
+
+function startTaskPerception_Control(callafter) {
+    startSurveyGeneric('task_perception_control', QUEST_TASK_PERCEPTION_CONTROL ,callafter, null);
+}
+
+function startLBS_ABS(callafter) {
+    startSurveyGeneric('lbs_abs', QUEST_LBS_ABS ,callafter, null);
+}
+
+function startLBS_REL(callafter) {
+    startSurveyGeneric('lbs_rel', QUEST_LBS_REL ,callafter, null);
+}
+
+function startLBS_C_ABS(callafter) {
+    startSurveyGeneric('lbs_C_abs', QUEST_LBS_C_ABS ,callafter, null);
+}
+
+function startLBS_C_REL(callafter) {
+    startSurveyGeneric('lbs_C_rel', QUEST_LBS_C_REL ,callafter, null);
+}
+
+function startChoice_Control(callafter) {
+    startSurveyGeneric('choice_control', QUEST_CHOICE_CONTROL ,callafter, null);
+}
+
+function startChoice_ABS(callafter) {
+    startSurveyGeneric('choice_abs', QUEST_CHOICE_ABS ,callafter, null);
+}
+
+function startChoice_REL(callafter) {
+    startSurveyGeneric('choice_rel', QUEST_CHOICE_REL ,callafter, null);
+}
+
+function startChoice_C_ABS(callafter) {
+    startSurveyGeneric('choice_C_abs', QUEST_CHOICE_C_ABS ,callafter, null);
+}
+
+function startChoice_C_REL(callafter) {
+    startSurveyGeneric('choice_C_rel', QUEST_CHOICE_C_REL ,callafter, null);
+}
+
+function startDemographic_Gami(callafter) {
+    startSurveyGeneric('demographic_gami', QUEST_DEMOGRAPHICS_GAMI ,callafter, null);
+}
+
+function startDemographic_Control(callafter) {
+    startSurveyGeneric('demographic_control', QUEST_DEMOGRAPHICS_CONTROL ,callafter, null);
+}
+
+function startBasics_Control(callafter) {
+    startSurveyGeneric('basics_control', QUEST_BASICS_CONTROL ,callafter, null);
+}
+
+function startBasics_Gami(callafter) {
+    startSurveyGeneric('basics_gami', QUEST_BASICS_GAMI ,callafter, null);
+}
+
+function startFinal_Control(callafter) {
+    startSurveyGeneric('final_control', QUEST_FINAL_CONTROL ,callafter, null);
+}
+
+
+function startFinal_ABS(callafter) {
+    startSurveyGeneric('final_abs', QUEST_FINAL_ABS ,callafter, null);
+}
+
+function startFinal_REL(callafter) {
+    startSurveyGeneric('final_rel', QUEST_FINAL_REL ,callafter, null);
+}
+
+function startFinal_C_ABS(callafter) {
+    startSurveyGeneric('final_C_abs', QUEST_FINAL_C_ABS,callafter, null);
+}
+
+function startFinal_C_REL(callafter) {
+    startSurveyGeneric('final_C_rel', QUEST_FINAL_C_REL ,callafter, null);
+}
+
+function startDebrief_Control(callafter) {
+    startSurveyGeneric('debrief_control', QUEST_FINAL_CONTROL_DEBRIEF ,callafter, null);
+}
+function startDebrief_ABS(callafter) {
+    startSurveyGeneric('debrief_abs', QUEST_FINAL_ABS_DEBRIEF ,callafter, null);
+}
+function startDebrief_REL(callafter) {
+    startSurveyGeneric('debrief_rel', QUEST_FINAL_REL_DEBRIEF ,callafter, null);
+}
+function startDebrief_C_ABS(callafter) {
+    startSurveyGeneric('debrief_C_abs', QUEST_FINAL_C_ABS_DEBRIEF ,callafter, null);
+}
+/*function startDebrief_C_REL(callafter) {
+    startSurveyGeneric('debrief_C_rel', QUEST_FINAL_C_REL_DEBRIEF ,callafter, null);
+}*/
+//test end
+
+
+
+
 
 function startSpeedTest() {
     startSurveyGeneric('demographics', SPEED_TEST, function () {
@@ -293,7 +406,6 @@ function setLeaderboardFromAPI(leaderboard) {
         }
     }
     LEADERBOARD_ARRAY = arrayOfData;
-    printLog(arrayOfData);
     //setLeaderboard();
     setLeaderboard(true);
 }
@@ -316,7 +428,6 @@ function setRelativeLeaderboardFromAPI(leaderboard){
     }
 
 
-printLog(Data);
     LEADERBOARD_ARRAY = Data;
     createRelativeDynamicLeaderboard();
 }
@@ -342,16 +453,12 @@ function createRelativeDynamicLeaderboard(){
     var currentposition = 0;
     RawData = JSON.parse(JSON.stringify(LEADERBOARD_ARRAY));
     for (var j = 0; j < LEADERBOARD_ARRAY.length; j++) {
-        //printLog(LEADERBOARD_ARRAY.length);
         if(j!=CURRENT_PLAYER_POSITION && j!=CURRENT_PLAYER_POSITION+1 && j!=CURRENT_PLAYER_POSITION-1){
-           // printLog("spliced");
             RawData.splice(currentposition,1);
-           // printLog(visiblePlayerCount);
         }else if(CURRENT_PLAYER_POSITION==0){currentposition=2;}
         else {currentposition = 3;}
     
     } 
-    printLog(RawData);
     var placeHolder = ["...","...","...",0];
     var Data = [];
     var playerIsAtTop = 1;
@@ -363,13 +470,10 @@ function createRelativeDynamicLeaderboard(){
     for (var c = playerIsAtTop; c < RawData.length+playerIsAtTop; c++) {
         Data[c]=RawData[c-playerIsAtTop];
     }
-    //Data.concat(RawData);
     if(LEADERBOARD_ARRAY[LEADERBOARD_ARRAY.length-1][1]!="Du" && LEADERBOARD_ARRAY[LEADERBOARD_ARRAY.length-1][1]!="Du (Bsp.)" && LEADERBOARD_ARRAY[LEADERBOARD_ARRAY.length-2][1]!="Du" && LEADERBOARD_ARRAY[LEADERBOARD_ARRAY.length-2][1]!="Du (Bsp.)" && LEADERBOARD_ARRAY[LEADERBOARD_ARRAY.length-1][1]!=NICKNAME && LEADERBOARD_ARRAY[LEADERBOARD_ARRAY.length-2][1]!=NICKNAME){
         Data[Data.length] = placeHolder;
     } 
-    //Data.push(placeHolder);
 
-    printLog(Data);
     removeLeaderboardEntrys(fetch);
 
 
@@ -410,7 +514,6 @@ function setAbsoluteLeaderboardFromAPI(leaderboard){
         }
     }
     LEADERBOARD_ARRAY = Data;
-    printLog(LEADERBOARD_ARRAY.length);
     createDynamicLeaderboard();
 }
 
@@ -419,12 +522,9 @@ function setAbsoluteLeaderboardFromAPI(leaderboard){
 function createDynamicLeaderboard(){
     fetch = document.getElementById('table_leaderboard');
     updateRanking();
-    //printLog("VisiblePlayerCount="+ visiblePlayerCount);
-    printLog("init_lb_state"+INITIAL_LEADERBOARD_STATE);
 
     removeLeaderboardEntrys(fetch);
 
-    
     var player_is_here = false;
     for(var i=0; i <LEADERBOARD_ARRAY.length; i++){
         if(LEADERBOARD_ARRAY[i][1] === 'Du (Bsp.)' || LEADERBOARD_ARRAY[i][1] === 'Du' || LEADERBOARD_ARRAY[i][1] === NICKNAME ){player_is_here=true;}
@@ -477,12 +577,11 @@ function setLeaderboard(anim) {
 
     // Remove all players with less than 1100 points
     // TODO: improve this thing
-    printLog('Hier ist leaderboard');
     var index = 0;
     while (index !== -1) {
         index = -1;
         for (var i = 0; i < temp_lb.length; i++) {
-            if (temp_lb[i][0] < 0) {  //Django
+            if (temp_lb[i][0] < 0) {  
                 index = i;
                 break;
             }
@@ -598,7 +697,7 @@ function viewDataPrivacy() {
     });
 }
 
-function viewChoiceOverlay1(){
+function viewChoiceOverlay1(){ //abs first
 
     $.get('views/dialogs/dialogs_abs_rel_choice/mst_choice_view1.html', function (template) {
         var in_design_implemented = arrayContainsElement(USER_GROUP, 'design_implemented');
@@ -614,7 +713,7 @@ function viewChoiceOverlay1(){
     
 }
 
-function viewChoiceOverlay2(){
+function viewChoiceOverlay2(){ //rel first
 
     $.get('views/dialogs/dialogs_abs_rel_choice/mst_choice_view2.html', function (template) {
         var in_design_implemented = arrayContainsElement(USER_GROUP, 'design_implemented');

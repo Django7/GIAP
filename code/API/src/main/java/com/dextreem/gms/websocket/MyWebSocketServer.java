@@ -9,7 +9,8 @@ import com.dextreem.gms.helper.Props;
 import com.dextreem.gms.session.SessionManager;
 import com.dextreem.gms.websocket.runner.WebSocketMessageReceivedThreadPool;
 import com.dextreem.gms.websocket.runner.WebSocketMessageReceivedWorkerThread;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.java_websocket.WebSocket;
 import org.java_websocket.WebSocketImpl;
 import org.java_websocket.handshake.ClientHandshake;
@@ -19,7 +20,8 @@ import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import org.java_websocket.server.DefaultSSLWebSocketServerFactory;
 import javax.net.ssl.KeyManager;
-import javax.xml.bind.DatatypeConverter;
+import java.util.Base64;
+//import javax.xml.bind.DatatypeConverter;
 import java.security.KeyFactory;
 import java.security.KeyStore;
 import java.security.NoSuchAlgorithmException;
@@ -39,13 +41,14 @@ public class MyWebSocketServer extends WebSocketServer {
     private static DataStoreConnector dataStoreConnector = null;
 
     private final SessionManager sessionManager;
-    private final Logger logger = Logger.getLogger(com.dextreem.gms.websocket.MyWebSocketServer.class);
+    private final Logger logger = LoggerFactory.getLogger(com.dextreem.gms.websocket.MyWebSocketServer.class);
 
     /**
      * Creates an WebSocket server and initializes everything needed
      */
     public MyWebSocketServer(){
-        super(new InetSocketAddress(Integer.parseInt(Props.getProp("api.ws.host.port"))));
+        //super(new InetSocketAddress(Integer.parseInt(Props.getProp("api.ws.host.port"))));  //Django muss geändert werden vor push
+        super(new InetSocketAddress(Integer.parseInt(System.getenv("PORT"))));
 
         // Init the session manager
         sessionManager = new SessionManager();
@@ -203,10 +206,13 @@ public class MyWebSocketServer extends WebSocketServer {
     }
 
     private static byte[] parseDERFromPEM(byte[] pem, String beginDelimiter, String endDelimiter) {
+        //Base64.Encoder enc = Base64.getEncoder();
+        Base64.Decoder dec = Base64.getDecoder();
         String data = new String(pem);
         String[] tokens = data.split(beginDelimiter);
         tokens = tokens[1].split(endDelimiter);
-        return DatatypeConverter.parseBase64Binary(tokens[0]);
+        return dec.decode(tokens[0]);
+        //return DatatypeConverter.parseBase64Binary(tokens[0]);
     }
 
     private static RSAPrivateKey generatePrivateKeyFromDER(byte[] keyBytes) throws InvalidKeySpecException, NoSuchAlgorithmException {

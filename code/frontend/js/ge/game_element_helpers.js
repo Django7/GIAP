@@ -2459,10 +2459,20 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
             break;
         }
         default: {
+            if((arrayContainsElement(USER_GROUP, 'none'))){
+                UDGE.onTutorialFinished = function (event, ui) {
+                    startEnjoymentChoice1Survey(function () {
+                    viewTutorialFinished();
+                });
+                };
+                break;
+            }
+            else{
             UDGE.onTutorialFinished = function (event, ui) {
                 startEnjoymentChoice1Survey(function () {BootstrapDialog.show({
                     title: 'Nickname',
                     message: $('<div>Bitte gebe hier deinen Nicknamen (1-8 Zeichen) ein, der später im Ranking erscheinen soll.</div>' +
+                        '<div>Bitte verwende keinen Namen, der auf dich (z. B. weil Freunde wissen, dass du diesen immer verwendest) zurückverfolgt werden kann.</div>' +
                         '<input class="pt-2 pb-2" type="text" id="dia_nickname_id_points">' +
                         '<div id="dia_nickname_id_points_error" class="invisible txt_red">Bitte gebe einen Nicknamen mit 1-8 Zeichen an.</div>'),
                     closable: false,
@@ -2483,10 +2493,9 @@ function setUDGEOnTutorialFinished(main_user_group_id) {
                     }]
                 });});
                 
-                //printLog("UDGE bei tutorial finished angekommen");
-                //viewTutorialFinished();
-            };
 
+            };
+        }
             
         }
     }
@@ -4127,7 +4136,6 @@ function setExampleImageChoice() {
     } else {
         // Set the image
         setImage(TUTORIAL_PICS_CHOICE[TUTORIAL_PIC]);
-        //printLog(TUTORIAL_PICS_CHOICE[TUTORIAL_PIC]+TUTORIAL_EXAMPLES_CHOICE[TUTORIAL_PIC]);
         // Set the respective examples
         setExampleMorales(TUTORIAL_EXAMPLES_CHOICE[TUTORIAL_PIC]);
 
@@ -4141,11 +4149,11 @@ function setExampleImageChoice() {
  * Sets some example points for the tutorial
  */
 function setExamplePoints() {
-    POINTS_ABSOLUTE = 1200;
-    POINTS_RELATIVE = 1200;
-    POINTS = 1200;
+    POINTS_ABSOLUTE = 200;
+    POINTS_RELATIVE = 200;
+    POINTS = 200;
     POINTS_INCR = 100;
-    setPoints(1200);
+    setPoints(200);
 }
 
 function setMainPoints() {
@@ -4155,89 +4163,34 @@ function setMainPoints() {
     setPoints(0);
 }
 
-/**
- * Sets example points for the tutorial in the absolute condition
- */
- /*function setExamplePointsLBAbsolute() {
-    setExamplePoints();
-    printLog('POINTS_ABSOLUTE auf 0 gesetzt' + POINTS_ABSOLUTE)
-    var leaderboard = [
-        {'name': 'verdani', points: 10200},
-        {'name': 'neo23', points: 6000},
-        {'name': 'legolas', points: 2900},
-        {'name': 'Du (Bsp.)', points: 1200},
-        {'name': 'anork85', points: 1100}
-    ];
-    setAbsoluteLeaderboardFromAPI(leaderboard);
-}*/
 
 
 function setExamplePointsLBAbsolute() {
     setExamplePoints();
-    printLog('POINTS_ABSOLUTE auf 0 gesetzt' + POINTS_ABSOLUTE)
     var leaderboard = [
-        {'name': 'verdani', points: 9700},
-        {'name': 'neo23', points: 9200},
-        {'name': 'legolas', points: 8800},
-        {'name': 'Luis', points: 8300},
-        {'name': 'lou95', points: 7900},
-        {'name': 'eeeee', points: 7400},
-        {'name': 'mia', points: 7000},
-        {'name': 'Jan', points: 6300},
-        {'name': 'hi', points: 5700},
-        {'name': '12345', points: 5300},
-        {'name': 'name', points: 4800},
-        {'name': 'mike', points: 4200},
-        {'name': 'Michael7', points: 3800},
-        {'name': 'David', points: 3400},
-        {'name': 'anork85', points: 2900},
-        {'name': 'marcccc', points: 2400},
-        {'name': 'Manu', points: 2000},
-        {'name': 'andi', points: 1600},
-        {'name': 'Du (Bsp.)', points: 1200},
-        {'name': 'luigi', points: 1100},
+        {'name': 'User 1', points: 700},
+        {'name': 'User 2', points: 600},
+        {'name': 'User 3', points: 500},
+        {'name': 'User 4', points: 400},
+        {'name': 'User 5', points: 300},
+        {'name': 'Du (Bsp.)', points: 200},
+        {'name': 'User 6', points: 100},
     ];
     setAbsoluteLeaderboardFromAPI(leaderboard);
 }
 
 
-/*function setExamplePointsLBRelative() {
-    setExamplePoints();
-    printLog('POINTS_ABSOLUTE auf 0 gesetzt' + POINTS_ABSOLUTE)
-    var leaderboard = [
-        {'name': 'verdani', points: 10200},
-        {'name': 'neo23', points: 6000},
-        {'name': 'legolas', points: 2900},
-        {'name': 'Du (Bsp.)', points: 1200},
-        {'name': 'anork85', points: 1100}
-    ];
-    setRelativeLeaderboardFromAPI(leaderboard);
-}*/
 
 function setExamplePointsLBRelative() {
     setExamplePoints();
-    printLog('POINTS_RELATIVE auf 0 gesetzt' + POINTS_RELATIVE)
     var leaderboard = [
-        {'name': 'verdani', points: 9700},
-        {'name': 'neo23', points: 9200},
-        {'name': 'legolas', points: 8800},
-        {'name': 'Luis', points: 8300},
-        {'name': 'lou95', points: 7900},
-        {'name': 'eeeee', points: 7400},
-        {'name': 'mia', points: 7000},
-        {'name': 'Jan', points: 6300},
-        {'name': 'hi', points: 5700},
-        {'name': '12345', points: 5300},
-        {'name': 'name', points: 4800},
-        {'name': 'mike', points: 4200},
-        {'name': 'Michael7', points: 3800},
-        {'name': 'David', points: 3400},
-        {'name': 'anork85', points: 2900},
-        {'name': 'marcccc', points: 2400},
-        {'name': 'Manu', points: 2000},
-        {'name': 'andi', points: 1600},
-        {'name': 'Du (Bsp.)', points: 1200},
-        {'name': 'luigi', points: 1100},
+        {'name': 'User 1', points: 700},
+        {'name': 'User 2', points: 600},
+        {'name': 'User 3', points: 500},
+        {'name': 'User 4', points: 400},
+        {'name': 'User 5', points: 300},
+        {'name': 'Du (Bsp.)', points: 200},
+        {'name': 'User 6', points: 100},
     ];
     setRelativeLeaderboardFromAPI(leaderboard);
 }
@@ -4340,12 +4293,12 @@ function increaseVisiblePoints(event, ui) {
         setPoints(POINTS_RELATIVE);
         adaptLeaderboardRelative();
     } else if(arrayContainsOnOfThoseElements(USER_GROUP, ['choice'])){
-        if(LEADERBOARD_CHOSEN == 2){
+        if(LEADERBOARD_CHOSEN == 2 || (getCookie("leaderboard_chosen")) === "2"){
         POINTS_RELATIVE += POINTS_INCR;
         setPoints(POINTS_RELATIVE);
         adaptLeaderboardRelative();
         } 
-        else if(LEADERBOARD_CHOSEN == 1){
+        else if(LEADERBOARD_CHOSEN == 1 || (getCookie("leaderboard_chosen")) === "1"){
         POINTS_ABSOLUTE += POINTS_INCR;
         setPoints(POINTS_ABSOLUTE);
         adaptLeaderboardAbsolute();
@@ -4361,7 +4314,6 @@ function increaseVisiblePoints(event, ui) {
         adaptLeaderboardAbsolute();
     
      
-       // else if(LEADERBOARD_CHOSEN == 0){}
     }else {
         POINTS += POINTS_INCR;
         setPoints(POINTS);
@@ -4386,11 +4338,35 @@ function decreaseVisiblePoints(event, ui) {
             POINTS_RELATIVE -= POINTS_INCR;
             setPoints(POINTS_RELATIVE);
             adaptLeaderboardRelative();
-        }    else {
-            POINTS -= POINTS_INCR;
+        }    else if(arrayContainsOnOfThoseElements(USER_GROUP, ['choice'])){
+            if(LEADERBOARD_CHOSEN == 2 || (getCookie("leaderboard_chosen")) === "2"){
+            POINTS_RELATIVE -= POINTS_INCR;
+            setPoints(POINTS_RELATIVE);
+            adaptLeaderboardRelative();
+            } 
+            else if(LEADERBOARD_CHOSEN == 1 || (getCookie("leaderboard_chosen")) === "1"){
+            POINTS_ABSOLUTE -= POINTS_INCR;
+            setPoints(POINTS_ABSOLUTE);
+            adaptLeaderboardAbsolute();
+            }
+            else if(LEADERBOARD_CHOSEN == 3){
+            POINTS_RELATIVE -= POINTS_INCR;
+            setPoints(POINTS_RELATIVE);
+            adaptLeaderboardRelative();
+        }
+            else if(LEADERBOARD_CHOSEN == 4){
+            POINTS_ABSOLUTE -= POINTS_INCR;
+            setPoints(POINTS_ABSOLUTE);
+            adaptLeaderboardAbsolute();
+        
+         
+           // else if(LEADERBOARD_CHOSEN == 0){}
+        }else {
+            POINTS += POINTS_INCR;
             setPoints(POINTS);
             adaptLeaderboard();
         }
+    }
     }
 }
 

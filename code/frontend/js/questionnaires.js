@@ -8,14 +8,22 @@ var COLUMNS_5_AGGREE = [
 ];
 
 var COLUMNS_5_TRUE = [
-    {value: 0, text: "Stimmt gar nicht"},
-    {value: 1, text: "Stimmt wenig"},
-    {value: 2, text: "Stimmt ziemlich"},
+    {value: 1, text: "Stimmt gar nicht"},
+    {value: 2, text: "Stimmt wenig"},
     {value: 3, text: "Stimmt teils-teils"},
-    {value: 4, text: "Stimmt völlig"}
+    {value: 4, text: "Stimmt ziemlich"},
+    {value: 5, text: "Stimmt völlig"}
 ];
 
-var COLUMNS_9_APPLY = [
+var COLUMNS_5_MORE_LESS = [
+    {value: 1, text: "Weniger"},
+    {value: 2, text: "Etwas weniger"},
+    {value: 3, text: "Weder mehr noch weniger"},
+    {value: 4, text: "Etwas mehr"},
+    {value: 5, text: "Mehr"}
+];
+
+/*var COLUMNS_9_APPLY = [
     {value: 1, text: "Trifft nicht zu"},
     {value: 2, text: ""},
     {value: 3, text: "Trifft eher nicht zu"},
@@ -25,7 +33,7 @@ var COLUMNS_9_APPLY = [
     {value: 7, text: "Trifft eher zu"},
     {value: 8, text: ""},
     {value: 9, text: "Trifft zu"}
-];
+];*/
 
 var COLUMNS_5_APPLY = [
     {value: 1, text: "Trifft nicht zu"},
@@ -36,6 +44,8 @@ var COLUMNS_5_APPLY = [
 ];
 
 var CHOICES_YES_NO = ["Ja", "Nein"];
+
+var CHOICES_SIDE = ["Linke Version" , "Rechte Version"];
 
 /* -------------------------- QUESTIONNAIRES ------------------------ */
 
@@ -57,7 +67,7 @@ var PART_QUESTS = {
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
         isAllRowRequired: true,
         isRequired: true,
-        columns: COLUMNS_5_AGGREE,
+        columns: COLUMNS_5_TRUE,
         rows: shuffleArray([{
             value: "tagging_fun_1",
             text: "Das Bilder-Taggen hat mir Spaß gemacht."
@@ -76,7 +86,7 @@ var PART_QUESTS = {
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
         isAllRowRequired: true,
         isRequired: true,
-        columns: COLUMNS_5_AGGREE,
+        columns: COLUMNS_5_TRUE,
         rows: shuffleArray([{
             value: "tagging_fun_2",
             text: "Das Bilder-Taggen hat mir Spaß gemacht."
@@ -103,8 +113,8 @@ var PART_QUESTS = {
         title: "Dein Geschlecht?",
         isRequired: true,
         hasOther: true,
-        otherText: "Anderes, und zwar (bitte angeben):",
-        choices: ["Weiblich", "Männlich", "Möchte ich nicht beantworten"]
+        otherText: "Möchte ich selbst beschreiben (bitte angeben):",
+        choices: ["Weiblich", "Männlich","nicht-binär", "Möchte ich nicht beantworten"]
     }, {
         type: "text",
         name: "nationality",
@@ -125,7 +135,7 @@ var PART_QUESTS = {
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
         isAllRowRequired: true,
         isRequired: true,
-        columns: COLUMNS_5_AGGREE,
+        columns: COLUMNS_5_TRUE,
         rows: shuffleArray([{
             value: "tagging_fun_imi",
             text: "Das Bilder-Taggen hat mir Spaß gemacht."
@@ -166,7 +176,7 @@ var PART_QUESTS = {
     },
 
     
-    maximization_scale: [{
+    /*maximization_scale: [{
         type: "matrix",
         name: "maximization_scale",
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
@@ -237,7 +247,7 @@ var PART_QUESTS = {
             value: "regret_5_not_questioning",
             text: "Wenn ich mich einmal entschieden habe, hinterfrage ich diese Entscheidung nicht."
         }])
-    }],
+    }],*/
     additional_comments_study: {
         type: "comment",
         name: "comments",
@@ -259,7 +269,7 @@ var PART_QUESTS = {
             text: "Es war wichtig für mich, so viele Tags wie möglich zu erstellen."
         }]
     },
-    perception_points: {
+    /*perception_points: {
         type: "matrix",
         name: "perception_points",
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
@@ -279,7 +289,63 @@ var PART_QUESTS = {
             value: "pp_4_distracted",
             text: "Ich fühlte mich durch das Erhalten von Punkten abgelenkt."
         }]
+    },*/
+    leaderboard_abs: {
+        type: "matrix",
+        name: "leaderboard_abs",
+        title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
+        isAllRowRequired: true,
+        isRequired: true,
+        columns: COLUMNS_5_AGGREE,
+        rows: [{
+            value: "lbg_1_leaderboard",
+            text: "Ich mochte es, mich mit anderen auf einer Bestenliste zu vergleichen."
+        }, {
+            value: "lbg_2_motivated",
+            text: "Mich mit anderen auf einer Bestenliste vergleichen zu können, hat mich motiviert, mehr Tags zu erstellen."
+        }, {
+            value: "lbg_3_motivating_in_general",
+            text: "Ich finde den Vergleich mit anderen auf einer Bestenliste allgemein motivierend."
+        }, {
+            value: "lbg_4_distracted",
+            text: "Ich fühlte mich durch die Bestenliste abgelenkt."
+        }, {
+            value: "lbg_5_design",
+            text: "Mir hat das Aussehen der Bestenliste gefallen."
+        },{
+            value: "lbs_absolute",
+            text: "Ich mochte es, dass auf der Bestenliste alle Spieler*innen gleichzeitig angezeigt wurden."
+        }]
     },
+
+    leaderboard_rel: {
+        type: "matrix",
+        name: "leaderboard_rel",
+        title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
+        isAllRowRequired: true,
+        isRequired: true,
+        columns: COLUMNS_5_AGGREE,
+        rows: [{
+            value: "lbg_1_leaderboard",
+            text: "Ich mochte es, mich mit anderen auf einer Bestenliste zu vergleichen."
+        }, {
+            value: "lbg_2_motivated",
+            text: "Mich mit anderen auf einer Bestenliste vergleichen zu können, hat mich motiviert, mehr Tags zu erstellen."
+        }, {
+            value: "lbg_3_motivating_in_general",
+            text: "Ich finde den Vergleich mit anderen auf einer Bestenliste allgemein motivierend."
+        }, {
+            value: "lbg_4_distracted",
+            text: "Ich fühlte mich durch die Bestenliste abgelenkt."
+        }, {
+            value: "lbg_5_design",
+            text: "Mir hat das Aussehen der Bestenliste gefallen."
+        },{
+            value: "lbs_relative",
+            text: "Ich mochte es, dass auf der Bestenliste nur die Spieler*innen angezeigt wurden, welche direkt über und unter mir platziert waren."
+        }]
+    },
+
     general_leaderboard: {
         type: "matrix",
         name: "general_leaderboard",
@@ -289,16 +355,19 @@ var PART_QUESTS = {
         columns: COLUMNS_5_AGGREE,
         rows: [{
             value: "lbg_1_leaderboard",
-            text: "Ich mochte es mich mit anderen auf einer Bestenliste zu vergleichen."
+            text: "Ich mochte es, mich mit anderen auf einer Bestenliste zu vergleichen."
         }, {
             value: "lbg_2_motivated",
-            text: "Mich mit anderen auf einer Bestenliste vergleichen zu können hat mich motiviert mehr Tags zu stellen."
+            text: "Mich mit anderen auf einer Bestenliste vergleichen zu können, hat mich motiviert, mehr Tags zu erstellen."
         }, {
             value: "lbg_3_motivating_in_general",
             text: "Ich finde den Vergleich mit anderen auf einer Bestenliste allgemein motivierend."
         }, {
             value: "lbg_4_distracted",
             text: "Ich fühlte mich durch die Bestenliste abgelenkt."
+        }, {
+            value: "lbg_5_design",
+            text: "Mir hat das Aussehen der Bestenliste gefallen."
         }]
     },
 
@@ -309,10 +378,23 @@ var PART_QUESTS = {
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
         isAllRowRequired: true,
         isRequired: true,
-        columns: COLUMNS_5_APPLY,
+        columns: COLUMNS_5_AGGREE,
         rows: [{
             value: "lbs_absolute",
-            text: "Ich mochte es, dass auf der Bestenliste alle Spieler gleichzeitig angezeigt wurden."
+            text: "Ich mochte es, dass auf der Bestenliste alle Spieler*innen gleichzeitig angezeigt wurden."
+        }]
+    },
+
+    lb_specific_more_less:{
+        type: "matrix",
+        name: "lbs_rel_more_less",
+        title: "Inwiefern trifft die folgende Aussage auf dich zu?",
+        isAllRowRequired: true,
+        isRequired: true,
+        columns: COLUMNS_5_MORE_LESS,
+        rows: [{
+            value: "lbs_rel_more_less",
+            text: "Hätte ich gewusst, wie weit Platz 1 entfernt ist, hätte ich mich ... angestrengt."
         }]
     },
 
@@ -322,14 +404,14 @@ var PART_QUESTS = {
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
         isAllRowRequired: true,
         isRequired: true,
-        columns: COLUMNS_5_APPLY,
+        columns: COLUMNS_5_AGGREE,
         rows: [{
             value: "lbs_relative",
-            text: "Ich mochte es, dass auf der Bestenliste nur die Spieler angezeigt wurden, welche direkt über und unter mir platziert waren."
+            text: "Ich mochte es, dass auf der Bestenliste nur die Spieler*innen angezeigt wurden, welche direkt über und unter mir platziert waren."
         }]
     },
 
-    lb_specific_3: {
+    /*lb_specific_3: {
         type: "matrix",
         name: "lbs_absolute_chosen_motivating",
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
@@ -340,17 +422,17 @@ var PART_QUESTS = {
             value: "lbs_3",
             text: "Ich habe die Version der Bestenliste welche alle Spieler gleichzeitig anzeigt hat ausgewählt, weil ich diese Version motivierender fand als die Bestenliste welche nur die Spieler angezeigt hat welche direkt über und unter mir platziert waren."
         }]
-    },
+    },*/
 
-    lb_specific_4 : {
+    lb_specific_3 : {
         type: "comment",
         name: "lbs_absolute_chosen_explain",
         isRequired: true,
         //rows: 3,
-        title: "Warum haben Sie die Bestenliste ausgewählt, welche alle Spieler gleichzeitig angezeigt hat, anstatt der Bestenliste, welche nur die Spieler angezeigt hat welche direkt über und unter mir platziert waren?"
+        title: "Warum hast du die Bestenliste ausgewählt, welche alle Spieler*innen gleichzeitig angezeigt hat, anstatt der Bestenliste, welche nur die Spieler*innen angezeigt hat, welche direkt über und unter dir platziert waren?"
     },
 
-    lb_specific_5: {
+    /*lb_specific_5: {
         type: "matrix",
         name: "lbs_relative_chosen_motivating",
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
@@ -361,26 +443,26 @@ var PART_QUESTS = {
             value: "lbs_relative_chosen_motivating",
             text: "Ich habe die Version der Bestenliste, welche nur die Spieler angezeigt hat welche direkt über und unter mir platziert waren, ausgewählt, weil ich diese Version motivierender fand als die Bestenliste, welche alle Spieler gleichzeitig anzeigt hat."
         }]
-    },
+    },*/
 
-    lb_specific_6 : {
+    lb_specific_4 : {
         type: "comment",
         name: "lbs_relative_chosen_explain",
         isRequired: true,
         //rows: 3,
-        title: "Warum haben Sie die Bestenliste ausgewählt, welche nur die Spieler angezeigt hat welche direkt über und unter mir platziert waren, anstatt der Bestenliste welche alle Spieler gleichzeitig angezeigt hat?"
+        title: "Warum hast du die Bestenliste ausgewählt, welche nur die Spieler*innen angezeigt hat, welche direkt über und unter dir platziert waren, anstatt der Bestenliste, welche alle Spieler*innen gleichzeitig angezeigt hat?"
     },
 
 
    /** ++++++++++++++++++++++++++++++++++choice specifics++++++++++++++++++++++++++++++++++ */
 
-   choice_specific_1: {
+   choice_specific_1: [{
     type: "matrix",
     name: "choice_specific_1",
     title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
     isAllRowRequired: true,
     isRequired: true,
-    columns: COLUMNS_5_APPLY,
+    columns: COLUMNS_5_AGGREE,
     rows: [{
         value: "choice_tutorial",
         text: "Das Tutorial half mir, meine Wahlmöglichkeiten zu verstehen."
@@ -389,7 +471,7 @@ var PART_QUESTS = {
         text: "Ich fühlte mich überfordert zu entscheiden, welche Version der Bestenliste ich verwenden möchte."
     }, {
         value: "choice_satisfied",
-        text: "Ich war mit der getroffenen Wahl, bezüglich der verschiedenen Versionen der Bestenliste zufrieden."
+        text: "Ich war mit der getroffenen Wahl, bezüglich der verschiedenen Versionen der Bestenliste, zufrieden."
     }, {
         value: "choice_liked",
         text: "Ich finde es gut, dass ich entscheiden konnte welche Version der Bestenliste verwendet wurde."
@@ -400,102 +482,135 @@ var PART_QUESTS = {
         value: "choice_more_options",
         text: "Ich hätte gerne noch weitere Entscheidungsmöglichkeiten gehabt."
     }]
-},
+},{
+    type: "comment",
+    name: "choice_ideas",
+    visibleIf: "{choice_specific_1.choice_more_options} >=4",
+    title: "Welche weiteren Entscheidungsmöglichkeiten hättest du gerne gehabt?",
+    isRequired: true,
+}],
+
+/*choice_specific_1_1: {
+    type: "comment",
+    name: "choice_ideas",
+    title: "Welche weiteren Entscheidungsmöglichkeiten hätten Sie gerne gehabt?",
+    isRequired: true,
+},*/
 
 choice_specific_2: {
     type: "matrix",
     name: "choice_none_extra_elements",
-    title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
+    title: "Inwiefern trifft die folgende Aussage auf dich zu?",
     isAllRowRequired: true,
     isRequired: true,
-    columns: COLUMNS_5_APPLY,
+    columns: COLUMNS_5_AGGREE,
     rows: [{
         value: "choice_none_extra_elements",
-        text: "Ich hätte es gut gefunden, wenn die Aufgabe zusätzliche Elemente gehabt hätte (z. B. Punkte für jeden Tag erhalten, oder eine Bestenliste um meine Leistung mit anderen Spielern zu vergleichen)."
+        text: "Ich hätte es gut gefunden, wenn ich in der Aufgabe Punkte hätte sammeln und mich mit anderen Spieler*innen auf einer Bestenliste hätte vergleichen können."
     }]
 },
 
 //Only in Relative Condition
 choice_specific_3: {
     type: "matrix",
+    name: "choice_abs_first_options",
+    title: "Inwiefern trifft die folgende Aussage auf dich zu?",
+    isAllRowRequired: true,
+    isRequired: true,
+    columns: COLUMNS_5_AGGREE,
+    rows: [{
+        value: "choice_abs_first_options",
+        text: "Hier siehst du eine Bestenliste, welche alle Spieler*innen anzeigt, und die Bestenliste, welche du verwendet hast. Hättest du gerne die Option gehabt, zwischen diesen Bestenlisten zu wählen?"
+    }]
+},
+
+choice_specific_3_1: {
+    type: "dropdown",
     name: "choice_prefered_absolute",
-    title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
+    title: "Hättest du lieber die Bestenliste verwendet, welche alle Spieler*innen anzeigt?",
+    isRequired: true,
+    choices: CHOICES_YES_NO
+},
+
+//Only in Relative Condition
+/*choice_specific_3_1: {
+    type: "matrix",
+    name: "choice_prefered_absolute",
+    title: "Inwiefern trifft die folgende Aussage auf dich zu?",
     isAllRowRequired: true,
     isRequired: true,
     columns: COLUMNS_5_APPLY,
     rows: [{
         value: "choice_prefered_absolute",
-        text: "Hier sehen Sie eine Bestenliste, welche alle Spieler anzeigt. Hätten Sie lieber diese Bestenliste verwendet?"
+        text: "Hättest du lieber die Bestenliste verwendet, welche alle Spieler anzeigt?"
     }]
-},
-
-//Only in Relative Condition
-choice_specific_3_1: {
-    type: "matrix",
-    name: "choice_abs_first_options",
-    title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
-    isAllRowRequired: true,
-    isRequired: true,
-    columns: COLUMNS_5_APPLY,
-    rows: [{
-        value: "choice_abs_first_options",
-        text: "Hier sehen Sie eine Bestenliste, welche alle Spieler anzeigt, und die Bestenliste welche Sie verwendet haben. Hätten Sie gerne die Auswahl gehabt welche Version der Bestenliste Sie verwenden möchten?"
-    }]
-},
+},*/
 
 //Only in Absolute Condition
 choice_specific_4: {
     type: "matrix",
+    name: "choice_rel_first_options",
+    title: "Inwiefern trifft die folgende Aussage auf dich zu?",
+    isAllRowRequired: true,
+    isRequired: true,
+    columns: COLUMNS_5_AGGREE,
+    rows: [{
+        value: "choice_rel_first_options",
+        text: "Hier siehst du eine Bestenliste, welche nur die Spieler*innen anzeigt, welche direkt über und unter dir platziert sind, und die Bestenliste, welche du verwendet hast. Hättest du gerne die Option gehabt zwischen diesen Bestenlisten zu wählen?"
+    }]
+},
+
+choice_specific_4_1: {
+    type: "dropdown",
     name: "choice_prefered_relative",
-    title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
+    title: "Hättest du lieber die Bestenliste verwendet, welche nur die Spieler*innen anzeigt welche direkt über und unter dir platziert sind?",
+    isRequired: true,
+    choices: CHOICES_YES_NO
+},
+
+//Only in Absolute Condition
+/*choice_specific_4_1: {
+    type: "matrix",
+    name: "choice_prefered_relative",
+    title: "Inwiefern trifft die folgende Aussage auf dich zu?",
     isAllRowRequired: true,
     isRequired: true,
     columns: COLUMNS_5_APPLY,
     rows: [{
         value: "choice_prefered_relative",
-        text: "Hier sehen Sie eine Bestenliste, welche nur die Spieler anzeigt welche direkt über und unter Ihnen platziert sind. Hätten Sie lieber diese Bestenliste verwendet?"
+        text: "Hättest du lieber die Bestenliste verwendet, welche nur die Spieler anzeigt welche direkt über und unter dir platziert sind?"
     }]
-},
+},*/
 
-//Only in Absolute Condition
-choice_specific_4_1: {
-    type: "matrix",
-    name: "choice_rel_first_options",
-    title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
-    isAllRowRequired: true,
-    isRequired: true,
-    columns: COLUMNS_5_APPLY,
-    rows: [{
-        value: "choice_rel_first_options",
-        text: "Hier sehen Sie eine Bestenliste, welche nur die Spieler anzeigt welche direkt über und unter Ihnen platziert sind, und die Bestenliste, welche Sie verwendet haben. Hätten Sie gerne die Auswahl gehabt welche Version der Bestenliste Sie verwenden möchten?"
-    }]
-},
+
 
 choice_specific_5: {
     type: "matrix",
     name: "choice_specific_5",
-    //title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
+    title: "Inwiefern trifft die folgende Aussage auf dich zu?",
     isAllRowRequired: true,
     isRequired: true,
-    columns: COLUMNS_5_APPLY,
+    columns: COLUMNS_5_AGGREE,
     rows: [{
         value: "choice_none_options",
-        text: "Hier sehen Sie eine Bestenliste, welche nur die Spieler anzeigt welche direkt über und unter Ihnen platziert waren, und eine Bestenliste welche alle Spieler anzeigt. Hätten Sie gerne die Auswahl gehabt welche Version der Bestenliste Sie verwenden möchten?"
+        text: "Hier siehst du zwei verschiedene Bestenlisten. Hättest du gerne die Option gehabt, zwischen diesen Bestenlisten zu wählen?"
     }]
 },
 
+//Die linke Bestenliste zeigt nur die Spieler an, welche direkt über und unter Ihnen stehen, und die rechte Bestenliste zeigt alle Spieler an.
+
 choice_specific_5_1: {
-    type: "choice_specific_5_1",
-    name: "choice_none_decision",
-    title: "Welche Version der Bestenliste hätten Sie gewählt?",
+    type: "dropdown",
+    name: "choice_none_decide",
+    title: "Angenommen, du hättest diese Auswahl gehabt, welche der Bestenlisten hättest du gewählt?",
     isRequired: true,
-    choices: ["Linke Version","Rechte Version"]
+    choices: CHOICES_SIDE,
 },
 
 choice_specific_6: {
     type: "comment",
     name: "choice_none_explain",
-    title: "Warum hätten Sie diese Version der Bestenliste gewählt?",
+    title: "Warum hättest du diese Version der Bestenliste gewählt?",
     isRequired: true,
 },
 
@@ -510,14 +625,14 @@ choice_specific_6: {
     basics_1:{
         type: "dropdown",
         name: "gaming_time",
-        title: "Wie viele Stunden pro Woche spielen Sie im Schnitt Spiele (egal ob analog oder digital)?",
+        title: "Wie viele Stunden pro Woche spielst du im Schnitt Spiele (egal ob analog oder digital)?",
         isRequired: true,
-        choices: ["unter 18", "18-24", "25-31", "32-38", "39-45", "46-52", "53-59", "60 und älter", "Möchte ich nicht beantworten"]
+        choices: ["keine", "weniger als 1", "1-3", "4-10", "11-15", "16-20", "21-25", "mehr als 26", "Möchte ich nicht beantworten"]
     },
     basics_2:{
         type: "dropdown",
         name: "basics_gamification_experience",
-        title: "Unter \"Gamification\" versteht man den Einsatz spieltypischer Elemente (z.B. Punkte/Ranglisten) in spielfremden Umgebungen zur Verhaltensänderung und zur Steigerung der Motivation (z.B. Vergabe von Punkten in Fitnessapps). Haben Sie in der Vergangenheit Erfahrungen mit gamifizierten Systemen gemacht?",
+        title: "Unter \"Gamification\" versteht man den Einsatz spieltypischer Elemente (z.B. Punkte/Ranglisten) in spielfremden Umgebungen zur Verhaltensänderung und zur Steigerung der Motivation (z.B. Vergabe von Punkten in Fitnessapps). Hast du in der Vergangenheit Erfahrungen mit gamifizierten Systemen gemacht?",
         isRequired: true,
         choices: CHOICES_YES_NO,
     },
@@ -529,7 +644,7 @@ choice_specific_6: {
     title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
     isAllRowRequired: true,
     isRequired: true,
-    columns: COLUMNS_5_APPLY,
+    columns: COLUMNS_5_AGGREE,
     rows: [{
         value: "basics_gami_used",
         text: "Ich hätte es bei der Aufgabe in dieser Studie gut gefunden, wenn Gamification verwendet worden wäre."
@@ -541,7 +656,7 @@ choice_specific_6: {
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
         isAllRowRequired: true,
         isRequired: true,
-        columns: COLUMNS_5_APPLY,
+        columns: COLUMNS_5_AGGREE,
         rows: [{
             value: "basics_gami_good",
             text: "Ich fand die in dieser Studie angebotene Gamification gut."
@@ -556,27 +671,27 @@ choice_specific_6: {
         isRequired: true,
         columns: COLUMNS_5_AGGREE,
         rows: [{
-            value: "game_affinity",
+            value: "basics_game_affinity",
             text: "Ich halte mich selbst für spielaffin."
         }, {
-            value: "video_game_frequency",
+            value: "basics_video_game_frequency",
             text: "Ich spiele häufig Videospiele."
         }, {
-            value: "video_game_passion",
+            value: "basics_video_game_passion",
             text: "Ich habe eine Leidenschaft für Videospiele."
         }, {
-            value: "board_game_frequency",
+            value: "basics_board_game_frequency",
             text: "Ich spiele häufig Brettspiele."
         }, {
-            value: "board_game_passion",
+            value: "basics_board_game_passion",
             text: "Ich habe eine Leidenschaft für Brettspiele."
         },{
-            value: "game_performance",
+            value: "basics_game_performance",
             text: "Es ist mir in Spielen allgemein wichtig, gute Leistungen zu bringen."
         }]
     },
 
-    big_five: {
+    /*big_five: {
         type: "matrix",
         name: "big_five_matrix",
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
@@ -614,8 +729,8 @@ choice_specific_6: {
             value: "bf_fantasy",
             text: "Ich habe eine aktive Vorstellungskraft, bin fantasievoll."
         }]
-    },
-    sus: {
+    },*/
+    /*sus: {
         type: "matrix",
         name: "sus_matrix",
         title: "Inwiefern treffen die folgenden Aussagen auf dich zu?",
@@ -653,7 +768,7 @@ choice_specific_6: {
             value: "sus_lot_to_learn_before",
             text: "Ich musste eine Menge lernen, bevor ich anfangen konnte das System zu verwenden."
         }]
-    },
+    },*/
     game_affinity: {
         type: "matrix",
         name: "design_game_affinity",
@@ -684,20 +799,80 @@ choice_specific_6: {
     care_comment_1: {
         type: "dropdown",
         name: "cc_usable",
-        title: "Sollten Ihrer ehrlichen Meinung nach Ihre Daten bei der Analyse der Studienergebnisse verwendet werden?",
+        title: "Sollten deiner ehrlichen Meinung nach deine Daten bei der Analyse der Studienergebnisse verwendet werden?",
         isRequired: true,
         choices: CHOICES_YES_NO
     },
     care_comment_2: {
-        type: "comment",
-        name: "cc_comments",
-        title: "Haben Sie noch Anregungen oder Kommentare zur Studie?",
-        isRequired: false,
+            type: "comment",
+            name: "comments",
+            title: "Hast du weitere Kommentare oder Feedback zur Studie, das du uns mitteilen möchtest? (optional)",
+            rows: 4
+        
     },
+
+
+    debrief_1: {
+        type: "html",
+        name: "debrief",
+        html: "<div class='center'><h3>Zweck der Studie</h3>"+
+            "<p>Fokus der Studie liegt darauf, herauszufinden, ob Menschen, welche die Möglichkeit haben zwischen unterschiedlichen " +
+            "Typen eines bestimmten Spielelements zu wählen, in bestimmten Situationen motivierter sind. " +
+            "Daher testen wir als Spielelement die Bestenliste und beobachten die Anzahl der gegebenen Tags.</p>" +
+            "Hinzufügen: Dieses Ziel konnten wir aber nicht vorab kommunizieren, da dies einen negativen Effekt auf das Experiment gehabt hätte. " +
+            "<p>Du wurdest zufällig einer von insgesamt vier Gruppen zugeordnet:</p>" +
+            "<ul><li>Testgruppe 1: Bilder-Taggen ohne Spielelemente.</li>"+
+            "<li>Testgruppe 2: Bilder-Taggen mit dem Spielelement \"Absolute Bestenliste\", welche alle Spieler*innen anzeigt.</li>"+
+            "<li>Testgruppe 3: Bilder-Taggen mit dem Spielelement \"Relative Bestenliste\",  welche nur die Spieler*innen anzeigt, welche direkt über und unter dir platziert sind."+
+            "</li><li>Testgruppe 4: Bilder-Taggen mit der Möglichkeit zwischen \"Absolute Bestenliste\", welche alle Spieler*innen anzeigt, "+
+                "und \"Relative Bestenliste\", welche nur die Spieler*innen anzeigt, welche direkt über und unter dir platziert sind, zu wählen.</li></ul>"
+    },
+
+    debrief_control: {
+        type: "html",
+        name: "debrief",
+        html: "<div class='center'>"+
+                "<p>Du warst in der <strong>Testgruppe 1</strong>.</p>"+
+       "<p>Wir möchten nun herausfinden, ob es einen Zusammenhang zwischen der Anzahl an erstellten Tags und "+
+            "der Zugehörigkeit der oben genannten Gruppen gibt, also ob Teilnehmer*innen, welche selbst entscheiden konnten welche Bestenliste sie verwenden, "+
+            "gleich viel, oder mehr Tags erstellt haben.</p></div>"
+    },
+
+    debrief_absolute: {
+        type: "html",
+        name: "debrief",
+        html: "<div class='center'>"+
+        "<p>Du warst in <strong>Testgruppe 2</strong>.</p>"+
+        "<p>Wir möchten nun herausfinden, ob es einen Zusammenhang zwischen der Anzahl an erstellten Tags und "+
+        "der Zugehörigkeit der oben genannten Gruppen gibt, also ob Teilnehmer*innen, welche selbst entscheiden konnten welche Bestenliste sie verwenden, "+
+        "gleich viel, oder mehr Tags erstellt haben.</p></div>"
+    },
+
+    debrief_relative: {
+        type: "html",
+        name: "debrief",
+        html: "<div class='center'>"+
+        "<p>Du warst in <strong>Testgruppe 3</strong>.</p>"+
+        "<p>Wir möchten nun herausfinden, ob es einen Zusammenhang zwischen der Anzahl an erstellten Tags und "+
+            "der Zugehörigkeit der oben genannten Gruppen gibt, also ob Teilnehmer*innen, welche selbst entscheiden konnten welche Bestenliste sie verwenden, "+
+            "gleich viel, oder mehr Tags erstellt haben.</p></div>"
+    },
+
+    debrief_choice: {
+        type: "html",
+        name: "debrief",
+        html: "<div class='center'>"+
+        "<p>Du warst in <strong>Testgruppe 4</strong>.</p>"+
+        "<p>Wir möchten nun herausfinden, ob es einen Zusammenhang zwischen der Anzahl an erstellten Tags und "+
+            "der Zugehörigkeit der oben genannten Gruppen gibt, also ob Teilnehmer*innen, welche selbst entscheiden konnten welche Bestenliste sie verwenden, "+
+            "gleich viel, oder mehr Tags erstellt haben.</p></div>"
+    },
+    
+
     end: {
         type: "dropdown",
         name: "end_usable",
-        title: "Dürfen wir unter diesem Aspekt Ihre Daten für die Studie weiterhin verwenden?",
+        title: "Dürfen wir unter diesem Aspekt deine Daten für die Studie weiterhin verwenden?",
         isRequired: true,
         choices: CHOICES_YES_NO        
     },
@@ -728,6 +903,297 @@ choice_specific_6: {
 };
 
 /* ----------- THE "REAL" QUESTIONNAIRES ------------------- */
+
+var QUEST_IMI_CONTROL ={
+    title: "Abschließender Fragebogen (1/7)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.imi)
+    }
+]
+};
+
+var QUEST_IMI ={
+    title: "Abschließender Fragebogen (1/8)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.imi)
+    }
+]
+};
+
+var QUEST_TASK_PERCEPTION ={
+    title: "Abschließender Fragebogen (2/8)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.task_perception)
+    }
+]
+};
+
+var QUEST_TASK_PERCEPTION_CONTROL ={
+    title: "Abschließender Fragebogen (2/7)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.task_perception)
+    }
+]
+};
+
+
+
+var QUEST_LBS_ABS ={
+    title: "Abschließender Fragebogen (3/8)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.leaderboard_abs)
+    }
+]
+};
+
+var QUEST_LBS_REL ={
+    title: "Abschließender Fragebogen (3/8)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.leaderboard_rel).concat(PART_QUESTS.lb_specific_more_less)
+    }
+]
+};
+
+var QUEST_LBS_C_ABS ={
+    title: "Abschließender Fragebogen (3/8)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.leaderboard_abs).concat(PART_QUESTS.lb_specific_3)
+    }
+]
+};
+
+var QUEST_LBS_C_REL ={
+    title: "Abschließender Fragebogen (3/8)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.leaderboard_rel).concat(PART_QUESTS.lb_specific_more_less).concat(PART_QUESTS.lb_specific_4)
+    }
+]
+};
+
+var QUEST_CHOICE_CONTROL ={
+    title: "Abschließender Fragebogen  (3/7)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation,PART_QUESTS.choice_specific_2,(PART_QUESTS.choice_specific_5),{
+            type: "image",
+                name: "choice_rel_first_options_IMG",
+                imageLink: "img/both_lbs_rel_first.png",
+                imageWidth: "904px",
+                imageHeight: "668px"},
+            ].concat(PART_QUESTS.choice_specific_5_1).concat(PART_QUESTS.choice_specific_6)
+    }
+]
+};
+
+var QUEST_CHOICE_ABS ={
+    title: "Abschließender Fragebogen (4/8)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation,PART_QUESTS.choice_specific_4,{
+            type: "image",
+                name: "choice_rel_first_options_IMG",
+                imageLink: "img/both_lbs_rel_first.png",
+                imageWidth: "994,1px",
+                imageHeight: "726,23px"},
+                /*PART_QUESTS.choice_specific_4_1,{
+                    type: "image",
+                        name: "choice_prefered_relative_IMG",
+                        imageLink: "img/rel_lb.PNG",
+                        imageWidth: "452px",
+                        imageHeight: "659,2px"}*/
+            ]
+    }
+]
+};
+
+var QUEST_CHOICE_REL ={
+    title: "Abschließender Fragebogen (4/8)",
+    pages: [{
+        questions: [PART_QUESTS.asterisk_explanation,PART_QUESTS.choice_specific_3,{
+            type: "image",
+                name: "choice_abs_first_options_IMG",
+                imageLink: "img/both_lbs_abs_first.png",
+                imageWidth: "994,1px",
+                imageHeight: "726,23px"},
+                /*PART_QUESTS.choice_specific_3_1,{
+                    type: "image",
+                        name: "choice_prefered_absolute_IMG",
+                        imageLink: "img/abs_lb.PNG",
+                        imageWidth: "563px",
+                        imageHeight: "835px"}*/
+            ]
+    }
+]
+};
+
+
+
+var QUEST_CHOICE_C_ABS ={
+    title: "Abschließender Fragebogen (4/8)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.choice_specific_1)//.concat(PART_QUESTS.choice_specific_1_1)
+    }
+]
+};
+
+var QUEST_CHOICE_C_REL ={
+    title: "Abschließender Fragebogen (4/8)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.choice_specific_1)//.concat(PART_QUESTS.choice_specific_1_1)
+    }
+]
+};
+
+var QUEST_DEMOGRAPHICS_GAMI ={
+    title: "Abschließender Fragebogen (5/8)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.demographics)
+    }
+]
+};
+
+var QUEST_DEMOGRAPHICS_CONTROL ={
+    title: "Abschließender Fragebogen (4/7)",
+    pages: [ {
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.demographics)
+    }
+]
+};
+
+var QUEST_BASICS_CONTROL ={
+    title: "Abschließender Fragebogen (5/7)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation,PART_QUESTS.basics_1,{
+            type: "dropdown",
+            name: "basics_gamification_experience",
+            title: "Unter \"Gamification\" versteht man den Einsatz spieltypischer Elemente (z.B. Punkte/Ranglisten) in spielfremden Umgebungen zur Verhaltensänderung und zur Steigerung der Motivation (z.B. Vergabe von Punkten in Fitnessapps). Hast du in der Vergangenheit Erfahrungen mit gamifizierten Systemen gemacht?",
+            isRequired: true,
+            choices: CHOICES_YES_NO,
+        },{
+            type: "matrix",
+            title: "Inwiefern trifft die folgende Aussage auf dich zu?",
+            name: "basics_gami_general_liking",
+            isRequired: true,
+            visibleIf: "{basics_gamification_experience}='Ja'",
+            columns: COLUMNS_5_AGGREE,
+            rows: [{
+                value: "lbs_5",
+                text: "Ich verwende gerne gamifizierte Systeme."
+            }]
+        },
+        PART_QUESTS.basics_4,PART_QUESTS.basics_7]
+    }
+]
+};
+
+var QUEST_BASICS_GAMI ={
+    title: "Abschließender Fragebogen (6/8)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation,PART_QUESTS.basics_1,{
+            type: "dropdown",
+            name: "basics_gami_exp_except_study",
+            title: "Unter \"Gamification\" versteht man den Einsatz spieltypischer Elemente (z.B. Punkte/Ranglisten) in spielfremden Umgebungen zur Verhaltensänderung und zur Steigerung der Motivation (z.B. Vergabe von Punkten in Fitnessapps). Hast du, abgesehen von der Gamifizierung, die in dieser Studie angeboten bzw. genutzt wurde, in der Vergangenheit Erfahrungen mit gamifizierten Systemen gemacht?",
+            isRequired: true,
+            choices: CHOICES_YES_NO 
+        },{
+            type: "matrix",
+            title: "Inwiefern trifft die folgende Aussage auf dich zu?",
+            name: "basics_gami_general_liking",
+            isRequired: true,
+            visibleIf: "{basics_gami_exp_except_study}='Ja'",
+            columns: COLUMNS_5_AGGREE,
+            rows: [{
+                value: "lbs_5",
+                text: "Ich verwende gerne gamifizierte Systeme."
+            }]
+        },
+        PART_QUESTS.basics_5,PART_QUESTS.basics_7]
+    }
+]
+};
+
+
+var QUEST_FINAL_CONTROL ={
+    title: "Abschließender Fragebogen (6/7)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2)
+    }
+]
+};
+
+
+var QUEST_FINAL_ABS ={
+    title: "Abschließender Fragebogen (7/8)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2)
+    }
+]
+};
+
+var QUEST_FINAL_REL ={
+    title: "Abschließender Fragebogen (7/8)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2)
+    }
+]
+};
+
+var QUEST_FINAL_C_ABS ={
+    title: "Abschließender Fragebogen (7/8)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2)
+    }
+]
+};
+
+var QUEST_FINAL_C_REL ={
+    title: "Abschließender Fragebogen (7/8)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2)
+    }
+]
+};
+
+
+var QUEST_FINAL_CONTROL_DEBRIEF ={
+    title: "Abschließender Fragebogen (7/7)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.debrief_1).concat(PART_QUESTS.debrief_control).concat(PART_QUESTS.end)
+    }
+]
+};
+
+var QUEST_FINAL_ABS_DEBRIEF ={
+    title: "Abschließender Fragebogen (8/8)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.debrief_1).concat(PART_QUESTS.debrief_absolute).concat(PART_QUESTS.end)
+    }
+]
+};
+
+var QUEST_FINAL_REL_DEBRIEF ={
+    title: "Abschließender Fragebogen (8/8)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.debrief_1).concat(PART_QUESTS.debrief_relative).concat(PART_QUESTS.end)
+    }
+]
+};
+
+var QUEST_FINAL_C_ABS_DEBRIEF ={
+    title: "Abschließender Fragebogen (8/8)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.debrief_1).concat(PART_QUESTS.debrief_choice).concat(PART_QUESTS.end)
+    }
+]
+};
+
+var QUEST_FINAL_C_REL_DEBRIEF ={
+    title: "Abschließender Fragebogen (8/8)",
+    pages: [ {
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.debrief_1).concat(PART_QUESTS.debrief_choice).concat(PART_QUESTS.end)
+    }
+]
+};
+
+
 var QUEST_ABSOLUTE ={
     title: "Abschließender Fragebogen",
     showProgressBar: "top",
@@ -746,16 +1212,16 @@ var QUEST_ABSOLUTE ={
     },{
         questions: [PART_QUESTS.asterisk_explanation,PART_QUESTS.choice_specific_4,{
             type: "image",
-                name: "choice_prefered_relative_IMG",
-                imageLink: "img/rel_lb.PNG",
-                imageWidth: "452px",
-                imageHeight: "659,2px"},
+                name: "choice_rel_first_options_IMG",
+                imageLink: "img/choice_rel_first_options_img.PNG",
+                imageWidth: "904px",
+                imageHeight: "668px"},
                 PART_QUESTS.choice_specific_4_1,{
                     type: "image",
-                        name: "choice_rel_first_options_IMG",
-                        imageLink: "img/choice_rel_first_options_img.PNG",
-                        imageWidth: "904px",
-                        imageHeight: "668px"}
+                        name: "choice_prefered_relative_IMG",
+                        imageLink: "img/rel_lb.PNG",
+                        imageWidth: "452px",
+                        imageHeight: "659,2px"}
             ]
     },{
         questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.demographics)
@@ -779,7 +1245,7 @@ var QUEST_ABSOLUTE ={
         },
         PART_QUESTS.basics_5,PART_QUESTS.basics_7]
     },{
-        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2).concat(PART_QUESTS.end)
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2).concat(PART_QUESTS.debrief_1).concat(PART_QUESTS.debrief_absolute).concat(PART_QUESTS.end)
     }]
 };
 
@@ -801,16 +1267,16 @@ var QUEST_RELATIVE ={
     },{
         questions: [PART_QUESTS.asterisk_explanation,PART_QUESTS.choice_specific_3,{
             type: "image",
-                name: "choice_prefered_absolute_IMG",
-                imageLink: "img/abs_lb.PNG",
-                imageWidth: "563px",
-                imageHeight: "835px"},
+                name: "choice_abs_first_options_IMG",
+                imageLink: "img/choice_abs_first_options_img.PNG",
+                imageWidth: "994,1px",
+                imageHeight: "726,23px"},
                 PART_QUESTS.choice_specific_3_1,{
                     type: "image",
-                        name: "choice_abs_first_options_IMG",
-                        imageLink: "img/choice_abs_first_options_img.PNG",
-                        imageWidth: "994,1px",
-                        imageHeight: "726,23px"}
+                        name: "choice_prefered_absolute_IMG",
+                        imageLink: "img/abs_lb.PNG",
+                        imageWidth: "563px",
+                        imageHeight: "835px"}
             ]
     },{
         questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.demographics)
@@ -826,7 +1292,7 @@ var QUEST_RELATIVE ={
             name: "basics_gami_general_liking",
             isRequired: true,
             visibleIf: "{basics_gamification_experience}='Ja'",
-            columns: COLUMNS_5_APPLY,
+            columns: COLUMNS_5_AGGREE,
             rows: [{
                 value: "lbs_5",
                 text: "Ich verwende gerne gamifizierte Systeme."
@@ -834,7 +1300,7 @@ var QUEST_RELATIVE ={
         },
         PART_QUESTS.basics_5,PART_QUESTS.basics_7]
     },{
-        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2).concat(PART_QUESTS.end)
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2).concat(PART_QUESTS.debrief_1).concat(PART_QUESTS.debrief_relative).concat(PART_QUESTS.end)
     }]
 };
 
@@ -850,15 +1316,13 @@ var QUEST_CONTROL ={
     },*/{
         questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.task_perception)
     },{
-        questions: [PART_QUESTS.asterisk_explanation,{
-
-        },{
+        questions: [PART_QUESTS.asterisk_explanation,PART_QUESTS.choice_specific_2,{
             type: "image",
-                name: "banner",
+                name: "choice_rel_first_options_IMG",
                 imageLink: "img/choice_rel_first_options_img.PNG",
-                imageWidth: "1130px",
-                imageHeight: "835px"},PART_QUESTS.choice_specific_5,PART_QUESTS.choice_specific_5_1,PART_QUESTS.choice_specific_6
-            ]
+                imageWidth: "904px",
+                imageHeight: "668px"},
+            ].concat(PART_QUESTS.choice_specific_5).concat(PART_QUESTS.choice_specific_5_1).concat(PART_QUESTS.choice_specific_6)
     },{
         questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.demographics)
     },{
@@ -881,7 +1345,7 @@ var QUEST_CONTROL ={
         },
         PART_QUESTS.basics_4,PART_QUESTS.basics_7]
     },{
-        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2).concat(PART_QUESTS.end)
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2).concat(PART_QUESTS.debrief_control).concat(PART_QUESTS.debrief_control).concat(PART_QUESTS.end)
     }]
 };
 
@@ -899,9 +1363,9 @@ var QUEST_ABSOLUTE_CHOSEN ={
     },/*{
         questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.perception_points)
     },*/{
-        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.general_leaderboard).concat(PART_QUESTS.lb_specific_1).concat(PART_QUESTS.lb_specific_3).concat(PART_QUESTS.lb_specific_4)
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.general_leaderboard).concat(PART_QUESTS.lb_specific_1).concat(PART_QUESTS.lb_specific_3)
     },{
-        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.choice_specific_1)
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.choice_specific_1).concat(PART_QUESTS.choice_specific_1_1)
     },{
         questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.demographics)
     },{
@@ -924,7 +1388,7 @@ var QUEST_ABSOLUTE_CHOSEN ={
         },
         PART_QUESTS.basics_5,PART_QUESTS.basics_7]
     },{
-        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2).concat(PART_QUESTS.end)
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2).concat(PART_QUESTS.debrief_1).concat(PART_QUESTS.debrief_choice).concat(PART_QUESTS.end)
     }]
 };
 
@@ -942,9 +1406,9 @@ var QUEST_RELATIVE_CHOSEN ={
     },/*{
         questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.perception_points)
     },*/{
-        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.general_leaderboard).concat(PART_QUESTS.lb_specific_2).concat(PART_QUESTS.lb_specific_5).concat(PART_QUESTS.lb_specific_6)
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.general_leaderboard).concat(PART_QUESTS.lb_specific_2).concat(PART_QUESTS.lb_specific_4)
     },{
-        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.choice_specific_1)
+        questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.choice_specific_1).concat(PART_QUESTS.choice_specific_1_1)
     },{
         questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.demographics)
     },{
@@ -967,23 +1431,23 @@ var QUEST_RELATIVE_CHOSEN ={
         },
         PART_QUESTS.basics_5,PART_QUESTS.basics_7]
     },{
-        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2).concat(PART_QUESTS.end)
+        questions:[PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.care_comment_1,PART_QUESTS.care_comment_2).concat(PART_QUESTS.debrief_1).concat(PART_QUESTS.debrief_choice).concat(PART_QUESTS.end)
     }]
 };
 
 
 
 var QUEST_ENJOY_CHOICE_1 ={
-    title: "Vergnügen",
-    showProgressBar: "top",
+    title: "Zwischenfragebogen",
+    //showProgressBar: "top",
     pages: [{
         questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.KIM_enjoyment_choice1)
     }]
 };
 
 var QUEST_ENJOY_CHOICE_2 ={
-    title: "Vergnügen",
-    showProgressBar: "top",
+    title: "Zwischenfragebogen",
+    //showProgressBar: "top",
     pages: [{
         questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.KIM_enjoyment_choice2)
     }]
@@ -991,7 +1455,7 @@ var QUEST_ENJOY_CHOICE_2 ={
 
 var MAXIMIZATION_SCALE ={
     title: "Maximieren",
-    showProgressBar: "top",
+    //showProgressBar: "top",
     pages: [{
         questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.maximization_scale)
     }]
@@ -1002,7 +1466,7 @@ var MAXIMIZATION_SCALE ={
  */ 
 var QUEST_DEMOGRAPHICS_NORMAL = {
     title: "Demographische Daten",
-    showProgressBar: "top",
+    //showProgressBar: "top",
     pages: [{
         questions: [PART_QUESTS.asterisk_explanation].concat(PART_QUESTS.demographics)
     }, {

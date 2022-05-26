@@ -1,6 +1,7 @@
 package com.dextreem.gms.helper;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.HashMap;
@@ -13,7 +14,7 @@ import java.util.Properties;
 public class Props {
 
     private static Properties props = new Properties();
-    final static Logger logger = Logger.getLogger(Props.class);
+    final static Logger logger = LoggerFactory.getLogger(Props.class);
     private static final String path = "props/settings.properties";
     private static Map<String, Integer> offsets = null;
 
@@ -36,6 +37,10 @@ public class Props {
      * @param key The key to get the property for
      * @return {key}'s respective property, null if {key} does not exist
      */
+    public static void setProp(String key, String value){
+        props.setProperty(key,value);
+    }
+
     public static String getProp(String key) {
         return props.getProperty(key);
     }

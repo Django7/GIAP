@@ -25,34 +25,67 @@
                 <p>
                     Du hast die Studie erfolgreich abgeschlossen und kannst das Browserfenster nun schließen.
                 </p>
-                <p>
+               <!-- <p>
                     Für Nutzer von <strong>SurveyCircle</strong> (www.surveycircle.com): Der Survey Code lautet:
                     Y9Z8-EDBZ-HUPJ-6K96
-                </p>
-                <h3>Zweck der Studie</h3>
-                <p>
+                </p>-->
+                <!--<h3>Zweck der Studie</h3>-->
+                <!--<p>
                     Fokus der Studie liegt darauf, herauszufinden, ob Menschen in der Lage sind, Spielkonzepte zu
                     entwickeln, die ihnen persönlich dabei helfen, ihre Motivation in bestimmten Situationen (hier: mehr
                     Tags erstellen) zu erhöhen.
+                </p>-->
+
+                <!--<p>
+                    Fokus der Studie liegt darauf, herauszufinden, ob Menschen, welche die Möglichkeit haben zwischen unterschiedlichen 
+                    Typen eines bestimmten Spielelements zu wählen (hier: Bestenlisten), in bestimmten Situationen (hier: mehr Tags erstellen) 
+                    motivierter sind.
                 </p>
+
                 <p>
-                    Du wurdest zufällig einer von insgesamt drei Gruppen zugeordnet:
+                    Du wurdest zufällig einer von insgesamt vier Gruppen zugeordnet:
                 </p>
                 <ul>
                     <li>
-                        Testgruppe 1: Erstellung eines Spielkonzepts und Bilder-Taggen mit dessen Realisierung.
+                        Kontrollgruppe: Bilder-Taggen ohne Spielelemente.
                     </li>
                     <li>
-                        Testgruppe 2: Erstellung eines Spielkonzepts und Bilder-Taggen mit der Realisierung eines <em>anderen</em>
-                        Spielkonzepts.
+                        Testgruppe 1: Bilder-Taggen mit dem Spielelement "Absolute Bestenliste", welche alle Spieler anzeigt.
                     </li>
                     <li>
-                        Kontrollgruppe: Bilder-Taggen mit vordefinierten Oberflächen, ohne ein persönliches Spielkonzept
-                        entwickelt zu haben.
+                        Testgruppe 2: Bilder-Taggen mit dem Spielelement "Relative Bestenliste",  welche nur die Spieler anzeigt
+                        welche direkt über und unter Ihnen platziert sind.
+                    </li>
+                    <li>
+                        Testgruppe 3: Bilder-Taggen mit der Möglichkeit zwischen "Absolute Bestenliste", welche alle Spieler anzeigt,
+                        und "Relative Bestenliste",  welche nur die Spieler anzeigt welche direkt über und unter Ihnen platziert sind, zu wählen.
                     </li>
                 </ul>
 
-                {{#design_implemented}}
+                {{#control}}
+                <p>
+                    Du warst in der <strong>Kontrollgruppe</strong>.
+                </p>
+                {{/control}}
+                {{#absolute}}
+                <p>
+                    Du warst in <strong>Testgruppe 1</strong>.
+                </p>
+                {{/absolute}}
+                {{#relative}}
+                <p>
+                    Du warst in <strong>Testgruppe 2</strong>.
+                </p>
+                {{/relative}}
+                {{#choice}}
+                <p>
+                    Du warst in <strong>Testgruppe 3</strong>.
+                </p>
+                {{/choice}}-->
+
+
+
+                <!--{{#design_implemented}}
                 <p>
                     {{#generic_implementation}}
                     Du warst in <strong>Testgruppe 2</strong>.
@@ -66,13 +99,13 @@
                 <p>
                     Du warst in der <strong>Kontrollgruppe</strong>.
                 </p>
-                {{/design_implemented}}
+                {{/design_implemented}}-->
 
-                <p>
+                <!--<p>
                     Wir möchten nun herausfinden, ob es einen Zusammenhang zwischen der Anzahl an erstellten Tags und
-                    der Zugehörigkeit der oben genannten Gruppen gibt, also ob Teilnehmer mit selbst erstellten
-                    Spielekonzepten weniger, gleich viel oder mehr Tags erstellt haben.
-                </p>
+                    der Zugehörigkeit der oben genannten Gruppen gibt, also ob Teilnehmer, welche selbst entscheiden konnten welche Bestenliste sie verwenden, 
+                    gleich viel oder mehr Tags erstellt haben.
+                </p>-->
 
                 <p>
                     Mit deiner Teilnahme hast du uns sehr geholfen.
@@ -113,7 +146,7 @@
 
                 {{#leaderboard}}
                 <p>
-                    Wenn du möchtest, kannst du hier deinen Namen in der Bestenliste anpassen.
+                    Hier kannst du deinen Namen in der Bestenliste anpassen.
                 </p>
                 <label class="pull-right">
                     Name:

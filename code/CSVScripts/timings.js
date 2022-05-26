@@ -12,6 +12,13 @@ var dbConnection = mysql.createConnection({
 
 var sql =
     "SELECT\n" +
+    "  uid,\n" +
+    "  iid\n" +
+    "FROM \n" +
+    "\timage_log;"
+
+  /*  var sql =
+    "SELECT\n" +
     "  image_log.uid,\n" +
     "  gid,\n" +
     "  iid,\n" +
@@ -22,7 +29,7 @@ var sql =
     "    users_groups\n" +
     "    ON(image_log.uid = users_groups.uid)\n" +
     "WHERE iid > 3\n" +
-    "ORDER BY uid, iid;";
+    "ORDER BY uid, iid;";*/
 
 dbConnection.connect(function(err) {
     if (err) {

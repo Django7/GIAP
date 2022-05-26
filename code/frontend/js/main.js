@@ -30,6 +30,7 @@ function heartbeating() {
 function initSurvey() {
     //Survey.Survey.cssType = "bootstrap";
    Survey.StylesManager.applyTheme("bootstrap");
+Survey.defaultBootstrapCss.navigationButton = "btn btn-blue";
 }
 
 /**
@@ -73,8 +74,10 @@ function postImageTags() {
     UDGE.afterPostImage();
 
     var tags = $("#myTags").tagit("assignedTags").join(',');
-    // addUserTagsToImageList(CURRENT_IMAGE, tags);
+    //if(tags!=''){sendPost(tags);}
     sendPost(tags);
+    // addUserTagsToImageList(CURRENT_IMAGE, tags);
+    
 }
 
 /**
@@ -131,7 +134,7 @@ function setFinalTaggingEnvironment() {
  */
 function setGenericTaggingEnvironment(container, fun_array, mst_params, frame_only) {
 
-    printLog("ich werde nach jedem bild neu ausgeführt");
+    
     /* Check if the user is in the design condition.
     If yes, show only this, no other element, and especially no tagging environment.*/
     if (arrayContainsElement(USER_GROUP, "design")) {
@@ -144,7 +147,6 @@ function setGenericTaggingEnvironment(container, fun_array, mst_params, frame_on
         }
         return;
 
-        // Django, hier anstatt getLeaderboard zu verwenden in absolute/relative conditions, ein BSP setzen wie bei dem Tutorial?
     } else { /* Otherwise, add the game elements to the tagging environment */
         if (getMainUserGroup() === null) {
             if (arrayContainsElement(USER_GROUP, "td")) {
@@ -185,13 +187,12 @@ function setTaggingTutorial() {
         else {setExampleImage();}
         setImageFlipper();
         disableTagFieldAndNextButton();
-         setTaggingField();  //django
+        setTaggingField();  
     }];
     var mst_params = {tutorial: true};
 
     // TODO: Merge tutorials
     // TODO: Remove else-ifs and append them intelligently
-    // Django TODO: create cases for absoluteLB, relativeLB, Choice, none kann bleiben
     if (arrayContainsElement(USER_GROUP, "design_implemented")) {
         mst_params['tutorial_implemented_design'] = true;
         setVisibleTutorialViews(mst_params);
@@ -219,39 +220,30 @@ function setTaggingTutorial() {
             startPAndLTutorial()
         }]);
     } else if (arrayContainsElement(USER_GROUP, "absolute")) {
-        printLog("absolute ausgewählt");
         mst_params['tutorial_normal'] = true;
         mst_params['stats'] = true;
         mst_params['points'] = true;
         mst_params['leaderboard'] = true;
         fun_array = fun_array.concat([function () {
             setExamplePointsLBAbsolute();
-            //createScoreboardTable();
-            //setstandardLeaderboard();
             startPAndLTutorial()
         }]);      
     } else if (arrayContainsElement(USER_GROUP, "relative")) {
-        printLog("relative ausgewählt");
         mst_params['tutorial_normal'] = true;
         mst_params['stats'] = true;
         mst_params['points'] = true;
         mst_params['leaderboard'] = true;
         fun_array = fun_array.concat([function () {
             setExamplePointsLBRelative();
-            //createScoreboardTable();
-            //setstandardLeaderboard();
             startPAndLTutorial()
         }]);     
     } else if (arrayContainsElement(USER_GROUP, "choice")) {
-        printLog("choice ausgewählt");
         mst_params['tutorial_normal'] = true;
         mst_params['stats'] = true;
         mst_params['points'] = true;
         mst_params['leaderboard'] = true;
         fun_array = fun_array.concat([function () {
-            //setExamplePointsLBRelative(); //wir starten hier mit dem relativen leaderboard, nach dem zwischensurvey wird dann das absolute abgespielt
-            //createScoreboardTable();
-            //setstandardLeaderboard();
+
 
 //HIER WEITERMACHEN
 
@@ -295,7 +287,6 @@ function setVisibleTutorialViews(mst_params) {
  */
 function setEnd() {
 
-    printLog("SETEND TRIGGERED");
 
     var $btn_quit_study = $('#btn_quit_study');
     var $main_controller = $('#main_container');
@@ -313,12 +304,16 @@ function setEnd() {
         show_quest_btn: true,
         show_extra_btn: false,
         g_add_round: true,
-        design_implemented : arrayContainsElement(USER_GROUP, 'design_implemented'),
-        generic_implementation : arrayContainsElement(USER_GROUP, 'generic_implementation')
+        control: arrayContainsElement(USER_GROUP, 'none'),
+        absolute: arrayContainsElement(USER_GROUP, 'absolute'),
+        relative: arrayContainsElement(USER_GROUP, 'relative'),
+        choice: arrayContainsElement(USER_GROUP, 'choice')
+        //design_implemented : arrayContainsElement(USER_GROUP, 'design_implemented'),
+        //generic_implementation : arrayContainsElement(USER_GROUP, 'generic_implementation')
     };
 
     // Final questionnaire already submitted?
-    if (QUESTS['end_normal'] || QUESTS['end_design'] ||  QUESTS['end_absolute']) {
+    if (QUESTS['end_normal'] || QUESTS['end_design'] ||  QUESTS['final_control'] || QUESTS['final_abs'] || QUESTS['final_rel'] || QUESTS['final_C_abs'] || QUESTS['final_C_rel']) {
         mst_params['show_quest_btn'] = false;
         mst_params['show_extra_btn'] = false;
         mst_params['with_frame'] = true;
@@ -406,7 +401,6 @@ function startBasicTutorial() {
  *
  */
 function nextTutorialImage() {
-    printLog("next Tutorial Image aufgerufen")
     var tags = [];
     $('#myTags').each(function () {
         tags.push($(this).text())
@@ -541,7 +535,7 @@ function startChoiceTutorial1() {
                             'Weiter',
                             function () {
                                 viewLeftTutorialOverlay(
-                                    'Relative Bestenliste',
+                                    'Erste Bestenliste',
                                     $('<div></div>').load('views/dialogs/dialogs_abs_rel_choice/dia_tutorial1_leaderboard_choice_relative.html'),
                                     'Weiter',
                                     function () {
@@ -562,10 +556,7 @@ function startChoiceTutorial1() {
 
 //CCT: continue choice tutorial (alle funktionen, welche das choice tutorial beinhaltet)
 function CCT1_after_first_ImageTagging(){
-    //var div_it_stats = $('#div_it_stats');
-    //setInvisible(div_it_stats);
 
-    printLog("CCT gestartet");
     var tags = [];
     $('#myTags').each(function () {
         tags.push($(this).text())
@@ -593,10 +584,7 @@ function CCT1_after_first_ImageTagging(){
 
 function CCT1_choice_second_tutorial(){
     
-   /* var next_img_btn = $('#next_img');
-    next_img_btn.prop('onclick', null).off('click');
-    next_img_btn.prop('disabled', true);*/
-    //printLog("111111111111111" + next_img_btn);
+
     
 
     var div_it_stats = $('#div_it_stats');
@@ -615,12 +603,11 @@ function CCT1_choice_second_tutorial(){
         next_img_btn.prop('disabled', true);
         
         setExampleImageChoice();
-        //setExamplePointsLBAbsolute();
         setImageFlipper();
         disableTagFieldAndNextButton(); 
         setTimeout( function () {
         viewLeftTutorialOverlay(
-            'Absolute Bestenliste',
+            'Zweite Bestenliste',
             $('<div></div>').load('views/dialogs/dialogs_abs_rel_choice/dia_tutorial1_leaderboard_choice_absolute.html'),
             'Weiter',
              
@@ -634,16 +621,14 @@ function CCT1_choice_second_tutorial(){
         }, 1000);
             
         setExamplePointsLBAbsolute(); 
-        //setTaggingField();  //django
+
     }];
     renderAndSetMustacheElement(mc, 'views/mst_tagging_environment.html', mst_params, fun_array, false);
-    //var div_it_stats = $('#div_it_stats');
-    //setVisible(div_it_stats);  
+
     
 }
 
 function CCT1_after_second_ImageTagging(){
-    printLog("CCT Part 2 gestartet");
     var tags = [];
     $('#myTags').each(function () {
         tags.push($(this).text())
@@ -661,28 +646,15 @@ function CCT1_after_second_ImageTagging(){
 
             $('.tagit-choice').remove();
 
-                //setExampleImageChoice();
-                //$('#next_img').prop('disabled', false);
 
-                //flipIn(5);
-
-
-
-
-                // Change the message if it's the last image
-               /* if (TUTORIAL_PIC >= TUTORIAL_PICS.length) {
-                    setInvisible($('#tut_next_img_label'));
-                    setVisible($('#tut_next_img_end_label'));
-                }*/
-                //setInvisible(div_it_stats);
                 startEnjoymentChoice2Survey(CCT1_after_second_Survey);
             
             }
-    //setVisible($('#choice_process'));
+
 }
 
 function CCT1_after_second_Survey(){
-    btn_oc_viewChoice1();
+    btn_oc_viewChoice2();
 }
 
 
@@ -718,7 +690,7 @@ function startChoiceTutorial2() {
                             'Weiter',
                             function () {
                                 viewLeftTutorialOverlay(
-                                    'Absolute Bestenliste',
+                                    'Erste Bestenliste',
                                     $('<div></div>').load('views/dialogs/dialogs_abs_rel_choice/dia_tutorial2_leaderboard_choice_absolute.html'),
                                     'Weiter',
                                     function () {
@@ -739,10 +711,7 @@ function startChoiceTutorial2() {
 
 //CCT: continue choice tutorial (alle funktionen, welche das choice tutorial beinhaltet)
 function CCT2_after_first_ImageTagging(){
-    //var div_it_stats = $('#div_it_stats');
-    //setInvisible(div_it_stats);
 
-    printLog("CCT gestartet");
     var tags = [];
     $('#myTags').each(function () {
         tags.push($(this).text())
@@ -770,10 +739,6 @@ function CCT2_after_first_ImageTagging(){
 
 function CCT2_choice_second_tutorial(){
     
-   /* var next_img_btn = $('#next_img');
-    next_img_btn.prop('onclick', null).off('click');
-    next_img_btn.prop('disabled', true);*/
-    //printLog("111111111111111" + next_img_btn);
     
 
     var div_it_stats = $('#div_it_stats');
@@ -797,7 +762,7 @@ function CCT2_choice_second_tutorial(){
         disableTagFieldAndNextButton(); 
         setTimeout( function () {
         viewLeftTutorialOverlay(
-            'Absolute Bestenliste',
+            'Zweite Bestenliste',
             $('<div></div>').load('views/dialogs/dialogs_abs_rel_choice/dia_tutorial2_leaderboard_choice_relative.html'),
             'Weiter',
              
@@ -811,16 +776,14 @@ function CCT2_choice_second_tutorial(){
         }, 1000);
             
         setExamplePointsLBRelative(); 
-        //setTaggingField();  //django
+
     }];
     renderAndSetMustacheElement(mc, 'views/mst_tagging_environment.html', mst_params, fun_array, false);
-    //var div_it_stats = $('#div_it_stats');
-    //setVisible(div_it_stats);  
+
     
 }
 
 function CCT2_after_second_ImageTagging(){
-    printLog("CCT Part 2 gestartet");
     var tags = [];
     $('#myTags').each(function () {
         tags.push($(this).text())
@@ -859,7 +822,7 @@ function CCT2_after_second_ImageTagging(){
 }
 
 function CCT2_after_second_Survey(){
-    btn_oc_viewChoice2();
+    btn_oc_viewChoice1();
 }
 
 

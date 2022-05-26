@@ -1,3 +1,5 @@
+
+
 /**
  * Registering a new user.
  * Does not explicitly logging in the user (the API's answer triggers the event)
@@ -18,14 +20,11 @@ function btn_oc_welcomeScreen_next() {
         startDemographicsBigFiveSurvey(function () {
             viewWelcomeOverlay();
         });
-    } else if (arrayContainsOnOfThoseElements(USER_GROUP, ['none', 'td', 'id_test_12'])) {
+    } else if (arrayContainsOnOfThoseElements(USER_GROUP, [ 'td', 'id_test_12'])) {
         startDemographicsSurveyNormal(function () {
             viewWelcomeOverlay();
         });
-    } else if (arrayContainsOnOfThoseElements(USER_GROUP, ['absolute','relative','choice'])) {
-      /*  startShortcutSurvey(function () {
-            viewWelcomeOverlay();
-        });*/
+    } else if (arrayContainsOnOfThoseElements(USER_GROUP, ['none','absolute','relative','choice'])) {
         viewWelcomeOverlay();
     } else {
         printErr("Could not find a starting survey for user in group(s) " + USER_GROUP);
@@ -64,9 +63,10 @@ function btn_oc_viewChoice2(){
 
 function btn_oc_absoluteLBchosen(){
     
-    printLog("LEFT BUTTON CHOSEN");
     LEADERBOARD_CHOSEN = 1;
     send(json_post_choice_absolute());
+    setCookie('leaderboard_chosen', '1');
+    setCookie('tut_done', 'true');
     UDGE.onTutorialFinished();
     //setTaggingEnvironment();
 }
@@ -75,6 +75,8 @@ function btn_oc_relativeLBchosen(){
     
     LEADERBOARD_CHOSEN = 2;
     send(json_post_choice_relative());
+    setCookie('leaderboard_chosen', '2');
+    setCookie('tut_done', 'true');
     UDGE.onTutorialFinished();
     //setTaggingEnvironment();
 }
@@ -103,6 +105,9 @@ function btn_oc_viewTutorialFinished() {
         reinitGameElements();
     }
 }
+
+
+
 
 /**
  * Starts an extra round
@@ -145,21 +150,71 @@ function btn_oc_end_questionnaire() {
         });
     } else if (arrayContainsElement(USER_GROUP, 'design')) {
         printErr('Tried to start survey when in design task. This should not happen!');
+    
+    
     } else if(arrayContainsElement(USER_GROUP, 'absolute')){
-        startAbsoluteEndSurvey(function () {
-            setEnd();
+            startIMI(function () {
+                startTaskPerception(function () {
+                    startLBS_ABS(function(){
+                        startChoice_ABS(function () {
+                            startDemographic_Gami(function () {
+                                startBasics_Gami(function () {
+                                    startFinal_ABS(function () {
+                                        startDebrief_ABS(function (){
+                                        setEnd();
+                                     });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
         });
     } else if(arrayContainsElement(USER_GROUP, 'relative')){
-        startRelativeEndSurvey(function () {
-            setEnd();
+        startIMI(function () {
+            startTaskPerception(function () {
+                startLBS_REL(function(){
+                    startChoice_REL(function () {
+                        startDemographic_Gami(function () {
+                            startBasics_Gami(function () {
+                                startFinal_REL(function () {
+                                    startDebrief_REL(function (){
+                                        setEnd();
+                                    });
+                            });
+                        });
+                    });
+                });
+            });
         });
+    });
     } else if(arrayContainsElement(USER_GROUP, 'choice')){
         send(json_get_chosen_leaderboard_message());
     } else {
-        startControlndSurvey(function () {
-            setEnd();
+        startIMIControl(function () {
+            startTaskPerception_Control(function () {
+                startChoice_Control(function () {
+                    startDemographic_Control(function () {
+                        startBasics_Control(function () {
+                            startFinal_Control(function () {
+                                startDebrief_Control(function (){
+                                    setEnd();
+                                });
+                            });
+                    });
+                });
+            });
         });
-    }
+    });
+}
+    
+    /*{
+        startIMI(function () {
+            startTaskPerception(function () {
+                setEnd();
+        });
+    });
+}*/
 }
 
 /**

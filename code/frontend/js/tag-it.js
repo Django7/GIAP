@@ -34,7 +34,8 @@
             placeholderText   : null,   // Sets `placeholder` attr on input field.
             readOnly          : false,  // Disables editing.
             removeConfirmation: false,  // Require confirmation to remove tags.
-            tagLimit          : null,   // Max number of tags allowed (null for unlimited).
+            tagLimit          : 50,   // Max number of tags allowed (null for unlimited).
+            maxTagLength      : 30,
 
             // Used for autocomplete, unless you override `autocomplete.source`.
             availableTags     : [],
@@ -238,7 +239,7 @@
 
                     // Comma/Space/Enter are all valid delimiters for new tags,
                     // except when there is an open quote or if setting allowSpaces = true.
-                    // Tab will also create a tag, unless the tag input is empty,
+                    // Tab will also create a tag, unless the tag input is empty,  Django and not longer than 30
                     // in which case it isn't caught.
                     if (
                         (event.which === $.ui.keyCode.COMMA && event.shiftKey === false) ||
@@ -251,11 +252,12 @@
                             event.which == $.ui.keyCode.SPACE &&
                             that.options.allowSpaces !== true &&
                             (
-                                $.trim(that.tagInput.val()).replace( /^s*/, '' ).charAt(0) != '"' ||
+                                $.trim(that.tagInput.val()).replace( /^s*/, '' ).charAt(0) != '"'||
                                 (
                                     $.trim(that.tagInput.val()).charAt(0) == '"' &&
                                     $.trim(that.tagInput.val()).charAt($.trim(that.tagInput.val()).length - 1) == '"' &&
-                                    $.trim(that.tagInput.val()).length - 1 !== 0
+                                    $.trim(that.tagInput.val()).length - 1 !== 0 
+                                    
                                 )
                             )
                         )
@@ -448,7 +450,7 @@
                 value = this.options.preprocessTag(value);
             }
 
-            if (value === '') {
+            if (value === '' || (value.length) > this.options.maxTagLength) {
                 return false;
             }
 

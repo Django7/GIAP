@@ -1,6 +1,7 @@
 package com.dextreem.gms.session;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.InetSocketAddress;
 import java.util.HashMap;
@@ -10,7 +11,7 @@ public class SessionManager {
     private Map<String, CustomSession> user_sessions = new HashMap<>();
     private Map<String, CustomSession> sessions_to_user = new HashMap<>();
 
-    private final Logger logger = Logger.getLogger(SessionManager.class);
+    private final Logger logger = LoggerFactory.getLogger(SessionManager.class);
 
     /**
      * Registers a user.

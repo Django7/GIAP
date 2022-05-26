@@ -1,6 +1,7 @@
 package com.dextreem.gms.websocket.runner;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -14,7 +15,7 @@ public class WebSocketMessageReceivedThreadPool {
     private static ExecutorService executor = Executors.newFixedThreadPool(size);
 
 
-    final static Logger logger = Logger.getLogger(WebSocketMessageReceivedThreadPool.class);
+    final static Logger logger = LoggerFactory.getLogger(WebSocketMessageReceivedThreadPool.class);
 
     /**
      * Execute the runnable in a thread pool

@@ -335,17 +335,45 @@ INSERT INTO questionnaires (quest_name, json_quest) VALUE ('design', '"dummy"');
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_normal', '"dummy"');
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_design', '"dummy"');
 
-INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_absolute', '"dummy"');
+/*INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_absolute', '"dummy"');
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_relative', '"dummy"');
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_control', '"dummy"');
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_choice_absolute', '"dummy"');
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('end_choice_relative', '"dummy"');
 
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('demographics', '"dummy"');
-INSERT INTO questionnaires (quest_name, json_quest) VALUE ('big_five', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('big_five', '"dummy"');*/
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('kim_enjoyment_choice1', '"dummy"');
 INSERT INTO questionnaires (quest_name, json_quest) VALUE ('kim_enjoyment_choice2', '"dummy"');
 
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('imi', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('imi_control', '"dummy"');
+
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('task_perception', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('task_perception_control', '"dummy"');
+
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('lbs_abs', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('lbs_rel', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('lbs_C_abs', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('lbs_C_rel', '"dummy"');
+
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('choice_control', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('choice_abs', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('choice_rel', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('choice_C_abs', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('choice_C_rel', '"dummy"');
+
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('demographic_control', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('demographic_gami', '"dummy"');
+
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('basics_control', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('basics_gami', '"dummy"');
+
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('final_control', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('final_abs', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('final_rel', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('final_C_abs', '"dummy"');
+INSERT INTO questionnaires (quest_name, json_quest) VALUE ('final_C_rel', '"dummy"');
 
 INSERT INTO image_tags (uid, iid, tag) VALUES (1, 1, 'ruhig');
 INSERT INTO image_tags (uid, iid, tag) VALUES (1, 2, 'ruhig');
